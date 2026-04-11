@@ -180,3 +180,39 @@ body {
     .search-panel { position: static; transform: none; width: 100%; margin-top: 20px; }
     .nav { display: none; } /* Скрываем меню на мобилках для простоты */
 }
+/* Стили для страницы "О Квартире" */
+.page-content { padding-top: 40px; }
+.apartment-details h1 { color: var(--dark-green); margin-bottom: 30px; }
+
+.full-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    height: 500px;
+    margin-bottom: 40px;
+}
+.full-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+.side-imgs { display: grid; grid-template-rows: 1fr 1fr; gap: 15px; }
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.rules-list { list-style: none; padding: 0; }
+.rules-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.rules-list i { color: var(--dark-green); width: 18px; }
+
+.price-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 20px;
+}
+.price-card .price { font-size: 24px; font-weight: 700; color: var(--dark-green); margin-bottom: 15px; }
+.price-card span { font-size: 14px; font-weight: 400; color: #777; }
+.active { border-bottom: 2px solid var(--dark-green); }
