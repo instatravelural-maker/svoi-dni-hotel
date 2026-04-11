@@ -6,10 +6,68 @@
     --text-color: #333;
     --white: #ffffff;
     --accent: #d4a373;
-    --sutochno-green: #4caf50; /* Добавил цвет рейтинга */
+    --sutochno-green: #4caf50;
 }
 
-/* ... (здесь идут твои базовые стили, header, hero и search-panel без изменений) ... */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--beige-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ШАПКА (HEADER) --- */
+.header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark-green);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav a:hover { color: var(--accent); }
+.nav a.active { border-bottom: 2px solid var(--dark-green); color: var(--dark-green); }
+
+.btn-dark {
+    background: var(--dark-green);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+}
 
 /* --- ОБЩИЕ СЕКЦИИ --- */
 .page-content { padding-top: 40px; }
@@ -17,7 +75,6 @@
 
 /* --- СТРАНИЦА ОТЗЫВОВ (SUTOCHNО STYLE) --- */
 
-/* Контейнер общей статистики */
 .reviews-stats-container {
     background: var(--white);
     padding: 30px;
@@ -58,7 +115,6 @@
     color: #888;
 }
 
-/* Шкалы характеристик */
 .detailed-stats {
     flex-grow: 1;
     display: grid;
@@ -85,7 +141,7 @@
 
 .progress {
     height: 100%;
-    background: var(--dark-green); /* Используем твой фирменный цвет для полосок */
+    background: var(--dark-green);
     border-radius: 10px;
 }
 
@@ -94,8 +150,6 @@
     width: 35px;
     text-align: right;
 }
-
-/* --- КАРТОЧКИ ОТЗЫВОВ --- */
 
 .reviews-full-list {
     display: flex;
@@ -158,7 +212,6 @@
     color: #999;
 }
 
-/* Контент отзыва */
 .review-content-box {
     padding-left: 30px;
 }
@@ -204,10 +257,117 @@
     width: 20px;
 }
 
-/* ... (далее идет твой блок .leave-review-cta и footer без изменений) ... */
+.leave-review-cta {
+    text-align: center;
+    background: var(--dark-green);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 30px;
+    margin-bottom: 80px;
+}
 
-/* --- ОБНОВЛЕННЫЙ АДАПТИВ --- */
+/* --- ПОДВАЛ (FOOTER) --- */
+.footer {
+    background-color: var(--footer-bg);
+    padding: 60px 0 30px;
+    color: #333;
+    margin-top: 80px;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-info .logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2b544a;
+}
+
+.footer-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-address p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.footer-address strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2b544a;
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.footer-social a:hover {
+    background: #2b544a;
+    color: #fff;
+}
+
+.vk-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
 @media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav a { margin: 0 5px; }
+
     .reviews-stats-container {
         flex-direction: column;
         gap: 25px;
