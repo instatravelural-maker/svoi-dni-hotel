@@ -1,1 +1,161 @@
+:root {
+    --dark-green: #1d3531;
+    --beige-bg: #fdf8ee;
+    --text-color: #333;
+    --white: #ffffff;
+}
 
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--beige-bg);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--dark-green);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-dark {
+    background: var(--dark-green);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 0 100px;
+    background: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1500&q=80') center/cover;
+    position: relative;
+    border-radius: 0 0 40px 40px;
+    margin: 0 20px;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark-green);
+}
+
+/* Search Panel */
+.search-panel {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.search-group { display: flex; flex-direction: column; }
+.search-group label { font-size: 12px; color: #888; margin-bottom: 5px; }
+.input-with-icon { position: relative; }
+.input-with-icon i { position: absolute; right: 10px; top: 10px; width: 16px; color: #888; }
+.search-group input, .search-group select {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.btn-search {
+    background: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* About Section */
+.about-section { padding: 100px 0; text-align: center; }
+.section-title { font-size: 28px; margin-bottom: 40px; color: var(--dark-green); }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.amenities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.amenity { font-size: 13px; display: flex; align-items: center; gap: 5px; }
+.amenity i { width: 16px; color: var(--dark-green); }
+
+.mini-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mini-gallery img {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
