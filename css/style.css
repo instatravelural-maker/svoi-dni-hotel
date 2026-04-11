@@ -686,3 +686,132 @@ body {
     
     .leave-review-cta h3 { font-size: 22px; }
 }
+/* --- СТИЛИ БРОНИРОВАНИЯ --- */
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.booking-form-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+.btn-send-booking {
+    width: 100%;
+    padding: 15px;
+    background: var(--dark-green);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-send-booking:hover {
+    background: #1a3d34;
+}
+
+.form-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.booking-info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-card-mini {
+    background: #fdfaf5;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.price-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-green);
+}
+
+.price-value span { font-size: 16px; font-weight: 400; color: #666; }
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.benefit-item i { color: #25d366; width: 20px; }
+
+.wa-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ БРОНИРОВАНИЯ --- */
+
+@media (max-width: 768px) {
+    .booking-container {
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .booking-form-box {
+        padding: 25px;
+        order: 2; /* Инфо сначала, форма потом */
+    }
+    .booking-info-sidebar {
+        order: 1;
+    }
+}
