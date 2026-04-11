@@ -8,58 +8,258 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Отступ для галереи */
-        .full-gallery { margin-bottom: 50px; }
+        /* Отступ для галереи, чтобы описание не прилипало */
+        .full-gallery {
+            margin-bottom: 50px;
+        }
 
         /* --- СТИЛИ ДЛЯ УДОБСТВ --- */
-        .amenities-section { margin-top: 40px; }
-        .amenities-group { margin-bottom: 30px; }
+        .amenities-section {
+            margin-top: 40px;
+        }
+
+        .amenities-group {
+            margin-bottom: 30px;
+        }
+
         .amenities-group h3 {
-            font-size: 18px; margin-bottom: 15px;
-            display: flex; align-items: center; gap: 10px; color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
         }
-        .amenities-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .amenities-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .amenity-tag {
-            background-color: #f7f3f0; padding: 8px 16px; border-radius: 50px;
-            display: flex; align-items: center; gap: 8px; font-size: 14px;
-            color: #444; border: 1px solid rgba(0,0,0,0.03);
+            background-color: #f7f3f0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #444;
+            border: 1px solid rgba(0,0,0,0.03);
         }
+
         .amenity-list-simple {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px; list-style: none; padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            list-style: none;
+            padding: 0;
         }
-        .amenity-item-simple { font-size: 14px; color: #555; display: flex; align-items: center; gap: 8px; }
 
-        /* --- СТИЛИ ПОДСКАЗОК (TOOLTIPS) --- */
-        .rule-item { display: flex; align-items: center; gap: 10px; position: relative; margin-bottom: 12px; }
-        .tooltip-container { position: relative; display: inline-block; margin-left: 5px; cursor: pointer; }
-        .icon-help { color: #ccc; transition: 0.3s; width: 18px; height: 18px; }
-        .tooltip-container:hover .icon-help { color: #2b544a; }
+        .amenity-item-simple {
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
+        /* --- СТИЛИ ДЛЯ ПРАВИЛ И ПОДСКАЗОК (ИСПРАВЛЕНО) --- */
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            position: relative; /* Чтобы подсказка была привязана к строке */
+        }
+
+        .tooltip-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .icon-help {
+            color: #ccc;
+            width: 18px;
+            height: 18px;
+            transition: color 0.3s;
+        }
+
+        .tooltip-container:hover .icon-help {
+            color: #2b544a;
+        }
+
+        /* Общее окно подсказки */
         .tooltip-box {
-            position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%);
-            width: 280px; background: #fff; color: #333; padding: 20px;
-            border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            visibility: hidden; opacity: 0; transition: 0.3s; z-index: 100;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 280px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            color: #333;
         }
-        .tooltip-container:hover .tooltip-box { visibility: visible; opacity: 1; }
 
-        /* Специфические стили для детей (как на макете) */
-        .tooltip-box.child-rules { width: 320px; text-align: left; }
-        .tooltip-box.child-rules h3 { 
-            font-size: 16px; margin: 0 0 15px 0; color: #333; font-weight: 700; 
+        .tooltip-container:hover .tooltip-box {
+            visibility: visible;
+            opacity: 1;
         }
-        .child-rule-row { display: flex; gap: 12px; margin-bottom: 15px; align-items: flex-start; }
-        .check-icon { color: #38a169; font-weight: bold; }
-        .rule-title-green { color: #38a169; font-weight: 600; margin: 0; font-size: 15px; }
-        .rule-subtitle { color: #666; font-size: 13px; margin: 2px 0 0 0; line-height: 1.4; }
 
-        /* --- ПОДВАЛ --- */
-        .footer { background-color: #f7f3f0; padding: 60px 0 30px; color: #333; margin-top: 80px; }
-        .footer-flex { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
-        .footer-info .logo { font-size: 24px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; color: #2b544a; }
-        .footer-social { display: flex; gap: 12px; }
-        .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; color: #2b544a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        /* Стили для сложной подсказки с детьми (как на картинке) */
+        .tooltip-box.child-rules {
+            width: 320px;
+        }
+
+        .tooltip-box.child-rules h3 {
+            font-size: 16px;
+            margin: 0 0 15px 0;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .child-rule-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: #38a169;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .rule-title-green {
+            color: #38a169;
+            font-weight: 600;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .rule-subtitle {
+            color: #666;
+            font-size: 13px;
+            margin: 2px 0 0 0;
+            line-height: 1.4;
+        }
+
+        .text-gold { color: #d4af37; }
+
+        .tooltip-sub-item {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
+        .footer {
+            background-color: #f7f3f0;
+            padding: 60px 0 30px;
+            color: #333;
+            margin-top: 80px;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2b544a;
+        }
+
+        .footer-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-address p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .footer-address strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2b544a;
+            transition: 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .footer-social a:hover {
+            background: #2b544a;
+            color: #fff;
+        }
+
+        .vk-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 12px;
+            color: #999;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .footer-flex {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,33 +300,118 @@
                 <div class="description">
                     <h2>Описание</h2>
                     <p>Добро пожаловать в светлую и просторную квартиру в самом сердце Санкт-Петербурга. Мы постарались сохранить атмосферу исторического центра, добавив современный комфорт и стиль.</p>
+                    <p>Квартира идеально подходит для пары или семьи из 4-х человек. Здесь есть всё для длительного проживания: от стиральной машины до кофемашины.</p>
                     
                     <div class="amenities-section">
                         <h2>Удобства</h2>
-                        <div class="amenities-grid">
-                            <div class="amenity-tag"><i data-lucide="wifi"></i> Wi-Fi</div>
-                            <div class="amenity-tag"><i data-lucide="tv"></i> Телевизор</div>
-                            <div class="amenity-tag"><i data-lucide="coffee"></i> Кофеварка</div>
-                            <div class="amenity-tag"><i data-lucide="washing-machine"></i> Стиральная машина</div>
+                        
+                        <div class="amenities-group">
+                            <div class="amenities-grid">
+                                <div class="amenity-tag"><i data-lucide="door-open"></i> Балкон / Лоджия</div>
+                                <div class="amenity-tag"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
+                                <div class="amenity-tag"><i data-lucide="tv"></i> Телевизор</div>
+                                <div class="amenity-tag"><i data-lucide="coffee"></i> Электрический чайник</div>
+                                <div class="amenity-tag"><i data-lucide="wind"></i> Фен</div>
+                                <div class="amenity-tag"><i data-lucide="microwave"></i> Микроволновка</div>
+                                <div class="amenity-tag"><i data-lucide="washing-machine"></i> Стиральная машина</div>
+                                <div class="amenity-tag"><i data-lucide="cup-soda"></i> Кофеварка</div>
+                                <div class="amenity-tag"><i data-lucide="columns"></i> Блэкаут шторы</div>
+                                <div class="amenity-tag"><i data-lucide="door-closed"></i> Шкаф</div>
+                                <div class="amenity-tag"><i data-lucide="refrigerator"></i> Холодильник</div>
+                                <div class="amenity-tag"><i data-lucide="iron"></i> Утюг</div>
+                                <div class="amenity-tag"><i data-lucide="table"></i> Гладильная доска</div>
+                            </div>
+                        </div>
+
+                        <div class="amenities-group">
+                            <h3><i data-lucide="bed" size="20"></i> Спальные места</h3>
+                            <ul class="amenity-list-simple">
+                                <li class="amenity-item-simple">Двуспальная кровать</li>
+                                <li class="amenity-item-simple">Двуспальный диван</li>
+                                <li class="amenity-item-simple">Постельное белье</li>
+                            </ul>
+                        </div>
+
+                        <div class="amenities-group">
+                            <h3><i data-lucide="monitor" size="20"></i> Мультимедиа</h3>
+                            <ul class="amenity-list-simple">
+                                <li class="amenity-item-simple">Wi-Fi</li>
+                                <li class="amenity-item-simple">Телевизор</li>
+                                <li class="amenity-item-simple">Кабельное ТВ</li>
+                            </ul>
+                        </div>
+
+                        <div class="amenities-group">
+                            <h3><i data-lucide="utensils" size="20"></i> Кухонная зона</h3>
+                            <ul class="amenity-list-simple">
+                                <li class="amenity-item-simple">Электроплита</li>
+                                <li class="amenity-item-simple">Духовка</li>
+                                <li class="amenity-item-simple">Микроволновка</li>
+                                <li class="amenity-item-simple">Посуда и принадлежности</li>
+                                <li class="amenity-item-simple">Столовые приборы</li>
+                                <li class="amenity-item-simple">Электрический чайник</li>
+                                <li class="amenity-item-simple">Кофеварка</li>
+                                <li class="amenity-item-simple">Холодильник</li>
+                                <li class="amenity-item-simple">Кухонный гарнитур</li>
+                                <li class="amenity-item-simple">Обеденный стол</li>
+                            </ul>
+                        </div>
+
+                        <div class="amenities-group">
+                            <h3><i data-lucide="bath" size="20"></i> Ванная комната</h3>
+                            <ul class="amenity-list-simple">
+                                <li class="amenity-item-simple">1 ванная комната с туалетом</li>
+                                <li class="amenity-item-simple">Полотенца</li>
+                                <li class="amenity-item-simple">Туалетные принадлежности</li>
+                                <li class="amenity-item-simple">Фен</li>
+                                <li class="amenity-item-simple">Душ</li>
+                            </ul>
+                        </div>
+
+                        <div class="amenities-group">
+                            <h3><i data-lucide="parking-circle" size="20"></i> Парковка</h3>
+                            <ul class="amenity-list-simple">
+                                <li class="amenity-item-simple">Без оплаты</li>
+                                <li class="amenity-item-simple">На территории объекта</li>
+                            </ul>
                         </div>
                     </div>
 
                     <h3>Правила проживания</h3>
-                    <ul class="rules-list" style="list-style: none; padding: 0;">
+                    <ul class="rules-list">
                         <li class="rule-item">
                             <i data-lucide="clock"></i> 
-                            <span>Заезд с 14:00 — Выезд до 12:00</span>
+                            Заезд с 14:00 — Выезд до 12:00
                             <div class="tooltip-container">
                                 <i data-lucide="help-circle" class="icon-help"></i>
                                 <div class="tooltip-box">
-                                    <p>Ранний заезд и поздний выезд возможны по согласованию.</p>
+                                    <p>Точное время можно выбрать при бронировании.</p>
+                                    <p>Если хотите заехать раньше 14:00 или выселиться позже 12:00, обратите внимание на эти условия:</p>
+                                    <div class="tooltip-sub-item">
+                                        <i data-lucide="clock" class="text-gold"></i>
+                                        <div>
+                                            <strong class="text-gold">Ранний заезд по согласованию</strong>
+                                            <span>выберите время и отправьте запрос хозяину</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-sub-item">
+                                        <i data-lucide="clock" class="text-gold"></i>
+                                        <div>
+                                            <strong class="text-gold">Поздний выезд по согласованию</strong>
+                                            <span>выберите время и отправьте запрос хозяину</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
+                        <li class="rule-item"><i data-lucide="cigarette-off"></i> Курение запрещено</li>
+                        <li class="rule-item"><i data-lucide="music-2"></i> Без вечеринок и мероприятий</li>
+                        <li class="rule-item"><i data-lucide="paw-print"></i> Нельзя с питомцами</li>
+                        <li class="rule-item"><i data-lucide="file-text"></i> Владелец предоставляет отчётные документы</li>
                         
                         <li class="rule-item">
                             <i data-lucide="baby"></i>
-                            <span>Можно с детьми по согласованию</span>
+                            <span>Можно с детьми по согласованию с хозяином жилья</span>
                             <div class="tooltip-container">
                                 <i data-lucide="help-circle" class="icon-help"></i>
                                 <div class="tooltip-box child-rules">
@@ -148,14 +433,15 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="rule-item"><i data-lucide="cigarette-off"></i> Курение запрещено</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-booking">
                     <div class="price-card">
                         <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
-                        <a href="booking.html" class="btn-search" style="display:block; text-align:center; padding: 15px; text-decoration:none; background:#2b544a; color:#fff; border-radius:8px; margin-top:15px;">Забронировать</a>
+                        <hr>
+                        <p>Минимальный срок аренды: 2 суток</p>
+                        <a href="booking.html" class="btn-search" style="display:block; text-align:center; padding: 15px; text-decoration:none;">Проверить свободные даты</a>
                     </div>
                 </div>
             </div>
@@ -165,13 +451,27 @@
     <footer class="footer">
         <div class="container footer-flex">
             <div class="footer-info">
-                <div class="logo"><i data-lucide="key-round"></i> CozyStay</div>
-                <p>© 2026 Все права защищены</p>
+                <div class="logo">
+                    <i data-lucide="key-round" size="24"></i>
+                    CozyStay
+                </div>
+                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
+                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+            </div>
+            <div class="footer-address">
+                <p><strong>Адрес:</strong></p>
+                <p>г. Санкт-Петербург,<br>ул. Марата, 15</p>
             </div>
             <div class="footer-social">
-                <a href="#"><i data-lucide="send"></i></a>
-                <a href="#"><i data-lucide="phone"></i></a>
+                <a href="#" title="Telegram"><i data-lucide="send" size="20"></i></a>
+                <a href="#" title="VK">
+                    <svg class="vk-icon" viewBox="0 0 24 24"><path d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg>
+                </a>
+                <a href="#" title="WhatsApp"><i data-lucide="phone" size="20"></i></a>
             </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2026 CozyStay. Все права защищены.</p>
         </div>
     </footer>
 
