@@ -17,9 +17,10 @@
                 <span>CozyStay</span>
             </div>
             <nav class="nav">
+                <a href="index.html">Главная</a>
                 <a href="about.html">О Квартире</a>
-                <a href="services.html">Услуги</a>
-                <a href="booking.html">Цены</a>
+                <a href="services.html">Сервис</a>
+                <a href="checkin.html">Заселение</a>
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
@@ -33,140 +34,34 @@
                 <h1>ВАШ УЮТНЫЙ УГОЛОК <br> В САНКТ-ПЕТЕРБУРГЕ</h1>
                 <p>Комфортабельная квартира посуточно в центре города. Идеально для отдыха и командировок.</p>
             </div>
-
             <div class="search-panel">
                 <div class="search-group">
                     <label>Заезд</label>
                     <div class="input-with-icon">
-                        <input type="text" value="Посуточно">
+                        <input type="text" placeholder="Дата заезда">
                         <i data-lucide="calendar"></i>
                     </div>
                 </div>
                 <div class="search-group">
                     <label>Выезд</label>
                     <div class="input-with-icon">
-                        <input type="text" value="Выезд">
+                        <input type="text" placeholder="Дата выезда">
                         <i data-lucide="calendar"></i>
                     </div>
                 </div>
                 <div class="search-group">
                     <label>Гостей</label>
                     <select>
-                        <option>2 Гостя</option>
-                        <option>3 Гостя</option>
-                        <option>4 Гостя</option>
+                        <option>1-2 гостя</option>
+                        <option>3 гостя</option>
+                        <option>4 гостя</option>
                     </select>
                 </div>
-                <button class="btn-search">Найти и Забронировать</button>
+                <button class="btn-search" onclick="location.href='booking.html'">Найти и Забронировать</button>
             </div>
         </div>
     </section>
 
-    <section class="about-section container">
-        <h2 class="section-title">НАШ УНИКАЛЬНЫЙ ОБЪЕКТ</h2>
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Интерьер">
-            </div>
-            <div class="about-text">
-                <p class="subtitle">Комфортабельная квартира посуточно в центре. Идеально для отдыха и командировок. 48 кв.м., 4 гостя, 1 спальня.</p>
-                <div class="amenities">
-                    <div class="amenity"><i data-lucide="wifi"></i> WiFi</div>
-                    <div class="amenity"><i data-lucide="tv"></i> ТВ</div>
-                    <div class="amenity"><i data-lucide="utensils"></i> Кухня</div>
-                    <div class="amenity"><i data-lucide="thermometer"></i> Кондиционер</div>
-                    <div class="amenity"><i data-lucide="parking-circle"></i> Парковка</div>
-                    <div class="amenity"><i data-lucide="coffee"></i> Кофемашина</div>
-                </div>
-                <div class="location-info">
-                    <p><i data-lucide="map-pin"></i> Центр, м. Восстания — 5 мин пешком</p>
-                    <p><i data-lucide="navigation"></i> Рядом Невский проспект</p>
-                </div>
-                <div class="mini-gallery">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=200&q=80">
-                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=200&q=80">
-                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=200&q=80">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits container">
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <i data-lucide="armchair"></i>
-                <h3>Комфорт</h3>
-                <p>Современная мебель и всё необходимое для жизни.</p>
-            </div>
-            <div class="benefit-card">
-                <i data-lucide="map-pin"></i>
-                <h3>Локация</h3>
-                <p>Все достопримечательности в шаговой доступности.</p>
-            </div>
-            <div class="benefit-card">
-                <i data-lucide="sparkles"></i>
-                <h3>Сервис</h3>
-                <p>Кристальная чистота и поддержка гостей 24/7.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery-section container">
-        <h2 class="section-title">ФОТОГАЛЕРЕЯ</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80">
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80">
-            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=600&q=80">
-        </div>
-    </section>
-
-    <section class="reviews-section">
-        <div class="container">
-            <h2 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <img src="https://i.pravatar.cc/100?u=1" class="review-avatar">
-                    <p>"Потрясающее место! Очень чисто и уютно. Обязательно вернемся."</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-                <div class="review-card">
-                    <img src="https://i.pravatar.cc/100?u=12" class="review-avatar">
-                    <p>"Локация просто супер. Всё рядом. Квартира лучше чем на фото."</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-                <div class="review-card">
-                    <img src="https://i.pravatar.cc/100?u=22" class="review-avatar">
-                    <p>"Хозяева очень гостеприимные. Заселились без проблем. 10/10!"</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container footer-flex">
-            <div class="footer-info">
-                <div class="logo">CozyStay</div>
-                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
-                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
-            </div>
-            <div class="footer-address">
-                <p><strong>Адрес:</strong></p>
-                <p>Санкт-Петербург,<br>ул. Марата, 15</p>
-            </div>
-            <div class="footer-social">
-                <i data-lucide="instagram"></i>
-                <i data-lucide="send"></i>
-                <i data-lucide="phone-call"></i>
-            </div>
-        </div>
-        <div class="footer-bottom container">
-            <p>© 2026 CozyStay Apartments. Сделано с любовью в СПб.</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
