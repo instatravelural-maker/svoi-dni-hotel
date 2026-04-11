@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Квартире — CozyStay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <i data-lucide="key-round"></i>
+                <span>CozyStay</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="about.html" class="active">О Квартире</a>
+                <a href="services.html">Услуги</a>
+                <a href="booking.html">Цены</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+            <a href="booking.html" class="btn-dark">Забронировать</a>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="apartment-details">
+            <h1>Уютные апартаменты на Марата</h1>
+            
+            <div class="full-gallery">
+                <div class="main-img">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Гостиная">
+                </div>
+                <div class="side-imgs">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400&q=80" alt="Кухня">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Спальня">
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="description">
+                    <h2>Описание</h2>
+                    <p>Добро пожаловать в светлую и просторную квартиру в самом сердце Санкт-Петербурга. Мы постарались сохранить атмосферу исторического центра, добавив современный комфорт и стиль.</p>
+                    <p>Квартира идеально подходит для пары или семьи из 4-х человек. Здесь есть всё для длительного проживания: от стиральной машины до кофемашины.</p>
+                    
+                    <h3>Правила дома</h3>
+                    <ul class="rules-list">
+                        <li><i data-lucide="clock"></i> Заезд с 14:00, выезд до 12:00</li>
+                        <li><i data-lucide="no-smoking"></i> Курение в квартире запрещено</li>
+                        <li><i data-lucide="users"></i> Без вечеринок и мероприятий</li>
+                        <li><i data-lucide="dog"></i> Проживание с животными по согласованию</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-booking">
+                    <div class="price-card">
+                        <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
+                        <hr>
+                        <p>Минимальный срок аренды: 2 суток</p>
+                        <a href="booking.html" class="btn-search" style="display:block; text-align:center; padding: 15px; text-decoration:none;">Проверить свободные даты</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <div class="footer-info">
+                <div class="logo">CozyStay</div>
+                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
+            </div>
+            <div class="footer-social">
+                <i data-lucide="send"></i>
+                <i data-lucide="phone-call"></i>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2026 CozyStay Apartments.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
