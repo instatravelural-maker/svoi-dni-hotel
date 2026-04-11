@@ -180,6 +180,7 @@ body {
     .search-panel { position: static; transform: none; width: 100%; margin-top: 20px; }
     .nav { display: none; } /* Скрываем меню на мобилках для простоты */
 }
+
 /* Стили для страницы "О Квартире" */
 .page-content { padding-top: 40px; }
 .apartment-details h1 { color: var(--dark-green); margin-bottom: 30px; }
@@ -201,9 +202,102 @@ body {
     margin-bottom: 80px;
 }
 
+/* --- ОБНОВЛЕННЫЕ ПРАВИЛА (СУТОЧНО СТИЛЬ) --- */
 .rules-list { list-style: none; padding: 0; }
-.rules-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.rules-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
 .rules-list i { color: var(--dark-green); width: 18px; }
+
+/* Плашка времени */
+.time-badge {
+    background: #f0f5ff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: inline-flex !important;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Перечеркнутые иконки для запретов */
+.icon-ban {
+    position: relative;
+    color: #ef4444 !important; /* Красный оттенок для запрета */
+}
+.icon-ban::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: rotate(-45deg);
+}
+
+/* Контейнер подсказки */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.icon-help {
+    width: 16px !important;
+    height: 16px !important;
+    color: #999;
+}
+
+/* Окно подсказки */
+.tooltip-box {
+    visibility: hidden;
+    width: 320px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 12px;
+    padding: 20px;
+    position: absolute;
+    z-index: 100;
+    bottom: 140%;
+    left: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.tooltip-box p { margin: 0 0 10px 0; }
+.text-gold { color: var(--accent); } /* Используем вашу переменную */
+
+.tooltip-sub-item {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    align-items: flex-start;
+}
+
+.tooltip-sub-item strong { display: block; font-size: 14px; color: var(--dark-green); }
+.tooltip-sub-item span { color: #888; font-size: 12px; }
+
+/* Показ окна */
+.tooltip-container:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+    bottom: 125%;
+}
+
+/* Треугольник подсказки */
+.tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* --- КОНЕЦ ПРАВИЛ --- */
 
 .price-card {
     background: white;
@@ -216,6 +310,7 @@ body {
 .price-card .price { font-size: 24px; font-weight: 700; color: var(--dark-green); margin-bottom: 15px; }
 .price-card span { font-size: 14px; font-weight: 400; color: #777; }
 .active { border-bottom: 2px solid var(--dark-green); }
+
 /* Стили для страницы Контакты */
 .contacts-grid {
     display: grid;
@@ -291,6 +386,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 /* Стили для страницы Сервиса */
 .services-intro {
     text-align: center;
@@ -346,6 +442,7 @@ body {
 @media (max-width: 600px) {
     .services-grid-new { grid-template-columns: 1fr; }
 }
+
 /* Стили для Памятки по заселению */
 .checkin-steps {
     display: grid;
@@ -382,6 +479,7 @@ body {
 
 .important-note h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
 .important-note ul { margin-bottom: 0; padding-left: 20px; }
+
 /* Новые секции для главной */
 .features-grid {
     display: grid;
@@ -426,8 +524,8 @@ body {
 @media (max-width: 768px) {
     .features-grid, .gallery-grid, .reviews-grid { grid-template-columns: 1fr; }
 }
-/* --- АДАПТИВНАЯ ВЕРСТКА (MOBILE READY) --- */
 
+/* --- АДАПТИВНАЯ ВЕРСТКА (MOBILE READY) --- */
 @media (max-width: 1024px) {
     .container { padding: 0 15px; }
     .hero-card { margin: 0 20px; }
@@ -455,7 +553,7 @@ body {
     
     /* Панель поиска */
     .search-panel {
-        grid-template-columns: 1fr; /* Всё в одну колонку */
+        grid-template-columns: 1fr;
         bottom: -130px;
         padding: 15px;
     }
@@ -465,15 +563,6 @@ body {
     .about-grid { grid-template-columns: 1fr; gap: 20px; }
     .about-image img { height: 250px; }
     .amenities { grid-template-columns: 1fr 1fr; }
-
-    /* Карточки преимуществ */
-    .features-grid { grid-template-columns: 1fr; }
-
-    /* Галерея "Места рядом" */
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    
-    /* Отзывы */
-    .reviews-grid { grid-template-columns: 1fr; }
 
     /* Футер */
     .footer-flex {
@@ -486,13 +575,12 @@ body {
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 24px; }
-    .gallery-grid { grid-template-columns: 1fr; } /* На совсем маленьких — по одной картинке */
+    .gallery-grid { grid-template-columns: 1fr; }
     .btn-dark { width: 100%; text-align: center; }
 }
-/* --- ИСПРАВЛЕНИЕ ВНУТРЕННИХ СТРАНИЦ ДЛЯ МОБИЛЬНЫХ --- */
 
+/* --- ИСПРАВЛЕНИЕ ВНУТРЕННИХ СТРАНИЦ --- */
 @media (max-width: 768px) {
-    /* Общие исправления для заголовков и отступов */
     .page-content {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -501,71 +589,26 @@ body {
     .section-title {
         font-size: 24px;
         margin-bottom: 30px;
-        text-align: center; /* На мобилках заголовки лучше по центру */
+        text-align: center;
     }
 
-    /* Исправляем страницу "СЕРВИС" (Услуги) */
     .services-grid-new {
-        grid-template-columns: 1fr !important; /* Строго в одну колонку */
+        grid-template-columns: 1fr !important;
         gap: 20px;
     }
-    .service-card-alt {
-        padding: 25px; /* Чуть меньше отступы внутри карточки */
-    }
-
-    /* Исправляем страницу "ЗАСЕЛЕНИЕ" (Памятка) */
+    
     .checkin-steps {
         grid-template-columns: 1fr !important;
         gap: 20px;
     }
-    .step-card {
-        padding: 20px;
-    }
-    .important-note {
-        padding: 20px;
-        font-size: 14px;
-    }
 
-    /* Исправляем страницу "КОНТАКТЫ" */
     .contacts-grid {
         grid-template-columns: 1fr !important;
         gap: 40px;
     }
-    .map-container iframe {
-        height: 300px; /* Уменьшаем карту, чтобы не занимала весь экран */
-    }
-    .contact-info-block {
-        order: 2; /* Карту можно оставить сверху, а инфо снизу, либо наоборот */
-    }
-
-    /* Исправляем страницу "О КВАРТИРЕ" (если там были сетки) */
-    .about-main-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* Универсальный фикс для всех карточек и блоков */
-    main img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-    }
 }
 
-/* Дополнительный фикс для совсем маленьких экранов (iPhone SE и т.д.) */
-@media (max-width: 480px) {
-    .header {
-        padding: 10px 0;
-    }
-    .logo span {
-        font-size: 18px;
-    }
-    .nav a {
-        font-size: 12px;
-        padding: 5px;
-    }
-}
 /* --- СТИЛИ СТРАНИЦЫ ОТЗЫВОВ --- */
-
 .reviews-stats {
     text-align: center;
     margin-bottom: 50px;
@@ -616,29 +659,8 @@ body {
     object-fit: cover;
 }
 
-.review-sidebar h4 {
-    margin-bottom: 5px;
-    color: var(--dark-green);
-}
-
-.review-sidebar span {
-    font-size: 12px;
-    color: #999;
-}
-
 .review-body {
     padding-left: 40px;
-}
-
-.review-body .stars {
-    margin-bottom: 15px;
-    color: #ffcc00;
-}
-
-.review-body p {
-    line-height: 1.7;
-    color: #555;
-    font-style: italic;
 }
 
 .leave-review-cta {
@@ -650,44 +672,7 @@ body {
     margin-bottom: 80px;
 }
 
-.leave-review-cta h3 { font-size: 28px; margin-bottom: 15px; }
-.leave-review-cta p { opacity: 0.8; margin-bottom: 30px; }
-.leave-review-cta .btn-dark { background: white; color: var(--dark-green); }
-
-/* --- МОБИЛЬНАЯ ВЕРСИЯ ОТЗЫВОВ --- */
-
-@media (max-width: 768px) {
-    .review-item-full {
-        grid-template-columns: 1fr; /* В одну колонку */
-        padding: 30px 20px;
-    }
-
-    .review-sidebar {
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding-right: 0;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        text-align: left;
-    }
-
-    .review-sidebar img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 0;
-    }
-
-    .review-body {
-        padding-left: 0;
-    }
-    
-    .leave-review-cta h3 { font-size: 22px; }
-}
 /* --- СТИЛИ БРОНИРОВАНИЯ --- */
-
 .booking-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -746,44 +731,6 @@ body {
     background: #1a3d34;
 }
 
-.form-note {
-    font-size: 12px;
-    color: #999;
-    margin-top: 15px;
-    text-align: center;
-}
-
-.booking-info-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.price-card-mini {
-    background: #fdfaf5;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-.price-value {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--dark-green);
-}
-
-.price-value span { font-size: 16px; font-weight: 400; color: #666; }
-
-.benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 15px;
-    margin-bottom: 12px;
-}
-
-.benefit-item i { color: #25d366; width: 20px; }
-
 .wa-link {
     display: flex;
     align-items: center;
@@ -798,20 +745,9 @@ body {
     margin-top: 10px;
 }
 
-/* --- МОБИЛЬНАЯ ВЕРСИЯ БРОНИРОВАНИЯ --- */
-
 @media (max-width: 768px) {
-    .booking-container {
-        grid-template-columns: 1fr; /* Одна колонка */
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    .booking-form-box {
-        padding: 25px;
-        order: 2; /* Инфо сначала, форма потом */
-    }
-    .booking-info-sidebar {
-        order: 1;
-    }
+    .booking-container { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .booking-form-box { order: 2; }
+    .booking-info-sidebar { order: 1; }
 }
