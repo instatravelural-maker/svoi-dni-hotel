@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CozyStay — Аренда квартир в Санкт-Петербурге</title>
+    <title>CozyStay — Апартаменты в Санкт-Петербурге</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
             <nav class="nav">
                 <a href="about.html">О Квартире</a>
                 <a href="services.html">Услуги</a>
-                <a href="booking.html">Цены и Бронирование</a>
+                <a href="booking.html">Цены</a>
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
@@ -52,9 +52,9 @@
                 <div class="search-group">
                     <label>Гостей</label>
                     <select>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>2 Гостя</option>
+                        <option>3 Гостя</option>
+                        <option>4 Гостя</option>
                     </select>
                 </div>
                 <button class="btn-search">Найти и Забронировать</button>
@@ -76,10 +76,11 @@
                     <div class="amenity"><i data-lucide="utensils"></i> Кухня</div>
                     <div class="amenity"><i data-lucide="thermometer"></i> Кондиционер</div>
                     <div class="amenity"><i data-lucide="parking-circle"></i> Парковка</div>
+                    <div class="amenity"><i data-lucide="coffee"></i> Кофемашина</div>
                 </div>
                 <div class="location-info">
-                    <p><i data-lucide="map-pin"></i> Центр, м. Восстания — 5 мин</p>
-                    <p><i data-lucide="map-pin"></i> Центр, м. Восстания — 5 мин</p>
+                    <p><i data-lucide="map-pin"></i> Центр, м. Восстания — 5 мин пешком</p>
+                    <p><i data-lucide="navigation"></i> Рядом Невский проспект</p>
                 </div>
                 <div class="mini-gallery">
                     <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=200&q=80">
@@ -89,6 +90,80 @@
             </div>
         </div>
     </section>
+
+    <section class="benefits container">
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i data-lucide="armchair"></i>
+                <h3>Комфорт</h3>
+                <p>Современная мебель и всё необходимое для жизни.</p>
+            </div>
+            <div class="benefit-card">
+                <i data-lucide="map-pin"></i>
+                <h3>Локация</h3>
+                <p>Все достопримечательности в шаговой доступности.</p>
+            </div>
+            <div class="benefit-card">
+                <i data-lucide="sparkles"></i>
+                <h3>Сервис</h3>
+                <p>Кристальная чистота и поддержка гостей 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section container">
+        <h2 class="section-title">ФОТОГАЛЕРЕЯ</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=600&q=80">
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <img src="https://i.pravatar.cc/100?u=1" class="review-avatar">
+                    <p>"Потрясающее место! Очень чисто и уютно. Обязательно вернемся."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <img src="https://i.pravatar.cc/100?u=12" class="review-avatar">
+                    <p>"Локация просто супер. Всё рядом. Квартира лучше чем на фото."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <img src="https://i.pravatar.cc/100?u=22" class="review-avatar">
+                    <p>"Хозяева очень гостеприимные. Заселились без проблем. 10/10!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <div class="footer-info">
+                <div class="logo">CozyStay</div>
+                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
+                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+            </div>
+            <div class="footer-address">
+                <p><strong>Адрес:</strong></p>
+                <p>Санкт-Петербург,<br>ул. Марата, 15</p>
+            </div>
+            <div class="footer-social">
+                <i data-lucide="instagram"></i>
+                <i data-lucide="send"></i>
+                <i data-lucide="phone-call"></i>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2026 CozyStay Apartments. Сделано с любовью в СПб.</p>
+        </div>
+    </footer>
 
     <script>
         lucide.createIcons();
