@@ -10,43 +10,41 @@
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* --- ИСПРАВЛЕННЫЕ СТИЛИ ВЫРАВНИВАНИЯ --- */
+        /* --- ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ЦЕНТРИРОВАНИЯ --- */
 
         .booking-layout-grid {
             display: grid;
             grid-template-columns: 1fr 380px;
             gap: 40px;
-            align-items: start;
+            align-items: stretch; /* Растягиваем колонки, чтобы блоки были одной высоты */
             margin-bottom: 80px;
         }
 
-        /* Контейнер виджета теперь флекс-бокс для центрирования */
+        /* Основной белый блок */
         .widget-panel {
             background: #fff;
-            padding: 30px;
+            padding: 40px;
             border-radius: 25px;
             border: 1px solid #eee;
             box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            min-height: 500px;
+            min-height: 600px; /* Фиксируем минимальную высоту */
             
-            display: flex;         /* Включаем флекс */
+            display: flex;
             flex-direction: column;
-            align-items: center;    /* Центрируем по горизонтали */
-            justify-content: flex-start;
+            justify-content: center; /* Центрируем содержимое по вертикали */
+            align-items: center;     /* Центрируем содержимое по горизонтали */
         }
 
-        /* Чтобы сам виджет внутри не прижимался к краям и был по центру */
+        /* Контейнер самого виджета */
         #hr-widget {
             width: 100% !important;
-            max-width: 800px;       /* Ограничиваем макс. ширину для эстетики */
-            margin: 0 auto;        /* Центрируем */
+            max-width: 800px;
+            margin: 0 auto;
+            /* Убираем возможные внутренние сдвиги самого скрипта */
+            display: block; 
         }
 
-        /* Убираем возможные внешние отступы у внутренних элементов виджета */
-        .hr-rc-widget-list {
-            margin: 0 auto !important;
-        }
-
+        /* Стили для сайдбара */
         .booking-sidebar {
             display: flex;
             flex-direction: column;
@@ -100,6 +98,10 @@
             .booking-layout-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            .widget-panel {
+                min-height: auto;
+                padding: 20px;
             }
         }
     </style>
