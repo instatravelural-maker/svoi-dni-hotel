@@ -291,3 +291,58 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Стили для страницы Сервиса */
+.services-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 18px;
+    color: #666;
+}
+
+.services-grid-new {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.service-card-alt {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.service-card-alt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(29, 53, 49, 0.05);
+}
+
+.service-card-alt i {
+    color: var(--dark-green);
+    width: 35px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.service-card-alt h3 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.service-card-alt p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .services-grid-new { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .services-grid-new { grid-template-columns: 1fr; }
+}
