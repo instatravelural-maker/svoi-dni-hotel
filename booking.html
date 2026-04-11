@@ -11,40 +11,34 @@
     
     <style>
         /* --- ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ЦЕНТРИРОВАНИЯ --- */
-
         .booking-layout-grid {
             display: grid;
             grid-template-columns: 1fr 380px;
             gap: 40px;
-            align-items: stretch; /* Растягиваем колонки, чтобы блоки были одной высоты */
+            align-items: stretch;
             margin-bottom: 80px;
         }
 
-        /* Основной белый блок */
         .widget-panel {
             background: #fff;
             padding: 40px;
             border-radius: 25px;
             border: 1px solid #eee;
             box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            min-height: 600px; /* Фиксируем минимальную высоту */
-            
+            min-height: 600px;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Центрируем содержимое по вертикали */
-            align-items: center;     /* Центрируем содержимое по горизонтали */
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Контейнер самого виджета */
         #hr-widget {
             width: 100% !important;
             max-width: 800px;
             margin: 0 auto;
-            /* Убираем возможные внутренние сдвиги самого скрипта */
             display: block; 
         }
 
-        /* Стили для сайдбара */
         .booking-sidebar {
             display: flex;
             flex-direction: column;
@@ -59,7 +53,7 @@
 
         .info-card-compact h2 {
             font-size: 24px;
-            color: var(--dark-green);
+            color: #2b544a; /* Использован цвет бренда */
             margin-bottom: 15px;
         }
 
@@ -94,6 +88,92 @@
             transition: 0.3s;
         }
 
+        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
+        .footer {
+            background-color: #f7f3f0;
+            padding: 60px 0 30px;
+            color: #333;
+            margin-top: 80px;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2b544a;
+        }
+
+        .footer-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-address p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .footer-address strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2b544a;
+            transition: 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .footer-social a:hover {
+            background: #2b544a;
+            color: #fff;
+        }
+
+        .vk-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 12px;
+            color: #999;
+            text-align: left;
+        }
+
         @media (max-width: 992px) {
             .booking-layout-grid {
                 grid-template-columns: 1fr;
@@ -102,6 +182,12 @@
             .widget-panel {
                 min-height: auto;
                 padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-flex {
+                flex-direction: column;
             }
         }
     </style>
@@ -115,13 +201,13 @@
                 <span>CozyStay</span>
             </div>
             <nav class="nav">
-    <a href="index.html">Главная</a>
-    <a href="about.html">О Квартире</a>
-    <a href="services.html">Сервис</a>
-    <a href="checkin.html">Заселение</a>
-    <a href="reviews.html">Отзывы</a>
-    <a href="contacts.html">Контакты</a>
-</nav>
+                <a href="index.html">Главная</a>
+                <a href="about.html">О Квартире</a>
+                <a href="services.html">Сервис</a>
+                <a href="checkin.html">Заселение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
             <a href="booking.html" class="btn-dark active-btn">Забронировать</a>
         </div>
     </header>
@@ -130,7 +216,6 @@
         <h1 class="section-title">ЗАБРОНИРОВАТЬ НАПРЯМУЮ</h1>
 
         <div class="booking-layout-grid">
-            
             <div class="widget-panel">
                 <div id="hr-widget"></div> 
                 <script type="module" src="https://homereserve.ru/widget.js"></script> 
@@ -173,22 +258,35 @@
     <footer class="footer">
         <div class="container footer-flex">
             <div class="footer-info">
-                <div class="logo">CozyStay</div>
+                <div class="logo">
+                    <i data-lucide="key-round" size="24"></i>
+                    CozyStay
+                </div>
                 <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
                 <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
             </div>
+            
             <div class="footer-address">
-                <p><strong>Локация:</strong></p>
-                <p>Санкт-Петербург,<br>ул. Марата, 15</p>
+                <p><strong>Адрес:</strong></p>
+                <p>г. Санкт-Петербург,<br>ул. Марата, 15</p>
             </div>
+
             <div class="footer-social">
-                <a href="#"><i data-lucide="instagram"></i></a>
-                <a href="#"><i data-lucide="send"></i></a>
-                <a href="#"><i data-lucide="message-square"></i></a>
+                <a href="#" title="Telegram">
+                    <i data-lucide="send" size="20"></i>
+                </a>
+                <a href="#" title="VK">
+                    <svg class="vk-icon" viewBox="0 0 24 24">
+                        <path d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/>
+                    </svg>
+                </a>
+                <a href="#" title="WhatsApp">
+                    <i data-lucide="message-circle" size="20"></i>
+                </a>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>© 2026 CozyStay Apartments. Все права защищены.</p>
+            <p>© 2026 CozyStay. Все права защищены.</p>
         </div>
     </footer>
 
