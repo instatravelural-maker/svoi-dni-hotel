@@ -564,3 +564,125 @@ body {
         padding: 5px;
     }
 }
+/* --- СТИЛИ СТРАНИЦЫ ОТЗЫВОВ --- */
+
+.reviews-stats {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #fdfaf5;
+    border-radius: 25px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--dark-green);
+    display: block;
+}
+
+.reviews-full-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.review-item-full {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s;
+}
+
+.review-item-full:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.review-sidebar {
+    text-align: center;
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.review-sidebar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.review-sidebar h4 {
+    margin-bottom: 5px;
+    color: var(--dark-green);
+}
+
+.review-sidebar span {
+    font-size: 12px;
+    color: #999;
+}
+
+.review-body {
+    padding-left: 40px;
+}
+
+.review-body .stars {
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.review-body p {
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+}
+
+.leave-review-cta {
+    text-align: center;
+    background: var(--dark-green);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 30px;
+    margin-bottom: 80px;
+}
+
+.leave-review-cta h3 { font-size: 28px; margin-bottom: 15px; }
+.leave-review-cta p { opacity: 0.8; margin-bottom: 30px; }
+.leave-review-cta .btn-dark { background: white; color: var(--dark-green); }
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ ОТЗЫВОВ --- */
+
+@media (max-width: 768px) {
+    .review-item-full {
+        grid-template-columns: 1fr; /* В одну колонку */
+        padding: 30px 20px;
+    }
+
+    .review-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+    }
+
+    .review-sidebar img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+    }
+
+    .review-body {
+        padding-left: 0;
+    }
+    
+    .leave-review-cta h3 { font-size: 22px; }
+}
