@@ -8,9 +8,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Настройка внешнего вида виджета поиска, чтобы он вписался в дизайн */
+        /* Настройка внешнего вида виджета поиска */
         .search-panel {
-            padding: 10px 20px !important; /* Уменьшаем внутренние отступы для виджета */
+            padding: 10px 20px !important;
             min-height: 80px;
             display: flex;
             align-items: center;
@@ -21,11 +21,97 @@
             width: 100%;
         }
 
-        /* Небольшая корректировка, чтобы виджет не конфликтовал с нашими тенями */
         .hr-rc-search-container {
             box-shadow: none !important;
             border: none !important;
             background: transparent !important;
+        }
+
+        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА ПО МАКЕТУ --- */
+        .footer {
+            background-color: #fff; /* Светлый фон как на макете */
+            padding: 60px 0 30px;
+            border-top: 1px solid #f0f0f0;
+            color: #333;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2b544a;
+        }
+
+        .footer-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-address p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .footer-address strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Иконки соцсетей в кружочках */
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2b544a;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: #2b544a;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 12px;
+            color: #999;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .footer-flex {
+                flex-direction: column;
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -160,22 +246,27 @@
     <footer class="footer">
         <div class="container footer-flex">
             <div class="footer-info">
-                <div class="logo">CozyStay</div>
+                <div class="logo">
+                    <i data-lucide="key-round" size="24"></i>
+                    CozyStay
+                </div>
                 <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
                 <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
             </div>
+            
             <div class="footer-address">
-                <p><strong>Локация:</strong></p>
-                <p>Санкт-Петербург,<br>ул. Марата, 15</p>
+                <p><strong>Адрес:</strong></p>
+                <p>г. Санкт-Петербург,<br>ул. Марата, 15</p>
             </div>
+
             <div class="footer-social">
-                <a href="#"><i data-lucide="instagram"></i></a>
-                <a href="#"><i data-lucide="send"></i></a>
-                <a href="#"><i data-lucide="message-square"></i></a>
+                <a href="#" title="Telegram"><i data-lucide="send" size="20"></i></a>
+                <a href="#" title="VK"><i data-lucide="share-2" size="20"></i></a>
+                <a href="#" title="WhatsApp"><i data-lucide="message-circle" size="20"></i></a>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>© 2026 CozyStay Apartments. Все права защищены.</p>
+            <p>© 2026 CozyStay. Все права защищены.</p>
         </div>
     </footer>
 
