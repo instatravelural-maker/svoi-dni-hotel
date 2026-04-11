@@ -14,18 +14,50 @@
     
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Локальные стили для календаря, чтобы не раздувать основной CSS */
+        /* Компактные стили для календаря */
         .calendar-wrapper {
-            margin-bottom: 40px;
+            margin: 0 auto 40px; /* Центрируем и добавляем отступ снизу */
             background: #fff;
             padding: 20px;
             border-radius: 25px;
             border: 1px solid #eee;
+            max-width: 500px; /* Ограничиваем ширину, чтобы не был огромным */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .fc { font-family: 'Inter', sans-serif; }
-        .fc-toolbar-title { font-size: 1.2rem !important; color: #2b544a; }
-        .fc-button-primary { background-color: #2b544a !important; border: none !important; }
-        .fc-daygrid-bg-event { opacity: 0.3 !important; }
+
+        .fc { font-family: 'Inter', sans-serif; font-size: 14px; }
+        
+        /* Уменьшаем высоту ячеек */
+        .fc .fc-daygrid-day-frame {
+            min-height: 50px !important; 
+        }
+
+        .fc-toolbar-title { 
+            font-size: 1.1rem !important; 
+            color: #2b544a; 
+            font-weight: 600;
+        }
+
+        .fc-button-primary { 
+            background-color: #2b544a !important; 
+            border: none !important; 
+            padding: 4px 8px !important;
+            font-size: 12px !important;
+        }
+
+        .fc-daygrid-bg-event { opacity: 0.2 !important; }
+        
+        .fc .fc-daygrid-day-number {
+            padding: 4px !important;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-wrapper {
+                padding: 10px;
+                border-radius: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -52,9 +84,9 @@
         <h1 class="section-title">ЗАБРОНИРОВАТЬ ПРОЖИВАНИЕ</h1>
 
         <div class="calendar-wrapper">
-            <h3 style="margin-bottom: 15px; text-align: center; color: #2b544a;">Календарь занятости</h3>
+            <h3 style="margin-bottom: 15px; text-align: center; color: #2b544a; font-size: 18px;">Календарь занятости</h3>
             <div id="calendar"></div>
-            <p class="form-note" style="margin-top: 10px;">Серые области — даты уже заняты или забронированы.</p>
+            <p class="form-note" style="margin-top: 10px; font-size: 11px;">Серые даты — уже забронированы.</p>
         </div>
 
         <div class="booking-container">
@@ -93,7 +125,7 @@
 
                     <button type="submit" class="btn-send-booking">Проверить доступность</button>
                 </form>
-                <p class="form-note">* После нажатия я проверю календарь и свяжусь с вами в течение 15 минут.</p>
+                <p class="form-note">* Я свяжусь с вами в течение 15 минут для подтверждения.</p>
             </div>
 
             <div class="booking-info-sidebar">
@@ -105,20 +137,15 @@
                 <div class="booking-benefits">
                     <div class="benefit-item">
                         <i data-lucide="check-circle" style="color: #25d366;"></i>
-                        <span>Гарантия лучшей цены (напрямую)</span>
+                        <span>Прямое бронирование без комиссий</span>
                     </div>
                     <div class="benefit-item">
                         <i data-lucide="shield-check" style="color: #25d366;"></i>
-                        <span>Безопасная оплата и чеки</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i data-lucide="clock" style="color: #25d366;"></i>
-                        <span>Мгновенный ответ владельца</span>
+                        <span>Официальные чеки и отчетность</span>
                     </div>
                 </div>
 
                 <div class="direct-wa">
-                    <p>Хотите забронировать быстрее?</p>
                     <a href="https://wa.me/79991234567" class="wa-link" style="background: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 600;">
                         <i data-lucide="message-circle"></i> Написать в WhatsApp
                     </a>
@@ -152,10 +179,8 @@
     <script>
         lucide.createIcons();
 
-        // Настройка календаря и загрузка данных из RealtyCalendar
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
-            // Используем прокси для обхода CORS
             var icsUrl = 'https://realtycalendar.ru/apartments/export.ics?q=MTA5MDk4%0A';
             var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(icsUrl);
 
@@ -163,6 +188,7 @@
                 initialView: 'dayGridMonth',
                 locale: 'ru',
                 firstDay: 1,
+                contentHeight: 'auto', // Календарь не будет растягиваться впустую
                 headerToolbar: {
                     left: 'prev,next',
                     center: 'title',
@@ -194,7 +220,7 @@
 
         document.getElementById('bookingForm').onsubmit = function(e) {
             e.preventDefault();
-            alert('Запрос отправлен! Я свяжусь с вами в ближайшее время.');
+            alert('Запрос отправлен!');
         };
     </script>
 </body>
