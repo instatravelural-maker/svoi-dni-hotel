@@ -426,3 +426,66 @@ body {
 @media (max-width: 768px) {
     .features-grid, .gallery-grid, .reviews-grid { grid-template-columns: 1fr; }
 }
+/* --- АДАПТИВНАЯ ВЕРСТКА (MOBILE READY) --- */
+
+@media (max-width: 1024px) {
+    .container { padding: 0 15px; }
+    .hero-card { margin: 0 20px; }
+}
+
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav a { margin: 0 5px; font-size: 13px; }
+
+    /* Главный экран */
+    .hero { padding: 40px 0 160px; border-radius: 0 0 30px 30px; }
+    .hero h1 { font-size: 28px; }
+    
+    /* Панель поиска */
+    .search-panel {
+        grid-template-columns: 1fr; /* Всё в одну колонку */
+        bottom: -130px;
+        padding: 15px;
+    }
+
+    /* Секция "О нас" */
+    .about-section { padding-top: 150px; }
+    .about-grid { grid-template-columns: 1fr; gap: 20px; }
+    .about-image img { height: 250px; }
+    .amenities { grid-template-columns: 1fr 1fr; }
+
+    /* Карточки преимуществ */
+    .features-grid { grid-template-columns: 1fr; }
+
+    /* Галерея "Места рядом" */
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    
+    /* Отзывы */
+    .reviews-grid { grid-template-columns: 1fr; }
+
+    /* Футер */
+    .footer-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-social { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 24px; }
+    .gallery-grid { grid-template-columns: 1fr; } /* На совсем маленьких — по одной картинке */
+    .btn-dark { width: 100%; text-align: center; }
+}
