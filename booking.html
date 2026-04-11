@@ -7,55 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
-    
     <link rel="stylesheet" href="css/style.css">
+    
     <style>
-        /* Компактные стили для календаря */
-        .calendar-wrapper {
-            margin: 0 auto 40px; /* Центрируем и добавляем отступ снизу */
+        /* Стили для контейнера виджета */
+        .widget-container {
             background: #fff;
             padding: 20px;
             border-radius: 25px;
             border: 1px solid #eee;
-            max-width: 500px; /* Ограничиваем ширину, чтобы не был огромным */
+            margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 500px; /* Чтобы страница не прыгала при загрузке */
         }
 
-        .fc { font-family: 'Inter', sans-serif; font-size: 14px; }
-        
-        /* Уменьшаем высоту ячеек */
-        .fc .fc-daygrid-day-frame {
-            min-height: 50px !important; 
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            align-items: start;
         }
 
-        .fc-toolbar-title { 
-            font-size: 1.1rem !important; 
-            color: #2b544a; 
-            font-weight: 600;
-        }
-
-        .fc-button-primary { 
-            background-color: #2b544a !important; 
-            border: none !important; 
-            padding: 4px 8px !important;
-            font-size: 12px !important;
-        }
-
-        .fc-daygrid-bg-event { opacity: 0.2 !important; }
-        
-        .fc .fc-daygrid-day-number {
-            padding: 4px !important;
-            font-size: 12px;
-        }
-
-        @media (max-width: 768px) {
-            .calendar-wrapper {
-                padding: 10px;
-                border-radius: 15px;
+        @media (max-width: 992px) {
+            .booking-layout {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -81,73 +56,44 @@
     </header>
 
     <main class="container page-content">
-        <h1 class="section-title">ЗАБРОНИРОВАТЬ ПРОЖИВАНИЕ</h1>
+        <h1 class="section-title">ЗАБРОНИРОВАТЬ ОНЛАЙН</h1>
 
-        <div class="calendar-wrapper">
-            <h3 style="margin-bottom: 15px; text-align: center; color: #2b544a; font-size: 18px;">Календарь занятости</h3>
-            <div id="calendar"></div>
-            <p class="form-note" style="margin-top: 10px; font-size: 11px;">Серые даты — уже забронированы.</p>
-        </div>
-
-        <div class="booking-container">
-            <div class="booking-form-box">
-                <form id="bookingForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Дата заезда</label>
-                            <input type="date" required id="checkInDate">
-                        </div>
-                        <div class="form-group">
-                            <label>Дата выезда</label>
-                            <input type="date" required id="checkOutDate">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Количество гостей</label>
-                        <select>
-                            <option>1 гость</option>
-                            <option selected>2 гостя</option>
-                            <option>3 гостя</option>
-                            <option>4 гостя</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Ваше имя</label>
-                        <input type="text" placeholder="Иван Иванов" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Телефон / WhatsApp</label>
-                        <input type="tel" placeholder="+7 (999) 000-00-00" required>
-                    </div>
-
-                    <button type="submit" class="btn-send-booking">Проверить доступность</button>
-                </form>
-                <p class="form-note">* Я свяжусь с вами в течение 15 минут для подтверждения.</p>
+        <div class="booking-layout">
+            <div class="widget-container">
+                <div id="hr-widget"></div> 
+                <script type="module" src="https://homereserve.ru/widget.js"></script> 
+                <script type="module"> 
+                    window.homereserve.initWidgetList({"token":"AeEVhV7jVU"}) 
+                </script>
             </div>
 
             <div class="booking-info-sidebar">
                 <div class="price-card-mini">
-                    <h3>Стоимость</h3>
-                    <div class="price-value">от 4 500 ₽ <span>/ сутки</span></div>
+                    <h3>Прямое бронирование</h3>
+                    <p style="margin-top: 10px; font-size: 14px; color: #666;">
+                        Выберите даты в календаре слева, чтобы увидеть актуальную стоимость и доступность.
+                    </p>
                 </div>
                 
                 <div class="booking-benefits">
                     <div class="benefit-item">
                         <i data-lucide="check-circle" style="color: #25d366;"></i>
-                        <span>Прямое бронирование без комиссий</span>
+                        <span>Мгновенное подтверждение</span>
                     </div>
                     <div class="benefit-item">
                         <i data-lucide="shield-check" style="color: #25d366;"></i>
-                        <span>Официальные чеки и отчетность</span>
+                        <span>Безопасная оплата через систему</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i data-lucide="message-circle" style="color: #25d366;"></i>
+                        <span>Синхронизация с RealtyCalendar</span>
                     </div>
                 </div>
 
                 <div class="direct-wa">
+                    <p style="margin-bottom: 10px; font-size: 14px;">Нужна помощь?</p>
                     <a href="https://wa.me/79991234567" class="wa-link" style="background: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 600;">
-                        <i data-lucide="message-circle"></i> Написать в WhatsApp
+                        <i data-lucide="message-circle"></i> Написать нам
                     </a>
                 </div>
             </div>
@@ -159,16 +105,12 @@
             <div class="footer-info">
                 <div class="logo">CozyStay</div>
                 <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
-                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
             </div>
             <div class="footer-address">
-                <p><strong>Локация:</strong></p>
-                <p>Санкт-Петербург,<br>ул. Марата, 15</p>
+                <p>Санкт-Петербург, ул. Марата, 15</p>
             </div>
             <div class="footer-social">
-                <a href="#"><i data-lucide="instagram"></i></a>
                 <a href="#"><i data-lucide="send"></i></a>
-                <a href="#"><i data-lucide="message-square"></i></a>
             </div>
         </div>
         <div class="footer-bottom container">
@@ -178,50 +120,6 @@
 
     <script>
         lucide.createIcons();
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var icsUrl = 'https://realtycalendar.ru/apartments/export.ics?q=MTA5MDk4%0A';
-            var proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(icsUrl);
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                locale: 'ru',
-                firstDay: 1,
-                contentHeight: 'auto', // Календарь не будет растягиваться впустую
-                headerToolbar: {
-                    left: 'prev,next',
-                    center: 'title',
-                    right: ''
-                },
-                events: function(info, successCallback, failureCallback) {
-                    fetch(proxyUrl)
-                        .then(res => res.text())
-                        .then(data => {
-                            var jcalData = ICAL.parse(data);
-                            var comp = new ICAL.Component(jcalData);
-                            var vevents = comp.getAllSubcomponents('vevent');
-                            var events = vevents.map(vevent => {
-                                var event = new ICAL.Event(vevent);
-                                return {
-                                    start: event.startDate.toString(),
-                                    end: event.endDate.toString(),
-                                    display: 'background',
-                                    color: '#d1d1d1'
-                                };
-                            });
-                            successCallback(events);
-                        })
-                        .catch(err => console.log('Ошибка календаря:', err));
-                }
-            });
-            calendar.render();
-        });
-
-        document.getElementById('bookingForm').onsubmit = function(e) {
-            e.preventDefault();
-            alert('Запрос отправлен!');
-        };
     </script>
 </body>
 </html>
