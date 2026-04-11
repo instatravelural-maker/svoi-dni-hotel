@@ -7,6 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Настройка внешнего вида виджета поиска, чтобы он вписался в дизайн */
+        .search-panel {
+            padding: 10px 20px !important; /* Уменьшаем внутренние отступы для виджета */
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #hr-widget {
+            width: 100%;
+        }
+
+        /* Небольшая корректировка, чтобы виджет не конфликтовал с нашими тенями */
+        .hr-rc-search-container {
+            box-shadow: none !important;
+            border: none !important;
+            background: transparent !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,29 +57,11 @@
             </div>
 
             <div class="search-panel">
-                <div class="search-group">
-                    <label>Заезд</label>
-                    <div class="input-with-icon">
-                        <input type="text" placeholder="Посуточно">
-                        <i data-lucide="calendar"></i>
-                    </div>
-                </div>
-                <div class="search-group">
-                    <label>Выезд</label>
-                    <div class="input-with-icon">
-                        <input type="text" placeholder="Выезд">
-                        <i data-lucide="calendar"></i>
-                    </div>
-                </div>
-                <div class="search-group">
-                    <label>Гостей</label>
-                    <select>
-                        <option>2 Гостя</option>
-                        <option>3 Гостя</option>
-                        <option>4 Гостя</option>
-                    </select>
-                </div>
-                <button class="btn-search" onclick="location.href='booking.html'">Найти и Забронировать</button>
+                <div id="hr-widget"></div>
+                <script type="module" src="https://homereserve.ru/widget.js"></script>
+                <script type="module">
+                    window.homereserve.initWidgetSearch({"token":"AeEVhV7jVU"})
+                </script>
             </div>
         </div>
     </section>
