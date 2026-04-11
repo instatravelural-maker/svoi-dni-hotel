@@ -7,100 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА (ПОД МАКЕТ) --- */
-        .footer {
-            background-color: #f7f3f0; /* Бежевый фон как на макете */
-            padding: 60px 0 30px;
-            color: #333;
-            margin-top: 80px; /* Отступ подвала от контента */
-        }
-
-        .footer-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-info .logo {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #2b544a;
-        }
-
-        .footer-info p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .footer-address p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        .footer-address strong {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        /* Иконки соцсетей в белых кружочках */
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2b544a;
-            transition: 0.3s;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .footer-social a:hover {
-            background: #2b544a;
-            color: #fff;
-        }
-
-        .vk-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            font-size: 12px;
-            color: #999;
-            text-align: left;
-        }
-
-        @media (max-width: 768px) {
-            .footer-flex {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -137,36 +43,42 @@
             <div class="review-item-full">
                 <div class="review-sidebar">
                     <img src="https://i.pravatar.cc/80?u=12" alt="Екатерина">
-                    <h4>Екатерина</h4>
-                    <span>Москва, август 2025</span>
+                    <div>
+                        <h4>Екатерина</h4>
+                        <span>Москва, август 2025</span>
+                    </div>
                 </div>
                 <div class="review-body">
                     <div class="stars">★★★★★</div>
-                    <p>Останавливались семьей на неделю. Квартира в реальности даже лучше, чем на фото! Идеальная чистота, очень тихий двор, хотя до Невского рукой подать. Особенно порадовало бесконтактное заселение — приехали поздно ночью, никаких проблем не возникло.</p>
+                    <p>Останавливались семьей на неделю. Квартира в реальности даже лучше, чем на фото! Идеальная чистота, очень тихий двор, хотя до Невского рукой подать.</p>
                 </div>
             </div>
 
             <div class="review-item-full">
                 <div class="review-sidebar">
                     <img src="https://i.pravatar.cc/80?u=45" alt="Дмитрий">
-                    <h4>Дмитрий</h4>
-                    <span>Казань, сентябрь 2025</span>
+                    <div>
+                        <h4>Дмитрий</h4>
+                        <span>Казань, сентябрь 2025</span>
+                    </div>
                 </div>
                 <div class="review-body">
                     <div class="stars">★★★★★</div>
-                    <p>Прекрасный сервис для частного жилья. Самозанятый владелец выдал все необходимые чеки для бухгалтерии, что было критично для моей командировки. Внутри есть всё: от кофемашины до стирального порошка. Однозначно рекомендую!</p>
+                    <p>Прекрасный сервис для частного жилья. Самозанятый владелец выдал все чеки для бухгалтерии. Внутри есть всё: от кофемашины до порошка. Рекомендую!</p>
                 </div>
             </div>
 
             <div class="review-item-full">
                 <div class="review-sidebar">
                     <img src="https://i.pravatar.cc/80?u=33" alt="Мария">
-                    <h4>Мария</h4>
-                    <span>СПб, октябрь 2025</span>
+                    <div>
+                        <h4>Мария</h4>
+                        <span>СПб, октябрь 2025</span>
+                    </div>
                 </div>
                 <div class="review-body">
                     <div class="stars">★★★★★</div>
-                    <p>Бронировала для родителей. Они в восторге от высоты потолков и удобства кровати. Хозяин всегда на связи, помог сориентироваться по парковке. Очень уютное место, чувствуешь себя как дома.</p>
+                    <p>Бронировала для родителей. Они в восторге от высоты потолков и удобства кровати. Хозяин всегда на связи, помог сориентироваться по парковке.</p>
                 </div>
             </div>
         </div>
@@ -195,17 +107,11 @@
             </div>
 
             <div class="footer-social">
-                <a href="#" title="Telegram">
-                    <i data-lucide="send" size="20"></i>
-                </a>
+                <a href="#" title="Telegram"><i data-lucide="send" size="20"></i></a>
                 <a href="#" title="VK">
-                    <svg class="vk-icon" viewBox="0 0 24 24">
-                        <path d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/>
-                    </svg>
+                    <svg class="vk-icon" viewBox="0 0 24 24"><path d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg>
                 </a>
-                <a href="#" title="WhatsApp">
-                    <i data-lucide="phone" size="20"></i>
-                </a>
+                <a href="#" title="WhatsApp"><i data-lucide="phone" size="20"></i></a>
             </div>
         </div>
         <div class="footer-bottom container">
