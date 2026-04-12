@@ -23,14 +23,18 @@
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
-            <a href="booking.html" class="btn-dark">Забронировать</a>
+            <div class="header-action">
+                <a href="booking.html" class="btn-booking-header">Забронировать</a>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <img src="https://images.unsplash.com/photo-1600607687940-4e524cb3515a?auto=format&fit=crop&w=1600&q=80" class="hero-image-bg" alt="Интерьер">
-            <div class="container">
+            <div class="hero-bg-wrapper">
+                <img src="https://images.unsplash.com/photo-1600607687940-4e524cb3515a?auto=format&fit=crop&w=1600&q=80" class="hero-image-bg" alt="Интерьер">
+            </div>
+            <div class="container hero-content">
                 <div class="hero-card">
                     <h1>ВАШ УЮТНЫЙ УГОЛОК <br> В САНКТ-ПЕТЕРБУРГЕ</h1>
                     <p>Комфортабельная квартира посуточно в центре города. Идеально для отдыха и командировок.</p>
@@ -55,7 +59,7 @@
 
                 <div class="about-text">
                     <p class="object-desc">Комфортабельная квартира посуточно в мини-гостиной, созданная для стильного отдыха и командировок.<br>
-                    <b>48 кв.м., 4 гостя, 1 спальня</b></p>
+                    <strong>48 кв.м., 4 гостя, 1 спальня</strong></p>
                     
                     <div class="amenities-row">
                         <div class="amenity-item"><i data-lucide="wifi"></i><br>WiFi</div>
@@ -67,7 +71,7 @@
 
                     <div class="location-details">
                         <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Восстания — 5 мин</div>
-                        <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Маяковская — 7 мин</div>
+                        <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Восстания — 5 мин</div>
                     </div>
 
                     <div class="about-thumbs">
@@ -80,7 +84,7 @@
         </section>
 
         <section class="container section-padding">
-            <h2 class="section-title">ПОЧЕМУ ВЫБИРАЮТ COZYSTAY?</h2>
+            <h2 class="section-title">Почему выбирают CozyStay?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i data-lucide="armchair" class="feature-icon"></i>
@@ -102,76 +106,38 @@
 
         <section class="container section-padding">
             <h2 class="section-title">Фотогалерея</h2>
-            <div class="places-grid">
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1548625361-260548545814?auto=format&fit=crop&w=400&q=80" alt="Место 1">
-                    <div class="place-overlay">Эрмитаж</div>
-                </div>
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1555650810-dc3206775924?auto=format&fit=crop&w=400&q=80" alt="Место 2">
-                    <div class="place-overlay">Исаакиевский собор</div>
-                </div>
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1590074251465-99882944b76e?auto=format&fit=crop&w=400&q=80" alt="Место 3">
-                    <div class="place-overlay">Казанский собор</div>
-                </div>
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1582125139044-63870624cc26?auto=format&fit=crop&w=400&q=80" alt="Место 4">
-                    <div class="place-overlay">Невский проспект</div>
-                </div>
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?auto=format&fit=crop&w=400&q=80" alt="Место 5">
-                    <div class="place-overlay">Спас на Крови</div>
-                </div>
-                <div class="place-card">
-                    <img src="https://images.unsplash.com/photo-1555650720-30f1d1d8a1c9?auto=format&fit=crop&w=400&q=80" alt="Место 6">
-                    <div class="place-overlay">Дворцовая площадь</div>
-                </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1548625361-260548545814?auto=format&fit=crop&w=400" alt="1"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555650810-dc3206775924?auto=format&fit=crop&w=400" alt="2"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1590074251465-99882944b76e?auto=format&fit=crop&w=400" alt="3"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1582125139044-63870624cc26?auto=format&fit=crop&w=400" alt="4"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?auto=format&fit=crop&w=400" alt="5"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555650720-30f1d1d8a1c9?auto=format&fit=crop&w=400" alt="6"></div>
             </div>
         </section>
 
-        <section class="container section-padding">
-            <h2 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h2>
-            <div class="reviews-vertical-list">
-                <div class="review-item">
-                    <div class="review-header">
+        <section class="reviews-section">
+            <div class="container">
+                <h2 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h2>
+                <div class="reviews-row">
+                    <div class="review-card">
                         <img src="https://i.pravatar.cc/150?u=1" class="user-avatar-img" alt="Avatar">
-                        <div>
-                            <div class="review-name">Елена Иванова</div>
-                            <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-                        </div>
+                        <div class="review-name">Елена Иванова</div>
+                        <p class="review-short-text">«Прекрасная квартира! Очень чисто, уютно и отличное расположение...»</p>
+                        <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
                     </div>
-                    <p class="review-text">«Прекрасная квартира! Очень чисто, уютно и отличное расположение. Заселились без проблем, все как на фото.»</p>
-                </div>
-                <div class="review-item">
-                    <div class="review-header">
+                    <div class="review-card">
                         <img src="https://i.pravatar.cc/150?u=2" class="user-avatar-img" alt="Avatar">
-                        <div>
-                            <div class="review-name">Михаил Петров</div>
-                            <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-                        </div>
+                        <div class="review-name">Михаил Петров</div>
+                        <p class="review-short-text">«Локация топовая — до Эрмитажа дошли пешком за 15 минут. Вернемся!»</p>
+                        <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
                     </div>
-                    <p class="review-text">«Останавливались на выходные. Локация топовая — до Эрмитажа дошли пешком за 15 минут. Вернемся еще!»</p>
-                </div>
-                <div class="review-item">
-                    <div class="review-header">
+                    <div class="review-card">
                         <img src="https://i.pravatar.cc/150?u=3" class="user-avatar-img" alt="Avatar">
-                        <div>
-                            <div class="review-name">Ольга Соколова</div>
-                            <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-                        </div>
+                        <div class="review-name">Дмитрий Волков</div>
+                        <p class="review-short-text">«Хорошая цена за такое качество. Внутри тихо, сервис на высоте.»</p>
+                        <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
                     </div>
-                    <p class="review-text">«Все продумано до мелочей: от капсул для кофе до зубных наборов. Сервис на высоте, спасибо команде CozyStay.»</p>
-                </div>
-                <div class="review-item">
-                    <div class="review-header">
-                        <img src="https://i.pravatar.cc/150?u=4" class="user-avatar-img" alt="Avatar">
-                        <div>
-                            <div class="review-name">Дмитрий Волков</div>
-                            <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-                        </div>
-                    </div>
-                    <p class="review-text">«Хорошая цена за такое качество. Внутри тихо, соседей не слышно, матрас действительно очень удобный.»</p>
                 </div>
             </div>
         </section>
