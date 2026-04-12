@@ -6,84 +6,7 @@
     <title>CozyStay — Апартаменты в Санкт-Петербурге</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* --- ТОЧНАЯ ПОДГОНКА ПОД МАКЕТ --- */
-        body { background-color: #f7f3f0; color: #1d3531; margin: 0; font-family: 'Inter', sans-serif; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-
-        /* 1. Шапка */
-        .header { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 22px; color: #1d3531; text-decoration: none; }
-        .logo i { color: #d4a373; }
-        .nav a { margin: 0 15px; text-decoration: none; color: #1d3531; font-size: 14px; font-weight: 500; }
-        .btn-dark { background: #2b544a; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; }
-
-        /* 2. Hero Section */
-        .hero { position: relative; padding-bottom: 100px; }
-        .hero-image-bg { 
-            width: 100%; 
-            height: 500px; 
-            object-fit: cover; 
-            border-radius: 0 0 20px 20px;
-        }
-        .hero-card {
-            position: absolute;
-            top: 100px;
-            left: 10%;
-            max-width: 500px;
-            color: #1d3531;
-        }
-        .hero-card h1 { font-size: 42px; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
-        
-        /* Виджет поиска с наплывом */
-        .search-panel {
-            background: #fff;
-            border-radius: 15px;
-            padding: 15px 25px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* 3. Наш уникальный объект */
-        .section-title { text-align: center; font-size: 28px; margin: 60px 0 40px; letter-spacing: 1px; }
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-        .about-main-img { width: 100%; border-radius: 20px; height: 400px; object-fit: cover; }
-        .about-text h3 { font-size: 16px; line-height: 1.6; margin-bottom: 25px; font-weight: 400; color: #444; }
-        
-        .amenity-item { text-align: center; color: #1d3531; font-weight: 600; }
-        .amenity-item i { color: #d4a373; margin-bottom: 5px; }
-
-        .location-line { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14px; color: #1d3531; font-weight: 500; }
-
-        /* 4. Почему выбирают нас */
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
-        .feature-card { background: #fff; padding: 40px 20px; border-radius: 20px; text-align: center; }
-        .feature-icon { color: #d4a373; margin-bottom: 15px; }
-        .feature-card h3 { font-size: 18px; margin-bottom: 10px; }
-        .feature-card p { font-size: 13px; color: #666; line-height: 1.5; }
-
-        /* 5. КУЛЬТОВЫЕ МЕСТА (Вместо галереи) */
-        .places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .place-card { position: relative; height: 280px; border-radius: 15px; overflow: hidden; }
-        .place-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .place-card:hover img { transform: scale(1.1); }
-        .place-overlay { 
-            position: absolute; bottom: 0; left: 0; right: 0; 
-            padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); 
-            color: #fff; font-weight: 600;
-        }
-
-        /* 6. Отзывы */
-        .reviews-section { background: #e5e0db; padding: 80px 0; margin-top: 80px; }
-        .reviews-grid-new { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .review-card-vertical { background: #fff; padding: 30px; border-radius: 20px; text-align: center; }
-        .review-card-vertical img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
-        .stars { color: #d4a373; margin-top: 10px; font-size: 14px; }
-    </style>
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 
@@ -95,8 +18,8 @@
             </a>
             <nav class="nav">
                 <a href="about.html">О Квартире</a>
-                <a href="services.html">Услуги</a>
-                <a href="booking.html">Цены и Бронирование</a>
+                <a href="services.html">Сервис</a>
+                <a href="checkin.html">Заселение</a>
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
@@ -104,147 +27,92 @@
         </div>
     </header>
 
-    <section class="hero">
-        <img src="https://images.unsplash.com/photo-1600607687940-4e524cb3515a?auto=format&fit=crop&w=1600&q=80" class="hero-image-bg" alt="Фон">
-        <div class="container">
-            <div class="hero-card">
-                <h1>ВАШ УЮТНЫЙ УГОЛОК <br> В САНКТ-ПЕТЕРБУРГЕ</h1>
-                <p>Комфортабельная квартира посуточно в центре города. Идеально для отдыха и командировок.</p>
-            </div>
-
-            <div class="search-panel">
-                <div id="hr-widget"></div>
-                <script type="module" src="https://homereserve.ru/widget.js"></script>
-                <script type="module">
-                    window.homereserve.initWidgetSearch({"token":"AeEVhV7jVU"})
-                </script>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">НАШ УНИКАЛЬНЫЙ ОБЪЕКТ</h2>
-        <div class="about-grid">
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Интерьер" class="about-main-img">
-            <div class="about-text">
-                <h3>Комфортабельная квартира посуточно в мини-гостиной, созданная для стильного отдыха и командировок.<br>
-                <b>48 кв.м., 4 гостя, 1 спальня</b></h3>
-                
-                <div class="amenities-row" style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-                    <div class="amenity-item"><i data-lucide="wifi"></i><br>WiFi</div>
-                    <div class="amenity-item"><i data-lucide="tv"></i><br>ТВ</div>
-                    <div class="amenity-item"><i data-lucide="utensils"></i><br>Кухня</div>
-                    <div class="amenity-item"><i data-lucide="thermometer"></i><br>Кондиц.</div>
-                    <div class="amenity-item"><i data-lucide="parking-circle"></i><br>Парковка</div>
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1600607687940-4e524cb3515a?auto=format&fit=crop&w=1600&q=80" class="hero-image-bg" alt="Интерьер">
+            <div class="container">
+                <div class="hero-card">
+                    <h1>ВАШ УЮТНЫЙ УГОЛОК <br> В САНКТ-ПЕТЕРБУРГЕ</h1>
+                    <p>Комфортабельная квартира посуточно в центре города. Идеально для отдыха и командировок.</p>
                 </div>
 
-                <div class="location-details" style="border-top: 1px solid #ddd; padding-top: 20px; margin-bottom: 20px;">
-                    <div class="location-line"><i data-lucide="map-pin" size="18"></i>Центр, м. Восстания — 5 мин</div>
-                    <div class="location-line"><i data-lucide="map-pin" size="18"></i>Центр, м. Маяковская — 7 мин</div>
+                <div class="search-panel">
+                    <div id="hr-widget"></div>
+                    <script type="module" src="https://homereserve.ru/widget.js"></script>
+                    <script type="module">
+                        window.homereserve.initWidgetSearch({"token":"AeEVhV7jVU"})
+                    </script>
                 </div>
+            </div>
+        </section>
 
-                <div class="about-thumbs-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px;" alt="1">
-                    <img src="https://images.unsplash.com/photo-1484101403033-5710502d671a?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px;" alt="2">
-                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px;" alt="3">
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="container section-padding">
+            <h2 class="section-title">НАШ УНИКАЛЬНЫЙ ОБЪЕКТ</h2>
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Интерьер" class="about-main-img">
+                <div class="about-text">
+                    <h3><b>48 кв.м., 4 гостя, 1 спальня</b><br>
+                    Светлое пространство, созданное для вашего комфорта в самом сердце Петербурга.</h3>
+                    
+                    <div class="amenities-row">
+                        <div class="amenity-item"><i data-lucide="wifi"></i><br>WiFi</div>
+                        <div class="amenity-item"><i data-lucide="tv"></i><br>ТВ</div>
+                        <div class="amenity-item"><i data-lucide="utensils"></i><br>Кухня</div>
+                        <div class="amenity-item"><i data-lucide="thermometer"></i><br>Кондиц.</div>
+                        <div class="amenity-item"><i data-lucide="parking-circle"></i><br>Парковка</div>
+                    </div>
 
-    <section class="container" style="margin-top: 80px;">
-        <h2 class="section-title">ПОЧЕМУ ВЫБИРАЮТ COZYSTAY?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i data-lucide="armchair" size="32"></i></div>
-                <h3>Комфорт</h3>
-                <p>Комфортабельная посуточно в светлом, уютном жилье.</p>
+                    <div class="location-details">
+                        <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Восстания — 5 мин</div>
+                        <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Маяковская — 7 мин</div>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i data-lucide="map-pinned" size="32"></i></div>
-                <h3>Локация</h3>
-                <p>Локация самая престижная и квартира идеальна в Петербурге.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i data-lucide="sparkles" size="32"></i></div>
-                <h3>Сервис</h3>
-                <p>Сервисная квартира испепеляюще стильно для отдыха и командировок.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container">
-        <h2 class="section-title">КУЛЬТОВЫЕ МЕСТА РЯДОМ</h2>
-        <div class="places-grid">
-            <div class="place-card">
-                <img src="https://images.unsplash.com/photo-1555650751-24ee59644877?auto=format&fit=crop&w=600&q=80" alt="Спас на Крови">
-                <div class="place-overlay">Спас на Крови</div>
-            </div>
-            <div class="place-card">
-                <img src="https://images.unsplash.com/photo-1548830697-396fab7f3ea9?auto=format&fit=crop&w=600&q=80" alt="Эрмитаж">
-                <div class="place-overlay">Эрмитаж</div>
-            </div>
-            <div class="place-card">
-                <img src="https://images.unsplash.com/photo-1582110111086-ad1365946137?auto=format&fit=crop&w=600&q=80" alt="Исаакиевский собор">
-                <div class="place-overlay">Исаакиевский собор</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="reviews-section">
-        <div class="container">
-            <h2 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h2>
-            <div class="reviews-grid-new">
-                <div class="review-card-vertical">
-                    <img src="https://i.pravatar.cc/100?u=10" alt="Аватар">
-                    <p>«Мы имели командировочную неделю, квартира супер, всем рекомендуем!»</p>
-                    <div class="stars">★★★★★</div>
+        <section class="container section-padding">
+            <h2 class="section-title">ПОЧЕМУ ВЫБИРАЮТ COZYSTAY?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i data-lucide="armchair" class="feature-icon"></i>
+                    <h3>Комфорт</h3>
+                    <p>Светлое жилье с ортопедическими матрасами и премиальным бельем.</p>
                 </div>
-                <div class="review-card-vertical">
-                    <img src="https://i.pravatar.cc/100?u=11" alt="Аватар">
-                    <p>«Все чистенько и уютно, хорошая локация, все в шаговой доступности.»</p>
-                    <div class="stars">★★★★★</div>
+                <div class="feature-card">
+                    <i data-lucide="map-pinned" class="feature-icon"></i>
+                    <h3>Локация</h3>
+                    <p>Все знаковые места города в пешей доступности от вашего дома.</p>
                 </div>
-                <div class="review-card-vertical">
-                    <img src="https://i.pravatar.cc/100?u=12" alt="Аватар">
-                    <p>«Прекрасная и чистая квартира, рекомендую всем для классного отдыха в Питере.»</p>
-                    <div class="stars">★★★★★</div>
+                <div class="feature-card">
+                    <i data-lucide="sparkles" class="feature-icon"></i>
+                    <h3>Сервис</h3>
+                    <p>Бесконтактное заселение и поддержка гостей 24/7.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <div class="footer-logo">
-                    <i data-lucide="key-round"></i>
-                    CozyStay
-                </div>
-                <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
-                <div class="social-links">
-                    <a href="#"><i data-lucide="instagram"></i></a>
-                    <a href="#"><i data-lucide="send"></i></a>
-                    <a href="#"><i data-lucide="message-circle"></i></a>
-                </div>
+                <div class="footer-logo"><i data-lucide="key-round"></i> CozyStay</div>
+                <p>Ваш уютный уголок в Санкт-Петербурге.</p>
             </div>
             <div>
                 <h4>Контакты</h4>
-                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
-                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+                <p>+7 999 123-45-67</p>
+                <p>booking@cozystay.ru</p>
             </div>
             <div>
                 <h4>Адрес</h4>
-                <p><i data-lucide="map-pin" size="16"></i> Адрес: г. Санкт-Петербург, <br>ул. Марата, д. 15</p>
+                <p>г. Санкт-Петербург, ул. Марата, д. 15</p>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>© 2024 CozyStay. Все права защищены.</p>
+            <p>© 2026 CozyStay. Все права защищены.</p>
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
