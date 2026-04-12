@@ -8,29 +8,54 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Дополнительные стили для сетки отзывов */
-        .reviews-full-list {
+        /* Стили согласно макету */
+        .reviews-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .review-item-sutochno {
-            background: #fff;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            transition: transform 0.2s ease;
+            grid-template-columns: 1fr 1fr; /* Две колонки */
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 60px;
         }
 
-        .review-item-sutochno:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+            padding: 10px;
+        }
+
+        .user-avatar-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 12px;
+            max-width: 300px;
+        }
+
+        .stars-row {
+            display: flex;
+            gap: 2px;
+            color: #FFD700; /* Золотой цвет звезд из макета */
+        }
+
+        .stars-row i {
+            width: 16px;
+            height: 16px;
+            fill: #FFD700;
         }
 
         @media (max-width: 768px) {
-            .reviews-full-list {
+            .reviews-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -93,99 +118,53 @@
         </div>
 
         <div class="reviews-grid">
-            <div class="reviews-column">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-avatar-text">Е</div>
-                            <div>
-                                <h4>Екатерина</h4>
-                                <span class="visit-date">Август 2025, 7 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">10</span>
-                    </div>
-                    <p class="review-text">Останавливались семьей на неделю. Квартира в реальности даже лучше, чем на фото! Идеальная чистота, очень тихий двор, хотя до Невского рукой подать.</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <img src="https://i.pravatar.cc/80?u=12" alt="Ольга" class="user-avatar-img">
-                            <div>
-                                <h4>Ольга</h4>
-                                <span class="visit-date">Июль 2025, 2 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">10</span>
-                    </div>
-                    <p class="review-text">Все очень понравилось. Чисто, уютно, бесконтактное заселение прошло быстро и без проблем. Обязательно вернемся снова!</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-avatar-text" style="background: #a373d4;">М</div>
-                            <div>
-                                <h4>Мария</h4>
-                                <span class="visit-date">Октябрь 2025, 4 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">10</span>
-                    </div>
-                    <p class="review-text">Бронировала для родителей. Они в восторге от высоты потолков и удобства кровати. Хозяин всегда на связи, помог с парковкой.</p>
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=1" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Мы полны энтузиазма и положительных эмоций от проживания в этих апартаментах!</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
                 </div>
             </div>
 
-            <div class="reviews-column">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <img src="https://i.pravatar.cc/80?u=45" alt="Дмитрий" class="user-avatar-img">
-                            <div>
-                                <h4>Дмитрий</h4>
-                                <span class="visit-date">Сентябрь 2025, 3 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">10</span>
-                    </div>
-                    <p class="review-text">Прекрасный сервис для частного жилья. Внутри есть всё: от кофемашины до порошка. Самозанятый владелец выдал все чеки для бухгалтерии. Рекомендую!</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-avatar-text" style="background: #e67e22;">А</div>
-                            <div>
-                                <h4>Александр</h4>
-                                <span class="visit-date">Ноябрь 2025, 5 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">9.0</span>
-                    </div>
-                    <p class="review-text">Отличная локация, до метро 5 минут пешком. В квартире тепло, окна выходят во двор, поэтому очень тихо. Спасибо за гостеприимство!</p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <img src="https://i.pravatar.cc/80?u=33" alt="Елена" class="user-avatar-img">
-                            <div>
-                                <h4>Елена</h4>
-                                <span class="visit-date">Декабрь 2025, 2 суток</span>
-                            </div>
-                        </div>
-                        <span class="rating-badge-small">10</span>
-                    </div>
-                    <p class="review-text">Потрясающая эстетика квартиры. Каждый уголок продуман. Очень удобный матрас, выспалась как дома. Теперь только к вам!</p>
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=2" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Удобная локация, до метро 5 минут. В квартире есть всё необходимое для комфорта.</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
                 </div>
             </div>
-        </div>
 
-        <div class="leave-review-cta">
-            <h3>Понравилось у нас?</h3>
-            <p>Ваши отзывы помогают нам становиться лучше, а будущим гостям — сделать правильный выбор.</p>
-            <a href="https://wa.me/79991234567" class="btn-dark">Написать отзыв в WhatsApp</a>
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=3" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Идеальная чистота и бесконтактное заселение. Хозяин всегда был на связи.</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=4" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Останавливаемся второй раз. Всё так же на высоте. Очень уютно и тихо.</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=5" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Замечательная квартира в самом центре. Вид из окна и ремонт просто супер!</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img src="https://i.pravatar.cc/100?u=6" alt="Гость" class="user-avatar-img">
+                <p class="review-text">Всё соответствует фото. Рекомендую всем, кто ценит стиль и качество сервиса.</p>
+                <div class="stars-row">
+                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                </div>
+            </div>
         </div>
     </main>
 
