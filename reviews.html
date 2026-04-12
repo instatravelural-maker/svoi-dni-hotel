@@ -9,6 +9,45 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Локальные стили для шкал в точности по скриншоту */
+        .detailed-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 60px;
+            flex-grow: 1;
+        }
+        .stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .stat-row span:first-child {
+            font-size: 16px;
+            color: #333;
+            white-space: nowrap;
+            width: auto;
+        }
+        .progress-bar {
+            flex-grow: 1;
+            height: 3px; /* Тонкая линия как на скрине */
+            background: #eee;
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 5px;
+        }
+        .progress {
+            height: 100%;
+            background: #1a1a1a; /* Черный цвет линии */
+        }
+        .stat-val {
+            font-weight: 700;
+            font-size: 16px;
+            color: #000;
+            width: 35px;
+            text-align: right;
+        }
+
         /* Локальные стили для подвала, чтобы соответствовать главной */
         .footer {
             background: #ece9e2;
@@ -46,6 +85,7 @@
         @media (max-width: 992px) {
             .reviews-grid-new { grid-template-columns: 1fr 1fr; }
             .reviews-stats-container { flex-direction: column; gap: 30px; }
+            .detailed-stats { grid-template-columns: 1fr; gap: 15px; }
         }
         @media (max-width: 768px) {
             .reviews-grid-new { grid-template-columns: 1fr; }
@@ -103,9 +143,24 @@
                     <span class="stat-val">10,0</span>
                 </div>
                 <div class="stat-row">
+                    <span>Своевременность заселения</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Цена - качество</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
+                </div>
+                <div class="stat-row">
                     <span>Расположение</span>
-                    <div class="progress-bar"><div class="progress" style="width: 98%;"></div></div>
-                    <span class="stat-val">9,8</span>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                    <span class="stat-val">9,5</span>
+                </div>
+                <div class="stat-row">
+                    <span>Качество обслуживания</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
                 </div>
             </div>
         </div>
@@ -281,7 +336,6 @@
         lucide.createIcons();
     </script>
     <script>
-    // Проверьте наличие этого кода внизу всех страниц!
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
 
