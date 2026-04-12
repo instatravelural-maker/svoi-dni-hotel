@@ -20,6 +20,7 @@
             font-family: 'Inter', sans-serif;
             color: #333;
             margin: 0;
+            line-height: 1.6;
         }
 
         .container {
@@ -52,7 +53,7 @@
             font-size: 14px;
         }
 
-        /* Основная сетка блоков в стиле оригинала */
+        /* Основная сетка блоков */
         .instruction-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -82,7 +83,6 @@
 
         .instr-card h2 i { color: var(--accent-gold); }
 
-        /* Элементы контента */
         .media-container {
             width: 100%;
             border-radius: 12px;
@@ -106,15 +106,19 @@
 
         .info-row .icon-box {
             background: rgba(43, 84, 74, 0.05);
-            padding: 10px;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 10px;
             color: var(--brand-green);
+            font-weight: 700;
         }
 
         .info-text strong { display: block; margin-bottom: 5px; color: #1a1a1a; }
         .info-text p { margin: 0; font-size: 15px; color: #666; line-height: 1.5; }
 
-        /* Блоки с кодами (как в оригинале) */
         .code-highlight {
             background: var(--bg-site);
             border: 2px dashed var(--accent-gold);
@@ -140,13 +144,6 @@
             letter-spacing: 5px;
         }
 
-        /* Список правил */
-        .rules-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
         .rule-item {
             padding: 20px;
             border-left: 3px solid var(--accent-gold);
@@ -157,11 +154,45 @@
         .rule-item h4 { margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; color: var(--brand-green); }
         .rule-item p { margin: 0; font-size: 13px; color: #666; }
 
+        /* Стили для нового блока охраны */
+        .security-banner {
+            background: var(--brand-green);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .security-banner i { color: var(--accent-gold); }
+        .security-banner h4 { margin: 0 0 5px 0; font-size: 18px; font-family: 'Playfair Display', serif; }
+        .security-banner p { margin: 0; font-size: 14px; opacity: 0.9; }
+        .security-phone { font-size: 22px; font-weight: 700; color: var(--accent-gold); display: block; margin-top: 10px; text-decoration: none; }
+
+        /* Адаптивность */
         @media (max-width: 850px) {
             .instruction-grid { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
-            .rules-grid { grid-template-columns: 1fr; }
             .section-header h1 { font-size: 28px; }
+            .security-banner { flex-direction: column; text-align: center; }
+        }
+
+        /* Адаптация видео для мобильных устройств */
+        @media (max-width: 600px) {
+            .instr-card.full-width iframe {
+                height: 200px !important;
+                margin-bottom: 20px;
+            }
+            .instr-card.full-width .instruction-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .instr-card.full-width .media-container {
+                order: -1;
+                height: auto !important;
+            }
         }
     </style>
 </head>
@@ -286,9 +317,19 @@
                         <h4>Курение</h4>
                         <p>Запрещено в квартире и на балконе (штраф в размере залога).</p>
                     </div>
-                    <div class="rule-item">
-                        <h4>Животные и чистота</h4>
-                        <p>Без животных. Пожалуйста, выносите мусор в баки во дворе.</p>
+                </div>
+            </div>
+
+            <div class="instr-card full-width">
+                <h2><i data-lucide="shield-alert"></i> 06. Безопасность</h2>
+                <p>Ваше спокойствие — наш приоритет. Территория дома и подъезд находятся под круглосуточным наблюдением.</p>
+                
+                <div class="security-banner">
+                    <i data-lucide="armchair" size="48"></i>
+                    <div>
+                        <h4>Круглосуточная поддержка и охрана</h4>
+                        <p>Если у вас возникли трудности с доступом или вы заметили подозрительную активность, немедленно свяжитесь с диспетчером:</p>
+                        <a href="tel:+79991234567" class="security-phone">+7 (999) 123-45-67</a>
                     </div>
                 </div>
             </div>
@@ -305,34 +346,26 @@
                 CozyStay
             </div>
             <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
-            <div class="social-links">
-                <a href="#"><i data-lucide="send"></i></a>
-                <a href="#"><i data-lucide="message-circle"></i></a>
-                <a href="#"><i data-lucide="instagram"></i></a>
-            </div>
         </div>
         <div>
             <h4>Контакты</h4>
             <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
             <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
-            <p><i data-lucide="map-pin" size="16"></i> ул. Марата, д. 15</p>
         </div>
         <div>
-    <h4>Навигация</h4>
-    <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
-    <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Инструкция по заселению</a></p>
-    <p><a href="contacts.html" style="color: inherit; text-decoration: none;">Контакты</a></p>
-</div>
+            <h4>Навигация</h4>
+            <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
+            <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Инструкция по заселению</a></p>
+        </div>
     </div>
     <div class="footer-bottom container">
-        <p>© 2026 CozyStay. Все права защищены. Информация на сайте не является публичной офертой.</p>
+        <p>© 2026 CozyStay. Все права защищены.</p>
     </div>
 </footer>
 
 <script>
     lucide.createIcons();
     
-    // Мобильное меню
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
     if (menuToggle && mainNav) {
