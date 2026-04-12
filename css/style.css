@@ -578,7 +578,7 @@ body {
     }
 /* Увеличиваем иконку ВК, чтобы она совпала с Lucide */
 .social-links .fa-vk {
-    font-size: 22px; /* Подберите это значение под размер ваших остальных иконок */
+    font-size: 35px; /* Подберите это значение под размер ваших остальных иконок */
     display: inline-flex;
     align-items: center;
     justify-content: center;
