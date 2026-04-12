@@ -1,42 +1,29 @@
-/* --- ПЕРЕМЕННЫЕ (ЦВЕТА ИЗ МАКЕТА) --- */
+/* Общие настройки */
 :root {
-    --dark-green: #1d3531;      /* Темно-зеленый */
-    --beige-bg: #fdf8ee;        /* Светло-бежевый фон */
-    --text-color: #333333;
-    --text-light: #777;
-    --white: #ffffff;
-    --accent: #d4a373;          /* Золотистый акцент */
-    --border-color: #f0f0f0;
-}
-
-/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
-* {
-    box-sizing: border-box;
+    --bg-cream: #FDFBF4;
+    --dark-accent: #214344; /* Глубокий зеленый/графит из макета */
+    --text-main: #333333;
+    --gold: #FFD700;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', sans-serif;
-    background-color: var(--beige-bg);
-    color: var(--text-color);
+    background-color: var(--bg-cream);
+    color: var(--text-main);
+    margin: 0;
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- ШАПКА (HEADER) --- */
+/* Шапка */
 .header {
-    background: var(--white);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background: var(--bg-cream);
+    padding: 20px 0;
 }
 
 .header-flex {
@@ -48,203 +35,104 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-weight: 700;
-    font-size: 22px;
-    color: var(--dark-green);
-    text-decoration: none;
+    font-size: 24px;
+    color: var(--dark-accent);
 }
 
 .nav a {
     text-decoration: none;
-    color: var(--text-color);
-    margin: 0 12px;
+    color: var(--text-main);
+    margin: 0 15px;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s;
 }
 
-.nav a:hover, .nav a.active {
-    color: var(--dark-green);
-    font-weight: 600;
-}
+.nav a.active { border-bottom: 2px solid var(--dark-accent); }
 
 .btn-dark {
-    background: var(--dark-green);
-    color: var(--white);
-    padding: 10px 22px;
-    border-radius: 8px;
+    background: var(--dark-accent);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
+    transition: opacity 0.3s;
 }
 
-.btn-dark:hover {
-    background: #2a4d47;
-}
-
-/* --- СЕКЦИЯ ОТЗЫВОВ --- */
-
-.section-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 40px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--dark-green);
-}
-
-/* Карточка общей статистики (Summary) */
-.reviews-stats-container {
-    background: var(--white);
-    padding: 35px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-}
-
-.overall-rating {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-right: 40px;
-    border-right: 1px solid #eee;
-}
-
-.rating-badge-large {
-    background: var(--dark-green);
-    color: var(--white);
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 700;
-    border-radius: 12px;
-}
-
-.rating-label { font-weight: 700; font-size: 1.1rem; }
-.reviews-count { color: var(--text-light); font-size: 0.85rem; }
-
-.detailed-stats { flex-grow: 1; }
-.stat-row { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-    margin-bottom: 10px; 
-    font-size: 0.9rem; 
-}
-.stat-row span:first-child { width: 140px; }
-.stat-val { font-weight: 600; width: 30px; text-align: right; }
-
-.progress-bar { flex-grow: 1; height: 6px; background: #eee; border-radius: 10px; overflow: hidden; }
-.progress { height: 100%; background: var(--accent); border-radius: 10px; }
-
-/* Сетка отзывов: 2 колонки */
-.reviews-full-list {
+/* Сетка отзывов по макету */
+.reviews-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 60px;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    gap: 40px;
+    margin: 50px 0;
 }
 
-.review-item-sutochno {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.02);
-    border: 1px solid var(--border-color);
+.review-card {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    transition: transform 0.3s ease;
-}
-
-.review-item-sutochno:hover {
-    transform: translateY(-5px);
-}
-
-.review-user-info { display: flex; align-items: center; gap: 12px; }
-.user-avatar-text { 
-    width: 45px; height: 45px; background: #e0d8cc; 
-    display: flex; align-items: center; justify-content: center; 
-    border-radius: 50%; font-weight: bold; color: #fff;
-}
-.user-avatar-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
-.review-user-info h4 { margin: 0; font-size: 0.95rem; color: var(--dark-green); }
-.visit-date { font-size: 0.8rem; color: var(--text-light); }
-
-.review-header-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.rating-badge-small { 
-    background: var(--dark-green); color: var(--white); 
-    padding: 2px 8px; border-radius: 5px; font-weight: 700; font-size: 0.8rem; 
-}
-.rating-text { font-size: 0.85rem; font-weight: 600; }
-.review-time { font-size: 0.8rem; color: var(--text-light); margin-left: auto; }
-
-.review-text { font-size: 0.95rem; color: #555; margin: 0; line-height: 1.5; }
-.icon-smile { width: 16px; height: 16px; color: var(--accent); vertical-align: middle; margin-right: 5px; }
-
-/* CTA блок */
-.leave-review-cta {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
+    align-items: center;
     text-align: center;
-    margin-bottom: 80px;
 }
 
-/* --- ПОДВАЛ (FOOTER) --- */
-.footer {
-    background: var(--white);
-    padding: 50px 0 20px;
-    border-top: 1px solid #eee;
+.user-avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.footer-flex {
+.review-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+    max-width: 320px;
+}
+
+.stars-row {
+    color: var(--gold);
+    display: flex;
+    gap: 3px;
+}
+
+.stars-row i {
+    width: 16px;
+    height: 16px;
+    fill: var(--gold);
+}
+
+/* Шкала оценок (блок слева) */
+.reviews-stats-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 30px;
+    align-items: center;
+    background: #E8EEF1; /* Светло-голубой фон из макета */
+    padding: 40px;
+    border-radius: 0; /* В макете блок на всю ширину или без скруглений */
+    margin-bottom: 40px;
 }
 
-.footer-info .logo { margin-bottom: 15px; }
-.footer-info p { margin: 5px 0; font-size: 14px; display: flex; align-items: center; gap: 8px; }
-
-.footer-address p { margin: 0; font-size: 14px; line-height: 1.4; }
-
-.footer-social { display: flex; gap: 15px; }
-.footer-social a { 
-    color: var(--dark-green); 
-    background: #f5f5f5; 
-    width: 36px; height: 36px; 
-    display: flex; align-items: center; justify-content: center; 
-    border-radius: 50%; transition: 0.3s; 
-}
-.footer-social a:hover { background: var(--dark-green); color: var(--white); }
-
-.vk-icon { width: 20px; height: 20px; fill: currentColor; }
-
-.footer-bottom {
-    border-top: 1px solid #f5f5f5;
-    padding-top: 20px;
-    font-size: 12px;
-    color: #bbb;
+.progress-bar {
+    width: 200px;
+    height: 6px;
+    background: #D1D1D1;
+    border-radius: 10px;
+    margin: 0 15px;
 }
 
-/* --- АДАПТИВНОСТЬ --- */
-@media (max-width: 992px) {
-    .reviews-stats-container { flex-direction: column; align-items: flex-start; gap: 30px; }
-    .overall-rating { border-right: none; border-bottom: 1px solid #eee; padding: 0 0 20px 0; width: 100%; }
+.progress {
+    height: 100%;
+    background: var(--dark-accent);
+    border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    .reviews-full-list { grid-template-columns: 1fr; }
-    .footer-flex { flex-direction: column; gap: 30px; }
+/* Подвал (ЗАПРЕЩЕНО МЕНЯТЬ - сохраняем стилистику) */
+.footer {
+    background: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
 }
