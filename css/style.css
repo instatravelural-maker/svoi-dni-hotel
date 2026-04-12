@@ -240,7 +240,7 @@ body {
 }
 
 /* =========================================
-   7. ОТЗЫВЫ (Профессиональный стиль)
+   7. ОТЗЫВЫ (Профессиональный стиль + живые звезды)
    ========================================= */
 .reviews-section {
     background-color: var(--grey-light);
@@ -341,10 +341,42 @@ body {
     border-bottom: 1px dashed #eee;
 }
 
-.stars-row {
-    color: var(--gold-accent);
+/* --- ЛОГИКА ЖИВЫХ ЗВЕЗД --- */
+.stars-wrapper {
+    position: relative;
+    display: inline-block;
+    font-size: 18px; /* Размер звезд */
+    line-height: 1;
+}
+
+/* Серые звезды (фон) */
+.stars-background {
+    color: #e0e0e0;
     display: flex;
-    gap: 3px;
+    gap: 2px;
+}
+
+/* Золотые звезды (поверх фона) */
+.stars-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 2px;
+    color: var(--gold-accent);
+    overflow: hidden; /* Обрезает звезды по ширине */
+    white-space: nowrap;
+}
+
+/* Конкретные значения закраски */
+.rating-100 { width: 100%; }
+.rating-97 { width: 97%; }
+.rating-98 { width: 98%; }
+
+.stat-val-bold {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-dark);
 }
 
 .review-modern-text {
