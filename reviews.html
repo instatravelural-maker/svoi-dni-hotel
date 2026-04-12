@@ -7,6 +7,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Дополнительные стили для сетки отзывов */
+        .reviews-full-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .review-item-sutochno {
+            background: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: transform 0.2s ease;
+        }
+
+        .review-item-sutochno:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-full-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,9 +45,10 @@
                 <span>CozyStay</span>
             </div>
             <nav class="nav">
-                <a href="index.html">О Квартире</a>
-                <a href="services.html">Услуги</a>
-                <a href="prices.html">Цены и Бронирование</a>
+                <a href="index.html">Главная</a>
+                <a href="about.html">О Квартире</a>
+                <a href="services.html">Сервис</a>
+                <a href="checkin.html">Заселение</a>
                 <a href="reviews.html" class="active">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
@@ -27,181 +56,187 @@
         </div>
     </header>
 
-    <main class="page-content">
-        <div class="container">
-            <h1 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h1>
+    <main class="container page-content">
+        <h1 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h1>
+        
+        <div class="reviews-stats-container">
+            <div class="overall-rating">
+                <span class="rating-badge-large">10</span>
+                <div>
+                    <div class="rating-label">Великолепно</div>
+                    <div class="reviews-count">На основе 48 отзывов</div>
+                </div>
+            </div>
             
-            <div class="reviews-summary-card">
-                <div class="summary-main">
-                    <div class="rating-huge">10</div>
-                    <div class="rating-info">
-                        <div class="rating-label">Великолепно</div>
-                        <div class="reviews-count">48 отзывов</div>
+            <div class="detailed-stats">
+                <div class="stat-row">
+                    <span>Чистота</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Соответствие фото</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Заселение</span>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    <span class="stat-val">10,0</span>
+                </div>
+                <div class="stat-row">
+                    <span>Расположение</span>
+                    <div class="progress-bar"><div class="progress" style="width: 98%;"></div></div>
+                    <span class="stat-val">9,8</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-full-list">
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <div class="user-avatar-text">Е</div>
+                    <div>
+                        <h4>Екатерина</h4>
+                        <span class="visit-date">Август 2025, 7 суток</span>
                     </div>
                 </div>
-                
-                <div class="detailed-stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-header"><span>Чистота</span> <span>10.0</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">10</span>
+                        <span class="rating-text">Великолепно</span>
+                        <span class="review-time">2 месяца назад</span>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-header"><span>Соответствие фото</span> <span>10.0</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-header"><span>Заселение</span> <span>10.0</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-header"><span>Расположение</span> <span>9.8</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 98%;"></div></div>
-                    </div>
+                    <p class="review-text">Останавливались семьей на неделю. Квартира в реальности даже лучше, чем на фото! Идеальная чистота и очень тихий двор.</p>
                 </div>
             </div>
 
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar-text">Е</div>
-                        <div class="user-meta">
-                            <h4>Екатерина</h4>
-                            <span class="stay-date">Август 2025 • 7 суток</span>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">10</span>
-                            <span class="rating-text">Великолепно</span>
-                        </div>
-                        <p>Квартира в реальности даже лучше, чем на фото! Идеальная чистота, очень тихий двор, хотя до Невского рукой подать. Обязательно вернемся.</p>
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <img src="https://i.pravatar.cc/80?u=45" alt="Дмитрий" class="user-avatar-img">
+                    <div>
+                        <h4>Дмитрий</h4>
+                        <span class="visit-date">Сентябрь 2025, 3 суток</span>
                     </div>
                 </div>
-
-                <div class="review-card">
-                    <div class="review-user">
-                        <img src="https://i.pravatar.cc/100?u=45" alt="Дмитрий" class="user-avatar-img">
-                        <div class="user-meta">
-                            <h4>Дмитрий</h4>
-                            <span class="stay-date">Сентябрь 2025 • 3 суток</span>
-                        </div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">10</span>
+                        <span class="rating-text">Великолепно</span>
+                        <span class="review-time">1 месяц назад</span>
                     </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">10</span>
-                            <span class="rating-text">Великолепно</span>
-                        </div>
-                        <p>Прекрасный сервис. Владелец выдал все чеки для бухгалтерии. Внутри есть всё: от кофемашины до порошка. Рекомендую!</p>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar-text" style="background: #d4a373;">М</div>
-                        <div class="user-meta">
-                            <h4>Мария</h4>
-                            <span class="stay-date">Октябрь 2025 • 2 суток</span>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">10</span>
-                            <span class="rating-text">Великолепно</span>
-                        </div>
-                        <p>Очень уютно и тепло, что важно для Питера осенью. Порадовало наличие бесконтактного заселения — очень удобно, когда прилетаешь поздно ночью.</p>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-user">
-                        <img src="https://i.pravatar.cc/100?u=32" alt="Алексей" class="user-avatar-img">
-                        <div class="user-meta">
-                            <h4>Алексей</h4>
-                            <span class="stay-date">Ноябрь 2025 • 5 суток</span>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">9.0</span>
-                            <span class="rating-text">Очень хорошо</span>
-                        </div>
-                        <p>Отличное расположение, метро в двух шагах. Кровать удобная, выспался отлично. Единственный минус — быстро разобрали свободные даты на следующий месяц.</p>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar-text" style="background: #203534;">С</div>
-                        <div class="user-meta">
-                            <h4>Светлана</h4>
-                            <span class="stay-date">Декабрь 2025 • 4 суток</span>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">10</span>
-                            <span class="rating-text">Великолепно</span>
-                        </div>
-                        <p>Стильный интерьер в спокойных тонах. Кухня полностью укомплектована, готовили завтраки сами. Окна выходят в тихий двор, шума машин совсем не слышно.</p>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-user">
-                        <img src="https://i.pravatar.cc/100?u=12" alt="Иван" class="user-avatar-img">
-                        <div class="user-meta">
-                            <h4>Иван</h4>
-                            <span class="stay-date">Январь 2026 • 10 суток</span>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        <div class="review-rating-row">
-                            <span class="badge-mini">10</span>
-                            <span class="rating-text">Великолепно</span>
-                        </div>
-                        <p>Жили семьей с ребенком. Места достаточно, всё продумано до мелочей. Скоростной Wi-Fi позволил спокойно работать удаленно. Оценка 10 из 10!</p>
-                    </div>
+                    <p class="review-text">Прекрасный сервис. Владелец выдал все чеки для бухгалтерии. Внутри есть всё: от кофемашины до порошка.</p>
                 </div>
             </div>
 
-            <div class="leave-review-section">
-                <h3>Понравилось у нас?</h3>
-                <p>Ваши отзывы помогают нам становиться лучше</p>
-                <a href="https://wa.me/79991234567" class="btn-outline">Оставить отзыв в WhatsApp</a>
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <div class="user-avatar-text" style="background: #d4a373;">М</div>
+                    <div>
+                        <h4>Мария</h4>
+                        <span class="visit-date">Октябрь 2025, 4 суток</span>
+                    </div>
+                </div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">10</span>
+                        <span class="rating-text">Великолепно</span>
+                        <span class="review-time">2 недели назад</span>
+                    </div>
+                    <p class="review-text">Бронировала для родителей. Они в восторге от высоты потолков и удобства кровати. Хозяин всегда на связи.</p>
+                </div>
             </div>
+
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <div class="user-avatar-text" style="background: #4a6741;">А</div>
+                    <div>
+                        <h4>Алексей</h4>
+                        <span class="visit-date">Июль 2025, 2 суток</span>
+                    </div>
+                </div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">10</span>
+                        <span class="rating-text">Великолепно</span>
+                        <span class="review-time">3 месяца назад</span>
+                    </div>
+                    <p class="review-text">Шикарное расположение! До метро Восстания буквально 5 минут пешком. В квартире очень тепло и уютно.</p>
+                </div>
+            </div>
+
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <img src="https://i.pravatar.cc/80?u=32" alt="Ольга" class="user-avatar-img">
+                    <div>
+                        <h4>Ольга</h4>
+                        <span class="visit-date">Ноябрь 2025, 5 суток</span>
+                    </div>
+                </div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">10</span>
+                        <span class="rating-text">Великолепно</span>
+                        <span class="review-time">1 неделю назад</span>
+                    </div>
+                    <p class="review-text">Порадовал дизайн интерьера и качественное постельное белье. Видно, что хозяева заботятся о комфорте гостей.</p>
+                </div>
+            </div>
+
+            <div class="review-item-sutochno">
+                <div class="review-user-info">
+                    <div class="user-avatar-text" style="background: #203534;">С</div>
+                    <div>
+                        <h4>Сергей</h4>
+                        <span class="visit-date">Декабрь 2025, 1 сутки</span>
+                    </div>
+                </div>
+                <div class="review-content-box">
+                    <div class="review-header-row">
+                        <span class="rating-badge-small">9.0</span>
+                        <span class="rating-text">Превосходно</span>
+                        <span class="review-time">3 дня назад</span>
+                    </div>
+                    <p class="review-text">Очень удобная система бесконтактного заселения. Всё интуитивно понятно, инструкция подробная. Рекомендую!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="leave-review-cta">
+            <h3>Понравилось у нас?</h3>
+            <p>Ваши отзывы помогают нам становиться лучше, а будущим гостям — сделать правильный выбор.</p>
+            <a href="https://wa.me/79991234567" class="btn-dark">Написать отзыв в WhatsApp</a>
         </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i data-lucide="key-round"></i>
-                        <span>CozyStay</span>
-                    </div>
-                    <div class="footer-contacts">
-                        <a href="tel:+79991234567">+7 999 123 45 67</a>
-                        <a href="mailto:cozy@stay.ru">cozy@stay.ru</a>
-                    </div>
+        <div class="container footer-flex">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="key-round"></i>
+                    <span>CozyStay</span>
                 </div>
-                
-                <div class="footer-address">
-                    <p>Адрес: г. Санкт-Петербург,</p>
-                    <p>ул. Восстания, 11</p>
+                <div class="footer-contacts">
+                    <a href="tel:+79991234567" class="footer-link">+7 999 123-45-67</a>
+                    <a href="mailto:booking@cozystay.ru" class="footer-link">booking@cozystay.ru</a>
                 </div>
+            </div>
+            
+            <div class="footer-address">
+                <p><strong>Адрес:</strong></p>
+                <p>г. Санкт-Петербург, ул. Марата, 15</p>
+            </div>
 
-                <div class="footer-socials">
-                    <a href="#"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="vk-custom">
-                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg>
-                    </a>
-                    <a href="#"><i data-lucide="message-circle"></i></a>
-                </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i data-lucide="send"></i></a>
+                <a href="#" class="social-icon">
+                    <svg class="vk-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg>
+                </a>
+                <a href="#" class="social-icon"><i data-lucide="message-circle"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 CozyStay. Все права защищены.</p>
-            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2026 CozyStay. Все права защищены.</p>
         </div>
     </footer>
 
