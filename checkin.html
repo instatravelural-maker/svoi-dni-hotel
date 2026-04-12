@@ -8,11 +8,140 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* --- СТИЛИ СОГЛАСНО МАКЕТУ --- */
+        body {
+            background-color: #fdfaf7; /* Светлый фон как в макете */
+            color: #333;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 40px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Блоки шагов */
+        .checkin-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .step-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2b544a;
+            background: rgba(43, 84, 74, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .step-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Блок "Важно знать" */
+        .important-note {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .important-note h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2b544a;
+            font-size: 20px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .important-note ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .important-note li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .important-note li::before {
+            content: "•";
+            color: #2b544a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2b544a;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
         /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
         .footer {
-            background-color: #f7f3f0;
+            background-color: #2d3e40; /* Темный фон из макета */
             padding: 60px 0 30px;
-            color: #333;
+            color: #ffffff;
             margin-top: 80px;
         }
 
@@ -32,7 +161,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #2b544a;
+            color: #ffffff;
         }
 
         .footer-info p {
@@ -41,43 +170,35 @@
             gap: 10px;
             margin-bottom: 12px;
             font-size: 14px;
-            color: #666;
+            color: rgba(255,255,255,0.8);
         }
 
         .footer-address p {
             font-size: 14px;
             line-height: 1.6;
-            color: #666;
+            color: rgba(255,255,255,0.8);
         }
 
         .footer-address strong {
             display: block;
             margin-bottom: 10px;
-            color: #333;
+            color: #ffffff;
         }
 
         .footer-social {
             display: flex;
-            gap: 12px;
+            gap: 15px;
         }
 
         .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2b544a;
+            color: #ffffff;
             transition: 0.3s;
             text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            opacity: 0.8;
         }
 
         .footer-social a:hover {
-            background: #2b544a;
-            color: #fff;
+            opacity: 1;
         }
 
         .vk-icon {
@@ -88,9 +209,9 @@
 
         .footer-bottom {
             padding-top: 20px;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 12px;
-            color: #999;
+            color: rgba(255,255,255,0.5);
             text-align: left;
         }
 
@@ -110,50 +231,50 @@
                 <span>CozyStay</span>
             </div>
             <nav class="nav">
-    <a href="index.html">Главная</a>
-    <a href="about.html">О Квартире</a>
-    <a href="services.html">Сервис</a>
-    <a href="checkin.html" class="active">Заселение</a>
-    <a href="reviews.html">Отзывы</a>
-    <a href="contacts.html">Контакты</a>
-</nav>
+                <a href="index.html">Главная</a>
+                <a href="about.html">О Квартире</a>
+                <a href="services.html">Сервис</a>
+                <a href="checkin.html" class="active">Заселение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
             <a href="booking.html" class="btn-dark">Забронировать</a>
         </div>
     </header>
 
     <main class="container page-content">
-        <h1 class="section-title">САМОСТОЯТЕЛЬНОЕ ЗАСЕЛЕНИЕ</h1>
+        <h1 class="section-title">Самостоятельное заселение</h1>
         
         <div class="checkin-steps">
             <div class="step-card">
                 <div class="step-number">01</div>
                 <h3>Подтверждение</h3>
-                <p>За день до вашего визита я свяжусь с вами через мессенджер, чтобы подтвердить время прибытия.</p>
+                <p>За день до вашего визита я свяжусь с вами через мессенджер, чтобы подтвердить время прибытия и детали бронирования.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">02</div>
                 <h3>Инструкция</h3>
-                <p>Вы получите подробную видео-инструкцию и индивидуальный цифровой код для входа в апартаменты.</p>
+                <p>Вы получите подробную видео-инструкцию и индивидуальный цифровой код для входа в апартаменты в день заезда.</p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">03</div>
                 <h3>Ваш отдых начался</h3>
-                <p>Просто введите код на ручке двери. Ключи не нужны, вы полностью свободны в перемещениях.</p>
+                <p>Просто введите код на ручке двери. Ключи не нужны, вы полностью свободны и можете заехать в любое удобное время.</p>
             </div>
         </div>
 
         <div class="important-note">
-            <h3><i data-lucide="info"></i> Что важно знать</h3>
+            <h3><i data-lucide="info" size="20"></i> Что важно знать</h3>
             <ul>
-                <li><strong>Заезд:</strong> официально с 14:00. Если квартира будет готова раньше — я обязательно сообщу.</li>
+                <li><strong>Заезд:</strong> официально с 14:00. Если квартира будет готова раньше — я обязательно сообщу вам об этом.</li>
                 <li><strong>Выезд:</strong> до 12:00. Код доступа перестает действовать автоматически после этого времени.</li>
-                <li><strong>Поддержка:</strong> Я на связи 24/7 по любым техническим вопросам.</li>
+                <li><strong>Поддержка:</strong> Я на связи 24/7 по любым техническим вопросам или если вам понадобится помощь.</li>
             </ul>
-            <div style="margin-top: 25px;">
-                <a href="https://wa.me/79991234567" class="btn-dark" style="display: inline-flex; align-items: center; gap: 8px; background: #25d366; text-decoration: none;">
-                    <i data-lucide="message-circle"></i> Задать вопрос в WhatsApp
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="https://wa.me/79991234567" class="btn-whatsapp">
+                    <i data-lucide="message-circle" size="18"></i> Задать вопрос в WhatsApp
                 </a>
             </div>
         </div>
