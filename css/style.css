@@ -282,7 +282,7 @@ body {
     background: var(--footer-bg);
     margin-top: 80px;
     padding: 60px 0 30px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #d4d1ca;
 }
 
 .footer-grid {
@@ -306,12 +306,13 @@ body {
     font-size: 16px;
     margin-bottom: 20px;
     color: var(--dark-green);
-    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer p {
     font-size: 14px;
-    color: #666666;
+    color: #555;
     margin: 10px 0;
     display: flex;
     align-items: center;
@@ -339,11 +340,15 @@ body {
     transition: 0.3s;
 }
 
+.social-links a:hover {
+    color: var(--gold-accent);
+}
+
 .footer-bottom {
     padding-top: 20px;
     border-top: 1px solid #d4d1ca;
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     color: #888;
 }
 
