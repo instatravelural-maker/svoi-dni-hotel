@@ -8,12 +8,82 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА (ПОД МАКЕТ) --- */
+        /* --- СТИЛИ ДЛЯ СТРАНИЦЫ СЕРВИС (ПО МАКЕТУ) --- */
+        body {
+            background-color: #fdfaf7; /* Светло-бежевый фон как на макете */
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 20px;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Сетка карточек */
+        .services-grid-new {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        /* Стиль карточки по макету (блок "Почему выбирают CozyStay") */
+        .service-card-alt {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Мягкая тень */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card-alt:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card-alt i, 
+        .service-card-alt svg {
+            color: #2b544a; /* Фирменный зеленый */
+            margin-bottom: 20px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .service-card-alt h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .service-card-alt p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
         .footer {
-            background-color: #f7f3f0; /* Бежевый фон как на макете */
+            background-color: #f7f3f0;
             padding: 60px 0 30px;
             color: #333;
-            margin-top: 80px; /* Отступ подвала от контента */
+            margin-top: 80px;
         }
 
         .footer-flex {
@@ -56,7 +126,6 @@
             color: #333;
         }
 
-        /* Иконки соцсетей в белых кружочках */
         .footer-social {
             display: flex;
             gap: 12px;
@@ -99,6 +168,9 @@
             .footer-flex {
                 flex-direction: column;
             }
+            .section-title {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -110,60 +182,60 @@
                 <i data-lucide="key-round"></i>
                 <span>CozyStay</span>
             </div>
-           <nav class="nav">
-    <a href="index.html">Главная</a>
-    <a href="about.html">О Квартире</a>
-    <a href="services.html" class="active">Сервис</a>
-    <a href="checkin.html">Заселение</a>
-    <a href="reviews.html">Отзывы</a>
-    <a href="contacts.html">Контакты</a>
-</nav>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="about.html">О Квартире</a>
+                <a href="services.html" class="active">Сервис</a>
+                <a href="checkin.html">Заселение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
             <a href="booking.html" class="btn-dark">Забронировать</a>
         </div>
     </header>
 
     <main class="container page-content">
-        <h1 class="section-title">ЗАБОТА О КАЖДОМ ГОСТЕ</h1>
+        <h1 class="section-title">ПОЧЕМУ ВЫБИРАЮТ COZYSTAY?</h1>
         
         <div class="services-intro">
-            <p>Я подготовил всё необходимое, чтобы ваше пребывание в Санкт-Петербурге было максимально комфортным и беззаботным.</p>
+            <p>Я продумал каждую деталь вашего проживания. Моя цель — чтобы вы чувствовали себя как дома, наслаждаясь сервисом высокого уровня.</p>
         </div>
 
         <div class="services-grid-new">
             <div class="service-card-alt">
                 <i data-lucide="door-open"></i>
                 <h3>Умное заселение</h3>
-                <p>Установлен электронный замок. Вы можете заехать в любое удобное время после 14:00 без ожидания встречи.</p>
+                <p>Электронный замок позволит вам заехать в любое время после 14:00 без лишних встреч и звонков.</p>
             </div>
 
             <div class="service-card-alt">
-                <i data-lucide="file-check"></i>
-                <h3>Чеки и документы</h3>
-                <p>Предоставляю официальный чек от самозанятого для вашей бухгалтерии. Работаю с командированными.</p>
+                <i data-lucide="file-text"></i>
+                <h3>Отчетные документы</h3>
+                <p>Предоставляю официальные чеки и договоры для бизнес-путешественников и бухгалтерии.</p>
             </div>
 
             <div class="service-card-alt">
-                <i data-lucide="map"></i>
-                <h3>Гид по району</h3>
-                <p>В квартире вас ждет папка с моими рекомендациями: где лучший кофе, где вкусно поужинать и куда сходить вечером.</p>
+                <i data-lucide="map-pin"></i>
+                <h3>Локальный гид</h3>
+                <p>Авторская подборка мест: от секретных кофеен до лучших маршрутов по крышам Петербурга.</p>
             </div>
 
             <div class="service-card-alt">
                 <i data-lucide="coffee"></i>
                 <h3>Welcome-набор</h3>
-                <p>Чай, ароматный кофе, сахар и небольшое угощение для приятного начала вашего отдыха.</p>
+                <p>Зерновой кофе, коллекционный чай и сладкий комплимент уже ждут вашего приезда.</p>
             </div>
 
             <div class="service-card-alt">
-                <i data-lucide="washing-machine"></i>
-                <h3>Быт продуман</h3>
-                <p>Стиральный порошок, капсулы для посудомойки, фен, утюг и гладильная доска — всё уже на месте.</p>
+                <i data-lucide="sparkles"></i>
+                <h3>Безупречный быт</h3>
+                <p>Всё от капсул для стирки до гигиенических наборов уже включено в стоимость проживания.</p>
             </div>
 
             <div class="service-card-alt">
-                <i data-lucide="shield-check"></i>
-                <h3>Безопасность</h3>
-                <p>Договор аренды и страхование имущества. Я всегда на связи, чтобы помочь решить любой вопрос.</p>
+                <i data-lucide="heart"></i>
+                <h3>Забота 24/7</h3>
+                <p>Я всегда на связи в мессенджерах, чтобы помочь с любым вопросом или рекомендацией.</p>
             </div>
         </div>
     </main>
