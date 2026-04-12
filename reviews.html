@@ -8,56 +8,47 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Стили согласно макету */
-        .reviews-grid {
+        /* Локальные стили для подвала, чтобы соответствовать главной */
+        .footer {
+            background: #ece9e2;
+            margin-top: 80px;
+            padding: 60px 0 30px;
+            border-top: 1px solid #ddd;
+        }
+        .footer-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Две колонки */
+            grid-template-columns: 1.5fr 1fr 1fr;
             gap: 40px;
-            margin-top: 40px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
-
-        .review-card {
+        .footer-logo {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 24px;
+            color: #2b544a;
+            margin-bottom: 20px;
+        }
+        .footer h4 { font-size: 16px; margin-bottom: 20px; color: #2b544a; }
+        .footer p { font-size: 14px; color: #666; margin: 10px 0; display: flex; align-items: center; gap: 10px; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { color: #2b544a; transition: 0.3s; }
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #d4d1ca;
             text-align: center;
-            background: transparent;
-            padding: 10px;
+            font-size: 13px;
+            color: #888;
         }
 
-        .user-avatar-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
+        @media (max-width: 992px) {
+            .reviews-grid-new { grid-template-columns: 1fr 1fr; }
+            .reviews-stats-container { flex-direction: column; gap: 30px; }
         }
-
-        .review-text {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #333;
-            margin-bottom: 12px;
-            max-width: 300px;
-        }
-
-        .stars-row {
-            display: flex;
-            gap: 2px;
-            color: #FFD700; /* Золотой цвет звезд из макета */
-        }
-
-        .stars-row i {
-            width: 16px;
-            height: 16px;
-            fill: #FFD700;
-        }
-
         @media (max-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
+            .reviews-grid-new { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -77,7 +68,7 @@
                 <a href="reviews.html" class="active">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
-            <a href="booking.html" class="btn-dark">Забронировать</a>
+            <a href="booking.html" class="btn-booking-header">Забронировать</a>
         </div>
     </header>
 
@@ -89,7 +80,7 @@
                 <span class="rating-badge-large">10</span>
                 <div>
                     <div class="rating-label">Великолепно</div>
-                    <div class="reviews-count">Оценка на основе 48 отзывов</div>
+                    <div class="reviews-count">На основе 48 отзывов</div>
                 </div>
             </div>
             
@@ -105,11 +96,6 @@
                     <span class="stat-val">10,0</span>
                 </div>
                 <div class="stat-row">
-                    <span>Заселение</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
-                </div>
-                <div class="stat-row">
                     <span>Расположение</span>
                     <div class="progress-bar"><div class="progress" style="width: 98%;"></div></div>
                     <span class="stat-val">9,8</span>
@@ -117,84 +103,128 @@
             </div>
         </div>
 
-        <div class="reviews-grid">
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=1" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Мы полны энтузиазма и положительных эмоций от проживания в этих апартаментах!</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        <div class="reviews-grid-new">
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=1" alt="Юлия">
+                    <div>
+                        <div class="reviewer-name">Юлия</div>
+                        <div class="review-date">Октябрь 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">10.0</span>
+                </div>
+                <p class="review-modern-text">"Мы полны энтузиазма и положительных эмоций! Идеальная чистота и очень вежливый хозяин."</p>
             </div>
 
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=2" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Удобная локация, до метро 5 минут. В квартире есть всё необходимое для комфорта.</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=2" alt="Александр">
+                    <div>
+                        <div class="reviewer-name">Александр</div>
+                        <div class="review-date">Сентябрь 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">10.0</span>
+                </div>
+                <p class="review-modern-text">"Удобная локация, до метро 5 минут. В квартире есть всё необходимое для жизни."</p>
             </div>
 
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=3" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Идеальная чистота и бесконтактное заселение. Хозяин всегда был на связи.</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=3" alt="Мария">
+                    <div>
+                        <div class="reviewer-name">Мария</div>
+                        <div class="review-date">Август 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">10.0</span>
+                </div>
+                <p class="review-modern-text">"Бесконтактное заселение — это очень удобно. Квартира выглядит лучше, чем на фото!"</p>
             </div>
 
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=4" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Останавливаемся второй раз. Всё так же на высоте. Очень уютно и тихо.</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=4" alt="Дмитрий">
+                    <div>
+                        <div class="reviewer-name">Дмитрий</div>
+                        <div class="review-date">Июль 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">9.8</span>
+                </div>
+                <p class="review-modern-text">"Тихий двор, хотя это самый центр. Выспались отлично, матрас очень удобный."</p>
             </div>
 
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=5" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Замечательная квартира в самом центре. Вид из окна и ремонт просто супер!</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=5" alt="Елена">
+                    <div>
+                        <div class="reviewer-name">Елена</div>
+                        <div class="review-date">Июнь 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">10.0</span>
+                </div>
+                <p class="review-modern-text">"Замечательный сервис. Нас ждал кофе и приятный комплимент. Вернемся обязательно!"</p>
             </div>
 
-            <div class="review-card">
-                <img src="https://i.pravatar.cc/100?u=6" alt="Гость" class="user-avatar-img">
-                <p class="review-text">Всё соответствует фото. Рекомендую всем, кто ценит стиль и качество сервиса.</p>
-                <div class="stars-row">
-                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <div class="review-card-modern">
+                <div class="reviewer-info">
+                    <img src="https://i.pravatar.cc/100?u=6" alt="Игорь">
+                    <div>
+                        <div class="reviewer-name">Игорь</div>
+                        <div class="review-date">Май 2025</div>
+                    </div>
                 </div>
+                <div class="review-meta">
+                    <div class="stars-row"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <span class="stat-val">10.0</span>
+                </div>
+                <p class="review-modern-text">"Стильный интерьер и идеальная чистота. Продумана каждая мелочь, даже зонтик был."</p>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i data-lucide="key-round"></i>
-                        <span>CozyStay</span>
-                    </div>
-                    <div class="footer-contacts">
-                        <span><i data-lucide="phone"></i> +7 999 123-45-67</span>
-                        <span><i data-lucide="mail"></i> cozy@stay.ru</span>
-                    </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i data-lucide="key-round"></i>
+                    CozyStay
                 </div>
-
-                <div class="footer-address">
-                    <p><i data-lucide="map-pin"></i> Адрес: г. Санкт-Петербург, ул. Марата, 15</p>
-                </div>
-
-                <div class="footer-social">
+                <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="send"></i></a>
+                    <a href="#"><svg style="width:20px; height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg></a>
                     <a href="#"><i data-lucide="instagram"></i></a>
-                    <a href="#"><svg class="vk-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg></a>
-                    <a href="#"><i data-lucide="phone"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 CozyStay. Все права защищены.</p>
+            <div>
+                <h4>Контакты</h4>
+                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
+                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+                <p><i data-lucide="map-pin" size="16"></i> ул. Марата, д. 15</p>
             </div>
+            <div>
+                <h4>Навигация</h4>
+                <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
+                <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Заселение</a></p>
+                <p><a href="contacts.html" style="color: inherit; text-decoration: none;">Контакты</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>© 2026 CozyStay. Все права защищены. Информация на сайте не является публичной офертой.</p>
         </div>
     </footer>
 
