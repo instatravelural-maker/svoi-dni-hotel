@@ -43,11 +43,12 @@ body {
    2. ШАПКА (Header)
    ========================================= */
 .header {
-    background: var(--bg-cream);
+    background: #ffffff; /* Изменено с var(--bg-cream) на белый цвет */
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Добавил легкую тень, чтобы белый на белом не терялся */
 }
 
 .header-flex {
