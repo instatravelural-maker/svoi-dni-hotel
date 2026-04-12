@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заселение — CozyStay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Инструкция по заселению — CozyStay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* --- СТИЛИ СОГЛАСНО МАКЕТУ --- */
+        /* --- ИНТЕГРИРОВАННЫЕ СТИЛИ --- */
+        :root {
+            --accent-gold: #b2945e;
+            --brand-green: #2b544a;
+        }
+
         body {
-            background-color: #fdfaf7; /* Светлый фон как в макете */
+            background-color: #fdfaf7;
+            font-family: 'Inter', sans-serif;
             color: #333;
         }
 
@@ -18,223 +24,112 @@
             text-align: center;
             font-size: 32px;
             font-weight: 700;
-            margin: 60px 0 40px;
+            margin: 60px 0 10px;
             color: #1a1a1a;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Блоки шагов */
-        .checkin-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 60px;
+        .section-subtitle {
+            text-align: center;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 40px;
+            display: block;
         }
 
-        .step-card {
+        /* Bento Grid Интеграция */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .bento-item {
             background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 20px;
+            padding: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .step-card:hover {
-            transform: translateY(-5px);
-        }
+        .bento-item:hover { transform: translateY(-5px); }
+        .wide { grid-column: span 2; }
+        .full { grid-column: span 3; }
 
-        .step-number {
-            font-size: 14px;
-            font-weight: 700;
-            color: #2b544a;
-            background: rgba(43, 84, 74, 0.1);
-            width: 40px;
-            height: 40px;
+        .bento-item h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-top: 0;
+            color: var(--brand-green);
         }
 
-        .step-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
+        .bento-item h2 i { color: var(--accent-gold); }
 
-        .step-card p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Блок "Важно знать" */
-        .important-note {
-            background: #ffffff;
-            padding: 40px;
+        /* Контентные блоки */
+        .media-box {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            max-width: 800px;
-            margin: 0 auto 80px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .media-box img { width: 100%; height: 100%; object-fit: cover; }
+        .media-box iframe { width: 100%; height: 100%; border: 0; }
+
+        .route-step { display: flex; gap: 15px; margin-bottom: 15px; font-size: 0.95rem; }
+        .step-num {
+            background: var(--brand-green);
+            color: white;
+            min-width: 24px; height: 24px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold;
         }
 
-        .important-note h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #2b544a;
-            font-size: 20px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 15px;
+        .code-display {
+            background: #fdfaf7;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px dashed var(--accent-gold);
+            margin: 15px 0;
         }
+        .code-val { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: bold; color: var(--accent-gold); }
 
-        .important-note ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .important-note li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 15px;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #444;
-        }
-
-        .important-note li::before {
-            content: "•";
-            color: #2b544a;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 20px;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #2b544a;
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: opacity 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            opacity: 0.9;
-        }
-
-        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
-        .footer {
-            background-color: #fdfaf7; /* ЦВЕТ ИЗМЕНЕН СОГЛАСНО МАКЕТУ */
-            padding: 60px 0 30px;
-            color: #ffffff;
-            margin-top: 80px;
-        }
-
-        .footer-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
+        .rules-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin-top: 20px;
         }
+        .rule-card { border-top: 1px solid #f0f0f0; padding-top: 15px; }
+        .rule-title { color: var(--accent-gold); font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; }
 
-        .footer-info .logo {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #ffffff;
-        }
-
-        .footer-info p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .footer-address p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .footer-address strong {
-            display: block;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-social a {
-            color: #ffffff;
-            transition: 0.3s;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-
-        .footer-social a:hover {
-            opacity: 1;
-        }
-
-        .vk-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-            text-align: left;
-        }
-
-        @media (max-width: 768px) {
-            .footer-flex {
-                flex-direction: column;
-            }
+        @media (max-width: 850px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .wide, .full { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
     <div class="container header-flex">
         <a href="index.html" class="logo">
             <i data-lucide="key-round"></i>
             <span>CozyStay</span>
         </a>
-
         <button class="menu-toggle" id="menu-toggle">
             <i data-lucide="menu"></i>
         </button>
-
         <nav class="nav" id="main-nav">
             <a href="index.html">Главная</a>
             <a href="about.html">О Квартире</a>
@@ -243,89 +138,120 @@
             <a href="reviews.html">Отзывы</a>
             <a href="contacts.html">Контакты</a>
         </nav>
-        
         <a href="booking.html" class="btn-dark header-action">Забронировать</a>
     </div>
 </header>
 
-    <main class="container page-content">
-        <h1 class="section-title">Самостоятельное заселение</h1>
-        
-        <div class="checkin-steps">
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <h3>Подтверждение</h3>
-                <p>За день до вашего визита я свяжусь с вами через мессенджер, чтобы подтвердить время прибытия и детали бронирования.</p>
-            </div>
+<main class="container">
+    <h1 class="section-title">Инструкция для гостя</h1>
+    <span class="section-subtitle">Бесконтактное заселение</span>
 
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <h3>Инструкция</h3>
-                <p>Вы получите подробную видео-инструкцию и индивидуальный цифровой код для входа в апартаменты в день заезда.</p>
+    <div class="bento-grid">
+        <div class="bento-item wide">
+            <h2><i data-lucide="map-pin"></i> Как добраться</h2>
+            <div class="media-box"><img src="way.jpg" alt="Карта проезда"></div>
+            <p><strong>Адрес:</strong> Арцеуловская аллея, д. 19, корп. 1</p>
+            <div class="route-step">
+                <span class="step-num">1</span>
+                <p>На авто: 14 подъезд (дом-свечка первый от школы). Парковка возле дома бесплатная.</p>
             </div>
-
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h3>Ваш отдых начался</h3>
-                <p>Просто введите код на ручке двери. Ключи не нужны, вы полностью свободны и можете заехать в любое удобное время.</p>
+            <div class="route-step">
+                <span class="step-num">2</span>
+                <p>Транспорт: автобус 127 или троллейбус 23 до ост. «Арцеуловская аллея».</p>
             </div>
         </div>
 
-        <div class="important-note">
-            <h3><i data-lucide="info" size="20"></i> Что важно знать</h3>
-            <ul>
-                <li><strong>Заезд:</strong> официально с 14:00. Если квартира будет готова раньше — я обязательно сообщу вам об этом.</li>
-                <li><strong>Выезд:</strong> до 12:00. Код доступа перестает действовать автоматически после этого времени.</li>
-                <li><strong>Поддержка:</strong> Я на связи 24/7 по любым техническим вопросам или если вам понадобится помощь.</li>
-            </ul>
-            <div style="margin-top: 30px; text-align: center;">
-                <a href="https://wa.me/79991234567" class="btn-whatsapp">
-                    <i data-lucide="message-circle" size="18"></i> Задать вопрос в WhatsApp
-                </a>
+        <div class="bento-item">
+            <h2><i data-lucide="key-round"></i> Вход в дом</h2>
+            <div class="code-display">
+                <small>КОД ДОМОФОНА</small>
+                <div class="code-val">2631</div>
+            </div>
+            <p style="font-size: 0.9rem; color: #666;">Вход со стороны школы. После входа — в левую дверь, по ступенькам и в правую дверь до конца.</p>
+        </div>
+
+        <div class="bento-item wide">
+            <h2><i data-lucide="door-open"></i> Инструкция к замку</h2>
+            <div class="media-box">
+                <iframe src="https://kinescope.io/rvrHaiMd39fBvqmdknZfVL" allowfullscreen></iframe>
+            </div>
+            <div class="route-step">
+                <span class="step-num">1</span>
+                <p>Коснитесь панели замка, чтобы она загорелась.</p>
+            </div>
+            <div class="route-step">
+                <span class="step-num">2</span>
+                <p>Введите ваш код (придет в СМС) и нажмите <strong>#</strong>.</p>
             </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <i data-lucide="key-round"></i>
-                    CozyStay
+        <div class="bento-item">
+            <h2><i data-lucide="wifi"></i> Wi-Fi</h2>
+            <div class="code-display">
+                <small>СЕТЬ: Арцеулка 5G</small>
+                <div class="code-val" style="font-size: 1.5rem;">1Q194Aws</div>
+            </div>
+            <p style="font-size: 0.85rem; color: #666;">Высокоскоростной интернет доступен на всей территории квартиры.</p>
+        </div>
+
+        <div class="bento-item full">
+            <h2><i data-lucide="list-checks"></i> Правила дома</h2>
+            <div class="rules-list">
+                <div class="rule-card">
+                    <div class="rule-title">ТИШИНА</div>
+                    <p style="font-size: 0.85rem;">Просим соблюдать тишину с 22:00 до 08:00. Уважайте покой соседей.</p>
                 </div>
-                <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
-                <div class="social-links">
-                    <a href="#"><i data-lucide="send"></i></a>
-                    <a href="#"><i data-lucide="message-circle"></i></a>
-                    <a href="#"><i data-lucide="instagram"></i></a>
+                <div class="rule-card">
+                    <div class="rule-title">КУРЕНИЕ</div>
+                    <p style="font-size: 0.85rem;">Строго запрещено в квартире и на балконе. Штраф — сумма залога.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-title">ЖИВОТНЫЕ</div>
+                    <p style="font-size: 0.85rem;">К сожалению, проживание с питомцами не предусмотрено.</p>
                 </div>
             </div>
-            <div>
-                <h4>Контакты</h4>
-                <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
-                <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
-                <p><i data-lucide="map-pin" size="16"></i> ул. Марата, д. 15</p>
-            </div>
-            <div>
-                <h4>Навигация</h4>
-                <p><a href="#" style="color: inherit; text-decoration: none;">О компании</a></p>
-                <p><a href="#" style="color: inherit; text-decoration: none;">Правила заселения</a></p>
-                <p><a href="#" style="color: inherit; text-decoration: none;">Частые вопросы</a></p>
-            </div>
         </div>
-        <div class="footer-bottom container">
-            <p>© 2026 CozyStay. Все права защищены. Информация на сайте не является публичной офертой.</p>
-        </div>
-    </footer>
+    </div>
+</main>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script>
-    // Проверьте наличие этого кода внизу всех страниц!
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <i data-lucide="key-round"></i>
+                CozyStay
+            </div>
+            <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="send"></i></a>
+                <a href="#"><i data-lucide="message-circle"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
+            <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+            <p><i data-lucide="map-pin" size="16"></i> ул. Марата, д. 15</p>
+        </div>
+        <div>
+            <h4>Навигация</h4>
+            <p><a href="#" style="color: inherit; text-decoration: none;">О компании</a></p>
+            <p><a href="#" style="color: inherit; text-decoration: none;">Правила заселения</a></p>
+            <p><a href="#" style="color: inherit; text-decoration: none;">Частые вопросы</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom container">
+        <p>© 2026 CozyStay. Все права защищены. Информация на сайте не является публичной офертой.</p>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+    
+    // Мобильное меню
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
