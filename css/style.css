@@ -576,9 +576,19 @@ body {
         order: -1; /* Видео будет первым */
         height: auto !important;
     }
-}
-/* Стили для корректного отображения иконки ВК */
+/* Увеличиваем иконку ВК, чтобы она совпала с Lucide */
 .social-links .fa-vk {
-    font-size: 1.2em; /* Немного увеличиваем, чтобы визуально сравнять с Lucide */
-    vertical-align: middle; /* Центрируем по вертикали */
+    font-size: 22px; /* Подберите это значение под размер ваших остальных иконок */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+/* Если нужно немного опустить или поднять иконку ВК для центровки */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
