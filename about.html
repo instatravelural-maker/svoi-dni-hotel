@@ -4,132 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О Квартире — CozyStay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Отступ для галереи */
-        .full-gallery {
-            margin-bottom: 40px;
+        :root {
+            --primary-color: #2b544a; /* Темно-зеленый из макета */
+            --bg-light: #fdfaf5;      /* Кремовый фон из макета */
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #eeeeee;
+            --white: #ffffff;
         }
 
-        /* --- БЛОК РЕЙТИНГА (КАК НА СКРИНШОТЕ) --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            background: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav a:hover, .nav a.active { color: var(--primary-color); }
+
+        .btn-dark {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* --- GALLERY --- */
+        .apartment-header {
+            margin: 30px 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .apartment-header h1 { margin: 0; font-size: 28px; }
+
+        .full-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            height: 450px;
+            margin-bottom: 40px;
+        }
+        .main-img img, .side-imgs img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .side-imgs {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* --- CONTENT GRID --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* --- RATING BOX --- */
         .rating-overview {
             display: flex;
             align-items: center;
-            gap: 20px;
-            background: #fff;
+            gap: 15px;
+            background: var(--white);
             padding: 20px;
             border-radius: 12px;
-            border: 1px solid #eee;
+            border: 1px solid var(--border-color);
             margin-bottom: 30px;
         }
-
         .rating-badge {
-            background-color: #2b544a;
+            background: #4caf50; /* Зеленый для рейтинга */
             color: white;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
         }
+        .rating-info h4 { margin: 0; font-size: 18px; }
+        .rating-info p { margin: 0; font-size: 13px; color: var(--text-muted); }
 
-        .rating-info h4 { margin: 0; font-size: 18px; color: #333; }
-        .rating-info p { margin: 5px 0 0; color: #666; font-size: 14px; }
-
-        /* --- СТИЛИ ДЛЯ УДОБСТВ --- */
-        .amenities-section {
-            margin-top: 40px;
+        /* --- AMENITIES --- */
+        .section-title {
+            font-size: 20px;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
         }
-
-        .amenities-group {
-            margin-bottom: 35px;
-        }
-
+        .amenities-group { margin-bottom: 25px; }
         .amenities-group h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #2b544a;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-        }
-
-        .amenity-list-simple {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 12px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .amenity-item-simple {
-            font-size: 15px;
-            color: #444;
+            font-size: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
-
-        .amenity-item-simple i {
-            color: #888;
-            width: 18px;
-        }
-
-        /* --- ПРАВИЛА --- */
-        .rules-list {
+        .amenity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
             list-style: none;
             padding: 0;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 12px;
         }
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .amenity-item i { color: #999; flex-shrink: 0; }
 
+        /* --- RULES --- */
+        .rules-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
         .rule-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 15px;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
         }
+        .rule-item:last-child { border-bottom: none; }
+        .rule-item i { color: var(--primary-color); width: 20px; }
 
-        .rule-item i { color: #2b544a; }
-
-        /* Тултипы */
-        .tooltip-container {
-            display: inline-flex;
-            align-items: center;
-            margin-left: 8px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .icon-help { color: #ccc; width: 16px; height: 16px; }
-
-        .tooltip-box {
-            position: absolute;
-            bottom: 130%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            width: 250px;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.3s;
-            z-index: 100;
-            font-size: 13px;
-        }
-
-        .tooltip-container:hover .tooltip-box { visibility: visible; opacity: 1; }
-
+        /* --- SIDEBAR --- */
         .sidebar-booking {
             position: sticky;
             top: 20px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+        .price { font-size: 24px; font-weight: 700; color: var(--primary-color); }
+        .price span { font-size: 14px; color: var(--text-muted); font-weight: 400; }
+        .sidebar-info { margin: 20px 0; border-top: 1px solid #eee; padding-top: 20px; }
+        .sidebar-info p { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted); margin: 8px 0; }
+        
+        .btn-booking-full {
+            display: block;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-booking-full:hover { opacity: 0.9; }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: #ece9e2; /* Тон из макета */
+            margin-top: 80px;
+            padding: 60px 0 30px;
+            border-top: 1px solid #ddd;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .footer h4 { font-size: 16px; margin-bottom: 20px; color: var(--primary-color); }
+        .footer p { font-size: 14px; color: var(--text-muted); margin: 10px 0; display: flex; align-items: center; gap: 10px; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { color: var(--primary-color); transition: 0.3s; }
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #d4d1ca;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .details-grid, .full-gallery, .footer-grid { grid-template-columns: 1fr; }
+            .full-gallery { height: auto; }
+            .side-imgs { display: none; }
+            .nav { display: none; }
         }
     </style>
 </head>
@@ -137,15 +254,14 @@
 
     <header class="header">
         <div class="container header-flex">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <i data-lucide="key-round"></i>
                 <span>CozyStay</span>
-            </div>
+            </a>
             <nav class="nav">
                 <a href="index.html">Главная</a>
                 <a href="about.html" class="active">О Квартире</a>
                 <a href="services.html">Сервис</a>
-                <a href="checkin.html">Заселение</a>
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
             </nav>
@@ -153,126 +269,126 @@
         </div>
     </header>
 
-    <main class="container page-content">
-        <section class="apartment-details">
-            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <main class="container">
+        <section class="apartment-header">
+            <div>
                 <h1>Уютные апартаменты на Марата, 15</h1>
-                <span style="color: #666;"><i data-lucide="map-pin" size="14"></i> Центральный район</span>
+                <p style="color: var(--text-muted); margin-top: 5px;">
+                    <i data-lucide="map-pin" size="16" style="vertical-align: middle;"></i> 
+                    Санкт-Петербург, Центральный район, м. Восстания (5 мин)
+                </p>
             </div>
-            
-            <div class="full-gallery">
-                <div class="main-img">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Гостиная">
-                </div>
-                <div class="side-imgs">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400&q=80" alt="Кухня">
-                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Спальня">
-                </div>
+        </section>
+
+        <div class="full-gallery">
+            <div class="main-img">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Гостиная">
             </div>
+            <div class="side-imgs">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=400&q=80" alt="Кухня">
+                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Спальня">
+            </div>
+        </div>
 
-            <div class="details-grid">
-                <div class="description">
-                    <div class="rating-overview">
-                        <div class="rating-badge">9.9</div>
-                        <div class="rating-info">
-                            <h4>Великолепно</h4>
-                            <p>На основании 54 отзывов на Суточно.ру</p>
-                        </div>
+        <div class="details-grid">
+            <div class="main-content">
+                <div class="rating-overview">
+                    <div class="rating-badge">9.9</div>
+                    <div class="rating-info">
+                        <h4>Великолепно</h4>
+                        <p>На основе 54 проверенных отзывов</p>
                     </div>
+                </div>
 
-                    <h2>Описание</h2>
-                    <p>Добро пожаловать в светлую и просторную квартиру в самом сердце Санкт-Петербурга. Мы постарались сохранить атмосферу исторического центра, добавив современный комфорт и стиль. Квартира расположена в "Золотом треугольнике", в шаговой доступности от основных достопримечательностей.</p>
-                    <p>Общая площадь: <strong>48 кв.м.</strong> | Вместимость: <strong>до 4 гостей</strong></p>
-                    
-                    <div class="amenities-section">
-                        <h2>Удобства в объекте</h2>
-                        
-                        <div class="amenities-group">
-                            <h3><i data-lucide="bed"></i> Спальные места</h3>
-                            <ul class="amenity-list-simple">
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Двуспальная кровать (160x200)</li>
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Двуспальный диван-кровать</li>
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Ортопедический матрас</li>
-                            </ul>
-                        </div>
+                <h2 class="section-title">Описание объекта</h2>
+                <p>Светлая и просторная квартира 48 м² в историческом центре. Идеально подходит для пары или семьи из 4 человек. В шаговой доступности Невский проспект, ТРЦ «Галерея» и Московский вокзал.</p>
 
-                        <div class="amenities-group">
-                            <h3><i data-lucide="utensils"></i> Кухня и техника</h3>
-                            <ul class="amenity-list-simple">
-                                <li class="amenity-item-simple"><i data-lucide="monitor"></i> Телевизор (Smart TV)</li>
-                                <li class="amenity-item-simple"><i data-lucide="wind"></i> Кондиционер</li>
-                                <li class="amenity-item-simple"><i data-lucide="coffee"></i> Кофемашина и чайник</li>
-                                <li class="amenity-item-simple"><i data-lucide="refrigerator"></i> Холодильник и СВЧ-печь</li>
-                                <li class="amenity-item-simple"><i data-lucide="washing-machine"></i> Стиральная машина</li>
-                                <li class="amenity-item-simple"><i data-lucide="iron"></i> Утюг и гладильная доска</li>
-                            </ul>
-                        </div>
-
-                        <div class="amenities-group">
-                            <h3><i data-lucide="bath"></i> Ванная комната</h3>
-                            <ul class="amenity-list-simple">
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Душевая кабина</li>
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Фен</li>
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Тапочки и средства гигиены</li>
-                                <li class="amenity-item-simple"><i data-lucide="check"></i> Набор полотенец</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>Правила проживания</h3>
-                    <ul class="rules-list">
-                        <li class="rule-item">
-                            <i data-lucide="clock"></i> 
-                            Заезд с 14:00 — Выезд до 12:00
-                            <div class="tooltip-container">
-                                <i data-lucide="help-circle" class="icon-help"></i>
-                                <div class="tooltip-box">Ранний заезд и поздний выезд возможны по предварительному согласованию.</div>
-                            </div>
-                        </li>
-                        <li class="rule-item"><i data-lucide="cigarette-off"></i> Курение строго запрещено</li>
-                        <li class="rule-item"><i data-lucide="users"></i> Без вечеринок и шумных компаний</li>
-                        <li class="rule-item"><i data-lucide="paw-print"></i> Проживание с животными не предусмотрено</li>
-                        <li class="rule-item"><i data-lucide="file-text"></i> Предоставляем отчетные документы</li>
+                <h2 class="section-title">Удобства</h2>
+                
+                <div class="amenities-group">
+                    <h3><i data-lucide="bed" size="18"></i> Спальные места</h3>
+                    <ul class="amenity-list">
+                        <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Двуспальная кровать 160x200</li>
+                        <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Раскладной диван</li>
+                        <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Чистое постельное белье</li>
                     </ul>
                 </div>
 
-                <div class="sidebar-booking">
-                    <div class="price-card">
-                        <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
-                        <hr>
-                        <p style="font-size: 14px; color: #666;"><i data-lucide="calendar-check" size="16"></i> Мин. срок: 2 суток</p>
-                        <p style="font-size: 14px; color: #666;"><i data-lucide="info" size="16"></i> Залог: 5 000 ₽ (возвратный)</p>
-                        <a href="booking.html" class="btn-search" style="display:block; text-align:center; padding: 15px; text-decoration:none; margin-top: 20px;">Забронировать</a>
+                <div class="amenities-group">
+                    <h3><i data-lucide="utensils" size="18"></i> Кухня и техника</h3>
+                    <ul class="amenity-list">
+                        <li class="amenity-item"><i data-lucide="wifi" size="16"></i> Высокоскоростной Wi-Fi</li>
+                        <li class="amenity-item"><i data-lucide="tv" size="16"></i> Smart TV</li>
+                        <li class="amenity-item"><i data-lucide="wind" size="16"></i> Кондиционер</li>
+                        <li class="amenity-item"><i data-lucide="coffee" size="16"></i> Кофемашина</li>
+                        <li class="amenity-item"><i data-lucide="refrigerator" size="16"></i> Холодильник и СВЧ</li>
+                        <li class="amenity-item"><i data-lucide="washing-machine" size="16"></i> Стиральная машина</li>
+                    </ul>
+                </div>
+
+                <h2 class="section-title">Правила проживания</h2>
+                <div class="rules-card">
+                    <div class="rule-item">
+                        <i data-lucide="clock"></i>
+                        <span>Заезд после 14:00, выезд до 12:00</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="ban"></i>
+                        <span>Курение и вечеринки запрещены</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="users"></i>
+                        <span>Максимум 4 гостя</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Страховой залог 5 000 ₽ (возвращается)</span>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <aside class="sidebar-booking">
+                <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
+                <div class="sidebar-info">
+                    <p><i data-lucide="calendar" size="18"></i> Минимальный срок: 2 суток</p>
+                    <p><i data-lucide="users" size="18"></i> До 4 человек</p>
+                    <p><i data-lucide="check-circle" size="18"></i> Мгновенное бронирование</p>
+                </div>
+                <a href="#" class="btn-booking-full">Проверить свободные даты</a>
+                <p style="text-align: center; font-size: 12px; color: #999; margin-top: 15px;">Вы ничего не платите на этом этапе</p>
+            </aside>
+        </div>
     </main>
 
     <footer class="footer">
-        <div class="container footer-flex">
-            <div class="footer-info">
-                <div class="logo">
-                    <i data-lucide="key-round" size="24"></i>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i data-lucide="key-round"></i>
                     CozyStay
                 </div>
+                <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="send"></i></a>
+                    <a href="#"><i data-lucide="message-circle"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Контакты</h4>
                 <p><i data-lucide="phone" size="16"></i> +7 999 123-45-67</p>
                 <p><i data-lucide="mail" size="16"></i> booking@cozystay.ru</p>
+                <p><i data-lucide="map-pin" size="16"></i> ул. Марата, д. 15</p>
             </div>
-            <div class="footer-address">
-                <p><strong>Адрес:</strong></p>
-                <p>г. Санкт-Петербург,<br>ул. Марата, 15</p>
-            </div>
-            <div class="footer-social">
-                <a href="#" title="Telegram"><i data-lucide="send" size="20"></i></a>
-                <a href="#" title="VK">
-                    <svg class="vk-icon" viewBox="0 0 24 24"><path d="M15.071 22.408c-8.033 0-12.608-5.503-12.801-14.65h4.032c.134 6.708 3.09 9.553 5.438 10.138V7.758h3.797v5.789c2.324-.251 4.757-2.88 5.58-5.789h4.032c-.604 3.528-3.19 6.157-5.034 7.228 1.845.86 4.808 3.12 6.015 7.422h-4.417c-.94-2.94-3.275-5.207-5.976-5.474v5.474h-1.166z"/></svg>
-                </a>
-                <a href="#" title="WhatsApp"><i data-lucide="phone" size="20"></i></a>
+            <div>
+                <h4>Навигация</h4>
+                <p><a href="#" style="color: inherit; text-decoration: none;">О компании</a></p>
+                <p><a href="#" style="color: inherit; text-decoration: none;">Правила заселения</a></p>
+                <p><a href="#" style="color: inherit; text-decoration: none;">Частые вопросы</a></p>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>© 2026 CozyStay. Все права защищены.</p>
+            <p>© 2026 CozyStay. Все права защищены. Информация на сайте не является публичной офертой.</p>
         </div>
     </footer>
 
