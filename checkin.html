@@ -179,7 +179,7 @@
             .security-banner { flex-direction: column; text-align: center; }
         }
 
-        /* Адаптация видео для мобильных устройств */
+        /* Адаптация видео и сеток для мобильных устройств */
         @media (max-width: 600px) {
             .instr-card.full-width iframe {
                 height: 200px !important;
@@ -322,14 +322,26 @@
 
             <div class="instr-card full-width">
                 <h2><i data-lucide="shield-alert"></i> 06. Безопасность</h2>
-                <p>Ваше спокойствие — наш приоритет. Территория дома и подъезд находятся под круглосуточным наблюдением.</p>
-                
-                <div class="security-banner">
-                    <i data-lucide="armchair" size="48"></i>
+                <div class="instruction-grid" style="grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                    <div class="media-container" style="margin-bottom: 0;">
+                        <img src="security.jpg" alt="Охрана" style="height: 250px; object-fit: cover;">
+                    </div>
                     <div>
-                        <h4>Круглосуточная поддержка и охрана</h4>
-                        <p>Если у вас возникли трудности с доступом или вы заметили подозрительную активность, немедленно свяжитесь с диспетчером:</p>
-                        <a href="tel:+79991234567" class="security-phone">+7 (999) 123-45-67</a>
+                        <div class="info-row">
+                            <div class="icon-box"><i data-lucide="eye"></i></div>
+                            <div class="info-text">
+                                <strong>Видеонаблюдение</strong>
+                                <p>Территория дома и подъезд находятся под круглосуточным наблюдением для вашей безопасности.</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="icon-box"><i data-lucide="phone-call"></i></div>
+                            <div class="info-text">
+                                <strong>Экстренная связь</strong>
+                                <p>Если вам нужна помощь охраны или диспетчера, звоните в любое время:</p>
+                                <a href="tel:+79991234567" style="color: var(--accent-gold); font-weight: 700; text-decoration: none; font-size: 18px;">+7 (999) 123-45-67</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
