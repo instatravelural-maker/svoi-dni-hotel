@@ -7,7 +7,8 @@
     --gold-accent: #d4a373;  /* Иконки, логотип */
     --text-dark: #333333;    /* Основной текст */
     --white: #ffffff;
-    --grey-light: #E7EDEE;   /* Фон для отзывов и футера */
+    --grey-light: #E7EDEE;   /* Фон для отзывов */
+    --footer-bg: #ece9e2;    /* Тот самый бежевый тон из макета для футера */
 }
 
 body {
@@ -170,7 +171,7 @@ body {
 }
 
 .amenity-item i {
-    color: var(--text-dark); /* На макете иконки темные */
+    color: var(--text-dark); 
     margin-bottom: 5px;
     width: 24px;
 }
@@ -275,45 +276,75 @@ body {
 }
 
 /* =========================================
-   8. ПОДВАЛ (Footer)
+   8. ПОДВАЛ (Footer) — ОБНОВЛЕННЫЙ
    ========================================= */
 .footer {
-    background: var(--grey-light);
+    background: var(--footer-bg);
+    margin-top: 80px;
     padding: 60px 0 30px;
+    border-top: 1px solid #ddd;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr; 
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .footer-logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark-green);
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark-green);
+    margin-bottom: 20px;
 }
 
 .footer h4 {
+    font-size: 16px;
     margin-bottom: 20px;
     color: var(--dark-green);
+    text-transform: none;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #666666;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer a {
+    color: inherit;
     text-decoration: none;
-    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: var(--dark-green);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: var(--dark-green);
+    transition: 0.3s;
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 50px;
-    border-top: 1px solid #ccc;
     padding-top: 20px;
+    border-top: 1px solid #d4d1ca;
+    text-align: center;
     font-size: 13px;
+    color: #888;
 }
 
 /* =========================================
@@ -323,7 +354,7 @@ body {
     .section-title { font-size: 20px; }
     
     .header-flex { justify-content: center; }
-    .nav, .header-action { display: none; } /* Скрыто на мобилках по макету */
+    .nav, .header-action { display: none; }
 
     .hero-image-bg { height: 450px; }
     .hero-card {
@@ -339,12 +370,12 @@ body {
     .features-grid, 
     .reviews-row, 
     .footer-grid {
-        grid-template-columns: 1fr; /* Все блоки в один ряд */
+        grid-template-columns: 1fr; 
         gap: 30px;
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr; /* Достопримечательности друг под другом */
+        grid-template-columns: 1fr; 
     }
 
     .about-main-img { height: 300px; }
