@@ -577,3 +577,8 @@ body {
         height: auto !important;
     }
 }
+/* Стили для корректного отображения иконки ВК */
+.social-links .fa-vk {
+    font-size: 1.2em; /* Немного увеличиваем, чтобы визуально сравнять с Lucide */
+    vertical-align: middle; /* Центрируем по вертикали */
+}
