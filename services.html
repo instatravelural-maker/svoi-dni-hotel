@@ -4,122 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сервис и Удобства — Свои Дни</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* --- СТИЛИ ДЛЯ СТРАНИЦЫ СЕРВИС --- */
-        body {
-            background-color: #fdfaf7; 
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 700;
-            margin: 60px 0 20px;
-            letter-spacing: 1px;
-            color: #1a1a1a;
-            text-transform: uppercase;
-        }
-
-        .services-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .services-grid-new {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 80px;
-        }
-
-        .service-card-alt {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .service-card-alt:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-        }
-
-        .service-card-alt i, 
-        .service-card-alt svg {
-            color: #2b544a; 
-            margin-bottom: 20px;
-            width: 32px;
-            height: 32px;
-        }
-
-        .service-card-alt h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .service-card-alt p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА ИЗ ОБРАЗЦА --- */
-        .footer {
-            background: #ece9e2; /* Тон из макета */
-            margin-top: 80px;
-            padding: 60px 0 30px;
-            border-top: 1px solid #ddd;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 24px;
-            color: #2b544a;
-            margin-bottom: 20px;
-        }
-        .footer h4 { font-size: 16px; margin-bottom: 20px; color: #2b544a; }
-        .footer p { font-size: 14px; color: #666; margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-links a { color: #2b544a; transition: 0.3s; }
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid #d4d1ca;
-            text-align: center;
-            font-size: 13px;
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .nav { display: none; }
-        }
-    </style>
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
     <div class="container header-flex">
         <a href="index.html" class="logo">
             <img src="img/logo.png" alt="Логотип" style="width: 55px; height: 55px; object-fit: contain;">
@@ -139,61 +31,63 @@
             <a href="contacts.html">Контакты</a>
         </nav>
         
-        <a href="booking.html" class="btn-dark header-action">Забронировать</a>
+        <div class="header-action-wrapper">
+            <a href="booking.html" class="btn-dark header-action">Забронировать</a>
+        </div>
     </div>
 </header>
 
-    <main class="container page-content">
-        <h1 class="section-title">Почему выбирают Свои Дни?</h1>
-        
-        <div class="services-intro">
-            <p>Я продумал каждую деталь вашего проживания. Моя цель — чтобы вы чувствовали себя как дома, наслаждаясь сервисом.</p>
+<main class="container page-content">
+    <h1 class="section-title">Почему выбирают Свои Дни?</h1>
+    
+    <div class="services-intro">
+        <p>Я продумал каждую деталь вашего проживания. Моя цель — чтобы вы чувствовали себя как дома, наслаждаясь сервисом.</p>
+    </div>
+
+    <div class="services-grid-new">
+        <div class="service-card-alt">
+            <i data-lucide="door-open"></i>
+            <h3>Умное заселение</h3>
+            <p>Электронный замок позволит вам заехать в любое время после 14:00 без лишних встреч и звонков.</p>
         </div>
 
-        <div class="services-grid-new">
-            <div class="service-card-alt">
-                <i data-lucide="door-open"></i>
-                <h3>Умное заселение</h3>
-                <p>Электронный замок позволит вам заехать в любое время после 14:00 без лишних встреч и звонков.</p>
-            </div>
-
-            <div class="service-card-alt">
-                <i data-lucide="file-text"></i>
-                <h3>Отчетные документы</h3>
-                <p>Предоставляю официальные чеки и договоры для бизнес-путешественников и бухгалтерии.</p>
-            </div>
-
-            <div class="service-card-alt">
-                <i data-lucide="map-pin"></i>
-                <h3>Локальный гид</h3>
-                <p>Подборка мест: от кофеен до лучших маршрутов по крышам Петербурга.</p>
-            </div>
-
-            <div class="service-card-alt">
-                <i data-lucide="coffee"></i>
-                <h3>Welcome-набор</h3>
-                <p>Зерновой кофе, чай и сахар уже ждут вашего приезда.</p>
-            </div>
-
-            <div class="service-card-alt">
-                <i data-lucide="sparkles"></i>
-                <h3>Безупречный быт</h3>
-                <p>Всё от капсул для стирки до гигиенических наборов уже включено в стоимость проживания.</p>
-            </div>
-
-            <div class="service-card-alt">
-                <i data-lucide="heart"></i>
-                <h3>Забота</h3>
-                <p>Я всегда на связи в мессенджерах, чтобы помочь с любым вопросом или рекомендацией.</p>
-            </div>
+        <div class="service-card-alt">
+            <i data-lucide="file-text"></i>
+            <h3>Отчетные документы</h3>
+            <p>Предоставляю официальные чеки и договоры для бизнес-путешественников и бухгалтерии.</p>
         </div>
-    </main>
 
-    <footer class="footer">
+        <div class="service-card-alt">
+            <i data-lucide="map-pin"></i>
+            <h3>Локальный гид</h3>
+            <p>Подборка мест: от кофеен до лучших маршрутов по крышам Петербурга.</p>
+        </div>
+
+        <div class="service-card-alt">
+            <i data-lucide="coffee"></i>
+            <h3>Welcome-набор</h3>
+            <p>Зерновой кофе, чай и сахар уже ждут вашего приезда.</p>
+        </div>
+
+        <div class="service-card-alt">
+            <i data-lucide="sparkles"></i>
+            <h3>Безупречный быт</h3>
+            <p>Всё от капсул для стирки до гигиенических наборов уже включено в стоимость проживания.</p>
+        </div>
+
+        <div class="service-card-alt">
+            <i data-lucide="heart"></i>
+            <h3>Забота</h3>
+            <p>Я всегда на связи в мессенджерах, чтобы помочь с любым вопросом или рекомендацией.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
     <div class="container footer-grid">
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="img/logo.png" alt="Логотип" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 10px;">
+                <img src="img/logo.png" alt="Логотип">
                 Свои Дни
             </div>
             <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
@@ -202,11 +96,9 @@
                 <a href="https://t.me/ваш_логин" target="_blank" title="Telegram">
                     <i data-lucide="send"></i>
                 </a>
-                
                 <a href="https://vk.com/ваш_id" target="_blank" title="ВКонтакте">
                     <i class="fa-brands fa-vk"></i>
                 </a>
-                
                 <a href="tel:+79214070305" title="Позвонить">
                     <i data-lucide="phone"></i>
                 </a>
@@ -215,23 +107,17 @@
 
         <div>
             <h4>Контакты</h4>
-            <p>
-                <i data-lucide="phone" size="16"></i> 
-                <a href="tel:+79214070305" style="color: inherit; text-decoration: none;">+7 921 407-03-05</a>
-            </p>
-            <p>
-                <i data-lucide="mail" size="16"></i> 
-                <a href="mailto:info@gorshkovrealtor.ru" style="color: inherit; text-decoration: none;">info@gorshkovrealtor.ru</a>
-            </p>
+            <p><i data-lucide="phone" size="16"></i> <a href="tel:+79214070305">+7 921 407-03-05</a></p>
+            <p><i data-lucide="mail" size="16"></i> <a href="mailto:info@gorshkovrealtor.ru">info@gorshkovrealtor.ru</a></p>
             <p><i data-lucide="map-pin" size="16"></i> Арцеуловская аллея, д. 19, корп. 1</p>
         </div>
 
         <div>
             <h4>Навигация</h4>
-            <p><a href="index.html" style="color: inherit; text-decoration: none;">Главная</a></p>
-            <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
-            <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Инструкция по заселению</a></p>
-            <p><a href="contacts.html" style="color: inherit; text-decoration: none;">Контакты</a></p>
+            <p><a href="index.html">Главная</a></p>
+            <p><a href="about.html">О квартире</a></p>
+            <p><a href="checkin.html">Инструкция по заселению</a></p>
+            <p><a href="contacts.html">Контакты</a></p>
         </div>
     </div>
     
@@ -240,11 +126,10 @@
     </div>
 </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script>
-    // Проверьте наличие этого кода внизу всех страниц!
+<script>
+    lucide.createIcons();
+    
+    // Скрипт мобильного меню
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
 
