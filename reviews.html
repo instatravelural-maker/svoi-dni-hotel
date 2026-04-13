@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О квартире — Свои Дни</title>
+    <title>Отзывы — Свои Дни</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -26,10 +26,10 @@
 
         <nav class="nav" id="main-nav">
             <a href="index.html">Главная</a>
-            <a href="about.html" class="active">О квартире</a>
+            <a href="about.html">О квартире</a>
             <a href="services.html">Сервис</a>
             <a href="checkin.html">Заселение</a>
-            <a href="reviews.html">Отзывы</a>
+            <a href="reviews.html" class="active">Отзывы</a>
             <a href="contacts.html">Контакты</a>
         </nav>
         
@@ -39,233 +39,69 @@
 
 <main class="container">
     <section class="apartment-header">
-        <div>
-            <h1>Уютные апартаменты в ЖК «Чистое небо»</h1>
-            <p style="color: var(--text-muted); margin-top: 5px;">
-                <i data-lucide="map-pin" size="16" style="vertical-align: middle;"></i> 
-                Санкт-Петербург, Приморский район, Арцеуловская аллея
-            </p>
-        </div>
+        <h1>Отзывы о проживании</h1>
+        <p style="color: var(--text-muted); margin-top: 5px;">ЖК «Чистое небо», Арцеуловская аллея</p>
     </section>
-
-    <div class="full-gallery">
-        <div class="main-img">
-            <img src="img/bed.webp" alt="Гостиная">
-        </div>
-        <div class="side-imgs">
-            <div><img src="img/room.webp" alt="Кухня"></div>
-            <div><img src="img/kitchen.webp" alt="Спальня"></div>
-        </div>
-    </div>
 
     <div class="details-grid">
         <div class="main-content">
             
-            <div class="description-block">
-                <div class="object-title">Студия</div>
-                <div class="chips-container">
-                    <div class="chip">27 м²</div>
-                    <div class="chip">2 гостя</div>
-                    <div class="chip">1 кровать</div>
-                    <div class="chip">Кухонная зона</div>
-                    <div class="chip">Этаж 1 из 14</div>
-                    <div class="chip">1 ванная комната</div>
-                    <div class="chip">Бесплатная парковка</div>
-                </div>
-
-                <div class="expandable-content" id="desc-content">
-                    <p style="margin-top:0;">Комфорт и уют в ЖК «Чистое небо» (Приморский район). Идеальный вариант для тех, кто ценит чистоту, современный сервис и тишину. Подходит для командировок, отдыха в Санкт-Петербурге или поездок в медицинские центры.</p>
-                    
-                    <div style="font-weight: 700; text-transform: uppercase; font-size: 13px; margin: 15px 0 10px;">Почему выбирают нас:</div>
-                    <p>
-                        <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.<br>
-                        <strong>Удаленная работа:</strong> Высокоскоростной Wi-Fi (до 100 Мбит/с) и Smart-TV (300+ каналов). Комфортное пространство для работы с ноутбуком.<br>
-                        <strong>Безопасность:</strong> охрана, видеонаблюдение, тихие соседи.<br>
-                        <strong>Оснащение для вашего удобства:</strong> Кухня: Полноценная варочная панель, духовка, большой холодильник, микроволновая печь, полный набор посуды для готовки.
-                        <strong>Спальная зона:</strong> Удобное спальное место с чистым постельным бельем.<br> 
-                        <strong>Ванная и быт:</strong> Стиральная машина, фен, утюг, гладильная доска, сушилка для белья. Всегда в наличии комплект полотенец и средства гигиены.
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <div class="user-name">Александр</div>
+                            <div class="review-date">Октябрь 2025</div>
+                        </div>
+                        <div class="rating-stars">
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Отличная студия! Очень чисто, современный ремонт. Бесконтактное заселение — это просто спасение, заехали поздно ночью без проблем. Спасибо за гостеприимство!
                     </p>
                 </div>
-                <a href="javascript:void(0)" class="toggle-desc" id="toggle-btn">Ещё</a>
-            </div>
 
-            <div class="sleeping-section">
-                <h3 style="font-size: 20px; margin-bottom: 5px;">Спальные места</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">1 кровать, 2 основных спальных места</p>
-                <div class="sleeping-card">
-                    <i data-lucide="bed" size="24"></i>
-                    <div style="font-size: 18px; font-weight: 500;">× 1</div>
-                    <span>Двуспальная кровать</span>
-                </div>
-            </div>
-
-            <div class="amenities-section">
-                <h3>Основные удобства</h3>
-                <div class="amenities-chips">
-                    <div class="amenity-chip"><i data-lucide="door-open"></i> Балкон / Лоджия</div>
-                    <div class="amenity-chip"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
-                    <div class="amenity-chip"><i data-lucide="tv"></i> Телевизор</div>
-                    <div class="amenity-chip"><i data-lucide="coffee"></i> Электрический чайник</div>
-                    <div class="amenity-chip"><i data-lucide="wind"></i> Фен</div>
-                    <div class="amenity-chip"><i data-lucide="microwave"></i> Микроволновка</div>
-                    <div class="amenity-chip"><i data-lucide="washing-machine"></i> Стиральная машина</div>
-                    <div class="amenity-chip"><i data-lucide="cup-soda"></i> Кофеварка</div>
-                    <div class="amenity-chip"><i data-lucide="blinds"></i> Блэкаут шторы</div>
-                    <div class="amenity-chip"><i data-lucide="columns"></i> Шкаф</div>
-                    <div class="amenity-chip"><i data-lucide="refrigerator"></i> Холодильник</div>
-                </div>
-
-                <div class="amenities-groups">
-                    <div class="amenity-group">
-                        <div class="amenity-group-title"><i data-lucide="utensils" size="20"></i> Кухонная зона</div>
-                        <div class="amenity-list">
-                            <div class="amenity-item">Электроплита</div>
-                            <div class="amenity-item">Духовка</div>
-                            <div class="amenity-item">Микроволновка</div>
-                            <div class="amenity-item">Посуда и принадлежности</div>
-                            <div class="amenity-item">Столовые приборы</div>
-                            <div class="amenity-item">Электрический чайник</div>
-                            <div class="amenity-item">Кофеварка</div>
-                            <div class="amenity-item">Холодильник</div>
-                            <div class="amenity-item">Кухонный гарнитур</div>
-                            <div class="amenity-item">Обеденный стол</div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <div class="user-name">Марина</div>
+                            <div class="review-date">Сентябрь 2025</div>
+                        </div>
+                        <div class="rating-stars">
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
+                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
                         </div>
                     </div>
-
-                    <div class="amenity-group">
-                        <div class="amenity-group-title"><i data-lucide="bath" size="20"></i> Ванная комната</div>
-                        <div class="amenity-list">
-                            <div class="amenity-item">1 ванная комната с туалетом</div>
-                            <div class="amenity-item">Полотенца</div>
-                            <div class="amenity-item">Туалетные принадлежности</div>
-                            <div class="amenity-item">Фен</div>
-                            <div class="amenity-item">Душ</div>
-                        </div>
-                    </div>
-
-                    <div class="amenity-group">
-                        <div class="amenity-group-title"><i data-lucide="p-circle" size="20"></i> Парковка</div>
-                        <div class="amenity-list">
-                            <div class="amenity-item">Без оплаты</div>
-                            <div class="amenity-item">На территории объекта</div>
-                        </div>
-                    </div>
+                    <p class="review-text">
+                        Уютная квартира, всё необходимое для жизни есть. Wi-Fi быстрый, для работы подошло идеально. Обязательно вернусь снова.
+                    </p>
                 </div>
             </div>
 
-            <div class="rules-card-container">
-                <h3 style="font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px;">Правила проживания</h3>
-                
-                <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
-                    <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
-                    <div class="tooltip-container">
-                        <i data-lucide="help-circle" size="16" style="color: #999;"></i>
-                        <span class="tooltip-text">Точное время можно выбрать при бронировании. Ранний заезд и поздний выезд по согласованию.</span>
-                    </div>
-                </div>
-
-                <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
-                    <div class="rule-item">
-                        <i data-lucide="baby" size="24"></i>
-                        <span style="font-size: 16px;">Можно с детьми по согласованию</span>
-                        <div class="tooltip-container">
-                            <i data-lucide="help-circle" size="16" style="color: #999; margin-left: 5px;"></i>
-                            <span class="tooltip-text">От 0 до 1 года бесплатно. От 2 лет на условиях взрослого гостя</span>
-                        </div>
-                    </div>
-                    
-                    <div class="rule-item">
-                        <img src="https://img.icons8.com/ios/50/000000/no-smoking.png" style="width: 24px; opacity: 0.8;" alt="">
-                        <span style="font-size: 16px;">Курение запрещено</span>
-                    </div>
-                    <div class="rule-item">
-                        <i data-lucide="paw-print" size="24"></i>
-                        <span style="font-size: 16px;">Нельзя с питомцами</span>
-                    </div>
-                    <div class="rule-item">
-                        <i data-lucide="music" size="24"></i>
-                        <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
-                    </div>
-                    <div class="rule-item">
-                        <i data-lucide="file-text" size="24"></i>
-                        <span style="font-size: 16px;">Отчётные документы о проживании</span>
-                    </div>
-                </div>
-
-                <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
-                    <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
-                        Страховой депозит 5 000 ₽ 
-                        <div class="tooltip-container">
-                            <i data-lucide="help-circle" size="16" style="color: #999;"></i>
-                            <span class="tooltip-text">Залог за сохранность имущества. Возвращается в день выезда после уборки.</span>
-                        </div>
-                    </div>
-                    <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость, возвращается при выезде</div>
-                </div>
-            </div>
         </div>
 
         <aside class="sidebar-booking">
             <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
             <div class="sidebar-info">
-                <p><i data-lucide="calendar" size="18"></i> Минимальный срок: 2 суток</p>
-                <p><i data-lucide="users" size="18"></i> До 2 человек</p>
-                <p><i data-lucide="check-circle" size="18"></i> Мгновенное бронирование</p>
+                <p><i data-lucide="check-circle" size="18"></i> Рейтинг 5.0</p>
+                <p><i data-lucide="message-square" size="18"></i> 48 отзывов</p>
             </div>
-            <a href="booking.html" class="btn-booking-full">Проверить свободные даты</a>
-            <p style="text-align: center; font-size: 12px; color: #999; margin-top: 15px;">Вы ничего не платите на этом этапе</p>
+            <a href="booking.html" class="btn-booking-full">Забронировать</a>
         </aside>
     </div>
 </main>
 
 <footer class="footer">
-    <div class="container footer-grid">
-        <div class="footer-brand">
-            <div class="footer-logo">
-                <img src="img/logo.png" alt="Логотип" style="width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 10px;">
-                Свои Дни
-            </div>
-            <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
-            
-            <div class="social-links">
-                <a href="https://t.me/ваш_логин" target="_blank" title="Telegram">
-                    <i data-lucide="send"></i>
-                </a>
-                
-                <a href="https://vk.com/ваш_id" target="_blank" title="ВКонтакте">
-                    <i class="fa-brands fa-vk"></i>
-                </a>
-                
-                <a href="tel:+79214070305" title="Позвонить">
-                    <i data-lucide="phone"></i>
-                </a>
-            </div>
-        </div>
-
-        <div>
-            <h4>Контакты</h4>
-            <p>
-                <i data-lucide="phone" size="16"></i> 
-                <a href="tel:+79214070305" style="color: inherit; text-decoration: none;">+7 921 407-03-05</a>
-            </p>
-            <p>
-                <i data-lucide="mail" size="16"></i> 
-                <a href="mailto:info@gorshkovrealtor.ru" style="color: inherit; text-decoration: none;">info@gorshkovrealtor.ru</a>
-            </p>
-            <p><i data-lucide="map-pin" size="16"></i> Арцеуловская аллея, д. 19, корп. 1</p>
-        </div>
-
-        <div>
-            <h4>Навигация</h4>
-            <p><a href="index.html" style="color: inherit; text-decoration: none;">Главная</a></p>
-            <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
-            <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Инструкция по заселению</a></p>
-            <p><a href="contacts.html" style="color: inherit; text-decoration: none;">Контакты</a></p>
-        </div>
-    </div>
-    
-    <div class="footer-bottom container">
-        <p>© 2026 Свои Дни. Все права защищены. Информация на сайте не является публичной офертой.</p>
+    <div class="container footer-bottom">
+        <p>© 2026 Свои Дни. Все права защищены.</p>
     </div>
 </footer>
 
@@ -277,20 +113,6 @@
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-        });
-    }
-
-    const toggleBtn = document.getElementById('toggle-btn');
-    const descContent = document.getElementById('desc-content');
-
-    if (toggleBtn && descContent) {
-        toggleBtn.addEventListener('click', () => {
-            descContent.classList.toggle('expanded');
-            if (descContent.classList.contains('expanded')) {
-                toggleBtn.textContent = 'Свернуть';
-            } else {
-                toggleBtn.textContent = 'Ещё';
-            }
         });
     }
 </script>
