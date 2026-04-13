@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #24414b; 
+    --bg-light: #fdfaf5;      
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #eeeeee;
+    --white: #ffffff;
+    --rating-green: #4caf50;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER --- */
+.header {
+    background: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav a:hover, .nav a.active { color: var(--primary-color); }
+
+.btn-dark {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn-dark:hover { opacity: 0.9; }
+
+.menu-toggle { display: none; background: none; border: none; color: var(--primary-color); cursor: pointer; }
+
+/* --- FOOTER --- */
+.footer {
+    background: #ece9e2; 
+    margin-top: 80px;
+    padding: 60px 0 30px;
+    border-top: 1px solid #ddd;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.footer h4 { font-size: 16px; margin-bottom: 20px; color: var(--primary-color); }
+.footer p { font-size: 14px; color: var(--text-muted); margin: 10px 0; display: flex; align-items: center; gap: 10px; }
+.social-links { display: flex; gap: 15px; margin-top: 20px; align-items: center; }
+.social-links a { color: var(--primary-color); transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; }
+.social-links .fa-vk { font-size: 20px; }
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #d4d1ca;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Общий адаптив для шапки/подвала */
+@media (max-width: 768px) {
+    .nav { display: none; }
+    .menu-toggle { display: block; }
+    .nav.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); z-index: 100; }
+    .footer-grid { grid-template-columns: 1fr; }
+}
