@@ -19,102 +19,122 @@
             <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
             <span style="text-transform: uppercase; letter-spacing: 1px;">Свои Дни</span>
         </a> 
-        
-        <button class="menu-toggle" id="menu-toggle">
-            <i data-lucide="menu"></i>
-        </button>
-
         <nav class="nav" id="main-nav">
             <a href="index.html">Главная</a>
             <a href="about.html">О квартире</a>
             <a href="services.html">Сервис</a>
-            <a href="checkin.html">Заселение</a>
             <a href="reviews.html" class="active">Отзывы</a>
             <a href="contacts.html">Контакты</a>
         </nav>
-        
         <a href="booking.html" class="btn-dark header-action">Забронировать</a>
     </div>
 </header>
 
-<main class="container">
-    <section class="apartment-header">
-        <h1>Отзывы о проживании</h1>
-        <p style="color: var(--text-muted); margin-top: 5px;">ЖК «Чистое небо», Арцеуловская аллея</p>
+<main class="container" style="margin-top: 40px; margin-bottom: 80px;">
+    <section class="reviews-header">
+        <h1>Отзывы наших гостей</h1>
+        <p class="subtitle">Мы ценим обратную связь и постоянно работаем над качеством сервиса</p>
     </section>
 
-    <div class="details-grid">
-        <div class="main-content">
-            
-            <div class="reviews-container">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-name">Александр</div>
-                            <div class="review-date">Октябрь 2025</div>
-                        </div>
-                        <div class="rating-stars">
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        Отличная студия! Очень чисто, современный ремонт. Бесконтактное заселение — это просто спасение, заехали поздно ночью без проблем. Спасибо за гостеприимство!
-                    </p>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-name">Марина</div>
-                            <div class="review-date">Сентябрь 2025</div>
-                        </div>
-                        <div class="rating-stars">
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                            <i data-lucide="star" fill="#ffb400" color="#ffb400"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        Уютная квартира, всё необходимое для жизни есть. Wi-Fi быстрый, для работы подошло идеально. Обязательно вернусь снова.
-                    </p>
-                </div>
+    <div class="rating-dashboard">
+        <div class="rating-total">
+            <div class="total-score">9.9</div>
+            <div class="total-label">Превосходно</div>
+        </div>
+        <div class="rating-details">
+            <div class="rating-item">
+                <span class="label">Чистота</span>
+                <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                <span class="value">10,0</span>
             </div>
+            <div class="rating-item">
+                <span class="label">Соответствие фото</span>
+                <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                <span class="value">10,0</span>
+            </div>
+            <div class="rating-item">
+                <span class="label">Своевременность заселения</span>
+                <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                <span class="value">10,0</span>
+            </div>
+            <div class="rating-item">
+                <span class="label">Цена — качество</span>
+                <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                <span class="value">10,0</span>
+            </div>
+            <div class="rating-item">
+                <span class="label">Расположение</span>
+                <div class="bar-container"><div class="bar" style="width: 95%;"></div></div>
+                <span class="value">9,5</span>
+            </div>
+            <div class="rating-item">
+                <span class="label">Качество обслуживания</span>
+                <div class="bar-container"><div class="bar" style="width: 100%;"></div></div>
+                <span class="value">10,0</span>
+            </div>
+        </div>
+    </div>
 
+    <div class="reviews-grid">
+        <div class="review-col">
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Анна М.</span>
+                    <span class="date">Март 2024</span>
+                </div>
+                <p>Квартира превзошла все ожидания. Идеальная чистота, очень уютно и стильно. Бесконтактное заселение прошло очень быстро.</p>
+            </div>
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Сергей</span>
+                    <span class="date">Февраль 2024</span>
+                </div>
+                <p>Отличное расположение в Приморском районе. Рядом всё необходимое. В квартире тихо, соседей не слышно.</p>
+            </div>
         </div>
 
-        <aside class="sidebar-booking">
-            <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
-            <div class="sidebar-info">
-                <p><i data-lucide="check-circle" size="18"></i> Рейтинг 5.0</p>
-                <p><i data-lucide="message-square" size="18"></i> 48 отзывов</p>
+        <div class="review-col">
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Екатерина</span>
+                    <span class="date">Январь 2024</span>
+                </div>
+                <p>Все фото соответствуют реальности на 100%. Очень порадовала кофеварка и наличие всех необходимых мелочей на кухне.</p>
             </div>
-            <a href="booking.html" class="btn-booking-full">Забронировать</a>
-        </aside>
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Игорь</span>
+                    <span class="date">Декабрь 2023</span>
+                </div>
+                <p>Бронировали для командировки. Быстрый Wi-Fi, удобное рабочее место. Отчетные документы предоставили без проблем.</p>
+            </div>
+        </div>
+
+        <div class="review-col">
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Мария П.</span>
+                    <span class="date">Ноябрь 2023</span>
+                </div>
+                <p>Удобная кровать и качественное белье — для меня это самое важное. Выспалась как дома. Спасибо хозяевам!</p>
+            </div>
+            <div class="review-card">
+                <div class="card-header">
+                    <span class="name">Дмитрий</span>
+                    <span class="date">Октябрь 2023</span>
+                </div>
+                <p>Сервис на высшем уровне. Всегда на связи, оперативно отвечают на вопросы. Рекомендую этот вариант!</p>
+            </div>
+        </div>
     </div>
 </main>
 
 <footer class="footer">
     <div class="container footer-bottom">
-        <p>© 2026 Свои Дни. Все права защищены.</p>
+        <p>© 2024 Свои Дни. Все права защищены.</p>
     </div>
 </footer>
 
-<script>
-    lucide.createIcons();
-    
-    const menuToggle = document.getElementById('menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-    }
-</script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
