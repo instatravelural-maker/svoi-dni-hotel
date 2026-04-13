@@ -27,7 +27,7 @@
         }
         .hero-card {
             max-width: 600px;
-            background: none !important; /* Убираем фон карточки, если был */
+            background: none !important; 
             padding: 0;
             color: #fff;
             text-align: left;
@@ -45,10 +45,9 @@
             opacity: 0.9;
         }
 
-        /* Панель поиска по макету */
         .search-panel {
             position: absolute;
-            bottom: -40px; /* Выезд за пределы фото как на макете */
+            bottom: -40px; 
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
@@ -60,12 +59,10 @@
             z-index: 10;
         }
 
-        /* Стилизация виджета homereserve под макет */
         #hr-widget {
-            --hr-primary-color: #1a3a3a; /* Цвет кнопки из макета */
+            --hr-primary-color: #1a3a3a; 
             --hr-bg-color: #ffffff;
         }
-        /* Переопределение внутренних стилей виджета для горизонтального вида */
         #hr-widget form {
             display: flex !important;
             flex-direction: row !important;
@@ -83,6 +80,53 @@
             border-radius: 8px !important;
             text-transform: none !important;
             font-weight: 600 !important;
+        }
+
+        /* ОБНОВЛЕННЫЙ БЛОК ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .gallery-overlay span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        .gallery-overlay i {
+            color: #ffcc00;
         }
     </style>
 </head>
@@ -196,25 +240,49 @@
         </section>
 
         <section class="container section-padding">
-            <h2 class="section-title">Достопримечательности</h2>
+            <h2 class="section-title">Достопримечательности рядом</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="img/hermitage.webp" alt="Эрмитаж">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Эрмитаж</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1555650810-dc3206775924?auto=format&fit=crop&w=400" alt="Исаакиевский собор">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Исаакиевский собор</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1590074251465-99882944b76e?auto=format&fit=crop&w=400" alt="Спас на Крови">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Спас на Крови</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1582125139044-63870624cc26?auto=format&fit=crop&w=400" alt="Казанский собор">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Казанский собор</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?auto=format&fit=crop&w=400" alt="Дворцовая площадь">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Дворцовая площадь</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1555650720-30f1d1d8a1c9?auto=format&fit=crop&w=400" alt="Медный всадник">
+                    <div class="gallery-overlay">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <span>Медный всадник</span>
+                    </div>
                 </div>
             </div>
         </section>
