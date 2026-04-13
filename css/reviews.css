@@ -9,7 +9,7 @@ html, body.reviews-page {
 /* 2. ОСНОВНОЙ КОНТЕЙНЕР СЕКЦИИ ОТЗЫВОВ */
 .reviews-main-container {
     padding: 60px 0 100px; /* Отступы как в .contacts-page-section */
-    background-color: #f9f9f9 !important;
+    background-color: #FDFBF4 !important;
 }
 
 /* 3. БЕЛЫЕ КАРТОЧКИ РЕЙТИНГА (Rating Card) */
