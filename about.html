@@ -75,7 +75,7 @@
         }
         .btn-dark:hover { opacity: 0.9; }
 
-        /* --- GALLERY --- */
+        /* --- GALLERY (EDITED FOR HOVER EFFECT) --- */
         .apartment-header {
             margin: 30px 0 20px;
             display: flex;
@@ -89,14 +89,30 @@
             grid-template-columns: 2fr 1fr;
             gap: 15px;
             height: 450px;
-            margin-bottom: 30px; /* Выровнено под общий стандарт */
+            margin-bottom: 30px;
         }
+
+        /* Контейнеры для изображений, чтобы ограничить масштаб */
+        .main-img, .side-imgs div {
+            overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
+            height: 100%;
+        }
+
         .main-img img, .side-imgs img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 12px;
+            display: block;
+            transition: transform 0.5s ease; /* Плавность эффекта */
         }
+
+        /* Эффект при наведении */
+        .main-img:hover img, .side-imgs div:hover img {
+            transform: scale(1.05); /* Легкое увеличение */
+        }
+
         .side-imgs {
             display: grid;
             grid-template-rows: 1fr 1fr;
@@ -107,7 +123,7 @@
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 350px;
-            gap: 30px; /* Уменьшено для плотности */
+            gap: 30px;
             align-items: start;
         }
 
@@ -116,7 +132,7 @@
             background: #fff;
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 30px; /* Идеальное расстояние между блоками */
+            margin-bottom: 30px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
@@ -385,8 +401,8 @@
             <img src="img/bed.webp" alt="Гостиная">
         </div>
         <div class="side-imgs">
-            <img src="img/room.webp" alt="Кухня">
-            <img src="img/kitchen.webp" alt="Спальня">
+            <div><img src="img/room.webp" alt="Кухня"></div>
+            <div><img src="img/kitchen.webp" alt="Спальня"></div>
         </div>
     </div>
 
