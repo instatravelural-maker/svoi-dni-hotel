@@ -175,7 +175,7 @@
         .sleeping-card i { color: #333; }
         .sleeping-card span { font-size: 14px; font-weight: 500; }
 
-        /* --- AMENITIES SECTION (STRICTLY FROM SCREENSHOT) --- */
+        /* --- AMENITIES SECTION --- */
         .amenities-section {
             background: #fff;
             border-radius: 16px;
@@ -226,29 +226,13 @@
         }
 
         /* --- RULES & SIDEBAR --- */
-        .section-title {
-            font-size: 20px;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary-color);
-            display: inline-block;
-        }
-        .rules-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
         .rule-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 10px 0;
-            border-bottom: 1px solid #f5f5f5;
-            font-size: 14px;
+            gap: 12px;
+            padding: 0;
+            border: none;
         }
-        .rule-item:last-child { border-bottom: none; }
-        .rule-item i { color: var(--primary-color); width: 20px; }
 
         .sidebar-booking {
             position: sticky;
@@ -463,7 +447,6 @@
                     </div>
                 </div>
             </div>
-</div>
 
             <div class="rules-section">
                 <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px; margin-bottom: 20px;">Правила проживания</h3>
@@ -475,22 +458,23 @@
                     </div>
 
                     <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
-                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="proportions" size="24" style="color: #333; transform: rotate(45deg);"></i> <span style="font-size: 16px;">Курение запрещено</span>
+                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
+                            <img src="https://img.icons8.com/ios/50/000000/no-smoking.png" style="width: 24px; opacity: 0.8;" alt="">
+                            <span style="font-size: 16px;">Курение запрещено</span>
                         </div>
-                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="dog" size="24" style="color: #333;"></i>
+                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
+                            <img src="https://img.icons8.com/ios/50/000000/no-pets.png" style="width: 24px; opacity: 0.8;" alt="">
                             <span style="font-size: 16px;">Нельзя с питомцами</span>
                         </div>
-                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="glass-water" size="24" style="color: #333;"></i>
+                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
+                            <img src="https://img.icons8.com/ios/50/000000/no-partying.png" style="width: 24px; opacity: 0.8;" alt="">
                             <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
                         </div>
-                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
                             <i data-lucide="file-text" size="24" style="color: #333;"></i>
                             <span style="font-size: 16px;">Владелец предоставляет отчётные документы о проживании</span>
                         </div>
-                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
                             <i data-lucide="baby" size="24" style="color: #333;"></i>
                             <span style="font-size: 16px;">Можно с детьми по согласованию с хозяином жилья</span>
                             <i data-lucide="help-circle" size="14" style="color: #999; margin-left: 5px;"></i>
@@ -505,7 +489,8 @@
                     </div>
                 </div>
             </div>
-     
+            </div>
+
         <aside class="sidebar-booking">
             <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
             <div class="sidebar-info">
