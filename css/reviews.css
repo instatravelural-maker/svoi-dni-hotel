@@ -143,3 +143,101 @@
     gap: 2px;
     margin-top: 2px;
 }
+/* --- Обновленные стили отзывов --- */
+
+.rating-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 60px;
+    background: #fff; /* Белый фон */
+    padding: 40px;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    margin-bottom: 60px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.rating-bar {
+    flex-grow: 1;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    position: relative;
+}
+
+.rating-bar .fill {
+    position: absolute;
+    height: 100%;
+    background: #1a1a1a;
+    border-radius: 2px;
+}
+
+/* Сетка отзывов: выравнивание по высоте */
+.reviews-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Убираем flex-колонки, так как grid сам выровняет блоки */
+.reviews-column {
+    display: contents; 
+}
+
+.review-box {
+    background: #fff; /* Белый фон */
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Выравнивание */
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+    margin-top: 2px;
+}
+
+.review-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .reviews-masonry { grid-template-columns: 1fr 1fr; }
+    .rating-overview { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .reviews-masonry { grid-template-columns: 1fr; }
+}
