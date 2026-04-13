@@ -41,10 +41,10 @@ body {
 
 /* =========================================
     2. ШАПКА (Header) — ИСПРАВЛЕННАЯ
-   ========================================= */
+    ========================================= */
 .header {
     background: #ffffff; 
-    height: 85px;
+    height: 85px; /* Жестко задаем высоту, чтобы меню не прыгало */
     display: flex;
     align-items: center;
     position: sticky;
@@ -57,50 +57,49 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100%; /* Растягиваем на всю ширину контейнера */
 }
 
+/* Единый стиль для логотипа и названия */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: var(--dark-green);
+    color: var(--dark-green); /* Используем ваш темно-зеленый из :root */
 }
 
-/* ОБНОВЛЕННЫЙ СТИЛЬ ШРИФТА (КАК В ПОДВАЛЕ) */
 .logo span {
     font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important;
-    font-size: 1.5rem; /* Увеличили до размера футера */
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px; /* Совпадение с футером */
+    letter-spacing: 1px;
     line-height: 1;
     white-space: nowrap;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* ФИКСАЦИЯ ЦВЕТА ИКОНОК (ЧТОБЫ НЕ БЫЛИ ЗОЛОТЫМИ) */
-header i, 
-header [data-lucide],
-main i, 
-main [data-lucide] {
-    color: #1a3a3a !important; /* Ваш темно-зеленый */
-    transition: none !important;
-}
-
-/* ЗАПРЕТ СМЕНЫ ЦВЕТА ПРИ НАВЕДЕНИИ */
-header a:hover i, 
-header a:hover [data-lucide],
-main a:hover i, 
-main a:hover [data-lucide],
-.feature-card:hover i {
-    color: #1a3a3a !important;
 }
 
 .logo i {
-    color: #1a3a3a !important; /* Убираем золото из логотипа тоже */
+    color: var(--gold-accent);
+}
+
+.nav {
+    display: flex;
+    gap: 25px; /* Увеличил отступ, чтобы выглядело просторнее */
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap; /* Запрещаем перенос ссылок на две строки */
+}
+
+.nav a:hover {
+    color: var(--gold-accent);
 }
 
 /* НОВАЯ КНОПКА ИЗ МАКЕТА */
