@@ -89,7 +89,7 @@
             grid-template-columns: 2fr 1fr;
             gap: 15px;
             height: 450px;
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Выровнено под общий стандарт */
         }
         .main-img img, .side-imgs img {
             width: 100%;
@@ -107,18 +107,20 @@
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 350px;
-            gap: 40px;
+            gap: 30px; /* Уменьшено для плотности */
             align-items: start;
         }
 
-        /* --- DESCRIPTION BLOCK (EXPANDABLE) --- */
-        .description-block {
+        /* --- COMMON BLOCK STYLE --- */
+        .description-block, .sleeping-section, .amenities-section, .rules-card-container {
             background: #fff;
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Идеальное расстояние между блоками */
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
+
+        /* --- DESCRIPTION BLOCK (EXPANDABLE) --- */
         .expandable-content {
             max-height: 150px;
             overflow: hidden;
@@ -154,19 +156,12 @@
             color: #333;
         }
 
-        /* NEW STYLE FOR SLEEPING SECTION */
-        .sleeping-section { 
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
         .sleeping-card {
             background: #f8f9fa;
             border-radius: 12px;
             padding: 12px 20px;
-            width: 260px;
+            width: fit-content;
+            min-width: 260px;
             border: 1px solid #eee;
             display: flex;
             align-items: center;
@@ -176,13 +171,6 @@
         .sleeping-card span { font-size: 14px; font-weight: 500; }
 
         /* --- AMENITIES SECTION --- */
-        .amenities-section {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
         .amenities-section h3 { font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px; }
         
         .amenities-chips {
@@ -225,7 +213,7 @@
             color: #333;
         }
 
-        /* --- RULES & SIDEBAR --- */
+        /* --- RULES --- */
         .rule-item {
             display: flex;
             align-items: center;
@@ -276,6 +264,7 @@
             opacity: 1;
         }
 
+        /* --- SIDEBAR --- */
         .sidebar-booking {
             position: sticky;
             top: 20px;
@@ -284,6 +273,7 @@
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid var(--border-color);
+            margin-bottom: 30px;
         }
         .price { font-size: 24px; font-weight: 700; color: var(--primary-color); }
         .price span { font-size: 14px; color: var(--text-muted); font-weight: 400; }
@@ -343,14 +333,13 @@
 
         @media (max-width: 768px) {
             .details-grid, .full-gallery, .footer-grid { grid-template-columns: 1fr; }
-            .full-gallery { height: auto; }
+            .full-gallery { height: auto; margin-bottom: 20px; }
             .side-imgs { display: none; }
             .nav { display: none; }
             .menu-toggle { display: block; }
             .nav.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); z-index: 100; }
             .amenity-list { grid-template-columns: 1fr; }
-            .tooltip-text { width: 150px; left: auto; right: 0; transform: none; } /* Оптимизация для мобильных */
-            .tooltip-text::after { left: 85%; }
+            .description-block, .sleeping-section, .amenities-section, .rules-card-container { margin-bottom: 20px; padding: 20px; }
         }
     </style>
 </head>
@@ -423,13 +412,10 @@
                     <p>
                         <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.<br>
                         <strong>Удаленная работа:</strong> Высокоскоростной Wi-Fi (до 100 Мбит/с) и Smart-TV (300+ каналов). Комфортное пространство для работы с ноутбуком.<br>
-<strong>Безопасность:</strong> охрана, видеонаблюдение, тихие соседи.<br>
-<strong>Оснащение для вашего удобства:</strong> Кухня: Полноценная варочная панель, духовка, большой холодильник, микроволновая печь, полный набор посуды для готовки.
-<strong>Спальная зона:</strong> Удобное спальное место с чистым постельным бельем.<br> <strong>Ванная и быт:</strong> Стиральная машина, фен, утюг, гладильная доска, сушилка для белья. Всегда в наличии комплект полотенец и средства гигиены.<br>
-<strong>Отличная локация:</strong> Удобный выезд на ЗСД и КАД (10-15 мин). До метро Комендантский проспект — 15 минут на транспорте.<br>
-<strong>Медицина:</strong> Рядом расположены клиники: Скандинавия (Северное отделение), Центр репродукции, Евромедика. До НМИЦ им. Алмазова — 20 минут.<br>
-<strong>Инфраструктура:</strong> В шаговой доступности гипермаркеты Лента и Лемана ПРО, кофейни, пекарни и пункты выдачи заказов.<br>
-Забронируйте прямо сейчас — актуальные даты в календаре!
+                        <strong>Безопасность:</strong> охрана, видеонаблюдение, тихие соседи.<br>
+                        <strong>Оснащение для вашего удобства:</strong> Кухня: Полноценная варочная панель, духовка, большой холодильник, микроволновая печь, полный набор посуды для готовки.
+                        <strong>Спальная зона:</strong> Удобное спальное место с чистым постельным бельем.<br> 
+                        <strong>Ванная и быт:</strong> Стиральная машина, фен, утюг, гладильная доска, сушилка для белья. Всегда в наличии комплект полотенец и средства гигиены.
                     </p>
                 </div>
                 <a href="javascript:void(0)" class="toggle-desc" id="toggle-btn">Ещё</a>
@@ -446,20 +432,20 @@
             </div>
 
             <div class="amenities-section">
-    <h3>Основные удобства</h3>
-    <div class="amenities-chips">
-        <div class="amenity-chip"><i data-lucide="door-open"></i> Балкон / Лоджия</div>
-        <div class="amenity-chip"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
-        <div class="amenity-chip"><i data-lucide="tv"></i> Телевизор</div>
-        <div class="amenity-chip"><i data-lucide="coffee"></i> Электрический чайник</div>
-        <div class="amenity-chip"><i data-lucide="wind"></i> Фен</div>
-        <div class="amenity-chip"><i data-lucide="microwave"></i> Микроволновка</div>
-        <div class="amenity-chip"><i data-lucide="washing-machine"></i> Стиральная машина</div>
-        <div class="amenity-chip"><i data-lucide="cup-soda"></i> Кофеварка</div>
-        <div class="amenity-chip"><i data-lucide="blinds"></i> Блэкаут шторы</div>
-        <div class="amenity-chip"><i data-lucide="columns"></i> Шкаф</div>
-        <div class="amenity-chip"><i data-lucide="refrigerator"></i> Холодильник</div>
-    </div>
+                <h3>Основные удобства</h3>
+                <div class="amenities-chips">
+                    <div class="amenity-chip"><i data-lucide="door-open"></i> Балкон / Лоджия</div>
+                    <div class="amenity-chip"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
+                    <div class="amenity-chip"><i data-lucide="tv"></i> Телевизор</div>
+                    <div class="amenity-chip"><i data-lucide="coffee"></i> Электрический чайник</div>
+                    <div class="amenity-chip"><i data-lucide="wind"></i> Фен</div>
+                    <div class="amenity-chip"><i data-lucide="microwave"></i> Микроволновка</div>
+                    <div class="amenity-chip"><i data-lucide="washing-machine"></i> Стиральная машина</div>
+                    <div class="amenity-chip"><i data-lucide="cup-soda"></i> Кофеварка</div>
+                    <div class="amenity-chip"><i data-lucide="blinds"></i> Блэкаут шторы</div>
+                    <div class="amenity-chip"><i data-lucide="columns"></i> Шкаф</div>
+                    <div class="amenity-chip"><i data-lucide="refrigerator"></i> Холодильник</div>
+                </div>
 
                 <div class="amenities-groups">
                     <div class="amenity-group">
@@ -499,58 +485,48 @@
                 </div>
             </div>
 
-            <div class="rules-section">
-                <div class="rules-card" style="background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: none; margin-top: 40px;">
-                    <h3 style="font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px;">Правила проживания</h3>
-                    
-                    <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
-                        <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
-                        <div class="tooltip-container">
-                            <i data-lucide="help-circle" size="16" style="color: #999;"></i>
-                            <span class="tooltip-text">Точное время можно выбрать при бронировании. Если хотите заехать раньше 14:00 или выселиться позже 12:00, обратите внимание на эти условия: ранний заезд и поздний выезд по согласованию (выберите время и отправьте запрос хозяину).</span>
-                        </div>
-                    </div>
-
-                    <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
-                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
-                            <img src="https://img.icons8.com/ios/50/000000/no-smoking.png" style="width: 24px; opacity: 0.8;" alt="">
-                            <span style="font-size: 16px;">Курение запрещено</span>
-                        </div>
-                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="paw-print" size="24" style="color: #333;"></i>
-                            <span style="font-size: 16px;">Нельзя с питомцами</span>
-                        </div>
-                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="music" size="24" style="color: #333;"></i>
-                            <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
-                        </div>
-                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="file-text" size="24" style="color: #333;"></i>
-                            <span style="font-size: 16px;">Владелец предоставляет отчётные документы о проживании</span>
-                        </div>
-                        <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
-                            <i data-lucide="baby" size="24" style="color: #333;"></i>
-                            <span style="font-size: 16px;">Можно с детьми по согласованию с хозяином жилья</span>
-                            <div class="tooltip-container">
-                                <i data-lucide="help-circle" size="14" style="color: #999; margin-left: 5px;"></i>
-                                <span class="tooltip-text">Правила размещения детей: от 0 до 1 года — бесплатно без дополнительного спального места; от 2 лет — на условиях взрослого гостя.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
-                        <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
-                            Страховой депозит 5 000 ₽ 
-                            <div class="tooltip-container">
-                                <i data-lucide="help-circle" size="16" style="color: #999;"></i>
-                                <span class="tooltip-text">Депозит служит гарантией сохранности имущества и чистоты. Возвращается в день выезда после уборки.</span>
-                            </div>
-                        </div>
-                        <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость проживания, возвращается при выезде</div>
+            <div class="rules-card-container">
+                <h3 style="font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px;">Правила проживания</h3>
+                
+                <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
+                    <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
+                    <div class="tooltip-container">
+                        <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                        <span class="tooltip-text">Точное время можно выбрать при бронировании. Ранний заезд и поздний выезд по согласованию.</span>
                     </div>
                 </div>
+
+                <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="rule-item">
+                        <img src="https://img.icons8.com/ios/50/000000/no-smoking.png" style="width: 24px; opacity: 0.8;" alt="">
+                        <span style="font-size: 16px;">Курение запрещено</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="paw-print" size="24"></i>
+                        <span style="font-size: 16px;">Нельзя с питомцами</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="music" size="24"></i>
+                        <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="file-text" size="24"></i>
+                        <span style="font-size: 16px;">Отчётные документы о проживании</span>
+                    </div>
+                </div>
+
+                <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
+                    <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+                        Страховой депозит 5 000 ₽ 
+                        <div class="tooltip-container">
+                            <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                            <span class="tooltip-text">Возвращается в день выезда после уборки.</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость, возвращается при выезде</div>
+                </div>
             </div>
-            </div>
+        </div>
 
         <aside class="sidebar-booking">
             <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
