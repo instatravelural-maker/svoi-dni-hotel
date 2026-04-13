@@ -1,6 +1,6 @@
 /* 1. ПРИНУДИТЕЛЬНАЯ УСТАНОВКА ФОНА СТРАНИЦЫ (КАК НА КОНТАКТАХ) */
 html, body.reviews-page {
-    background-color: #f9f9f9 !important; /* Тот самый светло-серый фон */
+    background-color: #FDFBF4 !important; /* Тот самый светло-серый фон */
     margin: 0;
     padding: 0;
     min-height: 100vh;
