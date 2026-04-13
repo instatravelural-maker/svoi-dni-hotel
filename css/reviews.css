@@ -1,0 +1,219 @@
+/* --- Стили для страницы отзывов (reviews.css) --- */
+
+/* Сетка страницы */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+/* Стили заголовка секции */
+.apartment-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Галерея (если она остается на странице отзывов) */
+.full-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.full-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.side-imgs {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Чипсы / Теги */
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.chip {
+    background: #f0f2f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Блок описания и раскрывающийся текст */
+.expandable-content {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    line-height: 1.6;
+    color: #444;
+}
+
+.expandable-content.expanded {
+    max-height: 2000px;
+}
+
+.toggle-desc {
+    display: inline-block;
+    margin-top: 10px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Стили для карточек (спальные места/правила) */
+.sleeping-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* Группы удобств */
+.amenities-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.amenity-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.amenities-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.amenity-group-title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amenity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Правила и Тултипы */
+.rule-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+}
+
+.tooltip-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Правая колонка (Бронирование) */
+.sidebar-booking {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 25px;
+    position: sticky;
+    top: 110px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+}
+
+.btn-booking-full {
+    display: block;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-booking {
+        position: static;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .full-gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .side-imgs {
+        display: none;
+    }
+}
