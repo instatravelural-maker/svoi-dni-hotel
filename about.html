@@ -165,15 +165,65 @@
         .sleeping-card {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 12px 20px; /* Reduced height */
+            padding: 12px 20px;
             width: 260px;
             border: 1px solid #eee;
             display: flex;
-            align-items: center; /* Changed to row-like alignment for compact view */
+            align-items: center;
             gap: 15px;
         }
         .sleeping-card i { color: #333; }
         .sleeping-card span { font-size: 14px; font-weight: 500; }
+
+        /* --- AMENITIES SECTION (STRICTLY FROM SCREENSHOT) --- */
+        .amenities-section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .amenities-section h3 { font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px; }
+        
+        .amenities-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .amenity-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            border: 1px solid #eee;
+        }
+
+        .amenities-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .amenity-group-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .amenity-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .amenity-item {
+            font-size: 14px;
+            color: #333;
+        }
 
         /* --- RULES & SIDEBAR --- */
         .section-title {
@@ -272,6 +322,7 @@
             .nav { display: none; }
             .menu-toggle { display: block; }
             .nav.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); z-index: 100; }
+            .amenity-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -356,6 +407,60 @@
                     <i data-lucide="bed" size="24"></i>
                     <div style="font-size: 18px; font-weight: 500;">× 1</div>
                     <span>Двуспальная кровать</span>
+                </div>
+            </div>
+
+            <div class="amenities-section">
+                <h3>Основные удобства</h3>
+                <div class="amenities-chips">
+                    <div class="amenity-chip"><i data-lucide="layout"></i> Балкон / Лоджия</div>
+                    <div class="amenity-chip"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
+                    <div class="amenity-chip"><i data-lucide="tv"></i> Телевизор</div>
+                    <div class="amenity-chip"><i data-lucide="coffee"></i> Электрический чайник</div>
+                    <div class="amenity-chip"><i data-lucide="wind"></i> Фен</div>
+                    <div class="amenity-chip"><i data-lucide="microwave"></i> Микроволновка</div>
+                    <div class="amenity-chip"><i data-lucide="washing-machine"></i> Стиральная машина</div>
+                    <div class="amenity-chip"><i data-lucide="cup-soda"></i> Кофеварка</div>
+                    <div class="amenity-chip"><i data-lucide="tent"></i> Блэкаут шторы</div>
+                    <div class="amenity-chip"><i data-lucide="columns"></i> Шкаф</div>
+                    <div class="amenity-chip"><i data-lucide="refrigerator"></i> Холодильник</div>
+                </div>
+
+                <div class="amenities-groups">
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="utensils" size="20"></i> Кухонная зона</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">Электроплита</div>
+                            <div class="amenity-item">Духовка</div>
+                            <div class="amenity-item">Микроволновка</div>
+                            <div class="amenity-item">Посуда и принадлежности</div>
+                            <div class="amenity-item">Столовые приборы</div>
+                            <div class="amenity-item">Электрический чайник</div>
+                            <div class="amenity-item">Кофеварка</div>
+                            <div class="amenity-item">Холодильник</div>
+                            <div class="amenity-item">Кухонный гарнитур</div>
+                            <div class="amenity-item">Обеденный стол</div>
+                        </div>
+                    </div>
+
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="bath" size="20"></i> Ванная комната</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">1 ванная комната с туалетом</div>
+                            <div class="amenity-item">Полотенца</div>
+                            <div class="amenity-item">Туалетные принадлежности</div>
+                            <div class="amenity-item">Фен</div>
+                            <div class="amenity-item">Душ</div>
+                        </div>
+                    </div>
+
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="p-circle" size="20"></i> Парковка</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">Без оплаты</div>
+                            <div class="amenity-item">На территории объекта</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
