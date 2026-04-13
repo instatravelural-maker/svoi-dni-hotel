@@ -111,7 +111,7 @@
             align-items: start;
         }
 
-        /* --- NEW SUTOCHNO STYLE RATING --- */
+        /* --- RATING STYLE (AS PER SCREENSHOT 1) --- */
         .sutochno-rating-container {
             margin-bottom: 30px;
         }
@@ -122,12 +122,13 @@
             margin-bottom: 20px;
         }
         .rating-score {
-            background: var(--rating-green);
+            background: #46a358;
             color: white;
-            padding: 5px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
             font-size: 24px;
             font-weight: 700;
+            line-height: 1;
         }
         .rating-label-box h4 { margin: 0; font-size: 20px; font-weight: 700; }
         .rating-label-box p { margin: 0; font-size: 14px; color: var(--text-muted); }
@@ -135,69 +136,73 @@
         .rating-details-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px 40px;
+            gap: 10px 60px;
         }
         .rating-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
+            font-size: 15px;
+            border-bottom: 2px solid #333; /* The black lines in the screenshot */
+            padding-bottom: 2px;
         }
-        .rating-bar-wrap {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-grow: 1;
-            margin: 0 15px;
-        }
-        .bar-bg {
-            height: 4px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            flex-grow: 1;
-            position: relative;
-        }
-        .bar-fill {
-            position: absolute;
-            left: 0; top: 0; height: 100%;
-            background: #333;
-            border-radius: 2px;
-        }
-        .rating-val { font-weight: 700; min-width: 25px; text-align: right; }
+        .rating-val { font-weight: 700; margin-left: 10px; }
 
-        /* --- SUTOCHNO CHIPS --- */
+        /* --- DESCRIPTION BLOCK (EXPANDABLE) --- */
+        .description-block {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .expandable-content {
+            max-height: 150px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.3s ease;
+        }
+        .expandable-content.expanded {
+            max-height: 2000px;
+        }
+        .toggle-desc {
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+
+        /* --- CHIPS & SLEEPING PLACES (AS PER SCREENSHOT 2) --- */
+        .object-title { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
         .chips-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 25px;
         }
         .chip {
-            background: #f0f2f5;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
+            background: #f1f4f9;
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-size: 14px;
             color: #333;
         }
 
-        /* --- DESCRIPTION --- */
-        .object-title { font-size: 24px; font-weight: 700; margin: 20px 0 10px; }
-        .object-desc { font-size: 15px; color: #333; margin-bottom: 20px; line-height: 1.5; }
-        .why-us-title { font-weight: 700; text-transform: uppercase; font-size: 13px; margin-bottom: 10px; color: #333; }
-
-        /* --- SLEEPING PLACES (Sutochno Style) --- */
         .sleeping-section { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 30px; }
         .sleeping-card {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 15px;
-            width: fit-content;
+            padding: 20px;
+            width: 260px;
             border: 1px solid #eee;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 10px;
         }
-        .sleeping-card i { color: #333; margin-bottom: 5px; }
+        .sleeping-card i { color: #333; }
         .sleeping-card span { font-size: 14px; font-weight: 500; }
 
         /* --- RULES & SIDEBAR --- */
@@ -330,10 +335,10 @@
 <main class="container">
     <section class="apartment-header">
         <div>
-            <h1>Уютные апартаменты на Марата, 15</h1>
+            <h1>Уютные апартаменты в ЖК «Чистое небо»</h1>
             <p style="color: var(--text-muted); margin-top: 5px;">
                 <i data-lucide="map-pin" size="16" style="vertical-align: middle;"></i> 
-                Санкт-Петербург, Центральный район, м. Восстания (5 мин)
+                Санкт-Петербург, Приморский район, Арцеуловская аллея
             </p>
         </div>
     </section>
@@ -362,75 +367,62 @@
                 <div class="rating-details-grid">
                     <div class="rating-item">
                         <span>Чистота</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-                            <span class="rating-val">10,0</span>
-                        </div>
+                        <span class="rating-val">10,0</span>
                     </div>
                     <div class="rating-item">
                         <span>Соответствие фото</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-                            <span class="rating-val">10,0</span>
-                        </div>
+                        <span class="rating-val">10,0</span>
                     </div>
                     <div class="rating-item">
                         <span>Своевременность заселения</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-                            <span class="rating-val">10,0</span>
-                        </div>
+                        <span class="rating-val">10,0</span>
                     </div>
                     <div class="rating-item">
                         <span>Цена - качество</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-                            <span class="rating-val">10,0</span>
-                        </div>
+                        <span class="rating-val">10,0</span>
                     </div>
                     <div class="rating-item">
                         <span>Расположение</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
-                            <span class="rating-val">9,5</span>
-                        </div>
+                        <span class="rating-val">9,5</span>
                     </div>
                     <div class="rating-item">
                         <span>Качество обслуживания</span>
-                        <div class="rating-bar-wrap">
-                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-                            <span class="rating-val">10,0</span>
-                        </div>
+                        <span class="rating-val">10,0</span>
                     </div>
                 </div>
             </div>
 
-            <div class="object-title">Студия</div>
-            <div class="chips-container">
-                <div class="chip">27 м²</div>
-                <div class="chip">2 гостя</div>
-                <div class="chip">1 кровать</div>
-                <div class="chip">Кухонная зона</div>
-                <div class="chip">Этаж 1 из 14</div>
-                <div class="chip">1 ванная комната</div>
-                <div class="chip">Бесплатная парковка</div>
-            </div>
+            <div class="description-block">
+                <div class="object-title">Студия</div>
+                <div class="chips-container">
+                    <div class="chip">27 м²</div>
+                    <div class="chip">2 гостя</div>
+                    <div class="chip">1 кровать</div>
+                    <div class="chip">Кухонная зона</div>
+                    <div class="chip">Этаж 1 из 14</div>
+                    <div class="chip">1 ванная комната</div>
+                    <div class="chip">Бесплатная парковка</div>
+                </div>
 
-            <div class="object-desc">
-                Комфорт и уют в историческом центре Санкт-Петербурга. Идеальный вариант для тех, кто ценит чистоту, современный сервис и тишину. Подходит для командировок, отдыха или поездок в медицинские центры.
-            </div>
+                <div class="expandable-content" id="desc-content">
+                    <p style="margin-top:0;">Комфорт и уют в ЖК «Чистое небо» (Приморский район). Идеальный вариант для тех, кто ценит чистоту, современный сервис и тишину. Подходит для командировок, отдыха в Санкт-Петербурге или поездок в медицинские центры.</p>
+                    
+                    <div style="font-weight: 700; text-transform: uppercase; font-size: 13px; margin: 15px 0 10px;">Почему выбирают нас:</div>
+                    <p>
+                        <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.<br>
+                        <strong>Удаленное...</strong> здесь может быть продолжение вашего текста, которое скроется под кнопкой "Ещё".
+                    </p>
+                </div>
+                <a href="javascript:void(0)" class="toggle-desc" id="toggle-btn">Ещё</a>
 
-            <div class="why-us-title">Почему выбирают нас:</div>
-            <p style="font-size: 15px;">
-                <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.
-            </p>
-
-            <div class="sleeping-section">
-                <h3 style="font-size: 20px; margin-bottom: 15px;">Спальные места</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">1 кровать, 2 основных спальных места</p>
-                <div class="sleeping-card">
-                    <i data-lucide="bed" size="24"></i>
-                    <span>× 1 Двуспальная кровать</span>
+                <div class="sleeping-section">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Спальные места</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">1 кровать, 2 основных спальных места</p>
+                    <div class="sleeping-card">
+                        <i data-lucide="bed" size="24"></i>
+                        <div style="font-size: 18px; font-weight: 500;">× 1</div>
+                        <span>Двуспальная кровать</span>
+                    </div>
                 </div>
             </div>
 
@@ -522,14 +514,27 @@
 <script>
     lucide.createIcons();
     
+    // Menu toggle logic
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
         });
     }
+
+    // Expand description logic
+    const toggleBtn = document.getElementById('toggle-btn');
+    const descContent = document.getElementById('desc-content');
+
+    toggleBtn.addEventListener('click', () => {
+        descContent.classList.toggle('expanded');
+        if (descContent.classList.contains('expanded')) {
+            toggleBtn.textContent = 'Свернуть';
+        } else {
+            toggleBtn.textContent = 'Ещё';
+        }
+    });
 </script>
 </body>
 </html>
