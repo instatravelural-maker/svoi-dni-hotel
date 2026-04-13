@@ -463,28 +463,58 @@
                     </div>
                 </div>
             </div>
+</div>
 
-            <h2 class="section-title">Правила проживания</h2>
-            <div class="rules-card">
-                <div class="rule-item">
-                    <i data-lucide="clock"></i>
-                    <span>Заезд после 14:00, выезд до 12:00</span>
-                </div>
-                <div class="rule-item">
-                    <i data-lucide="ban"></i>
-                    <span>Курение и вечеринки запрещены</span>
-                </div>
-                <div class="rule-item">
-                    <i data-lucide="users"></i>
-                    <span>Максимум 2 гостя</span>
-                </div>
-                <div class="rule-item">
-                    <i data-lucide="shield-check"></i>
-                    <span>Страховой залог 5 000 ₽ (возвращается)</span>
+            <div class="rules-section">
+                <h3 style="font-size: 22px; font-weight: 700; margin-top: 40px; margin-bottom: 20px;">Правила проживания</h3>
+                <div class="rules-card" style="background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: none;">
+                    
+                    <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
+                        <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
+                        <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                    </div>
+
+                    <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="proportions" size="24" style="color: #333; transform: rotate(45deg);"></i> <span style="font-size: 16px;">Курение запрещено</span>
+                        </div>
+                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="dog" size="24" style="color: #333;"></i>
+                            <span style="font-size: 16px;">Нельзя с питомцами</span>
+                        </div>
+                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="glass-water" size="24" style="color: #333;"></i>
+                            <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
+                        </div>
+                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="file-text" size="24" style="color: #333;"></i>
+                            <span style="font-size: 16px;">Владелец предоставляет отчётные документы о проживании</span>
+                        </div>
+                        <div class="rule-item" style="border: none; padding: 0; display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="baby" size="24" style="color: #333;"></i>
+                            <span style="font-size: 16px;">Можно с детьми по согласованию с хозяином жилья</span>
+                            <i data-lucide="help-circle" size="14" style="color: #999; margin-left: 5px;"></i>
+                        </div>
+                    </div>
+
+                    <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
+                        <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+                            Страховой депозит 5 000 ₽ <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                        </div>
+                        <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость проживания, возвращается при выезде</div>
+                    </div>
                 </div>
             </div>
-        </div>
+            ```
 
+### Что изменилось по сравнению с вашим кодом:
+1.  **Заголовок:** Стал более строгим (22px, жирный).
+2.  **Время заезда:** Вынесено в отдельную плашку-чип (как на скриншоте).
+3.  **Список:** Добавлены новые пункты (документы, дети, питомцы).
+4.  **Депозит:** Выделен желтоватым фоном в отдельную рамку.
+5.  **Стиль:** Удалены стандартные границы `border-bottom`, чтобы список выглядел чище, как в интерфейсе Суточно/Авито.
+
+Просто удалите старый кусок с `<h2>Правила проживания</h2>` и `.rules-card` и вставьте этот. Подвал и боковую панель трогать не нужно.
         <aside class="sidebar-booking">
             <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
             <div class="sidebar-info">
