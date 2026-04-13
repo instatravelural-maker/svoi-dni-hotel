@@ -1,21 +1,25 @@
-/* Обнуление для чистоты верстки именно на этой странице */
+/* Цвет фона всей страницы как в контактах */
+.reviews-page {
+    background-color: #f9f9f9 !important;
+}
+
 .reviews-page .reviews-main-container {
     padding: 60px 0;
-    background-color: #ffffff;
+    background-color: transparent; /* Оставляем фон страницы */
     min-height: 800px;
 }
 
-/* Карточка рейтинга */
+/* Карточка рейтинга - Белая */
 .sutochno-rating-card {
-    background: #fff;
-    border: 1px solid #e6e6e6;
+    background: #ffffff; /* Строго белый блок */
+    border: 1px solid #eee;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 50px;
     display: flex;
     align-items: center;
     gap: 60px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Мягкая тень */
 }
 
 .rating-main-info {
@@ -78,17 +82,19 @@
 .reviews-vertical-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
+/* Карточка отзыва - Белая */
 .single-review {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 30px;
-    background: #fff;
-    border: 1px solid #e6e6e6;
+    background: #ffffff; /* Строго белый блок */
+    border: 1px solid #eee;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Мягкая тень */
 }
 
 .guest-avatar {
@@ -151,7 +157,7 @@
     margin: 0;
 }
 
-/* Адаптив под мобилки */
+/* Адаптив */
 @media (max-width: 900px) {
     .sutochno-rating-card { flex-direction: column; align-items: flex-start; gap: 30px; }
     .rating-details-grid { grid-template-columns: 1fr; width: 100%; }
