@@ -40,21 +40,31 @@ body {
 }
 
 /* =========================================
-    2. ШАПКА (Header) — ОБНОВЛЕННАЯ С МОНТСЕРРАТ
+    2. ШАПКА (Header) — ФИНАЛЬНАЯ СТАБИЛИЗАЦИЯ
    ========================================= */
 
 /* Подключаем шрифт Montserrat для логотипа */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+/* 1. Сбрасываем лишние отступы, чтобы контейнеры были везде одинаковые */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. Жесткая структура шапки (чтобы не прыгала высота) */
 .header {
-    background: #ffffff; 
-    height: 90px; /* Увеличили высоту для солидности, как в новом коде */
+    background: #ffffff !important;
+    height: 90px !important; 
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 .header-flex {
@@ -62,40 +72,40 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 20px; /* Чтобы элементы не слипались на средних экранах */
 }
 
-/* Единый стиль для логотипа и названия (Montserrat) */
+/* 3. Логотип и шрифт (Фиксированная область слева) */
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px; /* Увеличен зазор между картинкой и текстом */
+    gap: 15px;
     text-decoration: none;
-    flex-shrink: 0; /* Чтобы логотип не сжимался */
+    flex: 0 0 280px; /* Фиксируем место под логотип */
 }
 
 .logo span {
-    font-family: 'Montserrat', sans-serif !important; /* Тот самый шрифт как на лого */
+    font-family: 'Montserrat', sans-serif !important;
     font-weight: 700 !important;
-    font-size: 24px;   /* Размер совпадает с подвалом */
-    color: #1a3a3a;    /* Фирменный темно-зеленый */
+    font-size: 24px !important; /* Крупный как в подвале */
+    color: #1a3a3a !important;
     letter-spacing: -0.5px;
     line-height: 1;
     white-space: nowrap;
-    text-transform: none; /* Убираем принудительный CAPS, если на логотипе строчные */
+    text-transform: none;
 }
 
-/* Меню навигации - ТЕПЕРЬ ВСЕГДА ПО ЦЕНТРУ */
+/* 4. Меню строго ПО ЦЕНТРУ экрана */
 .nav {
     display: flex;
     gap: 25px;
     align-items: center;
-    margin: 0 auto; /* МАГИЯ: выравнивает меню строго по центру между лого и кнопкой */
+    justify-content: center;
+    flex: 1; /* Занимает всё пространство между лого и кнопкой */
 }
 
 .nav a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: #333333;
     font-size: 14px;
     font-weight: 600;
     transition: 0.3s;
@@ -103,10 +113,16 @@ body {
 }
 
 .nav a:hover {
-    color: #1a3a3a; /* Меняем цвет наведения на фирменный */
+    color: #1a3a3a;
 }
 
-/* КНОПКА ЗАБРОНИРОВАТЬ - ФИКСИРОВАННАЯ */
+/* 5. Область кнопки справа (Фиксированная область справа) */
+.header-action-wrapper {
+    flex: 0 0 200px; /* Фиксируем место под кнопку */
+    display: flex;
+    justify-content: flex-end;
+}
+
 .btn-dark.header-action {
     background-color: #2d3e40; 
     color: #ffffff;
@@ -119,15 +135,15 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    min-width: 160px; /* Кнопка всегда одного размера, больше не прыгает */
-    flex-shrink: 0;   /* Запрещаем кнопке сжиматься */
+    min-width: 160px; /* Кнопка не меняет размер */
+    flex-shrink: 0;
 }
 
-.btn-dark:hover {
+.btn-dark.header-action:hover {
     background-color: #1f2b2c;
 }
 
-/* СТИЛИ БУРГЕР-МЕНЮ */
+/* 6. БУРГЕР ДЛЯ МОБИЛЬНЫХ */
 .menu-toggle {
     display: none;
     background: none;
@@ -135,14 +151,12 @@ body {
     color: #1a3a3a;
     cursor: pointer;
     font-size: 24px;
-    flex-shrink: 0;
 }
 
-/* ФИКС ДЛЯ ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ */
-.gallery-overlay i {
+/* ФИКС ЦВЕТА ИКОНОК (ИЗ ПРОШЛОГО ЗАПРОСА) */
+.gallery-overlay i, .feature-card i, .amenity-item i {
     color: #1a3a3a !important;
 }
-
 /* =========================================
     3. ГЛАВНЫЙ БЛОК (Hero)
     ========================================= */
