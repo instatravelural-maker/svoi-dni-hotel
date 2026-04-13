@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CozyStay — Апартаменты в Санкт-Петербурге</title>
+    <title>Свои Дни — Апартаменты в Санкт-Петербурге</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -15,7 +15,7 @@
     <div class="container header-flex">
         <div class="logo">
             <i data-lucide="key-round"></i>
-            <span>CozyStay</span>
+            <span>Свои Дни</span>
         </div>
 
         <button class="menu-toggle" id="menu-toggle">
@@ -38,7 +38,7 @@
     <main>
         <section class="hero">
             <div class="hero-bg-wrapper">
-                <img src="lahta.webp" class="hero-image-bg" alt="Интерьер">
+                <img src="img/lahta.webp" class="hero-image-bg" alt="Интерьер">
             </div>
             <div class="container">
                 <div class="hero-card">
@@ -263,7 +263,6 @@
 
     <script>lucide.createIcons();</script>
     <script>
-    // Инициализация иконок (если вы используете Lucide)
     lucide.createIcons();
 
     const menuToggle = document.getElementById('menu-toggle');
@@ -272,14 +271,13 @@
     menuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('active');
         
-        // Меняем иконку с "меню" на "крестик" при открытии
         const icon = menuToggle.querySelector('i');
         if (mainNav.classList.contains('active')) {
             icon.setAttribute('data-lucide', 'x');
         } else {
             icon.setAttribute('data-lucide', 'menu');
         }
-        lucide.createIcons(); // Перерисовываем иконку
+        lucide.createIcons(); 
     });
 </script>
 </body>
