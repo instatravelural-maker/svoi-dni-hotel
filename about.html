@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* ОБНОВЛЕННЫЙ ЦВЕТ: Темно-синий/графитовый из макета кнопки */
             --primary-color: #24414b; 
             --bg-light: #fdfaf5;      
             --text-main: #333333;
             --text-muted: #666666;
             --border-color: #eeeeee;
             --white: #ffffff;
+            --rating-green: #4caf50;
         }
 
         body {
@@ -111,29 +111,96 @@
             align-items: start;
         }
 
-        /* --- RATING BOX --- */
-        .rating-overview {
+        /* --- NEW SUTOCHNO STYLE RATING --- */
+        .sutochno-rating-container {
+            margin-bottom: 30px;
+        }
+        .rating-header {
             display: flex;
             align-items: center;
             gap: 15px;
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
-        .rating-badge {
-            background: #4caf50; 
+        .rating-score {
+            background: var(--rating-green);
             color: white;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 22px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 24px;
             font-weight: 700;
         }
-        .rating-info h4 { margin: 0; font-size: 18px; }
-        .rating-info p { margin: 0; font-size: 13px; color: var(--text-muted); }
+        .rating-label-box h4 { margin: 0; font-size: 20px; font-weight: 700; }
+        .rating-label-box p { margin: 0; font-size: 14px; color: var(--text-muted); }
 
-        /* --- AMENITIES --- */
+        .rating-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+        }
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        .rating-bar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-grow: 1;
+            margin: 0 15px;
+        }
+        .bar-bg {
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            flex-grow: 1;
+            position: relative;
+        }
+        .bar-fill {
+            position: absolute;
+            left: 0; top: 0; height: 100%;
+            background: #333;
+            border-radius: 2px;
+        }
+        .rating-val { font-weight: 700; min-width: 25px; text-align: right; }
+
+        /* --- SUTOCHNO CHIPS --- */
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+        .chip {
+            background: #f0f2f5;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        /* --- DESCRIPTION --- */
+        .object-title { font-size: 24px; font-weight: 700; margin: 20px 0 10px; }
+        .object-desc { font-size: 15px; color: #333; margin-bottom: 20px; line-height: 1.5; }
+        .why-us-title { font-weight: 700; text-transform: uppercase; font-size: 13px; margin-bottom: 10px; color: #333; }
+
+        /* --- SLEEPING PLACES (Sutochno Style) --- */
+        .sleeping-section { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 30px; }
+        .sleeping-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            width: fit-content;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .sleeping-card i { color: #333; margin-bottom: 5px; }
+        .sleeping-card span { font-size: 14px; font-weight: 500; }
+
+        /* --- RULES & SIDEBAR --- */
         .section-title {
             font-size: 20px;
             margin: 40px 0 20px;
@@ -141,32 +208,6 @@
             border-bottom: 2px solid var(--primary-color);
             display: inline-block;
         }
-        .amenities-group { margin-bottom: 25px; }
-        .amenities-group h3 {
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .amenity-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-        }
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: #555;
-        }
-        .amenity-item i { color: #999; flex-shrink: 0; }
-
-        /* --- RULES --- */
         .rules-card {
             background: var(--white);
             padding: 25px;
@@ -184,7 +225,6 @@
         .rule-item:last-child { border-bottom: none; }
         .rule-item i { color: var(--primary-color); width: 20px; }
 
-        /* --- SIDEBAR --- */
         .sidebar-booking {
             position: sticky;
             top: 20px;
@@ -238,8 +278,6 @@
         .footer p { font-size: 14px; color: var(--text-muted); margin: 10px 0; display: flex; align-items: center; gap: 10px; }
         .social-links { display: flex; gap: 15px; margin-top: 20px; align-items: center; }
         .social-links a { color: var(--primary-color); transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; }
-        
-        /* Фикс размера иконки ВК */
         .social-links .fa-vk { font-size: 20px; }
         
         .footer-bottom {
@@ -250,18 +288,15 @@
             color: #888;
         }
 
-        /* --- ВЕБ-ВЕРСИЯ: СКРЫВАЕМ КНОПКУ МЕНЮ --- */
         .menu-toggle { display: none; background: none; border: none; color: var(--primary-color); cursor: pointer; }
 
         @media (max-width: 768px) {
             .details-grid, .full-gallery, .footer-grid { grid-template-columns: 1fr; }
+            .rating-details-grid { grid-template-columns: 1fr; }
             .full-gallery { height: auto; }
             .side-imgs { display: none; }
             .nav { display: none; }
-            
-            /* --- МОБИЛЬНАЯ ВЕРСИЯ: ПОКАЗЫВАЕМ КНОПКУ МЕНЮ --- */
             .menu-toggle { display: block; }
-            
             .nav.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); z-index: 100; }
         }
     </style>
@@ -270,9 +305,9 @@
 
 <header class="header">
     <div class="container header-flex">
-        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <a href="index.html" class="logo">
             <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
-            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Свои Дни</span>
+            <span style="text-transform: uppercase; letter-spacing: 1px;">Свои Дни</span>
         </a> 
         
         <button class="menu-toggle" id="menu-toggle">
@@ -315,38 +350,88 @@
 
     <div class="details-grid">
         <div class="main-content">
-            <div class="rating-overview">
-                <div class="rating-badge">9.9</div>
-                <div class="rating-info">
-                    <h4>Великолепно</h4>
-                    <p>На основе 54 проверенных отзывов</p>
+            
+            <div class="sutochno-rating-container">
+                <div class="rating-header">
+                    <div class="rating-score">9,9</div>
+                    <div class="rating-label-box">
+                        <h4>Великолепно</h4>
+                        <p>54 отзыва</p>
+                    </div>
+                </div>
+                <div class="rating-details-grid">
+                    <div class="rating-item">
+                        <span>Чистота</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                            <span class="rating-val">10,0</span>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Соответствие фото</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                            <span class="rating-val">10,0</span>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Своевременность заселения</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                            <span class="rating-val">10,0</span>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Цена - качество</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                            <span class="rating-val">10,0</span>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Расположение</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+                            <span class="rating-val">9,5</span>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <span>Качество обслуживания</span>
+                        <div class="rating-bar-wrap">
+                            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                            <span class="rating-val">10,0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h2 class="section-title">Описание объекта</h2>
-            <p>Светлая и просторная квартира 48 м² в историческом центре. Идеально подходит для пары или семьи из 4 человек. В шаговой доступности Невский проспект, ТРЦ «Галерея» и Московский вокзал.</p>
-
-            <h2 class="section-title">Удобства</h2>
-            
-            <div class="amenities-group">
-                <h3><i data-lucide="bed" size="18"></i> Спальные места</h3>
-                <ul class="amenity-list">
-                    <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Двуспальная кровать 160x200</li>
-                    <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Раскладной диван</li>
-                    <li class="amenity-item"><i data-lucide="check-circle" size="16"></i> Чистое постельное белье</li>
-                </ul>
+            <div class="object-title">Студия</div>
+            <div class="chips-container">
+                <div class="chip">27 м²</div>
+                <div class="chip">2 гостя</div>
+                <div class="chip">1 кровать</div>
+                <div class="chip">Кухонная зона</div>
+                <div class="chip">Этаж 1 из 14</div>
+                <div class="chip">1 ванная комната</div>
+                <div class="chip">Бесплатная парковка</div>
             </div>
 
-            <div class="amenities-group">
-                <h3><i data-lucide="utensils" size="18"></i> Кухня и техника</h3>
-                <ul class="amenity-list">
-                    <li class="amenity-item"><i data-lucide="wifi" size="16"></i> Высокоскоростной Wi-Fi</li>
-                    <li class="amenity-item"><i data-lucide="tv" size="16"></i> Smart TV</li>
-                    <li class="amenity-item"><i data-lucide="wind" size="16"></i> Кондиционер</li>
-                    <li class="amenity-item"><i data-lucide="coffee" size="16"></i> Кофемашина</li>
-                    <li class="amenity-item"><i data-lucide="refrigerator" size="16"></i> Холорильник и СВЧ</li>
-                    <li class="amenity-item"><i data-lucide="washing-machine" size="16"></i> Стиральная машина</li>
-                </ul>
+            <div class="object-desc">
+                Комфорт и уют в историческом центре Санкт-Петербурга. Идеальный вариант для тех, кто ценит чистоту, современный сервис и тишину. Подходит для командировок, отдыха или поездок в медицинские центры.
+            </div>
+
+            <div class="why-us-title">Почему выбирают нас:</div>
+            <p style="font-size: 15px;">
+                <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.
+            </p>
+
+            <div class="sleeping-section">
+                <h3 style="font-size: 20px; margin-bottom: 15px;">Спальные места</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">1 кровать, 2 основных спальных места</p>
+                <div class="sleeping-card">
+                    <i data-lucide="bed" size="24"></i>
+                    <span>× 1 Двуспальная кровать</span>
+                </div>
             </div>
 
             <h2 class="section-title">Правила проживания</h2>
@@ -361,7 +446,7 @@
                 </div>
                 <div class="rule-item">
                     <i data-lucide="users"></i>
-                    <span>Максимум 4 гостя</span>
+                    <span>Максимум 2 гостя</span>
                 </div>
                 <div class="rule-item">
                     <i data-lucide="shield-check"></i>
