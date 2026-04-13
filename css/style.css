@@ -40,123 +40,98 @@ body {
 }
 
 /* =========================================
-    2. ШАПКА (Header) — ФИНАЛЬНАЯ СТАБИЛИЗАЦИЯ
-   ========================================= */
-
-/* Подключаем шрифт Montserrat для логотипа */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
-/* 1. Сбрасываем лишние отступы, чтобы контейнеры были везде одинаковые */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* 2. Жесткая структура шапки (чтобы не прыгала высота) */
+    2. ШАПКА (Header) — ИСПРАВЛЕННАЯ
+    ========================================= */
 .header {
-    background: #ffffff !important;
-    height: 90px !important; 
+    background: #ffffff; 
+    height: 85px; /* Жестко задаем высоту, чтобы меню не прыгало */
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
 }
 
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100%; /* Растягиваем на всю ширину контейнера */
 }
 
-/* 3. Логотип и шрифт (Фиксированная область слева) */
+/* Единый стиль для логотипа и названия */
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     text-decoration: none;
-    flex: 0 0 280px; /* Фиксируем место под логотип */
+    color: var(--dark-green); /* Используем ваш темно-зеленый из :root */
 }
 
 .logo span {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important;
-    font-size: 24px !important; /* Крупный как в подвале */
-    color: #1a3a3a !important;
-    letter-spacing: -0.5px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     line-height: 1;
     white-space: nowrap;
-    text-transform: none;
 }
 
-/* 4. Меню строго ПО ЦЕНТРУ экрана */
+.logo i {
+    color: var(--gold-accent);
+}
+
 .nav {
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Увеличил отступ, чтобы выглядело просторнее */
     align-items: center;
-    justify-content: center;
-    flex: 1; /* Занимает всё пространство между лого и кнопкой */
 }
 
 .nav a {
     text-decoration: none;
-    color: #333333;
+    color: var(--text-dark);
     font-size: 14px;
     font-weight: 600;
     transition: 0.3s;
-    white-space: nowrap;
+    white-space: nowrap; /* Запрещаем перенос ссылок на две строки */
 }
 
 .nav a:hover {
-    color: #1a3a3a;
+    color: var(--gold-accent);
 }
 
-/* 5. Область кнопки справа (Фиксированная область справа) */
-.header-action-wrapper {
-    flex: 0 0 200px; /* Фиксируем место под кнопку */
-    display: flex;
-    justify-content: flex-end;
-}
-
-.btn-dark.header-action {
-    background-color: #2d3e40; 
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
+/* НОВАЯ КНОПКА ИЗ МАКЕТА */
+.btn-dark {
+    background-color: #2d3e40; /* Темно-зеленый цвет из макета */
+    color: #ffffff;            /* Белый текст */
+    padding: 12px 24px;        /* Внутренние отступы */
+    border-radius: 6px;        /* Скругление углов как на макете */
+    text-decoration: none;     /* Убираем подчеркивание ссылки */
+    font-weight: 600;          /* Полужирное начертание */
     transition: background-color 0.3s ease;
+    border: none;              /* Убираем рамку, если есть */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    min-width: 160px; /* Кнопка не меняет размер */
-    flex-shrink: 0;
 }
 
-.btn-dark.header-action:hover {
-    background-color: #1f2b2c;
+.btn-dark:hover {
+    background-color: #1f2b2c; /* Чуть темнее при наведении */
 }
 
-/* 6. БУРГЕР ДЛЯ МОБИЛЬНЫХ */
+/* СТИЛИ БУРГЕР-МЕНЮ */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: #1a3a3a;
+    color: var(--dark-green);
     cursor: pointer;
     font-size: 24px;
 }
 
-/* ФИКС ЦВЕТА ИКОНОК (ИЗ ПРОШЛОГО ЗАПРОСА) */
-.gallery-overlay i, .feature-card i, .amenity-item i {
-    color: #1a3a3a !important;
-}
 /* =========================================
     3. ГЛАВНЫЙ БЛОК (Hero)
     ========================================= */
@@ -543,138 +518,4 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-}
-/* =========================================
-    10. СПЕЦИФИЧНЫЕ СТИЛИ СТРАНИЦЫ СЕРВИСЫ
-   ========================================= */
-.services-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 50px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.services-grid-new {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin-bottom: 80px;
-}
-
-.service-card-alt {
-    background: #ffffff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.service-card-alt:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-}
-
-/* Иконки в карточках сервисов */
-.service-card-alt i, 
-.service-card-alt svg {
-    color: #2b544a; 
-    margin-bottom: 20px;
-    width: 32px;
-    height: 32px;
-}
-
-.service-card-alt h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
-.service-card-alt p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Дополнительная фиксация для футера, чтобы он не прыгал */
-.footer-brand p {
-    max-width: 300px;
-}
-
-.footer-logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-/* =========================================
-    СПЕЦИФИЧНЫЕ СТИЛИ СТРАНИЦЫ СЕРВИСЫ (ВОЗВРАТ КРАСОТЫ)
-   ========================================= */
-
-/* Фон конкретно для этой страницы */
-.page-services-bg {
-    background-color: #fdfaf7 !important;
-}
-
-.services-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 40px auto 50px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.services-grid-new {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin-bottom: 80px;
-}
-
-.service-card-alt {
-    background: #ffffff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid rgba(0,0,0,0.02);
-}
-
-.service-card-alt:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-}
-
-/* Иконки — возвращаем ваш изумрудный цвет */
-.service-card-alt i, 
-.service-card-alt [data-lucide] {
-    color: #2b544a !important; 
-    margin-bottom: 20px;
-    width: 32px;
-    height: 32px;
-}
-
-.service-card-alt h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-}
-
-.service-card-alt p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
 }
