@@ -58,14 +58,22 @@ body {
     align-items: center;
 }
 
+/* Единый стиль для логотипа и названия на всех страницах */
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--dark-green);
     text-decoration: none;
+    color: inherit;
+}
+
+.logo span {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
 }
 
 .logo i {
@@ -268,58 +276,6 @@ body {
     padding: 80px 0;
 }
 
-/* Статистика отзывов */
-.reviews-stats-container {
-    display: flex;
-    gap: 60px;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    margin-bottom: 50px;
-    align-items: center;
-}
-
-.overall-rating {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    min-width: 250px;
-}
-
-.rating-badge-large {
-    background: var(--dark-green);
-    color: var(--white);
-    font-size: 32px;
-    font-weight: 700;
-    padding: 15px 20px;
-    border-radius: 8px;
-}
-
-.rating-label { font-weight: 700; font-size: 20px; color: var(--text-dark); }
-.reviews-count { color: #888; font-size: 14px; }
-
-.detailed-stats { flex-grow: 1; }
-.stat-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-.stat-row span:first-child { width: 140px; color: #444; }
-
-.progress-bar {
-    flex-grow: 1;
-    height: 6px;
-    background: #eee;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.progress { height: 100%; background: var(--dark-green); }
-.stat-val { font-weight: 600; width: 30px; text-align: right; }
-
 /* Сетка карточек */
 .reviews-grid-new {
     display: grid;
@@ -362,22 +318,19 @@ body {
     border-bottom: 1px dashed #eee;
 }
 
-/* --- ЛОГИКА ЖИВЫХ ЗВЕЗД --- */
 .stars-wrapper {
     position: relative;
     display: inline-block;
-    font-size: 18px; /* Размер звезд */
+    font-size: 18px; 
     line-height: 1;
 }
 
-/* Серые звезды (фон) */
 .stars-background {
     color: #e0e0e0;
     display: flex;
     gap: 2px;
 }
 
-/* Золотые звезды (поверх фона) */
 .stars-foreground {
     position: absolute;
     top: 0;
@@ -385,14 +338,12 @@ body {
     display: flex;
     gap: 2px;
     color: var(--gold-accent);
-    overflow: hidden; /* Обрезает звезды по ширине */
+    overflow: hidden;
     white-space: nowrap;
 }
 
-/* Конкретные значения закраски */
 .rating-100 { width: 100%; }
 .rating-97 { width: 97%; }
-.rating-98 { width: 98%; }
 
 .stat-val-bold {
     font-weight: 700;
@@ -408,7 +359,7 @@ body {
 }
 
 /* =========================================
-    8. ПОДВАЛ (Footer) — ОБНОВЛЕННЫЙ
+    8. ПОДВАЛ (Footer)
     ========================================= */
 .footer {
     background: var(--footer-bg);
@@ -485,29 +436,25 @@ body {
 }
 
 /* =========================================
-    9. АДАПТИВНОСТЬ (МОБИЛЬНАЯ ВЕРСИЯ)
+    9. АДАПТИВНОСТЬ
     ========================================= */
 @media (max-width: 992px) {
     .reviews-grid-new { grid-template-columns: 1fr 1fr; }
-    .reviews-stats-container { flex-direction: column; gap: 30px; }
 }
 
 @media (max-width: 768px) {
     .section-title { font-size: 20px; }
     
-    .header-flex { justify-content: space-between; } /* Изменено для лого и бургер-меню */
-
-    /* Настройки для бургер-меню */
     .menu-toggle {
-        display: block; /* Показываем кнопку */
+        display: block;
         z-index: 1001;
     }
 
     .nav {
-        display: none; /* Прячем ссылки по умолчанию */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Сразу под шапкой */
+        top: 100%;
         left: 0;
         width: 100%;
         background: #ffffff;
@@ -517,12 +464,10 @@ body {
         z-index: 1000;
     }
 
-    /* Класс, который будет добавляться скриптом при нажатии */
     .nav.active {
         display: flex;
     }
     
-    /* Скрываем кнопку "Забронировать" в шапке на мобилках, если она мешает */
     .header-action {
         display: none; 
     }
@@ -548,44 +493,17 @@ body {
     .gallery-grid {
         grid-template-columns: 1fr; 
     }
-
-    .about-main-img { height: 300px; }
-    
-    .amenities-row {
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
 }
 
-/* Адаптация видео для мобильных устройств */
-@media (max-width: 600px) {
-    /* Сбрасываем фиксированную высоту для контейнера видео */
-    .instr-card.full-width iframe {
-        height: 200px !important; /* Уменьшаем высоту для маленьких экранов */
-        margin-bottom: 20px;
-    }
-
-    /* Делаем сетку внутри карточки вертикальной */
-    .instr-card.full-width .instruction-grid {
-        grid-template-columns: 1fr !important; 
-        gap: 20px !important;
-    }
-
-    /* Располагаем видео над текстом */
-    .instr-card.full-width .media-container {
-        order: -1; /* Видео будет первым */
-        height: auto !important;
-    }
-/* Увеличиваем иконку ВК, чтобы она совпала с Lucide */
+/* Центрирование иконки ВК */
 .social-links .fa-vk {
-    font-size: 35px; /* Подберите это значение под размер ваших остальных иконок */
+    font-size: 24px; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
 }
 
-/* Если нужно немного опустить или поднять иконку ВК для центровки */
 .social-links a {
     display: inline-flex;
     align-items: center;
