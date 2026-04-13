@@ -1,168 +1,64 @@
-/* Цвет фона всей страницы как в контактах */
-.reviews-page {
+/* Принудительно меняем фон для всей страницы */
+html, body.reviews-page {
+    background-color: #f9f9f9 !important; /* Тот самый серый фон */
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер для контента */
+.reviews-main-container {
+    padding: 60px 0;
     background-color: #f9f9f9 !important;
 }
 
-.reviews-page .reviews-main-container {
-    padding: 60px 0;
-    background-color: transparent; /* Оставляем фон страницы */
-    min-height: 800px;
-}
-
-/* Карточка рейтинга - Белая */
+/* Белая карточка рейтинга */
 .sutochno-rating-card {
-    background: #ffffff; /* Строго белый блок */
-    border: 1px solid #eee;
+    background: #ffffff !important; /* Карточка остается белой */
+    border: 1px solid #e0e0e0;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 50px;
     display: flex;
     align-items: center;
     gap: 60px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Мягкая тень */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.rating-main-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    min-width: 250px;
-}
-
-.big-badge {
-    background: #399d7b;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 700;
-    padding: 10px 18px;
-    border-radius: 14px;
-    line-height: 1;
-}
-
-.status-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.reviews-amount {
-    color: #888;
-    font-size: 14px;
-}
-
-.rating-details-grid {
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 50px;
-}
-
-.detail-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    font-size: 15px;
-}
-
-.p-line {
-    flex-grow: 1;
-    height: 4px;
-    background: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.p-fill {
-    height: 100%;
-    background: #333;
-}
-
-/* Список отзывов */
-.reviews-vertical-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Карточка отзыва - Белая */
+/* Белая карточка отзыва */
 .single-review {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 30px;
-    background: #ffffff; /* Строго белый блок */
-    border: 1px solid #eee;
+    background: #ffffff !important; /* Отзыв остается белым */
+    border: 1px solid #e0e0e0;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Мягкая тень */
-}
-
-.guest-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.guest-name {
-    font-weight: 700;
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.stay-meta {
-    font-size: 13px;
-    color: #777;
-    line-height: 1.6;
-}
-
-.meta-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-}
-
-.review-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.small-badge {
-    background: #399d7b;
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 14px;
-}
+/* Остальные стили (копируем из предыдущего ответа) */
+.rating-main-info { display: flex; align-items: center; gap: 20px; min-width: 250px; }
+.big-badge { background: #399d7b; color: #fff; font-size: 32px; font-weight: 700; padding: 10px 18px; border-radius: 14px; line-height: 1; }
+.status-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.reviews-amount { color: #888; font-size: 14px; }
+.rating-details-grid { flex-grow: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px 50px; }
+.detail-item { display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: 15px; }
+.p-line { flex-grow: 1; height: 4px; background: #f0f0f0; border-radius: 10px; overflow: hidden; }
+.p-fill { height: 100%; background: #333; }
+.guest-avatar { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 15px; }
+.guest-name { font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+.stay-meta { font-size: 13px; color: #777; line-height: 1.6; }
+.meta-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.review-top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.small-badge { background: #399d7b; color: #fff; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 14px; }
+.date-posted { color: #aaa; font-size: 13px; }
+.comment { font-size: 16px; line-height: 1.7; color: #2c2c2c; margin: 0; }
 
-.date-posted {
-    color: #aaa;
-    font-size: 13px;
-}
-
-.comment {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #2c2c2c;
-    margin: 0;
-}
-
-/* Адаптив */
 @media (max-width: 900px) {
     .sutochno-rating-card { flex-direction: column; align-items: flex-start; gap: 30px; }
     .rating-details-grid { grid-template-columns: 1fr; width: 100%; }
 }
-
 @media (max-width: 600px) {
     .single-review { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
     .guest-info-side { display: flex; flex-direction: row; align-items: center; gap: 15px; flex-wrap: wrap; }
