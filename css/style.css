@@ -40,53 +40,57 @@ body {
 }
 
 /* =========================================
-    2. ШАПКА (Header) — ИСПРАВЛЕННАЯ
-    ========================================= */
+    2. ШАПКА (Header) — ОБНОВЛЕННАЯ С МОНТСЕРРАТ
+   ========================================= */
+
+/* Подключаем шрифт Montserrat для логотипа */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 .header {
     background: #ffffff; 
-    height: 85px; /* Жестко задаем высоту, чтобы меню не прыгало */
+    height: 90px; /* Увеличили высоту для солидности, как в новом коде */
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
 }
 
 .header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Растягиваем на всю ширину контейнера */
+    width: 100%;
+    gap: 20px; /* Чтобы элементы не слипались на средних экранах */
 }
 
-/* Единый стиль для логотипа и названия */
+/* Единый стиль для логотипа и названия (Montserrat) */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px; /* Увеличен зазор между картинкой и текстом */
     text-decoration: none;
-    color: var(--dark-green); /* Используем ваш темно-зеленый из :root */
+    flex-shrink: 0; /* Чтобы логотип не сжимался */
 }
 
 .logo span {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important; /* Тот самый шрифт как на лого */
     font-weight: 700 !important;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 24px;   /* Размер совпадает с подвалом */
+    color: #1a3a3a;    /* Фирменный темно-зеленый */
+    letter-spacing: -0.5px;
     line-height: 1;
     white-space: nowrap;
+    text-transform: none; /* Убираем принудительный CAPS, если на логотипе строчные */
 }
 
-.logo i {
-    color: var(--gold-accent);
-}
-
+/* Меню навигации - ТЕПЕРЬ ВСЕГДА ПО ЦЕНТРУ */
 .nav {
     display: flex;
-    gap: 25px; /* Увеличил отступ, чтобы выглядело просторнее */
+    gap: 25px;
     align-items: center;
+    margin: 0 auto; /* МАГИЯ: выравнивает меню строго по центру между лого и кнопкой */
 }
 
 .nav a {
@@ -95,31 +99,32 @@ body {
     font-size: 14px;
     font-weight: 600;
     transition: 0.3s;
-    white-space: nowrap; /* Запрещаем перенос ссылок на две строки */
+    white-space: nowrap;
 }
 
 .nav a:hover {
-    color: var(--gold-accent);
+    color: #1a3a3a; /* Меняем цвет наведения на фирменный */
 }
 
-/* НОВАЯ КНОПКА ИЗ МАКЕТА */
-.btn-dark {
-    background-color: #2d3e40; /* Темно-зеленый цвет из макета */
-    color: #ffffff;            /* Белый текст */
-    padding: 12px 24px;        /* Внутренние отступы */
-    border-radius: 6px;        /* Скругление углов как на макете */
-    text-decoration: none;     /* Убираем подчеркивание ссылки */
-    font-weight: 600;          /* Полужирное начертание */
+/* КНОПКА ЗАБРОНИРОВАТЬ - ФИКСИРОВАННАЯ */
+.btn-dark.header-action {
+    background-color: #2d3e40; 
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
     transition: background-color 0.3s ease;
-    border: none;              /* Убираем рамку, если есть */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    min-width: 160px; /* Кнопка всегда одного размера, больше не прыгает */
+    flex-shrink: 0;   /* Запрещаем кнопке сжиматься */
 }
 
 .btn-dark:hover {
-    background-color: #1f2b2c; /* Чуть темнее при наведении */
+    background-color: #1f2b2c;
 }
 
 /* СТИЛИ БУРГЕР-МЕНЮ */
@@ -127,9 +132,15 @@ body {
     display: none;
     background: none;
     border: none;
-    color: var(--dark-green);
+    color: #1a3a3a;
     cursor: pointer;
     font-size: 24px;
+    flex-shrink: 0;
+}
+
+/* ФИКС ДЛЯ ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ */
+.gallery-overlay i {
+    color: #1a3a3a !important;
 }
 
 /* =========================================
