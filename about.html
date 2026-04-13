@@ -234,6 +234,48 @@
             border: none;
         }
 
+        /* TOOLTIP STYLES */
+        .tooltip-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            cursor: help;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            line-height: 1.4;
+            font-weight: 400;
+            pointer-events: none;
+        }
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
         .sidebar-booking {
             position: sticky;
             top: 20px;
@@ -307,6 +349,8 @@
             .menu-toggle { display: block; }
             .nav.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 10px rgba(0,0,0,0.1); z-index: 100; }
             .amenity-list { grid-template-columns: 1fr; }
+            .tooltip-text { width: 150px; left: auto; right: 0; transform: none; } /* Оптимизация для мобильных */
+            .tooltip-text::after { left: 85%; }
         }
     </style>
 </head>
@@ -454,7 +498,10 @@
                     
                     <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
                         <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
-                        <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                        <div class="tooltip-container">
+                            <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                            <span class="tooltip-text">Ранний заезд и поздний выезд возможны по предварительному согласованию при наличии возможности.</span>
+                        </div>
                     </div>
 
                     <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
@@ -477,13 +524,20 @@
                         <div class="rule-item" style="display: flex; align-items: center; gap: 12px;">
                             <i data-lucide="baby" size="24" style="color: #333;"></i>
                             <span style="font-size: 16px;">Можно с детьми по согласованию с хозяином жилья</span>
-                            <i data-lucide="help-circle" size="14" style="color: #999; margin-left: 5px;"></i>
+                            <div class="tooltip-container">
+                                <i data-lucide="help-circle" size="14" style="color: #999; margin-left: 5px;"></i>
+                                <span class="tooltip-text">Пожалуйста, укажите возраст ребенка при бронировании. Мы подготовим всё необходимое.</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
                         <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
-                            Страховой депозит 5 000 ₽ <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                            Страховой депозит 5 000 ₽ 
+                            <div class="tooltip-container">
+                                <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                                <span class="tooltip-text">Депозит служит гарантией сохранности имущества и чистоты. Возвращается в день выезда после уборки.</span>
+                            </div>
                         </div>
                         <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость проживания, возвращается при выезде</div>
                     </div>
