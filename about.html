@@ -111,43 +111,6 @@
             align-items: start;
         }
 
-        /* --- RATING STYLE (AS PER SCREENSHOT 1) --- */
-        .sutochno-rating-container {
-            margin-bottom: 30px;
-        }
-        .rating-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .rating-score {
-            background: #46a358;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1;
-        }
-        .rating-label-box h4 { margin: 0; font-size: 20px; font-weight: 700; }
-        .rating-label-box p { margin: 0; font-size: 14px; color: var(--text-muted); }
-
-        .rating-details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px 60px;
-        }
-        .rating-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 15px;
-            border-bottom: 2px solid #333; /* The black lines in the screenshot */
-            padding-bottom: 2px;
-        }
-        .rating-val { font-weight: 700; margin-left: 10px; }
-
         /* --- DESCRIPTION BLOCK (EXPANDABLE) --- */
         .description-block {
             background: #fff;
@@ -175,7 +138,7 @@
             text-decoration: none;
         }
 
-        /* --- CHIPS & SLEEPING PLACES (AS PER SCREENSHOT 2) --- */
+        /* --- CHIPS & SLEEPING PLACES --- */
         .object-title { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
         .chips-container {
             display: flex;
@@ -191,16 +154,23 @@
             color: #333;
         }
 
-        .sleeping-section { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 30px; }
+        /* NEW STYLE FOR SLEEPING SECTION */
+        .sleeping-section { 
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
         .sleeping-card {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 20px;
+            padding: 12px 20px; /* Reduced height */
             width: 260px;
             border: 1px solid #eee;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            align-items: center; /* Changed to row-like alignment for compact view */
+            gap: 15px;
         }
         .sleeping-card i { color: #333; }
         .sleeping-card span { font-size: 14px; font-weight: 500; }
@@ -297,7 +267,6 @@
 
         @media (max-width: 768px) {
             .details-grid, .full-gallery, .footer-grid { grid-template-columns: 1fr; }
-            .rating-details-grid { grid-template-columns: 1fr; }
             .full-gallery { height: auto; }
             .side-imgs { display: none; }
             .nav { display: none; }
@@ -356,42 +325,6 @@
     <div class="details-grid">
         <div class="main-content">
             
-            <div class="sutochno-rating-container">
-                <div class="rating-header">
-                    <div class="rating-score">9,9</div>
-                    <div class="rating-label-box">
-                        <h4>Великолепно</h4>
-                        <p>54 отзыва</p>
-                    </div>
-                </div>
-                <div class="rating-details-grid">
-                    <div class="rating-item">
-                        <span>Чистота</span>
-                        <span class="rating-val">10,0</span>
-                    </div>
-                    <div class="rating-item">
-                        <span>Соответствие фото</span>
-                        <span class="rating-val">10,0</span>
-                    </div>
-                    <div class="rating-item">
-                        <span>Своевременность заселения</span>
-                        <span class="rating-val">10,0</span>
-                    </div>
-                    <div class="rating-item">
-                        <span>Цена - качество</span>
-                        <span class="rating-val">10,0</span>
-                    </div>
-                    <div class="rating-item">
-                        <span>Расположение</span>
-                        <span class="rating-val">9,5</span>
-                    </div>
-                    <div class="rating-item">
-                        <span>Качество обслуживания</span>
-                        <span class="rating-val">10,0</span>
-                    </div>
-                </div>
-            </div>
-
             <div class="description-block">
                 <div class="object-title">Студия</div>
                 <div class="chips-container">
@@ -414,15 +347,15 @@
                     </p>
                 </div>
                 <a href="javascript:void(0)" class="toggle-desc" id="toggle-btn">Ещё</a>
+            </div>
 
-                <div class="sleeping-section">
-                    <h3 style="font-size: 20px; margin-bottom: 5px;">Спальные места</h3>
-                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">1 кровать, 2 основных спальных места</p>
-                    <div class="sleeping-card">
-                        <i data-lucide="bed" size="24"></i>
-                        <div style="font-size: 18px; font-weight: 500;">× 1</div>
-                        <span>Двуспальная кровать</span>
-                    </div>
+            <div class="sleeping-section">
+                <h3 style="font-size: 20px; margin-bottom: 5px;">Спальные места</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">1 кровать, 2 основных спальных места</p>
+                <div class="sleeping-card">
+                    <i data-lucide="bed" size="24"></i>
+                    <div style="font-size: 18px; font-weight: 500;">× 1</div>
+                    <span>Двуспальная кровать</span>
                 </div>
             </div>
 
@@ -514,7 +447,6 @@
 <script>
     lucide.createIcons();
     
-    // Menu toggle logic
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
     if (menuToggle && mainNav) {
@@ -523,7 +455,6 @@
         });
     }
 
-    // Expand description logic
     const toggleBtn = document.getElementById('toggle-btn');
     const descContent = document.getElementById('desc-content');
 
