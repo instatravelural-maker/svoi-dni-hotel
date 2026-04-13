@@ -125,17 +125,28 @@
             font-size: 1.1rem;
             letter-spacing: 0.5px;
         }
+        /* Иконка в достопримечательностях */
         .gallery-overlay i {
-            color: #b19777; /* Цвет иконки как на образце */
+            color: #1a3a3a; 
         }
 
         /* НОВЫЕ СТИЛИ ДЛЯ ИКОНОК И ПОВЕДЕНИЯ БЛОКОВ (ПО ТЗ) */
         
-        /* Цвет всех иконок (кроме подвала) */
+        /* Цвет всех иконок в шапке и основном контенте (кроме подвала) */
+        header i,
+        header [data-lucide],
         main i, 
         main [data-lucide] {
-            color: #b19777 !important;
+            color: #1a3a3a !important;
             transition: none !important; /* Не меняют цвет при наведении */
+        }
+
+        /* Отключение смены цвета при наведении */
+        header a:hover i,
+        header a:hover [data-lucide],
+        main a:hover i,
+        main a:hover [data-lucide] {
+            color: #1a3a3a !important;
         }
 
         /* Поведение карточек "Почему выбирают нас" при наведении */
@@ -148,11 +159,11 @@
         
         /* Иконки в блоке "Наш уникальный объект" */
         .amenity-item i {
-            color: #b19777;
+            color: #1a3a3a;
             margin-bottom: 8px;
         }
         .location-line i {
-            color: #b19777;
+            color: #1a3a3a;
         }
 
     </style>
