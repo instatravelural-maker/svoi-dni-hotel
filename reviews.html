@@ -3,164 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отзывы гостей — CozyStay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>О квартире — Свои Дни</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* === ИСПРАВЛЕННЫЕ СТИЛИ СТАТИСТИКИ (ПО СКРИНШОТУ) === */
-        
-        .reviews-stats-container {
-            display: flex;
-            gap: 60px;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            margin-bottom: 50px;
-            align-items: flex-start; /* Выравнивание по верху */
-        }
-
-        /* Левая часть: бейдж и текст */
-        .overall-rating {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            min-width: 280px;
-        }
-
-        /* Зеленый круглый бейдж как на скрине */
-        .rating-badge-large {
-            background-color: #3e9e85; /* Точный цвет с макета */
-            color: #fff;
-            font-size: 28px;
-            font-weight: 700;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%; /* Круглый */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .rating-label {
-            font-weight: 700;
-            font-size: 20px;
-            color: #000;
-            margin-bottom: 2px;
-        }
-
-        .reviews-count {
-            color: #333;
-            font-size: 16px;
-        }
-
-        /* Правая часть: шкалы */
-        .detailed-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px 50px; /* Отступы между шкалами */
-            flex-grow: 1;
-        }
-
-        .stat-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        /* Название метрики */
-        .stat-row span:first-child {
-            font-size: 15px;
-            color: #000;
-            white-space: nowrap;
-            width: 170px; /* Фиксированная ширина для выравнивания */
-            flex-shrink: 0;
-        }
-
-        /* Тонкая линия шкалы */
-        .progress-bar {
-            flex-grow: 1;
-            height: 3px; /* Очень тонкая */
-            background: #eee;
-            border-radius: 2px;
-            overflow: hidden;
-            margin: 0 10px;
-        }
-
-        /* Черный цвет закраски */
-        .progress {
-            height: 100%;
-            background: #000 !important; /* Принудительно черный */
-        }
-
-        /* Числовое значение */
-        .stat-val {
-            font-weight: 700;
-            font-size: 15px;
-            color: #000;
-            width: 35px;
-            text-align: right;
-            flex-shrink: 0;
-        }
-
-        /* === ОСТАЛЬНЫЕ ЛОКАЛЬНЫЕ СТИЛИ БЕЗ ИЗМЕНЕНИЙ === */
-        .footer {
-            background: #ece9e2;
-            margin-top: 80px;
-            padding: 60px 0 30px;
-            border-top: 1px solid #ddd;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 24px;
-            color: #2b544a;
-            margin-bottom: 20px;
-        }
-        .footer h4 { font-size: 16px; margin-bottom: 20px; color: #2b544a; }
-        .footer p { font-size: 14px; color: #666; margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-links a { color: #2b544a; transition: 0.3s; }
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid #d4d1ca;
-            text-align: center;
-            font-size: 13px;
-            color: #888;
-        }
-
-        @media (max-width: 992px) {
-            .reviews-grid-new { grid-template-columns: 1fr 1fr; }
-            .reviews-stats-container { flex-direction: column; gap: 30px; padding: 20px; }
-            .overall-rating { min-width: auto; justify-content: center; }
-        }
-        @media (max-width: 768px) {
-            .reviews-grid-new { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .detailed-stats { grid-template-columns: 1fr; gap: 10px; }
-            .stat-row span:first-child { width: 140px; font-size: 14px; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reviews.css">
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
     <div class="container header-flex">
-        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <a href="index.html" class="logo">
             <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
-            <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Свои Дни</span>
+            <span style="text-transform: uppercase; letter-spacing: 1px;">Свои Дни</span>
         </a> 
         
         <button class="menu-toggle" id="menu-toggle">
@@ -169,7 +26,7 @@
 
         <nav class="nav" id="main-nav">
             <a href="index.html">Главная</a>
-            <a href="about.html">О Квартире</a>
+            <a href="about.html" class="active">О квартире</a>
             <a href="services.html">Сервис</a>
             <a href="checkin.html">Заселение</a>
             <a href="reviews.html">Отзывы</a>
@@ -180,187 +37,188 @@
     </div>
 </header>
 
-    <main class="container page-content">
-        <h1 class="section-title">ОТЗЫВЫ ГОСТЕЙ</h1>
-        
-        <div class="reviews-stats-container">
-            <div class="overall-rating">
-                <div class="rating-badge-large">9,9</div>
-                <div>
-                    <div class="rating-label">Великолепно</div>
-                    <div class="reviews-count">54 отзыва</div>
-                </div>
-            </div>
+<main class="container">
+    <section class="apartment-header">
+        <div>
+            <h1>Уютные апартаменты в ЖК «Чистое небо»</h1>
+            <p style="color: var(--text-muted); margin-top: 5px;">
+                <i data-lucide="map-pin" size="16" style="vertical-align: middle;"></i> 
+                Санкт-Петербург, Приморский район, Арцеуловская аллея
+            </p>
+        </div>
+    </section>
+
+    <div class="full-gallery">
+        <div class="main-img">
+            <img src="img/bed.webp" alt="Гостиная">
+        </div>
+        <div class="side-imgs">
+            <div><img src="img/room.webp" alt="Кухня"></div>
+            <div><img src="img/kitchen.webp" alt="Спальня"></div>
+        </div>
+    </div>
+
+    <div class="details-grid">
+        <div class="main-content">
             
-            <div class="detailed-stats">
-                <div class="stat-row">
-                    <span>Чистота</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
+            <div class="description-block">
+                <div class="object-title">Студия</div>
+                <div class="chips-container">
+                    <div class="chip">27 м²</div>
+                    <div class="chip">2 гостя</div>
+                    <div class="chip">1 кровать</div>
+                    <div class="chip">Кухонная зона</div>
+                    <div class="chip">Этаж 1 из 14</div>
+                    <div class="chip">1 ванная комната</div>
+                    <div class="chip">Бесплатная парковка</div>
                 </div>
-                <div class="stat-row">
-                    <span>Соответствие фото</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
+
+                <div class="expandable-content" id="desc-content">
+                    <p style="margin-top:0;">Комфорт и уют в ЖК «Чистое небо» (Приморский район). Идеальный вариант для тех, кто ценит чистоту, современный сервис и тишину. Подходит для командировок, отдыха в Санкт-Петербурге или поездок в медицинские центры.</p>
+                    
+                    <div style="font-weight: 700; text-transform: uppercase; font-size: 13px; margin: 15px 0 10px;">Почему выбирают нас:</div>
+                    <p>
+                        <strong>Бесконтактное заселение:</strong> Установлен электронный замок. Заезжайте в любое удобное время без ожидания хоста.<br>
+                        <strong>Удаленная работа:</strong> Высокоскоростной Wi-Fi (до 100 Мбит/с) и Smart-TV (300+ каналов). Комфортное пространство для работы с ноутбуком.<br>
+                        <strong>Безопасность:</strong> охрана, видеонаблюдение, тихие соседи.<br>
+                        <strong>Оснащение для вашего удобства:</strong> Кухня: Полноценная варочная панель, духовка, большой холодильник, микроволновая печь, полный набор посуды для готовки.
+                        <strong>Спальная зона:</strong> Удобное спальное место с чистым постельным бельем.<br> 
+                        <strong>Ванная и быт:</strong> Стиральная машина, фен, утюг, гладильная доска, сушилка для белья. Всегда в наличии комплект полотенец и средства гигиены.
+                    </p>
                 </div>
-                <div class="stat-row">
-                    <span>Заселение</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
+                <a href="javascript:void(0)" class="toggle-desc" id="toggle-btn">Ещё</a>
+            </div>
+
+            <div class="sleeping-section">
+                <h3 style="font-size: 20px; margin-bottom: 5px;">Спальные места</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">1 кровать, 2 основных спальных места</p>
+                <div class="sleeping-card">
+                    <i data-lucide="bed" size="24"></i>
+                    <div style="font-size: 18px; font-weight: 500;">× 1</div>
+                    <span>Двуспальная кровать</span>
                 </div>
-                <div class="stat-row">
-                    <span>Цена - качество</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
+            </div>
+
+            <div class="amenities-section">
+                <h3>Основные удобства</h3>
+                <div class="amenities-chips">
+                    <div class="amenity-chip"><i data-lucide="door-open"></i> Балкон / Лоджия</div>
+                    <div class="amenity-chip"><i data-lucide="wifi"></i> Беспроводной интернет Wi-Fi</div>
+                    <div class="amenity-chip"><i data-lucide="tv"></i> Телевизор</div>
+                    <div class="amenity-chip"><i data-lucide="coffee"></i> Электрический чайник</div>
+                    <div class="amenity-chip"><i data-lucide="wind"></i> Фен</div>
+                    <div class="amenity-chip"><i data-lucide="microwave"></i> Микроволновка</div>
+                    <div class="amenity-chip"><i data-lucide="washing-machine"></i> Стиральная машина</div>
+                    <div class="amenity-chip"><i data-lucide="cup-soda"></i> Кофеварка</div>
+                    <div class="amenity-chip"><i data-lucide="blinds"></i> Блэкаут шторы</div>
+                    <div class="amenity-chip"><i data-lucide="columns"></i> Шкаф</div>
+                    <div class="amenity-chip"><i data-lucide="refrigerator"></i> Холодильник</div>
                 </div>
-                <div class="stat-row">
-                    <span>Расположение</span>
-                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                    <span class="stat-val">9,5</span>
+
+                <div class="amenities-groups">
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="utensils" size="20"></i> Кухонная зона</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">Электроплита</div>
+                            <div class="amenity-item">Духовка</div>
+                            <div class="amenity-item">Микроволновка</div>
+                            <div class="amenity-item">Посуда и принадлежности</div>
+                            <div class="amenity-item">Столовые приборы</div>
+                            <div class="amenity-item">Электрический чайник</div>
+                            <div class="amenity-item">Кофеварка</div>
+                            <div class="amenity-item">Холодильник</div>
+                            <div class="amenity-item">Кухонный гарнитур</div>
+                            <div class="amenity-item">Обеденный стол</div>
+                        </div>
+                    </div>
+
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="bath" size="20"></i> Ванная комната</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">1 ванная комната с туалетом</div>
+                            <div class="amenity-item">Полотенца</div>
+                            <div class="amenity-item">Туалетные принадлежности</div>
+                            <div class="amenity-item">Фен</div>
+                            <div class="amenity-item">Душ</div>
+                        </div>
+                    </div>
+
+                    <div class="amenity-group">
+                        <div class="amenity-group-title"><i data-lucide="p-circle" size="20"></i> Парковка</div>
+                        <div class="amenity-list">
+                            <div class="amenity-item">Без оплаты</div>
+                            <div class="amenity-item">На территории объекта</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span>Качество обслуживания</span>
-                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
-                    <span class="stat-val">10,0</span>
+            </div>
+
+            <div class="rules-card-container">
+                <h3 style="font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px;">Правила проживания</h3>
+                
+                <div class="chip" style="background: #f1f4f9; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 10px 20px; border-radius: 50px;">
+                    <span style="font-size: 14px; font-weight: 500;">Заезд с 14:00 — Выезд до 12:00</span>
+                    <div class="tooltip-container">
+                        <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                        <span class="tooltip-text">Точное время можно выбрать при бронировании. Ранний заезд и поздний выезд по согласованию.</span>
+                    </div>
+                </div>
+
+                <div class="rules-list" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="rule-item">
+                        <i data-lucide="baby" size="24"></i>
+                        <span style="font-size: 16px;">Можно с детьми по согласованию</span>
+                        <div class="tooltip-container">
+                            <i data-lucide="help-circle" size="16" style="color: #999; margin-left: 5px;"></i>
+                            <span class="tooltip-text">От 0 до 1 года бесплатно. От 2 лет на условиях взрослого гостя</span>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-item">
+                        <img src="https://img.icons8.com/ios/50/000000/no-smoking.png" style="width: 24px; opacity: 0.8;" alt="">
+                        <span style="font-size: 16px;">Курение запрещено</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="paw-print" size="24"></i>
+                        <span style="font-size: 16px;">Нельзя с питомцами</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="music" size="24"></i>
+                        <span style="font-size: 16px;">Без вечеринок и мероприятий</span>
+                    </div>
+                    <div class="rule-item">
+                        <i data-lucide="file-text" size="24"></i>
+                        <span style="font-size: 16px;">Отчётные документы о проживании</span>
+                    </div>
+                </div>
+
+                <div class="deposit-box" style="background: #fff8e1; border-radius: 12px; padding: 16px 20px; margin-top: 25px;">
+                    <div style="font-weight: 600; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+                        Страховой депозит 5 000 ₽ 
+                        <div class="tooltip-container">
+                            <i data-lucide="help-circle" size="16" style="color: #999;"></i>
+                            <span class="tooltip-text">Залог за сохранность имущества. Возвращается в день выезда после уборки.</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 13px; color: #666; margin-top: 4px;">Не входит в стоимость, возвращается при выезде</div>
                 </div>
             </div>
         </div>
-        <div class="reviews-grid-new">
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=45" alt="Наталья">
-                    <div>
-                        <div class="reviewer-name">Наталья</div>
-                        <div class="review-date">2026, 2 суток</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-97">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">9,7</span>
-                </div>
-                <p class="review-modern-text">"Рекомендую! Хозяин всегда на связи, всё объяснил, выслал схему проезда. Заселение было даже раньше времени, сам встретил. Квартира отличная, чистая. "</p>
-            </div>
 
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=47" alt="Екатерина">
-                    <div>
-                        <div class="reviewer-name">Екатерина</div>
-                        <div class="review-date">2026, 2 суток</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-100">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">10.0</span>
-                </div>
-                <p class="review-modern-text">"Прекрасный хозяин квартиры! Сам позвонил, сориентировал по месту парковки. Согласовал раннее заселение. Постоянно был на связи. Очень удобный замок в квартиру. Без ключей. "</p>
+        <aside class="sidebar-booking">
+            <div class="price">от 4 500 ₽ <span>/ сутки</span></div>
+            <div class="sidebar-info">
+                <p><i data-lucide="calendar" size="18"></i> Минимальный срок: 2 суток</p>
+                <p><i data-lucide="users" size="18"></i> До 2 человек</p>
+                <p><i data-lucide="check-circle" size="18"></i> Мгновенное бронирование</p>
             </div>
+            <a href="booking.html" class="btn-booking-full">Проверить свободные даты</a>
+            <p style="text-align: center; font-size: 12px; color: #999; margin-top: 15px;">Вы ничего не платите на этом этапе</p>
+        </aside>
+    </div>
+</main>
 
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=18" alt="Григорий">
-                    <div>
-                        <div class="reviewer-name">Григорий</div>
-                        <div class="review-date">2026, 4 суток</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-100">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">10.0</span>
-                </div>
-                <p class="review-modern-text">"Квартира теплая, все необходимое для пребывания есть. Мебель, сантехника новая, постельные принадлежности чистые и свежие. На кухне все есть. По нашей просьбе хозяин добавил кофемашину."</p>
-            </div>
-
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=32" alt="Надежда">
-                    <div>
-                        <div class="reviewer-name">Надежда</div>
-                        <div class="review-date">2026, 2 суток</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-98">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">10</span>
-                </div>
-                <p class="review-modern-text">"Приветливый гостеприимный хозяин, заселение прошло раньше по времени, квартира чистая и уютная. В шаговой доступности магазины, кафе. Уезжали рано утром, не возникло никаких вопросов по сдаче квартиры. "</p>
-            </div>
-
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=14" alt="Руслан">
-                    <div>
-                        <div class="reviewer-name">Руслан</div>
-                        <div class="review-date">2026, 21 сутки</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-100">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">10.0</span>
-                </div>
-                <p class="review-modern-text">"Фото соответствуют реальности, очень уютная квартира, большой балкон, мягкий матрас, чисто, есть теплый пол в ванной! Очень любезный хозяин, спасибо, квартиру рекомендуем! "</p>
-            </div>
-
-            <div class="review-card-modern">
-                <div class="reviewer-info">
-                    <img src="https://i.pravatar.cc/150?img=12" alt="Роман">
-                    <div>
-                        <div class="reviewer-name">Роман</div>
-                        <div class="review-date">2026, 3 суток</div>
-                    </div>
-                </div>
-                <div class="review-meta">
-                    <div class="stars-wrapper">
-                        <div class="stars-background">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="stars-foreground rating-100">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <span class="stat-val-bold">10.0</span>
-                </div>
-                <p class="review-modern-text">"Все очень понравился. Отличный сервис. Аккуратная квартира. Будем обращаться еще! Спасибо"</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
+<footer class="footer">
     <div class="container footer-grid">
         <div class="footer-brand">
             <div class="footer-logo">
@@ -411,16 +269,28 @@
     </div>
 </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script>
+<script>
+    lucide.createIcons();
+    
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
+        });
+    }
+
+    const toggleBtn = document.getElementById('toggle-btn');
+    const descContent = document.getElementById('desc-content');
+
+    if (toggleBtn && descContent) {
+        toggleBtn.addEventListener('click', () => {
+            descContent.classList.toggle('expanded');
+            if (descContent.classList.contains('expanded')) {
+                toggleBtn.textContent = 'Свернуть';
+            } else {
+                toggleBtn.textContent = 'Ещё';
+            }
         });
     }
 </script>
