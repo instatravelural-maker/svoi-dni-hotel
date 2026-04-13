@@ -126,8 +126,35 @@
             letter-spacing: 0.5px;
         }
         .gallery-overlay i {
-            color: #ffcc00;
+            color: #b19777; /* Цвет иконки как на образце */
         }
+
+        /* НОВЫЕ СТИЛИ ДЛЯ ИКОНОК И ПОВЕДЕНИЯ БЛОКОВ (ПО ТЗ) */
+        
+        /* Цвет всех иконок (кроме подвала) */
+        main i, 
+        main [data-lucide] {
+            color: #b19777 !important;
+            transition: none !important; /* Не меняют цвет при наведении */
+        }
+
+        /* Поведение карточек "Почему выбирают нас" при наведении */
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px) !important;
+        }
+        
+        /* Иконки в блоке "Наш уникальный объект" */
+        .amenity-item i {
+            color: #b19777;
+            margin-bottom: 8px;
+        }
+        .location-line i {
+            color: #b19777;
+        }
+
     </style>
 </head>
 <body>
@@ -197,12 +224,12 @@
                     </p>
                     
                     <div class="amenities-row">
-    <div class="amenity-item"><i data-lucide="wifi"></i><br>WiFi</div>
-    <div class="amenity-item"><i data-lucide="tv"></i><br>ТВ</div>
-    <div class="amenity-item"><i data-lucide="utensils"></i><br>Кухня</div>
-    <div class="amenity-item"><i data-lucide="washing-machine"></i><br>Стирка</div>
-    <div class="amenity-item"><i data-lucide="parking-circle"></i><br>Парковка</div>
-</div>
+                        <div class="amenity-item"><i data-lucide="wifi"></i><br>WiFi</div>
+                        <div class="amenity-item"><i data-lucide="tv"></i><br>ТВ</div>
+                        <div class="amenity-item"><i data-lucide="utensils"></i><br>Кухня</div>
+                        <div class="amenity-item"><i data-lucide="washing-machine"></i><br>Стирка</div>
+                        <div class="amenity-item"><i data-lucide="parking-circle"></i><br>Парковка</div>
+                    </div>
 
                     <div class="location-details">
                         <div class="location-line"><i data-lucide="map-pin"></i>Центр, м. Восстания — 5 мин</div>
