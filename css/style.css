@@ -614,3 +614,67 @@ body {
     vertical-align: middle;
     margin-right: 10px;
 }
+/* =========================================
+    СПЕЦИФИЧНЫЕ СТИЛИ СТРАНИЦЫ СЕРВИСЫ (ВОЗВРАТ КРАСОТЫ)
+   ========================================= */
+
+/* Фон конкретно для этой страницы */
+.page-services-bg {
+    background-color: #fdfaf7 !important;
+}
+
+.services-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 40px auto 50px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.services-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.service-card-alt {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.service-card-alt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Иконки — возвращаем ваш изумрудный цвет */
+.service-card-alt i, 
+.service-card-alt [data-lucide] {
+    color: #2b544a !important; 
+    margin-bottom: 20px;
+    width: 32px;
+    height: 32px;
+}
+
+.service-card-alt h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-card-alt p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
