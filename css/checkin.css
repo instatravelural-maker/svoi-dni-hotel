@@ -1,14 +1,15 @@
 :root {
     --navy: #244471;
-    --gold: #244471;
+    --gold: #244471; /* Возвращен корпоративный синий */
     --bg: #FDFBF4;
     --radius: 20px;
+    --text-gray: #666666;
 }
 
 body { background: var(--bg); font-family: 'Inter', sans-serif; margin: 0; }
 
 /* Навигация и хедер */
-.nav a { text-decoration: none; color: inherit; } /* Убираем подчеркивание у всех ссылок */
+.nav a { text-decoration: none; color: inherit; } 
 .nav a.active { color: var(--navy) !important; border-bottom: none !important; text-decoration: none !important; }
 .btn-dark.header-action { background: var(--navy) !important; color: #fff; text-decoration: none; }
 
@@ -17,6 +18,8 @@ body { background: var(--bg); font-family: 'Inter', sans-serif; margin: 0; }
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding-bottom: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .item {
@@ -31,21 +34,31 @@ body { background: var(--bg); font-family: 'Inter', sans-serif; margin: 0; }
 .wide { grid-column: span 2; }
 .full { grid-column: span 3; }
 
+/* ОБНОВЛЕННЫЙ ЗАГОЛОВОК С ЛИНИЕЙ-ГРАДИЕНТОМ (КОРПОРАТИВНЫЙ ЦВЕТ) */
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--navy);
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     margin: 0 0 25px 0;
+    width: 100%;
 }
 
-h2 svg { color: var(--navy); width: 24px; }
+h2::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    /* Градиент от корпоративного синего до полной прозрачности */
+    background: linear-gradient(to right, var(--navy) 0%, rgba(36, 68, 113, 0) 100%);
+}
+
+h2 i, h2 svg { color: var(--navy); width: 24px; flex-shrink: 0; }
 
 .media-wrapper {
     width: 100%;
-    height: 250px;
+    height: 450px;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -56,7 +69,12 @@ h2 svg { color: var(--navy); width: 24px; }
     width: 100%; height: 100%; object-fit: cover; border: none;
 }
 
-.description-block p { font-size: 0.95rem; color: #445; line-height: 1.6; margin: 0; }
+.description-block p { 
+    font-size: 0.95rem; 
+    color: var(--text-gray); 
+    line-height: 1.7; 
+    margin: 0; 
+}
 
 .route-step { display: flex; gap: 15px; margin-bottom: 12px; align-items: flex-start; }
 .route-step span {
@@ -125,37 +143,44 @@ h2 svg { color: var(--navy); width: 24px; }
 }
 
 .food-vertical-card {
-    background: #f8fafc;
-    padding: 25px;
+    background: #fff;
+    padding: 30px 20px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid #f0f0f0;
 }
 
-.food-vertical-card h3 { font-family: 'Playfair Display', serif; margin: 15px 0 10px 0; color: var(--navy); }
-.food-vertical-card p { font-size: 0.85rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+.food-vertical-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 15px 0 10px 0; color: var(--navy); }
+.food-vertical-card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
 
-.rule-header { color: var(--navy); font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 6px; }
+.rule-header { color: var(--navy); font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
 
-.maps-btn {
+.address-text { color: #000; font-weight: 600; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+
+.food-vertical-card .maps-btn {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 12px;
     background: var(--navy);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.75rem;
-    transition: 0.3s;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.maps-btn:hover { filter: brightness(1.2); }
+.food-vertical-card .maps-btn::after {
+    content: "\f124"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
 
 .info-pill-centered {
     background: #f8fafc; padding: 15px; border-radius: 15px;
@@ -164,95 +189,21 @@ h2 svg { color: var(--navy); width: 24px; }
 
 .code-val { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 700; }
 
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 1024px) {
     .rules-grid-four { grid-template-columns: repeat(2, 1fr); }
-    .food-grid-three { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-    .bento-grid { grid-template-columns: 1fr; }
-    .wide, .full { grid-column: span 1; }
-    .rules-grid-four { grid-template-columns: 1fr; }
-}
-/* Ограничение ширины сетки и центрирование */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding-bottom: 50px;
-    max-width: 1100px; /* Сужаем блоки */
-    margin: 0 auto;    /* Центрируем на странице */
-}
-
-/* Увеличение высоты для фото и видео */
-.media-wrapper {
-    width: 100%;
-    height: 450px;     /* Увеличено для нормального отображения контента */
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background: #eee;
-}
-
-/* Адаптивность для мобильных устройств (чтобы на телефонах высота не была слишком огромной) */
-@media (max-width: 768px) {
-    .media-wrapper {
-        height: 250px;
-    }
-}
-/* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
-
-@media (max-width: 768px) {
-    /* Центрируем и убираем лишние отступы у главного контейнера */
-    main.container {
-        padding: 0 15px !important;
-        margin-top: 20px !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* Заголовки делаем меньше, чтобы не переносились некрасиво */
-    .section-header h1 {
-        font-size: 1.8rem !important;
-    }
-
-    /* Сетку bento перестраиваем в 1 колонку */
-    .bento-grid {
-        grid-template-columns: 1fr !important; 
-        gap: 15px !important;
-        width: 100% !important;
-    }
-
-    /* Сбрасываем расширение блоков на всю ширину */
-    .item.wide, .item.full {
-        grid-column: span 1 !important;
-    }
-
-    /* Внутренние отступы в карточках */
-    .item {
-        padding: 20px !important;
-    }
-
-    /* Высота картинок и видео на мобильном */
-    .media-wrapper {
-        height: 250px !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* Сетки внутри блоков (Правила, Еда) — тоже в одну колонку */
-    .rules-grid-four, .food-grid-three {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-    }
-
-    /* Код домофона чуть меньше */
-    .code-val {
-        font-size: 1.6rem !important;
-    }
-
-    /* Кнопки делаем удобными для нажатия пальцем */
-    .maps-btn {
-        padding: 15px !important;
-        font-size: 0.85rem !important;
-    }
+    main.container { padding: 0 15px !important; margin-top: 20px !important; width: 100% !important; box-sizing: border-box; }
+    .section-header h1 { font-size: 1.8rem !important; }
+    .bento-grid { grid-template-columns: 1fr !important; gap: 15px !important; width: 100% !important; }
+    .item.wide, .item.full { grid-column: span 1 !important; }
+    .item { padding: 20px !important; }
+    .media-wrapper { height: 250px !important; }
+    .rules-grid-four, .food-grid-three { grid-template-columns: 1fr !important; gap: 10px !important; }
+    .code-val { font-size: 1.6rem !important; }
+    .maps-btn { padding: 15px !important; font-size: 0.85rem !important; }
+    /* Адаптивный градиент для мобилок */
+    h2::after { background: linear-gradient(to right, var(--navy) 0%, rgba(36, 68, 113, 0) 90%); }
 }
