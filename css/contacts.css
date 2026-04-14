@@ -172,3 +172,56 @@
     .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
     .map-wrapper { height: 450px; }
 }
+/* --- ФИКСАЦИЯ РАЗМЕРОВ ШАПКИ (ЧТОБЫ НЕ ПРЫГАЛО) --- */
+
+/* Контейнер шапки */
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; /* Фиксируем высоту шапки */
+}
+
+/* Текст логотипа */
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem !important; /* Единый размер */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brand-blue) !important;
+    white-space: nowrap;
+}
+
+/* Навигация */
+.nav {
+    display: flex;
+    gap: 25px; /* Одинаковое расстояние между пунктами */
+    align-items: center;
+}
+
+.nav a {
+    font-size: 15px !important; /* Одинаковый размер шрифта */
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--brand-blue) !important;
+    transition: opacity 0.3s;
+}
+
+/* Кнопка в шапке */
+.header-action {
+    padding: 10px 20px;
+    font-size: 14px !important;
+    min-width: 160px;
+    text-align: center;
+}
+
+/* Адаптив для мобилок (чтобы не ломалось) */
+@media (max-width: 1024px) {
+    .nav {
+        gap: 15px;
+    }
+    .nav a {
+        font-size: 14px !important;
+    }
+}
