@@ -170,9 +170,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</main>
-</div> 
 
         <div class="review-cta">
             <h3>Хотите поделиться впечатлениями?</h3>
@@ -186,7 +183,9 @@
                 </a>
             </div>
         </div>
-        </div> </main>
+    </div> 
+</main>
+
 <footer class="footer">
     <div class="container footer-grid">
         <div class="footer-brand">
@@ -243,16 +242,18 @@
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
 
-    menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (mainNav.classList.contains('active')) {
-            icon.setAttribute('data-lucide', 'x');
-        } else {
-            icon.setAttribute('data-lucide', 'menu');
-        }
-        lucide.createIcons();
-    });
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+    }
 </script>
 </body>
 </html>
