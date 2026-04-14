@@ -22,7 +22,7 @@
             <a href="index.html">Главная</a>
             <a href="about.html">О Квартире</a>
             <a href="services.html">Сервис</a>
-            <a href="checkin.html">Заселение</a>
+            <a href="checkin.html" class="active">Заселение</a>
             <a href="reviews.html">Отзывы</a>
             <a href="contacts.html">Контакты</a>
         </nav>
@@ -36,76 +36,149 @@
         <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #001b33;">Инструкция гостя</h1>
     </div>
 
+    <div class="item full" style="margin-bottom: 30px;">
+        <h2><i data-lucide="calendar-check"></i> Прямое бронирование</h2>
+        <p style="margin-bottom: 25px; color: #444;">Забронируйте следующие даты проживания без комиссий площадок.</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); min-height: 100px;">
+            <div id="hr-widget">
+                <script type="module" src="https://homereserve.ru/widget.js"></script>
+                <script type="module">
+                    window.homereserve.initWidgetSearch({"token":"AeEVhV7jVU"})
+                </script>
+            </div>
+        </div>
+        <a href="https://homereserve.ru/AeEVhV7jVU" class="maps-btn" style="width: 100%; box-sizing: border-box;">Забронировать сейчас</a>
+    </div>
+
     <div class="bento-grid">
         <div class="item wide">
-            <h2><i data-lucide="map-pin"></i> 01. Как добраться</h2>
+            <h2><i data-lucide="map-pin"></i> Как добраться</h2>
             <div class="media-wrapper"><img src="img/way.webp" alt="Карта"></div>
             <div class="description-block">
-                <p style="margin-bottom: 15px; color: #001b33; font-weight: 600;">Арцеуловская аллея, д. 19, корп. 1</p>
-                <div class="route-step"><span>1</span><p>Авто: 14 подъезд (башня у школы). Бесплатная парковка у дома.</p></div>
-                <div class="route-step"><span>2</span><p>Транспорт: от м. Комендантский пр. (авт. 127, трол. 23) до конечной "Арцеуловская аллея".</p></div>
+                <p style="margin-bottom: 15px; color: #001b33; font-weight: 600;">Наш адрес: Арцеуловская аллея, д. 19, корп. 1</p>
+                <div class="route-step">
+                    <span>1</span>
+                    <p>Личным транспортом: 14 подъезд (дом-свечка первый от школы). Бесплатная парковка возле дома.</p>
+                </div>
+                <div class="route-step">
+                    <span>2</span>
+                    <p>Общественным транспортом: от м. "Комендантский пр-кт" (авт. 127, трол. 23) до конечной "Арцеуловская аллея". 7 минут пешком.</p>
+                </div>
             </div>
             <a href="https://yandex.ru/maps/?pt=30.211941%2C60.039164&z=17" target="_blank" class="maps-btn">Открыть в Картах</a>
         </div>
 
         <div class="item">
-            <h2><i data-lucide="key-round"></i> 02. Вход в дом</h2>
+            <h2><i data-lucide="key-round"></i> Доступ</h2>
             <div class="media-wrapper"><img src="img/intercom.webp" alt="Домофон"></div>
             <div class="info-pill-centered">
-                <small>Код домофона</small>
+                <small>ДОМОФОН</small>
                 <div class="code-val">2631</div>
             </div>
             <div class="description-block">
-                <p>Вход со стороны школы. Наберите 2631. Внутри: в левую дверь, по ступеням и в правую до конца.</p>
+                <p>Вход со стороны школы. Наберите 2631. Внутри: в левую дверь, по ступенькам и в правую дверь до конца.</p>
             </div>
         </div>
 
-        <div class="item full">
-            <h2><i data-lucide="door-open"></i> 03. Электронный замок</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="media-wrapper" style="height: 350px;">
-                    <iframe src="https://kinescope.io/rvrHaiMd39fBvqmdknZfVL" allowfullscreen></iframe>
-                </div>
-                <div class="description-block">
-                    <div class="route-step"><span>1</span><p>Активация: Проведите ладонью по панели.</p></div>
-                    <div class="route-step"><span>2</span><p>Ввод: Введите код из СМС и нажмите #.</p></div>
-                    <div class="route-step"><span>3</span><p>Выход: Просто опустите ручку вниз.</p></div>
-                </div>
+        <div class="item wide">
+            <h2><i data-lucide="door-open"></i> Инструкция к замку</h2>
+            <div class="media-wrapper">
+                <iframe src="https://kinescope.io/rvrHaiMd39fBvqmdknZfVL" allowfullscreen></iframe>
             </div>
-        </div>
-
-        <div class="item">
-            <h2><i data-lucide="wifi"></i> 04. Wi-Fi</h2>
-            <div class="info-pill-centered">
-                <small>Сеть: Арцеулка 5G</small>
-                <div class="code-val" style="font-size: 1.5rem;">1Q194Aws</div>
-            </div>
-        </div>
-
-        <div class="item">
-            <h2><i data-lucide="shield-check"></i> 05. Охрана</h2>
-            <div class="media-wrapper" style="height: 150px;"><img src="img/security.webp" alt="Охрана"></div>
             <div class="description-block">
-                <p>Территория под охраной. Просим соблюдать закон о тишине.</p>
+                <div class="route-step"><span>1</span><p>Проведите рукой по панели, чтобы активировать её.</p></div>
+                <div class="route-step"><span>2</span><p>Введите код из СМС и нажмите #.</p></div>
+                <div class="route-step"><span>3</span><p>Закрыть: просто захлопните дверь или поднимите ручку вверх.</p></div>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2><i data-lucide="shield-check"></i> Охрана</h2>
+            <div class="media-wrapper"><img src="img/security.webp" alt="Охрана"></div>
+            <div class="description-block">
+                <p>ЖК под охраной. Охрана следит за порядком и соблюдением закона о тишине.</p>
+            </div>
+        </div>
+
+        <div class="item wide">
+            <h2><i data-lucide="tv-2"></i> Развлечения</h2>
+            <div class="media-wrapper"><img src="img/entertainment.jpg" alt="ТВ"></div>
+            <div class="description-block">
+                <div class="route-step"><span>1</span><p><b>OTT Player:</b> Более 600 ТВ-каналов.</p></div>
+                <div class="route-step"><span>2</span><p><b>Okko:</b> Фильмы и сериалы уже доступны.</p></div>
+                <div class="route-step"><span>3</span><p><b>YouTube:</b> Проверяйте работоспособность (возможны сбои).</p></div>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2><i data-lucide="thermometer-snowflake"></i> Теплый пол</h2>
+            <div class="media-wrapper"><img src="img/floor.jpg" alt="Пол"></div>
+            <div class="description-block">
+                <p>Вкл: зажмите «Режим» до света на экране. Выкл: разбудите экран нажатием и зажмите кнопку до угасания.</p>
             </div>
         </div>
 
         <div class="item full">
-            <h2><i data-lucide="list-checks"></i> 06. Правила проживания</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <div class="rule-item" style="border-top: 1px solid #eee; padding-top: 15px;">
-                    <div style="color:#b2945e; font-weight:700; font-size:0.8rem; margin-bottom:5px;">ТИШИНА</div>
-                    <p style="font-size:0.85rem;">С 22:00 до 08:00. </p>
+            <h2><i data-lucide="list-checks"></i> Правила проживания</h2>
+            <div class="rules-flex">
+                <div class="rule-box">
+                    <div class="rule-header"><i data-lucide="volume-x"></i> ТИШИНА</div>
+                    <p>С 22:00 до 08:00. Нарушение — выселение.</p>
                 </div>
-                <div class="rule-item" style="border-top: 1px solid #eee; padding-top: 15px;">
-                    <div style="color:#b2945e; font-weight:700; font-size:0.8rem; margin-bottom:5px;">КУРЕНИЕ</div>
-                    <p style="font-size:0.85rem;">Запрещено (штраф - залог).</p>
+                <div class="rule-box">
+                    <div class="rule-header"><i data-lucide="cigarette-off"></i> КУРЕНИЕ</div>
+                    <p>Запрещено везде. Штраф — залог.</p>
+                </div>
+                <div class="rule-box">
+                    <div class="rule-header"><i data-lucide="dog"></i> ЖИВОТНЫЕ</div>
+                    <p>Без животных. Мусор выносите в баки во дворе.</p>
+                </div>
+                <div class="rule-box active-rule">
+                    <div class="rule-header"><i data-lucide="wifi"></i> WI-FI</div>
+                    <p>Сеть: <b>Арцеулка 5G</b></p>
+                    <div class="wifi-copy">
+                        <span id="wifi">1Q194Aws</span>
+                        <button onclick="copy('wifi', event)" class="btn-copy">КОПИРОВАТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item full">
+            <h2><i data-lucide="utensils"></i> Где перекусить поблизости</h2>
+            <div class="food-grid">
+                <div class="food-card">
+                    <div class="rule-header"><i data-lucide="coffee"></i> ПЕКАРНЯ</div>
+                    <h3>Хлебник</h3>
+                    <p>Комендантский пр., 64 к1 (9 мин.)</p>
+                    <a href="https://yandex.ru/maps/?rtext=60.039164,30.211941~60.03837003690155,30.22196178817496&rtt=pd" target="_blank" class="maps-btn">МАРШРУТ</a>
+                </div>
+                <div class="food-card">
+                    <div class="rule-header"><i data-lucide="pizza"></i> СТРИТ-ФУД</div>
+                    <h3>VЛАVАШЕ</h3>
+                    <p>Плесецкая ул., 10 ст1 (8 мин.)</p>
+                    <a href="https://yandex.ru/maps/?rtext=60.039164,30.211941~60.034730873971064,30.218142322538483&rtt=pd" target="_blank" class="maps-btn">МАРШРУТ</a>
+                </div>
+                <div class="food-card">
+                    <div class="rule-header"><i data-lucide="shopping-basket"></i> МАГАЗИН</div>
+                    <h3>ВкусВилл</h3>
+                    <p>Комендантский пр., 66 к1 (7 мин.)</p>
+                    <a href="https://yandex.ru/maps/?rtext=60.039164,30.211941~60.040216302043675,30.220009140011566&rtt=pd" target="_blank" class="maps-btn">МАРШРУТ</a>
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-<script>lucide.createIcons();</script>
+<script>
+    lucide.createIcons();
+    function copy(id, event) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text);
+        const btn = event.target;
+        btn.innerText = 'ГОТОВО';
+        setTimeout(() => { btn.innerText = 'КОПИРОВАТЬ'; }, 1200);
+    }
+</script>
 </body>
 </html>
