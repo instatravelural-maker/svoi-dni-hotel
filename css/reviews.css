@@ -498,106 +498,59 @@ html, body.reviews-page {
 
 /* --- ФИКСАЦИЯ РАЗМЕРОВ ШАПКИ (ЧТОБЫ НЕ ПРЫГАЛО) --- */
 
-
-
 /* Контейнер шапки */
-
 .header-flex {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    height: 80px; /* Фиксируем высоту шапки */
-
+    height: 80px; 
 }
-
-
 
 /* Текст логотипа */
-
 .logo-text {
-
     font-family: 'Inter', sans-serif;
-
     font-weight: 700;
-
-    font-size: 1.2rem !important; /* Единый размер */
-
+    font-size: 1.2rem !important; 
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
-    color: var(--brand-blue) !important;
-
+    color: #244471 !important; /* ЗАМЕНИЛИ ПЕРЕМЕННУЮ НА ЦВЕТ */
     white-space: nowrap;
-
 }
-
-
 
 /* Навигация */
-
 .nav {
-
     display: flex;
-
-    gap: 25px; /* Одинаковое расстояние между пунктами */
-
+    gap: 25px; 
     align-items: center;
-
 }
-
-
 
 .nav a {
-
-    font-size: 15px !important; /* Одинаковый размер шрифта */
-
+    font-size: 15px !important; 
     font-weight: 600;
-
     text-decoration: none;
-
-    color: var(--brand-blue) !important;
-
+    color: #244471 !important; /* ЗАМЕНИЛИ ПЕРЕМЕННУЮ НА ЦВЕТ */
     transition: opacity 0.3s;
-
 }
-
-
 
 /* Кнопка в шапке */
-
 .header-action {
-
     padding: 10px 20px;
-
     font-size: 14px !important;
-
     min-width: 160px;
-
     text-align: center;
-
+    background-color: #244471 !important; /* Кнопка тоже должна быть синей */
+    color: #ffffff !important;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-
-
-/* Адаптив для мобилок (чтобы не ломалось) */
-
+/* Адаптив для мобилок */
 @media (max-width: 1024px) {
-
     .nav {
-
         gap: 15px;
-
     }
-
     .nav a {
-
         font-size: 14px !important;
-
     }
-
 }
