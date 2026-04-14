@@ -189,6 +189,42 @@ h2 i, h2 svg { color: var(--navy); width: 24px; flex-shrink: 0; }
 
 .code-val { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 700; }
 
+/* Стили для расширенного описания проезда */
+.arrival-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.arrival-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* Иконки корпоративного цвета */
+.arrival-item i, 
+.arrival-item svg {
+    color: #244471;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.arrival-text {
+    font-size: 0.95rem;
+    color: #445;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.arrival-text strong {
+    color: #244471;
+    font-weight: 700;
+}
+
 /* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 1024px) {
     .rules-grid-four { grid-template-columns: repeat(2, 1fr); }
