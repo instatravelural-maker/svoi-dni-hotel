@@ -3,13 +3,30 @@ body {
     background-color: #fdfaf7; 
 }
 
+/* Шапка и навигация */
+.logo span {
+    color: #244471 !important;
+    font-weight: 700;
+}
+
+.nav a {
+    color: #244471 !important;
+    font-weight: 600;
+}
+
+.header-action {
+    background-color: #244471 !important;
+    color: #ffffff !important;
+}
+
+/* Заголовки */
 .section-title {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
     margin: 60px 0 20px;
     letter-spacing: 1px;
-    color: #1a1a1a;
+    color: #244471 !important; /* Цвет изменен на корпоративный */
     text-transform: uppercase;
 }
 
@@ -45,9 +62,10 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
+/* Иконки в карточках */
 .service-card-alt i, 
 .service-card-alt svg {
-    color: #2b544a; 
+    color: #244471 !important; /* Цвет изменен на корпоративный */
     margin-bottom: 20px;
     width: 32px;
     height: 32px;
@@ -88,14 +106,14 @@ body {
     gap: 10px;
     font-weight: 700;
     font-size: 24px;
-    color: #2b544a;
+    color: #244471 !important; /* Цвет изменен на корпоративный */
     margin-bottom: 20px;
 }
 
 .footer h4 { 
     font-size: 16px; 
     margin-bottom: 20px; 
-    color: #2b544a; 
+    color: #244471 !important; /* Цвет изменен на корпоративный */
 }
 
 .footer p { 
@@ -107,6 +125,12 @@ body {
     gap: 10px; 
 }
 
+/* Иконки в футере */
+.footer p i,
+.footer p svg {
+    color: #244471 !important;
+}
+
 .social-links { 
     display: flex; 
     gap: 15px; 
@@ -114,7 +138,7 @@ body {
 }
 
 .social-links a { 
-    color: #2b544a; 
+    color: #244471 !important; /* Цвет изменен на корпоративный */
     transition: 0.3s; 
 }
 
@@ -129,4 +153,5 @@ body {
 @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; }
     .nav { display: none; }
+    .menu-toggle i { color: #244471; }
 }
