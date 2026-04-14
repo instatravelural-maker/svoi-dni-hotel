@@ -1,0 +1,132 @@
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ СЕРВИС --- */
+body {
+    background-color: #fdfaf7; 
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 60px 0 20px;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.services-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.services-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.service-card-alt {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card-alt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.service-card-alt i, 
+.service-card-alt svg {
+    color: #2b544a; 
+    margin-bottom: 20px;
+    width: 32px;
+    height: 32px;
+}
+
+.service-card-alt h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-card-alt p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
+.footer {
+    background: #ece9e2; 
+    margin-top: 80px;
+    padding: 60px 0 30px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #2b544a;
+    margin-bottom: 20px;
+}
+
+.footer h4 { 
+    font-size: 16px; 
+    margin-bottom: 20px; 
+    color: #2b544a; 
+}
+
+.footer p { 
+    font-size: 14px; 
+    color: #666; 
+    margin: 10px 0; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.social-links { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px; 
+}
+
+.social-links a { 
+    color: #2b544a; 
+    transition: 0.3s; 
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #d4d1ca;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+}
