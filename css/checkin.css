@@ -225,6 +225,28 @@ h2 i, h2 svg { color: var(--navy); width: 24px; flex-shrink: 0; }
     font-weight: 700;
 }
 
+/* Унификация кнопки "Открыть в картах" со стилем из блока еды */
+.item.wide .maps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Добавление иконки стрелочки как в ТЗ для еды */
+.item.wide .maps-btn::after {
+    content: "\f124"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
 /* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 1024px) {
     .rules-grid-four { grid-template-columns: repeat(2, 1fr); }
