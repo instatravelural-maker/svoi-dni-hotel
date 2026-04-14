@@ -36,20 +36,6 @@
         <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #001b33;">Инструкция гостя</h1>
     </div>
 
-    <div class="item full" style="margin-bottom: 30px;">
-        <h2><i data-lucide="calendar-check"></i> Прямое бронирование</h2>
-        <p style="margin-bottom: 25px; color: #444;">Забронируйте следующие даты проживания без комиссий площадок.</p>
-        <div style="background: #f8fafc; padding: 20px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); min-height: 100px;">
-            <div id="hr-widget">
-                <script type="module" src="https://homereserve.ru/widget.js"></script>
-                <script type="module">
-                    window.homereserve.initWidgetSearch({"token":"AeEVhV7jVU"})
-                </script>
-            </div>
-        </div>
-        <a href="https://homereserve.ru/AeEVhV7jVU" class="maps-btn" style="width: 100%; box-sizing: border-box;">Забронировать сейчас</a>
-    </div>
-
     <div class="bento-grid">
         <div class="item wide">
             <h2><i data-lucide="map-pin"></i> Как добраться</h2>
@@ -75,7 +61,7 @@
                 <small>ДОМОФОН</small>
                 <div class="code-val">2631</div>
             </div>
-            <div class="description-block">
+            <div class="description-block" style="text-align: center;">
                 <p>Вход со стороны школы. Наберите 2631. Внутри: в левую дверь, по ступенькам и в правую дверь до конца.</p>
             </div>
         </div>
@@ -95,7 +81,7 @@
         <div class="item">
             <h2><i data-lucide="shield-check"></i> Охрана</h2>
             <div class="media-wrapper"><img src="img/security.webp" alt="Охрана"></div>
-            <div class="description-block">
+            <div class="description-block" style="text-align: center;">
                 <p>ЖК под охраной. Охрана следит за порядком и соблюдением закона о тишине.</p>
             </div>
         </div>
@@ -113,28 +99,32 @@
         <div class="item">
             <h2><i data-lucide="thermometer-snowflake"></i> Теплый пол</h2>
             <div class="media-wrapper"><img src="img/floor.jpg" alt="Пол"></div>
-            <div class="description-block">
+            <div class="description-block" style="text-align: center;">
                 <p>Вкл: зажмите «Режим» до света на экране. Выкл: разбудите экран нажатием и зажмите кнопку до угасания.</p>
             </div>
         </div>
 
         <div class="item full">
-            <h2><i data-lucide="list-checks"></i> Правила проживания</h2>
-            <div class="rules-flex">
-                <div class="rule-box">
-                    <div class="rule-header"><i data-lucide="volume-x"></i> ТИШИНА</div>
+            <h2 style="justify-content: center;"><i data-lucide="list-checks"></i> Правила проживания</h2>
+            <div class="rules-grid-four">
+                <div class="rule-card">
+                    <i data-lucide="volume-x" class="rule-icon"></i>
+                    <h4>ТИШИНА</h4>
                     <p>С 22:00 до 08:00. Нарушение — выселение.</p>
                 </div>
-                <div class="rule-box">
-                    <div class="rule-header"><i data-lucide="cigarette-off"></i> КУРЕНИЕ</div>
-                    <p>Запрещено везде. Штраф — залог.</p>
+                <div class="rule-card">
+                    <i data-lucide="cigarette-off" class="rule-icon"></i>
+                    <h4>КУРЕНИЕ</h4>
+                    <p>Запрещено везде. Штраф — сумма залога.</p>
                 </div>
-                <div class="rule-box">
-                    <div class="rule-header"><i data-lucide="dog"></i> ЖИВОТНЫЕ</div>
+                <div class="rule-card">
+                    <i data-lucide="dog" class="rule-icon"></i>
+                    <h4>ЖИВОТНЫЕ</h4>
                     <p>Без животных. Мусор выносите в баки во дворе.</p>
                 </div>
-                <div class="rule-box active-rule">
-                    <div class="rule-header"><i data-lucide="wifi"></i> WI-FI</div>
+                <div class="rule-card active-rule-card">
+                    <i data-lucide="wifi" class="rule-icon"></i>
+                    <h4>WI-FI</h4>
                     <p>Сеть: <b>Арцеулка 5G</b></p>
                     <div class="wifi-copy">
                         <span id="wifi">1Q194Aws</span>
@@ -145,21 +135,21 @@
         </div>
 
         <div class="item full">
-            <h2><i data-lucide="utensils"></i> Где перекусить поблизости</h2>
-            <div class="food-grid">
-                <div class="food-card">
+            <h2 style="justify-content: center;"><i data-lucide="utensils"></i> Где перекусить поблизости</h2>
+            <div class="food-grid-three">
+                <div class="food-vertical-card">
                     <div class="rule-header"><i data-lucide="coffee"></i> ПЕКАРНЯ</div>
                     <h3>Хлебник</h3>
                     <p>Комендантский пр., 64 к1 (9 мин.)</p>
                     <a href="https://yandex.ru/maps/?rtext=60.039164,30.211941~60.03837003690155,30.22196178817496&rtt=pd" target="_blank" class="maps-btn">МАРШРУТ</a>
                 </div>
-                <div class="food-card">
+                <div class="food-vertical-card">
                     <div class="rule-header"><i data-lucide="pizza"></i> СТРИТ-ФУД</div>
                     <h3>VЛАVАШЕ</h3>
                     <p>Плесецкая ул., 10 ст1 (8 мин.)</p>
                     <a href="https://yandex.ru/maps/?rtext=60.039164,30.211941~60.034730873971064,30.218142322538483&rtt=pd" target="_blank" class="maps-btn">МАРШРУТ</a>
                 </div>
-                <div class="food-card">
+                <div class="food-vertical-card">
                     <div class="rule-header"><i data-lucide="shopping-basket"></i> МАГАЗИН</div>
                     <h3>ВкусВилл</h3>
                     <p>Комендантский пр., 66 к1 (7 мин.)</p>
