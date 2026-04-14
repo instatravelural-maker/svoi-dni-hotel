@@ -200,3 +200,59 @@ h2 svg { color: var(--navy); width: 24px; }
         height: 250px;
     }
 }
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+
+@media (max-width: 768px) {
+    /* Центрируем и убираем лишние отступы у главного контейнера */
+    main.container {
+        padding: 0 15px !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Заголовки делаем меньше, чтобы не переносились некрасиво */
+    .section-header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Сетку bento перестраиваем в 1 колонку */
+    .bento-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    /* Сбрасываем расширение блоков на всю ширину */
+    .item.wide, .item.full {
+        grid-column: span 1 !important;
+    }
+
+    /* Внутренние отступы в карточках */
+    .item {
+        padding: 20px !important;
+    }
+
+    /* Высота картинок и видео на мобильном */
+    .media-wrapper {
+        height: 250px !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Сетки внутри блоков (Правила, Еда) — тоже в одну колонку */
+    .rules-grid-four, .food-grid-three {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    /* Код домофона чуть меньше */
+    .code-val {
+        font-size: 1.6rem !important;
+    }
+
+    /* Кнопки делаем удобными для нажатия пальцем */
+    .maps-btn {
+        padding: 15px !important;
+        font-size: 0.85rem !important;
+    }
+}
