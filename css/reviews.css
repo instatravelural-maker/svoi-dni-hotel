@@ -1,6 +1,6 @@
-/* 1. ПРИНУДИТЕЛЬНАЯ УСТАНОВКА ФОНА СТРАНИЦЫ (КАК НА КОНТАКТАХ) */
+/* 1. ПРИНУДИТЕЛЬНАЯ УСТАНОВКА ФОНА СТРАНИЦЫ */
 html, body.reviews-page {
-    background-color: #FDFBF4 !important; /* Тот самый светло-серый фон */
+    background-color: #FDFBF4 !important;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -8,13 +8,13 @@ html, body.reviews-page {
 
 /* 2. ОСНОВНОЙ КОНТЕЙНЕР СЕКЦИИ ОТЗЫВОВ */
 .reviews-main-container {
-    padding: 60px 0 100px; /* Отступы как в .contacts-page-section */
+    padding: 60px 0 100px;
     background-color: #FDFBF4 !important;
 }
 
-/* 3. БЕЛЫЕ КАРТОЧКИ РЕЙТИНГА (Rating Card) */
+/* 3. БЕЛЫЕ КАРТОЧКИ РЕЙТИНГА */
 .sutochno-rating-card {
-    background: #ffffff !important; /* Строго белый цвет блока */
+    background: #ffffff !important;
     border: 1px solid #eee;
     border-radius: 20px;
     padding: 30px;
@@ -22,35 +22,33 @@ html, body.reviews-page {
     display: flex;
     align-items: center;
     gap: 60px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Глубокая тень как у карты */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* 4. БЕЛЫЕ КАРТОЧКИ ОТЗЫВОВ (Single Review) */
+/* 4. БЕЛЫЕ КАРТОЧКИ ОТЗЫВОВ */
 .single-review {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 30px;
-    background: #ffffff !important; /* Строго белый цвет блока */
+    background: #ffffff !important;
     border: 1px solid #eee;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Мягкая тень для выделения на сером */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-/* --- КОРРЕКТИРОВКА БЛОКА ОТПРАВКИ ОТЗЫВА ПОД РАЗМЕР КОНТЕЙНЕРА --- */
+/* --- ОБНОВЛЕННЫЙ БЛОК ОТПРАВКИ ОТЗЫВА (ПОДНЯТ И ВЫРОВНЕН) --- */
 .review-cta {
     max-width: 1200px; /* Соответствие стандартной ширине контейнера */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px 20px;
+    margin: 40px auto 60px; /* Поднят вверх (40px до отзывов), центрирован */
+    padding: 40px 30px;
     background: #ffffff !important;
     border-radius: 20px;
     border: 1px solid #eee;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 60px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-sizing: border-box;
 }
 
 .review-cta h3 {
@@ -77,19 +75,16 @@ html, body.reviews-page {
 /* Кнопки в цвет кнопки "Забронировать" (#333) */
 .cta-btn.whatsapp, 
 .cta-btn.telegram {
-    background-color: #333 !important; /* Темный цвет из меню */
+    background-color: #333 !important;
     color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
     transition: all 0.3s ease;
-}
-
-.cta-btn {
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
 }
 
 .cta-btn:hover {
@@ -99,7 +94,7 @@ html, body.reviews-page {
 }
 /* ---------------------------------------------------------------- */
 
-/* 5. СОХРАНЕНИЕ ВСЕХ ЭЛЕМЕНТОВ ТЗ (СТИЛИ КОНТЕНТА) */
+/* 5. СТИЛИ КОНТЕНТА ОТЗЫВОВ */
 .rating-main-info { 
     display: flex; 
     align-items: center; 
@@ -216,7 +211,7 @@ html, body.reviews-page {
     margin: 0; 
 }
 
-/* 6. АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА */
+/* 6. АДАПТИВНОСТЬ */
 @media (max-width: 900px) {
     .sutochno-rating-card { 
         flex-direction: column; 
@@ -245,7 +240,6 @@ html, body.reviews-page {
     .guest-avatar { 
         margin-bottom: 0; 
     }
-    /* Адаптивность для кнопок мессенджеров */
     .cta-buttons {
         flex-direction: column;
         gap: 10px;
