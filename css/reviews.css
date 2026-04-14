@@ -87,7 +87,7 @@ html, body.reviews-page {
 }
 
 .cta-btn.whatsapp {
-    background-color: var(--brand-green); /* Цвет темной кнопки сайта */
+    background-color: #25D366;
 }
 
 .cta-btn.telegram {
