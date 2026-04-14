@@ -506,3 +506,67 @@ body {
     justify-content: center;
     text-decoration: none;
 }
+/* --- АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ --- */
+
+@media (max-width: 768px) {
+    /* 1. Настройка главного контейнера */
+    .container {
+        padding: 0 15px; /* Уменьшаем боковые отступы */
+        margin-top: 20px !important;
+    }
+
+    /* 2. Адаптация заголовков */
+    .section-header h1 {
+        font-size: 1.8rem !important; /* Уменьшаем шрифт заголовка */
+        line-height: 1.2;
+    }
+
+    .section-header {
+        margin-bottom: 30px !important;
+    }
+
+    /* 3. Перестроение сетки в одну колонку */
+    .bento-grid {
+        grid-template-columns: 1fr !important; /* Всегда одна колонка */
+        gap: 15px !important;
+    }
+
+    /* 4. Сброс расширенных блоков (wide и full) */
+    .item.wide, .item.full {
+        grid-column: span 1 !important; /* Блоки на весь экран по ширине */
+    }
+
+    /* 5. Настройка карточек (item) */
+    .item {
+        padding: 20px !important; /* Меньше внутренних отступов */
+    }
+
+    /* 6. Высота фото и видео для мобилок */
+    .media-wrapper {
+        height: 220px !important; /* Чтобы блоки не были слишком длинными */
+        margin-bottom: 15px;
+    }
+
+    /* 7. Адаптация внутренних сеток (Правила и Еда) */
+    .rules-grid-four, .food-grid-three {
+        grid-template-columns: 1fr !important; /* Колонки друг под другом */
+        gap: 10px !important;
+    }
+
+    /* 8. Текст и кнопки */
+    .code-val {
+        font-size: 1.5rem !important; /* Уменьшаем код домофона */
+    }
+
+    h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Поправка навигации (если меню-бургер еще не настроен в style.css) */
+    .header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
