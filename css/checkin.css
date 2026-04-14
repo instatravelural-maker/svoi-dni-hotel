@@ -1,186 +1,102 @@
-:root {
-    --accent-gold: #b2945e;
-    --brand-green: #2b544a;
-    --white: #ffffff;
-    --bg-site: #fdfaf7;
+/* --- КОРПОРАТИВНЫЙ СТИЛЬ СТРАНИЦЫ ЗАСЕЛЕНИЯ (#244471) --- */
+
+/* 1. ШАПКА И МЕНЮ (ФИКСАЦИЯ РАЗМЕРОВ И ЦВЕТА) */
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; 
 }
 
-body {
-    background-color: var(--bg-site);
+.logo-text, .logo span {
     font-family: 'Inter', sans-serif;
-    color: #333;
-    margin: 0;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.instruction-section {
-    padding: 60px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.section-header p {
-    color: var(--accent-gold);
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-/* Основная сетка блоков */
-.instruction-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.instr-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-    border: 1px solid rgba(178, 148, 94, 0.1);
-}
-
-.full-width { grid-column: span 2; }
-
-.instr-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: var(--brand-green);
-}
-
-.instr-card h2 i { color: var(--accent-gold); }
-
-.media-container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    background: #f0f0f0;
-}
-
-.media-container img, .media-container iframe {
-    width: 100%;
-    display: block;
-    border: none;
-}
-
-.info-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-    align-items: flex-start;
-}
-
-.info-row .icon-box {
-    background: rgba(43, 84, 74, 0.05);
-    min-width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color: var(--brand-green);
     font-weight: 700;
-}
-
-.info-text strong { display: block; margin-bottom: 5px; color: #1a1a1a; }
-.info-text p { margin: 0; font-size: 15px; color: #666; line-height: 1.5; }
-
-.code-highlight {
-    background: var(--bg-site);
-    border: 2px dashed var(--accent-gold);
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    margin: 20px 0;
-}
-
-.code-highlight span {
-    display: block;
-    font-size: 12px;
+    font-size: 1.2rem !important; 
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #888;
-    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #244471 !important;
+    white-space: nowrap;
+}
+
+.nav a {
+    font-size: 15px !important; 
+    font-weight: 600;
+    text-decoration: none;
+    color: #244471 !important;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover, .nav a.active {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.header-action {
+    padding: 10px 20px;
+    font-size: 14px !important;
+    min-width: 160px;
+    text-align: center;
+    background-color: #244471 !important;
+    color: #ffffff !important;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 2. ЗАГОЛОВКИ И ТЕКСТОВЫЕ НАДПИСИ */
+.section-header h1, 
+.instr-card h2, 
+.rule-item h4, 
+.footer-brand .footer-logo,
+.footer h4 {
+    color: #244471 !important;
+}
+
+.section-header p,
+.info-text strong,
+.code-highlight span {
+    color: #244471 !important;
+}
+
+/* 3. ИКОНКИ (LUCIDE) */
+[data-lucide] {
+    color: #244471 !important;
+    stroke: #244471 !important;
+}
+
+/* Иконки внутри цветных боксов (если они должны быть инвертированы — убери этот блок) */
+.icon-box i[data-lucide] {
+    color: #244471 !important;
+}
+
+/* 4. СПЕЦИФИЧЕСКИЕ ЭЛЕМЕНТЫ (Карточки и выделения) */
+.code-highlight {
+    border: 1px solid #244471;
 }
 
 .code-highlight strong {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: var(--accent-gold);
-    letter-spacing: 5px;
+    color: #244471 !important;
 }
 
-.rule-item {
-    padding: 20px;
-    border-left: 3px solid var(--accent-gold);
-    background: rgba(178, 148, 94, 0.03);
-    margin-bottom: 10px;
+/* Порядковые номера в кружочках (1, 2, 3) */
+.instr-card .icon-box {
+    border: 2px solid #244471;
+    color: #244471;
+    font-weight: 700;
 }
 
-.rule-item h4 { margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; color: var(--brand-green); }
-.rule-item p { margin: 0; font-size: 13px; color: #666; }
-
-/* Стили для нового блока охраны */
-.security-banner {
-    background: var(--brand-green);
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.security-banner i { color: var(--accent-gold); }
-.security-banner h4 { margin: 0 0 5px 0; font-size: 18px; font-family: 'Playfair Display', serif; }
-.security-banner p { margin: 0; font-size: 14px; opacity: 0.9; }
-.security-phone { font-size: 22px; font-weight: 700; color: var(--accent-gold); display: block; margin-top: 10px; text-decoration: none; }
-
-/* Адаптивность */
-@media (max-width: 850px) {
-    .instruction-grid { grid-template-columns: 1fr; }
-    .full-width { grid-column: span 1; }
-    .section-header h1 { font-size: 28px; }
-    .security-banner { flex-direction: column; text-align: center; }
-}
-
-/* Адаптация видео и сеток для мобильных устройств */
-@media (max-width: 600px) {
-    .instr-card.full-width iframe {
-        height: 200px !important;
-        margin-bottom: 20px;
+/* 5. АДАПТИВНОСТЬ МЕНЮ */
+@media (max-width: 1024px) {
+    .nav {
+        gap: 15px;
     }
-    .instr-card.full-width .instruction-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
+    .nav a {
+        font-size: 14px !important;
     }
-    .instr-card.full-width .media-container {
-        order: -1;
-        height: auto !important;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle [data-lucide] {
+        color: #244471 !important;
     }
 }
