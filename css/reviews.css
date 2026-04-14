@@ -1,6 +1,6 @@
-/* 1. ПРИНУДИТЕЛЬНАЯ УСТАНОВКА ФОНА СТРАНИЦЫ */
+/* 1. ПРИНУДИТЕЛЬНАЯ УСТАНОВКА ФОНА СТРАНИЦЫ (КАК НА КОНТАКТАХ) */
 html, body.reviews-page {
-    background-color: #FDFBF4 !important;
+    background-color: #FDFBF4 !important; /* Тот самый светло-серый фон */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -12,7 +12,23 @@ html, body.reviews-page {
     background-color: #FDFBF4 !important;
 }
 
-/* 3. БЕЛЫЕ КАРТОЧКИ РЕЙТИНГА */
+/* --- КОРПОРАТИВНЫЕ ЦВЕТА И ЭЛЕМЕНТЫ МЕНЮ --- */
+/* Активный пункт меню и ссылки при наведении */
+.nav a.active, .nav a:hover {
+    color: #244471 !important;
+}
+
+/* Иконки Lucide по умолчанию */
+[data-lucide] {
+    color: #244471;
+}
+
+/* Заголовки */
+.reviews-title, h3, h4 {
+    color: #244471 !important;
+}
+
+/* 3. БЕЛЫЕ КАРТОЧКИ РЕЙТИНГА (Rating Card) */
 .sutochno-rating-card {
     background: #ffffff !important;
     border: 1px solid #eee;
@@ -25,7 +41,7 @@ html, body.reviews-page {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* 4. БЕЛЫЕ КАРТОЧКИ ОТЗЫВОВ */
+/* 4. БЕЛЫЕ КАРТОЧКИ ОТЗЫВОВ (Single Review) */
 .single-review {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -38,24 +54,19 @@ html, body.reviews-page {
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-/* --- ОБНОВЛЕННЫЙ БЛОК ОТПРАВКИ ОТЗЫВА (ПОДНЯТ И ВЫРОВНЕН) --- */
+/* --- КОРРЕКТИРОВКА БЛОКА ОТПРАВКИ ОТЗЫВА --- */
 .review-cta {
-    max-width: 1200px; /* Соответствие стандартной ширине контейнера */
-    margin: 40px auto 60px; /* Поднят вверх (40px до отзывов), центрирован */
-    padding: 40px 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 20px;
     background: #ffffff !important;
     border-radius: 20px;
     border: 1px solid #eee;
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    box-sizing: border-box;
-}
-
-.review-cta h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #333;
 }
 
 .review-cta p {
@@ -72,29 +83,38 @@ html, body.reviews-page {
     flex-wrap: wrap;
 }
 
-/* Кнопки в цвет кнопки "Забронировать" (#333) */
+/* КОРПОРАТИВНЫЕ КНОПКИ (Забронировать, WhatsApp, Telegram) */
+.btn-dark, 
 .cta-btn.whatsapp, 
 .cta-btn.telegram {
-    background-color: #333 !important;
-    color: #fff !important;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
+    background-color: #244471 !important;
+    border-color: #244471 !important;
+    color: #ffffff !important;
+}
+
+.cta-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Иконки внутри кнопок (белые для контраста) */
+.cta-btn [data-lucide], 
+.btn-dark [data-lucide] {
+    color: #ffffff !important;
 }
 
 .cta-btn:hover {
     opacity: 0.9;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(36, 68, 113, 0.2);
 }
-/* ---------------------------------------------------------------- */
 
-/* 5. СТИЛИ КОНТЕНТА ОТЗЫВОВ */
+/* 5. СТИЛИ КОНТЕНТА И РЕЙТИНГА */
 .rating-main-info { 
     display: flex; 
     align-items: center; 
@@ -103,24 +123,13 @@ html, body.reviews-page {
 }
 
 .big-badge { 
-    background: #399d7b; 
+    background: #399d7b; /* Цвет успеха оставляем зеленым или меняем на синий #244471 по желанию */
     color: #fff; 
     font-size: 32px; 
     font-weight: 700; 
     padding: 10px 18px; 
     border-radius: 14px; 
     line-height: 1; 
-}
-
-.status-title { 
-    font-size: 20px; 
-    font-weight: 700; 
-    margin-bottom: 4px; 
-}
-
-.reviews-amount { 
-    color: #888; 
-    font-size: 14px; 
 }
 
 .rating-details-grid { 
@@ -146,9 +155,10 @@ html, body.reviews-page {
     overflow: hidden; 
 }
 
+/* Полоски прогресса в корпоративном цвете */
 .p-fill { 
     height: 100%; 
-    background: #333; 
+    background: #244471 !important; 
 }
 
 .guest-avatar { 
@@ -199,11 +209,6 @@ html, body.reviews-page {
     font-size: 14px; 
 }
 
-.date-posted { 
-    color: #aaa; 
-    font-size: 13px; 
-}
-
 .comment { 
     font-size: 16px; 
     line-height: 1.7; 
@@ -237,14 +242,8 @@ html, body.reviews-page {
         gap: 15px; 
         flex-wrap: wrap; 
     }
-    .guest-avatar { 
-        margin-bottom: 0; 
-    }
     .cta-buttons {
         flex-direction: column;
         gap: 10px;
-    }
-    .cta-btn {
-        justify-content: center;
     }
 }
