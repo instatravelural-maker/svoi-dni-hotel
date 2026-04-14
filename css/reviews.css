@@ -38,6 +38,63 @@ html, body.reviews-page {
     box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Мягкая тень для выделения на сером */
 }
 
+/* --- НОВЫЙ БЛОК: ОТПРАВКА ОТЗЫВА ЧЕРЕЗ МЕССЕНДЖЕРЫ --- */
+.review-cta {
+    background-color: #ffffff !important; /* Изменено на белый для соответствия карточкам */
+    border-radius: 20px; /* Скругление как у карточек отзывов */
+    padding: 40px 30px;
+    text-align: center;
+    margin-top: 50px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.review-cta h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.review-cta p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-btn.whatsapp {
+    background-color: #25D366;
+}
+
+.cta-btn.telegram {
+    background-color: #0088cc;
+}
+/* ---------------------------------------------------- */
+
 /* 5. СОХРАНЕНИЕ ВСЕХ ЭЛЕМЕНТОВ ТЗ (СТИЛИ КОНТЕНТА) */
 .rating-main-info { 
     display: flex; 
@@ -183,5 +240,12 @@ html, body.reviews-page {
     }
     .guest-avatar { 
         margin-bottom: 0; 
+    }
+    /* Адаптивность для кнопок мессенджеров */
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .cta-btn {
+        justify-content: center;
     }
 }
