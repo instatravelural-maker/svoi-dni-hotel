@@ -1,100 +1,98 @@
-/* СТИЛИ БЕНТО-СЕТКИ ИЗ ЗАДАНИЯ */
 :root {
-    --hyatt-navy: #001b33;
-    --hyatt-gold: #b2945e;
-    --border-color: rgba(0,0,0,0.05);
+    --navy: #001b33;
+    --gold: #b2945e;
+    --bg: #f4f7f9;
+    --radius: 20px;
 }
 
-.instruction-section { background: #f4f7f9; }
+body { background: var(--bg); font-family: 'Inter', sans-serif; }
 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    margin-bottom: 30px;
 }
 
 .item {
     background: #fff;
     padding: 35px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    transition: transform 0.3s ease;
+    border-radius: var(--radius);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
 }
 
-.item:hover { transform: translateY(-5px); border-color: var(--hyatt-gold); }
+.item:hover { transform: translateY(-5px); border-color: var(--gold); }
 
-/* Выравнивание блоков */
 .wide { grid-column: span 2; }
 .full { grid-column: span 3; }
 
-/* Заголовки блоков */
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
-    color: var(--hyatt-navy);
+    color: var(--navy);
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 
-h2 svg { color: var(--hyatt-gold); width: 22px; }
+h2 svg { color: var(--gold); width: 22px; }
 
-/* Медиа контейнеры */
 .media-wrapper {
     width: 100%;
-    height: 250px;
+    height: 300px;
     border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 20px;
     position: relative;
-    background: #f0f0f0;
+    background: #eee;
 }
 
 .media-wrapper img, .media-wrapper iframe {
     width: 100%; height: 100%; object-fit: cover; border: none;
 }
 
-/* Коды и Инфо-плашки */
-.info-pill-centered {
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px dashed var(--hyatt-gold);
-    text-align: center;
-    margin-top: 15px;
-}
+.description-block p { font-size: 0.95rem; color: #445; line-height: 1.6; }
 
-.code-val {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--hyatt-navy);
-    font-weight: 700;
-}
-
-/* Шаги (1, 2, 3) */
 .route-step { display: flex; gap: 15px; margin-bottom: 12px; }
 .route-step span {
-    background: var(--hyatt-gold);
-    color: #fff;
+    background: var(--gold); color: #fff;
     min-width: 24px; height: 24px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.7rem; font-weight: 700;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
 }
 
-/* Кнопки */
+.info-pill-centered {
+    background: #f8fafc; padding: 20px; border-radius: 15px;
+    border: 1px dashed var(--gold); text-align: center; margin-bottom: 20px;
+}
+
+.code-val { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); font-weight: 700; }
+
 .maps-btn {
-    display: inline-flex; width: 100%; justify-content: center;
-    margin-top: 20px; padding: 15px; background: var(--hyatt-gold);
-    color: #fff; text-decoration: none; border-radius: 10px;
-    font-weight: 600; text-transform: uppercase; font-size: 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+    padding: 15px; background: var(--gold); color: #fff;
+    text-decoration: none; border-radius: 10px; font-weight: 600;
+    text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
 }
 
-/* Адаптив под мобилки */
+.maps-btn:hover { background: var(--navy); }
+
+/* Правила и Еда */
+.rules-flex { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.rule-box { border-top: 1px solid #eee; padding-top: 15px; }
+.rule-header { color: var(--gold); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.active-rule { border-top: 2px solid var(--navy); }
+.wifi-copy { display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 10px; border-radius: 8px; }
+.btn-copy { background: var(--navy); color: #fff; border: none; padding: 5px 10px; font-size: 0.6rem; border-radius: 4px; cursor: pointer; }
+
+.food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.food-card { background: #fff; padding: 25px; border-radius: 15px; border: 1px solid #eee; }
+
 @media (max-width: 850px) {
     .bento-grid { grid-template-columns: 1fr; }
     .wide, .full { grid-column: span 1; }
-    .item { padding: 25px 20px; }
+    .item { padding: 25px; }
 }
