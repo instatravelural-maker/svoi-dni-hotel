@@ -1,4 +1,39 @@
-/* Дополнительные стили именно для страницы Контактов */
+/* --- ПЕРЕМЕННЫЕ ЦВЕТА --- */
+:root {
+    --brand-blue: #244471;
+    --text-dark: #333;
+    --white: #ffffff;
+    --border-light: #eee;
+}
+
+/* --- ОБЩИЕ КОРПОРАТИВНЫЕ СТИЛИ ДЛЯ КОНТАКТОВ --- */
+
+/* Навигация (активная ссылка) */
+.nav a.active {
+    color: var(--brand-blue) !important;
+}
+
+/* Заголовки и иконки */
+.section-title, 
+.contact-item h3, 
+.social-connect h3,
+.contact-item i {
+    color: var(--brand-blue) !important;
+}
+
+/* Ссылки в контактах */
+.contact-item a {
+    color: var(--brand-blue);
+    transition: opacity 0.2s;
+}
+
+.contact-item a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* --- СТРУКТУРА СТРАНИЦЫ --- */
+
 .contacts-page-section {
     padding: 60px 0 100px;
 }
@@ -7,7 +42,7 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 60px;
-    align-items: stretch; /* Изменено со start для выравнивания высоты карты и контента */
+    align-items: stretch;
 }
 
 .contact-info-block {
@@ -23,35 +58,33 @@
 }
 
 .contact-item i {
-    color: var(--gold-accent);
     flex-shrink: 0;
     margin-top: 5px;
 }
 
 .contact-item h3 {
     font-size: 18px;
-    color: var(--dark-green);
     margin: 0 0 5px 0;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.contact-item p, .contact-item a {
+.contact-item p, 
+.contact-item a {
     font-size: 16px;
     color: var(--text-dark);
     text-decoration: none;
     margin: 0;
+    line-height: 1.5;
 }
+
+/* --- БЛОК МЕССЕНДЖЕРОВ --- */
 
 .social-connect {
     margin-top: 20px;
     padding-top: 30px;
-    border-top: 1px solid #eee;
-}
-
-.social-connect h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: var(--dark-green);
+    border-top: 1px solid var(--border-light);
 }
 
 .social-icons-large {
@@ -60,43 +93,67 @@
 }
 
 .social-icons-large a {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background: var(--white);
     border: 1px solid #ddd;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--dark-green);
     transition: all 0.3s ease;
 }
 
-.social-icons-large a:hover {
-    background: var(--dark-green);
-    color: var(--white);
-    border-color: var(--dark-green);
+/* Иконки внутри кружков */
+.social-icons-large a i, 
+.social-icons-large a svg {
+    color: var(--brand-blue);
+    fill: var(--brand-blue); /* Для SVG иконки ВК */
+    transition: all 0.3s ease;
 }
+
+/* Ховер на иконки мессенджеров */
+.social-icons-large a:hover {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+}
+
+.social-icons-large a:hover i,
+.social-icons-large a:hover svg {
+    color: var(--white) !important;
+    fill: var(--white) !important;
+}
+
+/* --- КАРТА --- */
 
 .map-wrapper {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     border-radius: 20px;
     overflow: hidden;
     line-height: 0;
-    height: 100%; /* Добавлено для заполнения высоты сетки */
+    height: 100%;
 }
 
 .map-wrapper iframe {
-    height: 100%; /* Чтобы iframe занимал всю высоту контейнера */
+    width: 100%;
+    height: 100%;
     min-height: 450px;
+    border: 0;
 }
+
+/* --- АДАПТИВНОСТЬ --- */
 
 @media (max-width: 992px) {
     .contacts-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .map-wrapper iframe {
+    
+    .map-wrapper {
         height: 450px;
+    }
+
+    .contacts-page-section {
+        padding: 40px 0 60px;
     }
 }
