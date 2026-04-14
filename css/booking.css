@@ -1,12 +1,17 @@
-/* Основные переменные для интеграции со стилем сайта */
+/* --- КОРПОРАТИВНЫЙ СТИЛЬ СТРАНИЦЫ БРОНИРОВАНИЯ (#244471) --- */
+
 :root {
-    --brand-green: #2b544a;
-    --accent-gold: #b2945e;
+    --brand-blue: #244471; /* Основной корпоративный цвет */
     --dark-text: #1a1a1a;
 }
 
 .page-content {
     padding-top: 40px;
+}
+
+/* Заголовок страницы */
+.section-title {
+    color: var(--brand-blue) !important;
 }
 
 /* Горизонтальный модуль бронирования */
@@ -30,13 +35,13 @@
     padding: 40px;
     border-radius: 20px;
     margin-bottom: 60px;
-    border: 1px solid rgba(178, 148, 94, 0.1);
+    border: 1px solid rgba(36, 68, 113, 0.1); /* Цвет заменен на синий 10% */
 }
 
 .info-card-compact h2 {
     font-size: 24px;
     font-family: 'Playfair Display', serif;
-    color: var(--brand-green);
+    color: var(--brand-blue) !important;
     margin-bottom: 15px;
     margin-top: 0;
 }
@@ -55,11 +60,16 @@
     color: var(--dark-text);
 }
 
-.benefit-item i {
-    color: var(--accent-gold);
+/* Иконки преимуществ */
+.benefit-item i, 
+[data-lucide="check-circle"], 
+[data-lucide="shield-check"], 
+[data-lucide="calendar"], 
+[data-lucide="clock"] {
+    color: var(--brand-blue) !important;
 }
 
-/* Кнопки мессенджеров в стиле сайта */
+/* Кнопки мессенджеров */
 .support-actions {
     display: flex;
     gap: 15px;
@@ -71,7 +81,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: var(--brand-green); /* Цвет темной кнопки сайта */
+    background: var(--brand-blue) !important; /* Цвет заменен на синий */
     color: white;
     padding: 14px 24px;
     border-radius: 8px;
@@ -85,8 +95,35 @@
 }
 
 .btn-support:hover {
-    background: var(--accent-gold);
+    opacity: 0.9;
+    background: var(--brand-blue);
     color: white;
+    box-shadow: 0 4px 12px rgba(36, 68, 113, 0.2);
+}
+
+/* Стили шапки и навигации (синхронизация) */
+.nav a {
+    color: var(--brand-blue) !important;
+    font-weight: 600;
+}
+
+.logo span {
+    color: var(--brand-blue) !important;
+}
+
+.header-action {
+    background-color: var(--brand-blue) !important;
+}
+
+[data-lucide="menu"] {
+    color: var(--brand-blue) !important;
+}
+
+/* Футер: заголовки и иконки */
+.footer h4, 
+.footer-logo, 
+.footer [data-lucide] {
+    color: var(--brand-blue) !important;
 }
 
 /* Адаптивность */
