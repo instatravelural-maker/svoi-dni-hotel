@@ -1,6 +1,6 @@
 /* --- КОРПОРАТИВНЫЙ СТИЛЬ СТРАНИЦЫ ЗАСЕЛЕНИЯ (#244471) --- */
 
-/* 1. ШАПКА И МЕНЮ (ФИКСАЦИЯ РАЗМЕРОВ И ЦВЕТА) */
+/* 1. ШАПКА И НАВИГАЦИЯ (ФИКСИРОВАННЫЕ ЦВЕТА) */
 .header-flex {
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@
     height: 80px; 
 }
 
-.logo-text, .logo span {
+.logo span, .logo-text {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.2rem !important; 
@@ -26,11 +26,6 @@
     transition: opacity 0.3s;
 }
 
-.nav a:hover, .nav a.active {
-    opacity: 0.7;
-    text-decoration: none;
-}
-
 .header-action {
     padding: 10px 20px;
     font-size: 14px !important;
@@ -43,60 +38,55 @@
     font-weight: 600;
 }
 
-/* 2. ЗАГОЛОВКИ И ТЕКСТОВЫЕ НАДПИСИ */
+/* 2. ЗАГОЛОВКИ И ТЕКСТОВЫЕ АКЦЕНТЫ */
 .section-header h1, 
 .instr-card h2, 
-.rule-item h4, 
-.footer-brand .footer-logo,
-.footer h4 {
+.rule-item h4,
+.info-text strong,
+.footer h4,
+.footer-logo {
     color: #244471 !important;
 }
 
 .section-header p,
-.info-text strong,
 .code-highlight span {
     color: #244471 !important;
+    font-weight: 600;
 }
 
 /* 3. ИКОНКИ (LUCIDE) */
 [data-lucide] {
     color: #244471 !important;
-    stroke: #244471 !important;
 }
 
-/* Иконки внутри цветных боксов (если они должны быть инвертированы — убери этот блок) */
-.icon-box i[data-lucide] {
-    color: #244471 !important;
-}
-
-/* 4. СПЕЦИФИЧЕСКИЕ ЭЛЕМЕНТЫ (Карточки и выделения) */
+/* 4. ОФОРМЛЕНИЕ КАРТОЧЕК (ТОЛЬКО ЦВЕТОВЫЕ ЭЛЕМЕНТЫ) */
 .code-highlight {
-    border: 1px solid #244471;
+    border: 1px solid #244471 !important;
 }
 
 .code-highlight strong {
     color: #244471 !important;
 }
 
-/* Порядковые номера в кружочках (1, 2, 3) */
-.instr-card .icon-box {
-    border: 2px solid #244471;
-    color: #244471;
+/* Кружочки с цифрами 1, 2, 3 и боксы для иконок */
+.icon-box {
+    border: 2px solid #244471 !important;
+    color: #244471 !important;
     font-weight: 700;
 }
 
-/* 5. АДАПТИВНОСТЬ МЕНЮ */
+/* 5. ФУТЕР И СОЦИАЛЬНЫЕ СЕТИ */
+.social-links a [data-lucide],
+.footer p [data-lucide] {
+    color: #244471 !important;
+}
+
+/* Адаптив для мобилок */
 @media (max-width: 1024px) {
     .nav {
         gap: 15px;
     }
     .nav a {
         font-size: 14px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle [data-lucide] {
-        color: #244471 !important;
     }
 }
