@@ -1,12 +1,56 @@
-/* --- GALLERY --- */
+/* --- ПЕРЕМЕННЫЕ И ОСНОВНЫЕ ЦВЕТА --- */
+:root {
+    --brand-color: #244471;
+    --primary-color: #244471;
+    --white: #ffffff;
+    --text-muted: #666;
+    --border-color: #eee;
+    --bg-light: #f8f9fa;
+    --bg-chip: #f1f4f9;
+}
+
+/* --- БРЕНДИРОВАНИЕ ЭЛЕМЕНТОВ --- */
+.btn-dark.header-action, 
+.btn-booking-full {
+    background-color: var(--brand-color) !important;
+    border-color: var(--brand-color) !important;
+    color: #fff !important;
+}
+
+.nav a.active, 
+.toggle-desc, 
+.object-title, 
+.amenity-group-title, 
+.price,
+.logo span, 
+.footer-logo {
+    color: var(--brand-color) !important;
+}
+
+.header i, 
+.apartment-header i, 
+.amenities-section i, 
+.rules-list i, 
+.sidebar-info i, 
+.sleeping-card i, 
+.social-links i {
+    color: var(--brand-color) !important;
+}
+
+/* --- ШАПКА ОБЪЕКТА --- */
 .apartment-header {
     margin: 30px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
-.apartment-header h1 { margin: 0; font-size: 28px; }
+.apartment-header h1 { 
+    margin: 0; 
+    font-size: 28px; 
+    font-weight: 700;
+}
 
+/* --- ГАЛЕРЕЯ --- */
 .full-gallery {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -19,6 +63,7 @@
     border-radius: 12px;
     width: 100%;
     height: 100%;
+    background-color: #eee;
 }
 .main-img img, .side-imgs img {
     width: 100%;
@@ -27,86 +72,129 @@
     display: block;
     transition: transform 0.5s ease;
 }
-.main-img:hover img, .side-imgs div:hover img { transform: scale(1.05); }
-.side-imgs { display: grid; grid-template-rows: 1fr 1fr; gap: 15px; }
+.main-img:hover img, .side-imgs div:hover img { 
+    transform: scale(1.05); 
+}
+.side-imgs { 
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 15px; 
+}
 
-/* --- CONTENT GRID --- */
+/* --- СЕТКА КОНТЕНТА --- */
 .details-grid {
     display: grid;
     grid-template-columns: 1fr 350px;
     gap: 30px;
     align-items: start;
 }
-.description-block, .sleeping-section, .amenities-section, .rules-card-container {
-    background: #fff;
+
+.description-block, 
+.sleeping-section, 
+.amenities-section, 
+.rules-card-container {
+    background: var(--white);
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 30px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
+
+/* Раскрывающийся текст */
 .expandable-content {
     max-height: 150px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.3s ease;
 }
-.expandable-content.expanded { max-height: 2000px; }
+.expandable-content.expanded { 
+    max-height: 2000px; 
+}
 .toggle-desc {
-    color: #007bff;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-block;
-    margin-top: 5px;
-    text-decoration: none;
+    margin-top: 10px;
+    text-decoration: underline;
 }
-.object-title { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
-.chips-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+
+/* Чипсы (теги) */
+.chips-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-bottom: 25px; 
+}
 .chip {
-    background: #f1f4f9;
+    background: var(--bg-chip);
     padding: 8px 18px;
     border-radius: 24px;
     font-size: 14px;
     color: #333;
 }
+
+/* Спальные места */
 .sleeping-card {
-    background: #f8f9fa;
+    background: var(--bg-light);
     border-radius: 12px;
     padding: 12px 20px;
     width: fit-content;
     min-width: 260px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.amenities-section h3 { font-size: 22px; font-weight: 700; margin-top: 0; margin-bottom: 20px; }
-.amenities-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+
+/* Удобства */
+.amenities-chips { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    margin-bottom: 30px; 
+}
 .amenity-chip {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #f8f9fa;
+    background: var(--bg-light);
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 14px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
 }
-.amenities-groups { display: flex; flex-direction: column; gap: 25px; }
-.amenity-group-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 15px;
+.amenities-groups { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
 }
-.amenity-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.amenity-item { font-size: 14px; color: #333; }
-.rule-item { display: flex; align-items: center; gap: 12px; padding: 0; border: none; }
+.amenity-list { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+}
+.amenity-item { 
+    font-size: 14px; 
+    color: #333; 
+}
 
-/* TOOLTIP STYLES */
-.tooltip-container { position: relative; display: inline-flex; align-items: center; cursor: help; }
+/* Правила */
+.rule-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 0; 
+    border: none; 
+}
+
+/* --- ПОДСКАЗКИ (TOOLTIP) --- */
+.tooltip-container { 
+    position: relative; 
+    display: inline-flex; 
+    align-items: center; 
+    cursor: help; 
+}
 .tooltip-text {
     visibility: hidden;
     width: 200px;
@@ -124,10 +212,14 @@
     transition: opacity 0.3s;
     font-size: 12px;
     pointer-events: none;
+    line-height: 1.4;
 }
-.tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+.tooltip-container:hover .tooltip-text { 
+    visibility: visible; 
+    opacity: 1; 
+}
 
-/* --- SIDEBAR --- */
+/* --- БОКОВАЯ ПАНЕЛЬ (SIDEBAR) --- */
 .sidebar-booking {
     position: sticky;
     top: 20px;
@@ -138,25 +230,76 @@
     border: 1px solid var(--border-color);
     margin-bottom: 30px;
 }
-.price { font-size: 24px; font-weight: 700; color: var(--primary-color); }
-.price span { font-size: 14px; color: var(--text-muted); font-weight: 400; }
-.sidebar-info { margin: 20px 0; border-top: 1px solid #eee; padding-top: 20px; }
-.sidebar-info p { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted); margin: 8px 0; }
+.price { 
+    font-size: 24px; 
+    font-weight: 700; 
+}
+.price span { 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    font-weight: 400; 
+}
+.sidebar-info { 
+    margin: 20px 0; 
+    border-top: 1px solid var(--border-color); 
+    padding-top: 20px; 
+}
+.sidebar-info p { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    margin: 12px 0; 
+}
 .btn-booking-full {
     display: block;
-    background: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 16px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    transition: 0.3s ease;
+}
+.btn-booking-full:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 992px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-booking {
+        position: static;
+        order: -1; /* Выводит блок бронирования выше на мобильных, если нужно */
+    }
 }
 
 @media (max-width: 768px) {
-    .details-grid, .full-gallery { grid-template-columns: 1fr; }
-    .full-gallery { height: auto; margin-bottom: 20px; }
-    .side-imgs { display: none; }
-    .amenity-list { grid-template-columns: 1fr; }
+    .full-gallery { 
+        grid-template-columns: 1fr; 
+        height: 300px; 
+    }
+    .side-imgs { 
+        display: none; 
+    }
+    .amenity-list { 
+        grid-template-columns: 1fr 1fr; 
+    }
+    .apartment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .amenity-list { 
+        grid-template-columns: 1fr; 
+    }
+    .apartment-header h1 {
+        font-size: 22px;
+    }
 }
