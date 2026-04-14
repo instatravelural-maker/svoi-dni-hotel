@@ -303,3 +303,56 @@
         font-size: 22px;
     }
 }
+/* --- ФИКСАЦИЯ РАЗМЕРОВ ШАПКИ (ЧТОБЫ НЕ ПРЫГАЛО) --- */
+
+/* Контейнер шапки */
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; /* Фиксированная высота шапки */
+}
+
+/* Текст логотипа */
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem !important; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brand-color) !important;
+    white-space: nowrap;
+}
+
+/* Навигация */
+.nav {
+    display: flex;
+    gap: 25px; 
+    align-items: center;
+}
+
+.nav a {
+    font-size: 15px !important; 
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--brand-color) !important;
+    transition: opacity 0.3s;
+}
+
+/* Кнопка в шапке */
+.btn-dark.header-action {
+    padding: 10px 20px;       /* Настрой здесь размер: высота (10px) и ширина (20px) */
+    font-size: 14px !important; 
+    min-width: 160px;         /* Увеличь это число, если хочешь кнопку шире */
+    text-align: center;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 1024px) {
+    .nav {
+        gap: 15px;
+    }
+    .nav a {
+        font-size: 14px !important;
+    }
+}
