@@ -1,92 +1,115 @@
-/* --- КОРПОРАТИВНЫЙ СТИЛЬ СТРАНИЦЫ ЗАСЕЛЕНИЯ (#244471) --- */
+/* --- ФИКСАЦИЯ РАЗМЕРОВ ШАПКИ (ЧТОБЫ НЕ ПРЫГАЛО) --- */
 
-/* 1. ШАПКА И НАВИГАЦИЯ (ФИКСИРОВАННЫЕ ЦВЕТА) */
+
+
+/* Контейнер шапки */
+
 .header-flex {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     height: 80px; 
+
 }
 
-.logo span, .logo-text {
+
+
+/* Текст логотипа */
+
+.logo-text {
+
     font-family: 'Inter', sans-serif;
+
     font-weight: 700;
+
     font-size: 1.2rem !important; 
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
-    color: #244471 !important;
+
+    color: #244471 !important; /* ЗАМЕНИЛИ ПЕРЕМЕННУЮ НА ЦВЕТ */
+
     white-space: nowrap;
+
 }
+
+
+
+/* Навигация */
+
+.nav {
+
+    display: flex;
+
+    gap: 25px; 
+
+    align-items: center;
+
+}
+
+
 
 .nav a {
+
     font-size: 15px !important; 
+
     font-weight: 600;
+
     text-decoration: none;
-    color: #244471 !important;
+
+    color: #244471 !important; /* ЗАМЕНИЛИ ПЕРЕМЕННУЮ НА ЦВЕТ */
+
     transition: opacity 0.3s;
+
 }
+
+
+
+/* Кнопка в шапке */
 
 .header-action {
+
     padding: 10px 20px;
+
     font-size: 14px !important;
+
     min-width: 160px;
+
     text-align: center;
-    background-color: #244471 !important;
+
+    background-color: #244471 !important; /* Кнопка тоже должна быть синей */
+
     color: #ffffff !important;
+
     border-radius: 8px;
+
     text-decoration: none;
+
     font-weight: 600;
+
 }
 
-/* 2. ЗАГОЛОВКИ И ТЕКСТОВЫЕ АКЦЕНТЫ */
-.section-header h1, 
-.instr-card h2, 
-.rule-item h4,
-.info-text strong,
-.footer h4,
-.footer-logo {
-    color: #244471 !important;
-}
 
-.section-header p,
-.code-highlight span {
-    color: #244471 !important;
-    font-weight: 600;
-}
-
-/* 3. ИКОНКИ (LUCIDE) */
-[data-lucide] {
-    color: #244471 !important;
-}
-
-/* 4. ОФОРМЛЕНИЕ КАРТОЧЕК (ТОЛЬКО ЦВЕТОВЫЕ ЭЛЕМЕНТЫ) */
-.code-highlight {
-    border: 1px solid #244471 !important;
-}
-
-.code-highlight strong {
-    color: #244471 !important;
-}
-
-/* Кружочки с цифрами 1, 2, 3 и боксы для иконок */
-.icon-box {
-    border: 2px solid #244471 !important;
-    color: #244471 !important;
-    font-weight: 700;
-}
-
-/* 5. ФУТЕР И СОЦИАЛЬНЫЕ СЕТИ */
-.social-links a [data-lucide],
-.footer p [data-lucide] {
-    color: #244471 !important;
-}
 
 /* Адаптив для мобилок */
+
 @media (max-width: 1024px) {
+
     .nav {
+
         gap: 15px;
+
     }
+
     .nav a {
+
         font-size: 14px !important;
+
     }
+
 }
