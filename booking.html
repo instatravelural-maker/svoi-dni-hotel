@@ -3,198 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бронирование — CozyStay</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Бронирование — Свои Дни</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        /* --- ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ЦЕНТРИРОВАНИЯ --- */
-        .booking-layout-grid {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 40px;
-            align-items: stretch;
-            margin-bottom: 80px;
-        }
-
-        .widget-panel {
-            background: #fff;
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid #eee;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            min-height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #hr-widget {
-            width: 100% !important;
-            max-width: 800px;
-            margin: 0 auto;
-            display: block; 
-        }
-
-        .booking-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .info-card-compact {
-            background: #fdfaf5;
-            padding: 30px;
-            border-radius: 20px;
-        }
-
-        .info-card-compact h2 {
-            font-size: 24px;
-            color: #2b544a; /* Использован цвет бренда */
-            margin-bottom: 15px;
-        }
-
-        .benefit-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-        }
-
-        .benefit-item i {
-            color: #25d366;
-        }
-
-        .btn-wa-lg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #25d366;
-            color: white;
-            padding: 18px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        /* --- ОБНОВЛЕННЫЕ СТИЛИ ПОДВАЛА --- */
-        .footer {
-            background-color: #f7f3f0;
-            padding: 60px 0 30px;
-            color: #333;
-            margin-top: 80px;
-        }
-
-        .footer-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-info .logo {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #2b544a;
-        }
-
-        .footer-info p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .footer-address p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        .footer-address strong {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2b544a;
-            transition: 0.3s;
-            text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .footer-social a:hover {
-            background: #2b544a;
-            color: #fff;
-        }
-
-        .vk-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        .footer-bottom {
-            padding-top: 20px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            font-size: 12px;
-            color: #999;
-            text-align: left;
-        }
-
-        @media (max-width: 992px) {
-            .booking-layout-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .widget-panel {
-                min-height: auto;
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer-flex {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/booking.css">
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
     <div class="container header-flex">
         <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
             <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
@@ -218,50 +36,54 @@
     </div>
 </header>
 
-    <main class="container page-content">
-        <h1 class="section-title">ЗАБРОНИРОВАТЬ НАПРЯМУЮ</h1>
+<main class="container page-content">
+    <h1 class="section-title">ЗАБРОНИРОВАТЬ НАПРЯМУЮ</h1>
 
-        <div class="booking-layout-grid">
-            <div class="widget-panel">
-                <div id="hr-widget"></div> 
-                <script type="module" src="https://homereserve.ru/widget.js"></script> 
-                <script type="module"> 
-                    window.homereserve.initWidgetList({"token":"AeEVhV7jVU"}) 
-                </script>
+    <div class="booking-full-width">
+        <div id="hr-widget"></div> 
+        <script type="module" src="https://homereserve.ru/widget.js"></script> 
+        <script type="module"> 
+            window.homereserve.initWidgetList({"token":"AeEVhV7jVU"}) 
+        </script>
+    </div>
+
+    <div class="booking-info-bottom">
+        <div class="info-card-compact">
+            <h2>Прямое бронирование</h2>
+            <p>Выберите свободные даты в календаре выше, чтобы увидеть точную стоимость и мгновенно оформить бронь. Никаких скрытых комиссий.</p>
+            
+            <div class="support-actions">
+                <a href="https://wa.me/79214070305" class="btn-support">
+                    <i data-lucide="message-circle"></i> WhatsApp
+                </a>
+                <a href="https://t.me/ваш_логин" class="btn-support">
+                    <i data-lucide="send"></i> Telegram
+                </a>
             </div>
-
-            <aside class="booking-sidebar">
-                <div class="info-card-compact">
-                    <h2>Прямое бронирование</h2>
-                    <p>Выберите свободные даты в календаре слева, чтобы увидеть точную стоимость и мгновенно оформить бронь.</p>
-                </div>
-                
-                <div class="benefit-list">
-                    <div class="benefit-item">
-                        <i data-lucide="check-circle"></i>
-                        <span>Мгновенное подтверждение</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i data-lucide="shield-check"></i>
-                        <span>Безопасная оплата через систему</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i data-lucide="message-circle"></i>
-                        <span>Синхронизация с RealtyCalendar</span>
-                    </div>
-                </div>
-
-                <div class="direct-support" style="margin-top: 10px;">
-                    <p style="font-size: 14px; color: #888; margin-bottom: 10px; text-align: center;">Нужна помощь?</p>
-                    <a href="https://wa.me/79991234567" class="btn-wa-lg">
-                        <i data-lucide="message-circle"></i> Написать нам
-                    </a>
-                </div>
-            </aside>
         </div>
-    </main>
+        
+        <div class="benefit-list">
+            <div class="benefit-item">
+                <i data-lucide="check-circle"></i>
+                <span>Мгновенное подтверждение без звонков</span>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="shield-check"></i>
+                <span>Безопасная оплата через шлюз системы</span>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="calendar"></i>
+                <span>Актуальное наличие мест (RealtyCalendar)</span>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="clock"></i>
+                <span>Бронирование доступно 24/7</span>
+            </div>
+        </div>
+    </div>
+</main>
 
-    <footer class="footer">
+<footer class="footer">
     <div class="container footer-grid">
         <div class="footer-brand">
             <div class="footer-logo">
@@ -274,11 +96,9 @@
                 <a href="https://t.me/ваш_логин" target="_blank" title="Telegram">
                     <i data-lucide="send"></i>
                 </a>
-                
                 <a href="https://vk.com/ваш_id" target="_blank" title="ВКонтакте">
                     <i class="fa-brands fa-vk"></i>
                 </a>
-                
                 <a href="tel:+79214070305" title="Позвонить">
                     <i data-lucide="phone"></i>
                 </a>
@@ -287,14 +107,8 @@
 
         <div>
             <h4>Контакты</h4>
-            <p>
-                <i data-lucide="phone" size="16"></i> 
-                <a href="tel:+79214070305" style="color: inherit; text-decoration: none;">+7 921 407-03-05</a>
-            </p>
-            <p>
-                <i data-lucide="mail" size="16"></i> 
-                <a href="mailto:info@gorshkovrealtor.ru" style="color: inherit; text-decoration: none;">info@gorshkovrealtor.ru</a>
-            </p>
+            <p><i data-lucide="phone" size="16"></i> <a href="tel:+79214070305" style="color: inherit; text-decoration: none;">+7 921 407-03-05</a></p>
+            <p><i data-lucide="mail" size="16"></i> <a href="mailto:info@gorshkovrealtor.ru" style="color: inherit; text-decoration: none;">info@gorshkovrealtor.ru</a></p>
             <p><i data-lucide="map-pin" size="16"></i> Арцеуловская аллея, д. 19, корп. 1</p>
         </div>
 
@@ -302,7 +116,7 @@
             <h4>Навигация</h4>
             <p><a href="index.html" style="color: inherit; text-decoration: none;">Главная</a></p>
             <p><a href="about.html" style="color: inherit; text-decoration: none;">О квартире</a></p>
-            <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Инструкция по заселению</a></p>
+            <p><a href="checkin.html" style="color: inherit; text-decoration: none;">Заселение</a></p>
             <p><a href="contacts.html" style="color: inherit; text-decoration: none;">Контакты</a></p>
         </div>
     </div>
@@ -312,14 +126,10 @@
     </div>
 </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <script>
-    // Проверьте наличие этого кода внизу всех страниц!
+<script>
+    lucide.createIcons();
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
