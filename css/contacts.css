@@ -1,7 +1,7 @@
 /* --- ПЕРЕМЕННЫЕ ЦВЕТА --- */
 :root {
     --brand-blue: #244471;   /* Корпоративный синий */
-    --text-dark: #000000;    /* Чистый черный для текста */
+    --text-dark: #000000;    /* Чистый черный для основного текста */
     --white: #ffffff;
     --border-light: #eee;
 }
@@ -13,21 +13,27 @@
     color: var(--brand-blue) !important;
 }
 
-/* Пункты меню (черные, синие только при наведении и активные) */
+/* Пункты меню — согласно ТЗ делаем их корпоративным синим */
 .nav a {
-    color: var(--text-dark) !important;
+    color: var(--brand-blue) !important;
+    text-decoration: none;
 }
 
 .nav a:hover, 
 .nav a.active {
-    color: var(--brand-blue) !important;
+    opacity: 0.8;
 }
 
 /* Кнопка "Забронировать" */
 .btn-dark.header-action {
     background-color: var(--brand-blue) !important;
     border-color: var(--brand-blue) !important;
-    color: var(--white) !important; /* Текст на кнопке всегда белый */
+    color: var(--white) !important; /* Текст на кнопке белый */
+}
+
+/* Иконка бургер-меню для мобильных */
+.menu-toggle i {
+    color: var(--brand-blue) !important;
 }
 
 /* --- СТРАНИЦА КОНТАКТОВ --- */
@@ -36,8 +42,9 @@
     color: var(--brand-blue) !important;
 }
 
-/* Иконки на странице */
-.contact-item i {
+/* Иконки на странице (все иконки — синие) */
+.contact-item i, 
+[data-lucide] {
     color: var(--brand-blue) !important;
 }
 
@@ -48,16 +55,14 @@
     font-weight: 700;
 }
 
-/* Текст в контактах (черный) */
+/* Текст в контактах (строго черный по ТЗ) */
 .contact-item p, 
 .contact-item a {
     color: var(--text-dark) !important;
     text-decoration: none;
 }
 
-/* Ссылки при наведении становятся синими */
 .contact-item a:hover {
-    color: var(--brand-blue) !important;
     text-decoration: underline;
 }
 
@@ -80,9 +85,9 @@
     color: var(--brand-blue) !important;
 }
 
-/* Текст в футере (навигация и контакты) */
+/* Текст в футере — черный */
 .footer p, 
-.footer a {
+.footer a:not(.footer-logo) {
     color: var(--text-dark) !important;
 }
 
@@ -108,7 +113,7 @@
     fill: var(--white) !important;
 }
 
-/* --- СТРУКТУРА И СЕТКА (ОСТАВЛЕНО БЕЗ ИЗМЕНЕНИЙ) --- */
+/* --- СТРУКТУРА И СЕТКА --- */
 
 .contacts-page-section { padding: 60px 0 100px; }
 .contacts-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: stretch; }
