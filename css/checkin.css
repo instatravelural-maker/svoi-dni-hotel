@@ -1,35 +1,44 @@
-/* --- ФИНАЛЬНЫЙ CSS: ИСПРАВЛЕНИЕ СЕТКИ И АДАПТИВА --- */
+/* --- СТРОГОЕ ВЫРАВНИВАНИЕ СЕТКИ И БЛОКОВ --- */
 
 :root {
     --brand-blue: #244471;
     --bg-color: #fdfaf7;
-    --white: #ffffff;
 }
 
 body { background-color: var(--bg-color); margin: 0; }
 
-.instruction-section { padding: 40px 0; }
-
 /* Основная сетка страницы */
 .instruction-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* СТРОГО 2 КОЛОНКИ */
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 /* Карточки */
 .instr-card {
-    background: var(--white);
+    background: #fff;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(36, 68, 113, 0.05);
     border: 1px solid rgba(36, 68, 113, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-.instr-card.wide, .instr-card.full-width { grid-column: span 2; }
+/* Блок "Как добраться" (01) теперь НЕ на всю ширину, чтобы встать рядом со вторым */
+.instr-card.wide {
+    grid-column: span 1; 
+}
 
+/* Блоки на всю ширину (Замок и Безопасность) */
+.instr-card.full-width {
+    grid-column: span 2;
+}
+
+/* Заголовки */
 .instr-card h2 {
     font-family: 'Playfair Display', serif;
     color: var(--brand-blue);
@@ -40,48 +49,37 @@ body { background-color: var(--bg-color); margin: 0; }
     gap: 12px;
 }
 
-/* Стилизация иконок Lucide */
-[data-lucide] { color: var(--brand-blue); }
-
-/* --- ИСПРАВЛЕНИЕ БЛОКА С ЗАМКОМ И ОХРАНОЙ --- */
-/* Внутренняя сетка для сложных карточек */
-.instr-card .instruction-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Видео слева, текст справа */
-    gap: 30px;
-    width: 100%;
-}
-
-/* Для блока охраны (06) */
+/* Внутренняя структура сложных карточек (Замок 03 и Безопасность 06) */
 .instr-card.full-width .instruction-grid {
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Фото/Видео слева, текст справа */
+    gap: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-/* Адаптивный контейнер для видео */
+/* Изображения и Видео */
 .media-container {
     width: 100%;
     border-radius: 15px;
     overflow: hidden;
-    position: relative;
-    background: #000;
+    margin-bottom: 20px;
+}
+
+.media-container img, 
+.media-container iframe {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border: none;
 }
 
 .media-container iframe {
-    width: 100%;
-    min-height: 350px;
-    border: none;
-    display: block;
+    min-height: 300px;
 }
 
-.media-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Элементы списков и кодов */
-.info-row { display: flex; gap: 15px; margin-bottom: 15px; }
+/* Иконки и инфо-строки */
+.info-row { display: flex; gap: 15px; margin-top: 15px; }
 .icon-box {
     min-width: 40px; height: 40px;
     background: rgba(36, 68, 113, 0.07);
@@ -90,32 +88,25 @@ body { background-color: var(--bg-color); margin: 0; }
     color: var(--brand-blue); font-weight: 700;
 }
 
+/* Коды (Домофон/WiFi) */
 .code-highlight {
     background: rgba(36, 68, 113, 0.03);
     border: 2px dashed var(--brand-blue);
-    padding: 20px; border-radius: 15px;
-    text-align: center; margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 15px 0;
 }
 .code-highlight strong { color: var(--brand-blue); font-size: 24px; }
 
-/* --- МОБИЛЬНАЯ АДАПТАЦИЯ (ГЛАВНОЕ) --- */
+/* Адаптив для мобильных (переход в одну колонку) */
 @media (max-width: 1024px) {
     .instruction-grid, 
-    .instr-card .instruction-grid { 
-        grid-template-columns: 1fr !important; /* Все в одну колонку */
+    .instr-card.full-width .instruction-grid { 
+        grid-template-columns: 1fr !important; 
     }
-    
-    .instr-card.wide, .instr-card.full-width { grid-column: span 1; }
-
-    /* Исправление видео на мобиле: чтобы не было "горизонтали" */
-    .media-container iframe {
-        min-height: 250px; 
+    .instr-card.wide, 
+    .instr-card.full-width { 
+        grid-column: span 1; 
     }
-
-    .instr-card { padding: 20px; }
-}
-
-@media (max-width: 480px) {
-    .section-header h1 { font-size: 28px; }
-    .code-highlight strong { font-size: 18px; }
 }
