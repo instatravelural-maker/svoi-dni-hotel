@@ -23,49 +23,60 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .nav { display: flex; gap: 25px; align-items: center; }
 .nav a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 15px; }
 
-.btn-dark { background: var(--navy); color: #fff !important; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; justify-content: center; }
+.btn-dark { background: var(--navy); color: #fff !important; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; }
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
 
 /* =========================================
-    HERO & BOOKING MODULE
+    HERO & BOOKING MODULE (STRICT LAYOUT)
    ========================================= */
 .hero {
     position: relative;
     height: 600px;
-    background: url('../img/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../img/hero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
     margin-bottom: 80px;
 }
 
+.hero-layout {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .hero-content {
-    text-align: left;
-    max-width: 1140px;
-    width: 100%;
-    padding: 0 20px;
+    max-width: 800px;
     color: #ffffff !important;
 }
 
-.hero-content h1, .hero-content p {
+.hero-content h1 {
     color: #ffffff !important;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .booking-container {
     position: absolute;
     bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20px;
+    right: 20px;
     background: #fff;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 25px 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     display: flex;
     gap: 20px;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    box-sizing: border-box;
+    align-items: flex-end;
     z-index: 10;
 }
 
@@ -75,8 +86,9 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     flex-direction: column;
 }
 
-.booking-item label { font-size: 14px; font-weight: 600; margin-bottom: 5px; color: #333; }
-.booking-item input, .booking-item select { border: 1px solid #ddd; padding: 10px; border-radius: 6px; font-family: inherit; }
+.booking-item label { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #888; text-transform: none; }
+.booking-item input, .booking-item select { border: 1px solid #eee; padding: 12px; border-radius: 8px; font-family: inherit; font-size: 15px; background: #fdfdfd; }
+.booking-btn { height: 50px; padding: 0 35px !important; white-space: nowrap; }
 
 /* =========================================
     3. СЕТКИ (ДЕСКТОП)
@@ -127,7 +139,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     }
     .nav.active { display: flex !important; }
     .hero { height: 400px; margin-bottom: 0; }
-    .booking-container { position: relative; bottom: 0; transform: none; flex-direction: column; width: 90%; margin: 20px auto; }
+    .hero-content h1 { font-size: 28px; }
+    .booking-container { position: relative; bottom: 0; transform: none; flex-direction: column; width: 100%; left: 0; right: 0; margin-top: 20px; padding: 20px; }
     .mobile-booking-btn { 
         display: flex !important; margin-top: 10px; background: var(--navy); 
         color: #fff !important; width: 100%; padding: 14px; 
@@ -140,8 +153,4 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .about-main-img { height: 300px; }
     .section-padding { padding: 40px 0; }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid { grid-template-columns: 1fr !important; }
 }
