@@ -186,7 +186,7 @@ body {
 .features-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 40px !important;
+    gap: 15px !important;
     align-items: stretch !important;
 }
 
@@ -199,13 +199,15 @@ body {
 
 .feature-card {
     width: 100% !important;
+    height: 280px !important;
     background: var(--white);
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
 }
 
