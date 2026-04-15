@@ -249,3 +249,25 @@
     height: 100% !important;
     text-align: center !important;
 }
+.mobile-booking-btn {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .desktop-only-btn {
+        display: none !important;
+    }
+
+    .nav.active {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        padding: 30px 20px !important;
+    }
+
+    .mobile-booking-btn {
+        display: inline-flex !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+}
