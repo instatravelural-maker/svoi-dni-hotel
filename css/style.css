@@ -272,6 +272,21 @@ body {
     border-radius: 10px;
 }
 
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.gallery-overlay i {
+    color: #ffffff;
+}
 .reviews-section {
     background-color: var(--grey-light);
     padding: 80px 0;
