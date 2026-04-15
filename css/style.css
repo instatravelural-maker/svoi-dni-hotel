@@ -27,6 +27,58 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
 
 /* =========================================
+    HERO & BOOKING MODULE
+   ========================================= */
+.hero {
+    position: relative;
+    height: 600px;
+    background: url('../img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 1140px;
+    width: 100%;
+    padding: 0 20px;
+    color: #ffffff !important;
+}
+
+.hero-content h1, .hero-content p {
+    color: #ffffff !important;
+}
+
+.booking-container {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.booking-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-item label { font-size: 14px; font-weight: 600; margin-bottom: 5px; color: #333; }
+.booking-item input, .booking-item select { border: 1px solid #ddd; padding: 10px; border-radius: 6px; font-family: inherit; }
+
+/* =========================================
     3. СЕТКИ (ДЕСКТОП)
    ========================================= */
 .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
@@ -74,6 +126,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     .nav.active { display: flex !important; }
+    .hero { height: 400px; margin-bottom: 0; }
+    .booking-container { position: relative; bottom: 0; transform: none; flex-direction: column; width: 90%; margin: 20px auto; }
     .mobile-booking-btn { 
         display: flex !important; margin-top: 10px; background: var(--navy); 
         color: #fff !important; width: 100%; padding: 14px; 
