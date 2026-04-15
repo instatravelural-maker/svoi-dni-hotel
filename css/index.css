@@ -226,3 +226,11 @@
         height: 300px !important;
     }
 }
+.review-card-modern {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+.review-modern-text {
+    flex-grow: 1 !important;
+}
