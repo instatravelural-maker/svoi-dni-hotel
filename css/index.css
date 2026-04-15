@@ -234,3 +234,9 @@
 .review-modern-text {
     flex-grow: 1 !important;
 }
+.feature-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    text-align: center !important;
+}
