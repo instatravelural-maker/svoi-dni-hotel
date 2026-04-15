@@ -80,6 +80,7 @@
 .gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
     gap: 20px;
 }
 .gallery-item {
@@ -126,12 +127,12 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 25px;
-    align-items: center;
+    align-items: stretch !important;
 }
 .feature-card, 
 .review-card-modern {
     width: 100% !important;
-    max-width: 100%;
+    box-sizing: border-box !important;
 }
 
 /* 5. АДАПТИВНОСТЬ (Мобильные и Планшеты) */
@@ -238,4 +239,16 @@
         background: #fff;
     }
     .hero-bg-wrapper::after { display: none; }
+}
+/* Фиксация вертикального расположения для десктопной версии */
+@media (min-width: 769px) {
+    .features-grid, 
+    .reviews-grid-new {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .feature-card, 
+    .review-card-modern {
+        width: 100% !important;
+    }
 }
