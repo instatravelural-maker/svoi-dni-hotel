@@ -89,13 +89,20 @@
     gap: 10px;
 }
 
-/* 4. ВЕРТИКАЛЬНЫЕ БЛОКИ (Один под другим по ТЗ) */
+/* 4. ГОРИЗОНТАЛЬНЫЕ БЛОКИ (3 колонки в ряд по ТЗ) */
 .features-grid, 
 .reviews-grid-new {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 25px;
     align-items: stretch !important;
+}
+
+@media (max-width: 768px) {
+    .features-grid, 
+    .reviews-grid-new {
+        grid-template-columns: 1fr !important; /* На мобилках в один ряд */
+    }
 }
 .feature-card, 
 .review-card-modern {
