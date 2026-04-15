@@ -195,6 +195,9 @@ body {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 25px !important;
     align-items: stretch !important;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .feature-card {
@@ -219,6 +222,10 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     display: flex !important;
     flex-direction: column !important;
+}
+
+.review-card-modern .stars-wrapper {
+    display: none;
 }
 
 /* ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Строго 3 колонки) */
