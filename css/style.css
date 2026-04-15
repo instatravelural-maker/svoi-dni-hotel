@@ -26,305 +26,109 @@ body {
     padding: 0 20px;
 }
 
-.section-padding { 
-    padding: 80px 0; 
-}
+.section-padding { padding: 80px 0; }
 
 .section-title { 
-    text-align: center; 
-    font-size: 26px; 
-    margin-bottom: 50px; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--navy);
-    font-weight: 700;
+    text-align: center; font-size: 26px; margin-bottom: 50px; 
+    text-transform: uppercase; letter-spacing: 2px; color: var(--navy); font-weight: 700;
 }
 
 /* =========================================
-    2. ШАПКА (Header)
+    2. ШАПКА И НАВИГАЦИЯ
     ========================================= */
 .header {
-    background: #ffffff; 
-    height: 85px;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    background: #ffffff; height: 85px; display: flex; align-items: center;
+    position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
 }
 
-.header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+.header-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--navy);
-}
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
+.logo span { font-weight: 700; font-size: 1.2rem; text-transform: uppercase; }
 
-.logo span {
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--navy) !important;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.nav a:hover { color: var(--gold-accent) !important; }
+.nav { display: flex; gap: 30px; align-items: center; }
+.nav a { text-decoration: none; color: var(--navy) !important; font-size: 15px; font-weight: 600; }
 
 .btn-dark {
-    background-color: var(--navy) !important; 
-    color: #ffffff !important;           
-    padding: 10px 24px;
-    border-radius: 6px;        
-    text-decoration: none;     
-    font-weight: 600;          
-    display: inline-flex;
-    align-items: center;
-    font-size: 14px;
-    min-width: 160px;
-    justify-content: center;
+    background-color: var(--navy) !important; color: #ffffff !important;           
+    padding: 10px 24px; border-radius: 6px; text-decoration: none;     
+    font-weight: 600; display: inline-flex; align-items: center; justify-content: center;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--navy);
-}
+.menu-toggle { display: none; background: none; border: none; font-size: 24px; color: var(--navy); }
 
 /* =========================================
-    3. ГЛАВНЫЙ ЭКРАН (Hero)
+    3. КОНТЕНТ (Сетки)
     ========================================= */
-.hero { 
-    position: relative;
-    overflow: hidden;
-}
+.hero-bg-wrapper { position: relative; height: 650px; }
+.hero-image-bg { width: 100%; height: 650px; object-fit: cover; display: block; }
+.hero-card { position: absolute; top: 20%; left: 5%; max-width: 600px; color: var(--navy); z-index: 2; }
+.hero-card h1 { font-size: 46px; font-weight: 800; line-height: 1.1; }
 
-.hero-bg-wrapper {
-    position: relative;
-    height: 650px;
-}
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; }
+.about-main-img { width: 100%; border-radius: 12px; height: 450px; object-fit: cover; }
 
-.hero-image-bg {
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-card {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    max-width: 600px;
-    color: var(--navy);
-    z-index: 2;
-}
-
-.hero-card h1 {
-    font-size: 46px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.search-panel {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 20px 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    margin-top: -50px;
-    position: relative;
-    z-index: 10;
-}
-
-/* =========================================
-    4. СЕТКИ И КОНТЕНТ (Десктоп)
-    ========================================= */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 50px;
-}
-
-.about-main-img {
-    width: 100%;
-    border-radius: 12px;
-    height: 450px;
-    object-fit: cover;
-}
-
-.amenities-row {
-    display: flex;
-    gap: 30px;
-    margin: 30px 0;
-}
-
-/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Вертикально по ТЗ) */
-/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Теперь горизонтально в 3 колонки) */
-.features-grid, 
-.reviews-grid-new {
-    display: grid !important; /* Было flex */
-    grid-template-columns: repeat(3, 1fr) !important; /* Силой ставим 3 колонки */
-    gap: 25px !important;
-    align-items: stretch !important;
+.features-grid, .reviews-grid-new {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;
 }
 
 .feature-card, .review-card-modern {
-    width: 100% !important; /* Убираем фикс ширину, пусть сетка рулит */
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    display: flex !important;
-    flex-direction: column !important;
+    background: var(--white); padding: 30px; border-radius: 12px;
+    display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-/* ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Строго 3 колонки) */
-.gallery-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 15px;
-}
-
-.gallery-item {
-    position: relative;
-    height: 280px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%; height: 100%; object-fit: cover;
-}
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.gallery-item { height: 280px; border-radius: 10px; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 
 /* =========================================
-    5. ОТЗЫВЫ (Детали)
+    4. ФУТЕР (Десктоп)
     ========================================= */
-.reviews-section { background-color: var(--grey-light); padding: 80px 0; }
-.reviewer-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-.reviewer-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.review-meta { display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-bottom: 15px; }
-.stars-wrapper { position: relative; color: var(--gold-accent); font-size: 18px; }
-
-/* =========================================
-    6. ФУТЕР
-    ========================================= */
-.footer {
-    background: var(--footer-bg);
-    padding: 60px 0 30px;
-    border-top: 1px solid #d4d1ca;
-    margin-top: 80px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; 
-    gap: 40px;
-}
-
-.footer-logo { font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 20px; display: block; }
+.footer { background: var(--footer-bg); padding: 60px 0 30px; border-top: 1px solid #d4d1ca; margin-top: 80px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+.footer-logo { font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 20px; display: block; text-decoration: none; }
 .footer p { font-size: 14px; display: flex; align-items: center; gap: 10px; color: #555; }
 .social-links { display: flex; gap: 15px; margin-top: 20px; }
 .social-links a { color: var(--navy); font-size: 24px; }
 
 /* =========================================
-    ОБНОВЛЕННАЯ АДАПТИВНОСТЬ (Mobile)
+    5. ЕДИНАЯ АДАПТИВНОСТЬ (Mobile 768px)
     ========================================= */
-
-/* Скрываем мобильную кнопку на ПК */
-.mobile-booking-btn {
-    display: none !important;
-}
+.mobile-booking-btn { display: none !important; }
 
 @media (max-width: 768px) {
-    /* 1. Скрываем лишнюю кнопку из шапки */
-    .desktop-only-btn {
-        display: none !important;
+    /* Навигация и Кнопки */
+    .menu-toggle { display: block; }
+    .desktop-only-btn { display: none !important; }
+    
+    .nav {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; width: 100%; background: #fff;
+        padding: 40px 20px; gap: 28px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
+    .nav.active { display: flex !important; text-align: center; }
 
-    /* 2. Исправляем выпадающее меню */
-    .nav.active {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 25px !important; /* Увеличиваем расстояние между ссылками */
-        padding: 30px 20px !important;
-        text-align: center;
-    }
-
-    /* 3. Кнопка внутри меню (Белый текст) */
     .mobile-booking-btn {
-        display: inline-flex !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-        color: #ffffff !important; /* Белый цвет текста */
-        background-color: var(--navy) !important;
-        justify-content: center;
+        display: inline-flex !important; width: 100%; margin-top: 10px;
+        background-color: var(--navy) !important; color: #ffffff !important;
+        padding: 14px; border-radius: 6px; font-weight: 700; justify-content: center;
     }
 
-    /* 4. Переводим сетки преимуществ и отзывов в 1 колонку (чтобы не было каши) */
-    .features-grid, 
-    .reviews-grid-new {
+    /* Сетки контента */
+    .about-grid, .features-grid, .reviews-grid-new, .gallery-grid {
         grid-template-columns: 1fr !important;
     }
-}
-/* Базовое состояние кнопок */
-.mobile-booking-btn {
-    display: none !important;
-}
-
-@media (max-width: 768px) {
-    /* 1. Прячем кнопку из шапки, чтобы не мешала логотипу */
-    .desktop-only-btn {
-        display: none !important;
-    }
-
-    /* 2. Бургер-меню: увеличиваем расстояние (links gap) */
-    .nav.active {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 28px !important; /* Увеличено для удобства нажатия */
-        padding: 40px 20px !important;
-        background: #ffffff !important;
-    }
-
-    /* 3. Кнопка «Забронировать» внутри меню: позиция и цвет */
-    .mobile-booking-btn {
-        display: inline-flex !important;
-        width: 100% !important;
-        margin-top: 15px !important;
-        background-color: var(--navy) !important;
-        color: #ffffff !important; /* ПРИНУДИТЕЛЬНО БЕЛЫЙ ЦВЕТ */
-        justify-content: center;
-        padding: 14px !important;
-        font-weight: 700 !important;
-    }
     
-    /* Убираем синий/черный цвет ссылок для кнопки внутри меню */
-    .nav.active a.mobile-booking-btn {
-        color: #ffffff !important;
+    .hero-bg-wrapper, .hero-image-bg { height: 400px; }
+    .hero-card { position: relative; top: 0; left: 0; padding: 40px 20px; text-align: center; }
+    .hero-card h1 { font-size: 28px; }
+
+    /* ФУТЕР МОБИЛЬНЫЙ (Исправление "уебищности") */
+    .footer-grid { 
+        grid-template-columns: 1fr !important; 
+        text-align: center; 
+        gap: 30px; 
     }
+    .footer p { justify-content: center; }
+    .social-links { justify-content: center; }
 }
