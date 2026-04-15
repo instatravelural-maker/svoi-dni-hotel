@@ -356,3 +356,46 @@
         font-size: 14px !important;
     }
 }
+@media (max-width: 992px) {
+    .details-grid { grid-template-columns: 1fr; }
+    .sidebar-booking { position: static; order: -1; width: auto; }
+}
+
+@media (max-width: 768px) {
+    /* Навигация и меню */
+    .header-flex { height: 70px; position: relative; }
+    .nav { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100%; left: 0; width: 100%; 
+        background: var(--white); 
+        padding: 20px; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        z-index: 1000; 
+        gap: 15px;
+    }
+    .nav.active { display: flex; }
+    .header-action { display: none; }
+    .menu-toggle { display: block !important; }
+
+    /* Галерея */
+    .full-gallery { grid-template-columns: 1fr; height: 300px; }
+    .side-imgs { display: none; }
+
+    /* Контентные блоки */
+    .apartment-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .chips-container { gap: 8px; }
+    .chip { padding: 6px 14px; font-size: 13px; }
+    .sleeping-card { min-width: 100%; box-sizing: border-box; }
+    
+    /* Удобства */
+    .amenity-list { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .apartment-header h1 { font-size: 22px; }
+    .amenity-list { grid-template-columns: 1fr; }
+    .description-block, .sleeping-section, .amenities-section, .rules-card-container { padding: 15px; }
+    .full-gallery { height: 250px; }
+}
