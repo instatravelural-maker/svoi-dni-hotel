@@ -35,7 +35,7 @@ body {
     margin-bottom: 50px; 
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--dark-green);
+    color: #244471;
     font-weight: 700;
 }
 
@@ -66,7 +66,7 @@ body {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: var(--dark-green);
+    color: #244471;
 }
 
 .logo span {
@@ -105,7 +105,7 @@ body {
 
 /* Кнопка "Забронировать" */
 .btn-dark {
-    background-color: var(--dark-green) !important; 
+    background-color: #244471 !important; 
     color: #ffffff !important;           
     padding: 10px 24px !important; /* Оптимальный размер */
     border-radius: 6px;        
@@ -156,7 +156,7 @@ body {
     top: 20%;
     left: 5%;
     max-width: 600px;
-    color: var(--dark-green);
+    color: #244471;
     z-index: 2;
 }
 
@@ -253,7 +253,7 @@ body {
 }
 
 .feature-icon {
-    color: var(--dark-green);
+    color: #244471;
     margin-bottom: 20px;
     width: 35px;
     height: 35px;
@@ -378,14 +378,14 @@ body {
     gap: 10px;
     font-weight: 700;
     font-size: 24px;
-    color: var(--dark-green);
+    color: #244471;
     margin-bottom: 20px;
 }
 
 .footer h4 {
     font-size: 16px;
     margin-bottom: 20px;
-    color: var(--dark-green);
+    color: #244471;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -416,7 +416,7 @@ body {
 }
 
 .social-links a {
-    color: var(--dark-green);
+    color: #244471;
     transition: 0.3s;
 }
 
