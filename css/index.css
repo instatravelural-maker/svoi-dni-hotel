@@ -136,26 +136,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 }
 .feature-card i { font-size: 32px; margin-bottom: 15px; color: var(--navy); }
 
-/* РАЗДЕЛ ОТЗЫВЫ - СТРОГО ПО МАКЕТУ */
-.reviews-grid-new { 
-    display: flex !important; 
-    flex-direction: row !important; 
-    justify-content: center !important; 
-    gap: 20px !important; 
-    width: 100%; 
-    max-width: 1140px; 
-    margin: 0 auto; 
-}
-.review-card-modern { 
-    background: #fff; 
-    padding: 20px; 
-    border-radius: 15px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03); 
-    display: flex; 
-    flex-direction: column; 
-    width: 320px; 
-    flex-shrink: 0;
-}
+.reviews-grid-new { display: flex !important; justify-content: center !important; gap: 20px !important; width: 100%; max-width: 1140px; margin: 0 auto; }
+.review-card-modern { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; width: 350px; flex-shrink: 0; }
 .review-card-modern .stars, .review-card-modern .stars-wrapper { display: none !important; }
 
 .gallery-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
@@ -185,6 +167,5 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     .search-panel { position: relative; bottom: -280px; width: auto; margin: 0 20px; left: 0; transform: none; }
     .about-grid, .features-grid, .footer-grid { grid-template-columns: 1fr !important; }
     .reviews-grid-new { flex-direction: column !important; align-items: center !important; }
-    .review-card-modern { width: 100%; max-width: 320px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
