@@ -183,18 +183,34 @@ body {
     margin: 30px 0;
 }
 
-/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Вертикально по ТЗ) */
-/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Теперь горизонтально в 3 колонки) */
-.features-grid, 
+.features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px !important;
+    align-items: stretch !important;
+}
+
 .reviews-grid-new {
-    display: grid !important; /* Было flex */
-    grid-template-columns: repeat(3, 1fr) !important; /* Силой ставим 3 колонки */
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 25px !important;
     align-items: stretch !important;
 }
 
-.feature-card, .review-card-modern {
-    width: 100% !important; /* Убираем фикс ширину, пусть сетка рулит */
+.feature-card {
+    width: 100% !important;
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.review-card-modern {
+    width: 100% !important;
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
@@ -255,76 +271,40 @@ body {
     ОБНОВЛЕННАЯ АДАПТИВНОСТЬ (Mobile)
     ========================================= */
 
-/* Скрываем мобильную кнопку на ПК */
 .mobile-booking-btn {
     display: none !important;
 }
 
 @media (max-width: 768px) {
-    /* 1. Скрываем лишнюю кнопку из шапки */
     .desktop-only-btn {
         display: none !important;
     }
 
-    /* 2. Исправляем выпадающее меню */
     .nav.active {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; /* Увеличиваем расстояние между ссылками */
-        padding: 30px 20px !important;
-        text-align: center;
-    }
-
-    /* 3. Кнопка внутри меню (Белый текст) */
-    .mobile-booking-btn {
-        display: inline-flex !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-        color: #ffffff !important; /* Белый цвет текста */
-        background-color: var(--navy) !important;
-        justify-content: center;
-    }
-
-    /* 4. Переводим сетки преимуществ и отзывов в 1 колонку (чтобы не было каши) */
-    .features-grid, 
-    .reviews-grid-new {
-        grid-template-columns: 1fr !important;
-    }
-}
-/* Базовое состояние кнопок */
-.mobile-booking-btn {
-    display: none !important;
-}
-
-@media (max-width: 768px) {
-    /* 1. Прячем кнопку из шапки, чтобы не мешала логотипу */
-    .desktop-only-btn {
-        display: none !important;
-    }
-
-    /* 2. Бургер-меню: увеличиваем расстояние (links gap) */
-    .nav.active {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 28px !important; /* Увеличено для удобства нажатия */
+        gap: 28px !important; 
         padding: 40px 20px !important;
         background: #ffffff !important;
     }
 
-    /* 3. Кнопка «Забронировать» внутри меню: позиция и цвет */
     .mobile-booking-btn {
         display: inline-flex !important;
         width: 100% !important;
         margin-top: 15px !important;
         background-color: var(--navy) !important;
-        color: #ffffff !important; /* ПРИНУДИТЕЛЬНО БЕЛЫЙ ЦВЕТ */
+        color: #ffffff !important; 
         justify-content: center;
         padding: 14px !important;
         font-weight: 700 !important;
     }
     
-    /* Убираем синий/черный цвет ссылок для кнопки внутри меню */
     .nav.active a.mobile-booking-btn {
         color: #ffffff !important;
+    }
+
+    .features-grid, 
+    .reviews-grid-new {
+        grid-template-columns: 1fr !important;
     }
 }
