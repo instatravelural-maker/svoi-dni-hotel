@@ -186,7 +186,7 @@ body {
 .features-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 40px !important;
+    gap: 60px !important;
     align-items: stretch !important;
 }
 
@@ -201,7 +201,7 @@ body {
     width: 100% !important;
     height: 280px !important;
     background: var(--white);
-    padding: 30px;
+    padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     display: flex !important;
