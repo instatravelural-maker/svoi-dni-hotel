@@ -299,3 +299,17 @@ body {
     .gallery-item { height: 100px; }
     .section-title { font-size: 20px; }
 }
+.review-card-modern {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+.review-modern-text {
+    flex-grow: 1 !important;
+}
+.feature-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    text-align: center !important;
+}
