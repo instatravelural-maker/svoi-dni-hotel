@@ -92,7 +92,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: var(--text-dark) !important;
+    color: #244471 !important;
     font-size: 15px !important; /* Фикс размера шрифта меню */
     font-weight: 600;
     transition: 0.3s;
