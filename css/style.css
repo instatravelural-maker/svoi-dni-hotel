@@ -618,3 +618,64 @@ body {
     .amenities-row { grid-template-columns: repeat(2, 1fr); }
     .gallery-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+    /* Фикс наложения текста на белый фон (скриншот) */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-bg-wrapper {
+        position: relative;
+        height: 300px; /* Фиксированная высота для фото на мобильных */
+    }
+
+    .hero-image-bg {
+        height: 100%;
+        object-position: center;
+    }
+
+    /* Исправление карточки с заголовком */
+    .hero-card {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 20px 15px;
+        background: #244471; /* Темный фон для читаемости текста */
+        color: #ffffff !important;
+        box-sizing: border-box;
+    }
+
+    .hero-card h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ffffff !important;
+    }
+
+    .hero-card p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Позиционирование виджета поиска под текстом */
+    .search-panel {
+        margin-top: 0;
+        position: relative;
+        z-index: 5;
+        border-radius: 0 0 15px 15px;
+        padding: 15px;
+    }
+
+    /* Адаптация сетки преимуществ и отзывов */
+    .about-grid, .features-grid, .gallery-grid, .reviews-grid-new {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+}
