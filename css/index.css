@@ -232,3 +232,94 @@
         padding: 40px 0;
     }
 }
+/* Возврат веб-версии к изначальному виду (десктоп) */
+@media (min-width: 769px) {
+    .hero {
+        position: relative;
+        min-height: auto;
+        display: block;
+    }
+
+    .hero-bg-wrapper {
+        position: relative;
+        height: 650px;
+    }
+
+    .hero-image-bg {
+        height: 650px;
+        object-fit: cover;
+    }
+
+    .hero-card {
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        max-width: 600px;
+        text-align: left;
+        background: none;
+        margin-bottom: 0;
+        transform: none;
+    }
+
+    .hero-card h1 {
+        font-size: 46px;
+        color: #244471 !important;
+        text-shadow: none;
+    }
+
+    .hero-card p {
+        color: #444 !important;
+        text-shadow: none;
+    }
+
+    .search-panel {
+        position: relative;
+        margin-top: -50px;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        transform: none;
+        background: var(--white);
+        backdrop-filter: none;
+    }
+
+    .hero-bg-wrapper::after {
+        display: none;
+    }
+}
+
+/* Сохранение мобильной адаптации */
+@media (max-width: 768px) {
+    .hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-bg-wrapper {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+    }
+    .hero-image-bg { height: 100%; object-fit: cover; }
+    .hero-bg-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    }
+    .hero-card {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .search-panel {
+        position: absolute;
+        bottom: 20px; left: 15px; right: 15px;
+        width: auto;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
