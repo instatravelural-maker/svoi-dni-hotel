@@ -9,7 +9,7 @@
 body { background: var(--bg); font-family: 'Inter', sans-serif; margin: 0; }
 
 /* Навигация и хедер */
-.nav a { text-decoration: none; color: inherit; } 
+.nav a { text-decoration: none; color: var(--navy); }
 .nav a.active { color: var(--navy) !important; border-bottom: none !important; text-decoration: none !important; }
 .btn-dark.header-action { background: var(--navy) !important; color: #fff; text-decoration: none; }
 
