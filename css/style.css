@@ -291,3 +291,40 @@ body {
         grid-template-columns: 1fr !important;
     }
 }
+/* Базовое состояние кнопок */
+.mobile-booking-btn {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    /* 1. Прячем кнопку из шапки, чтобы не мешала логотипу */
+    .desktop-only-btn {
+        display: none !important;
+    }
+
+    /* 2. Бургер-меню: увеличиваем расстояние (links gap) */
+    .nav.active {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 28px !important; /* Увеличено для удобства нажатия */
+        padding: 40px 20px !important;
+        background: #ffffff !important;
+    }
+
+    /* 3. Кнопка «Забронировать» внутри меню: позиция и цвет */
+    .mobile-booking-btn {
+        display: inline-flex !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        background-color: var(--navy) !important;
+        color: #ffffff !important; /* ПРИНУДИТЕЛЬНО БЕЛЫЙ ЦВЕТ */
+        justify-content: center;
+        padding: 14px !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Убираем синий/черный цвет ссылок для кнопки внутри меню */
+    .nav.active a.mobile-booking-btn {
+        color: #ffffff !important;
+    }
+}
