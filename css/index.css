@@ -41,9 +41,9 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .about-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .about-thumbs img { width: 100%; height: 80px; object-fit: cover; border-radius: 10px; }
 
-.features-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 60px; align-items: stretch; width: 100%; }
+.features-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 30px; align-items: stretch; width: 100%; max-width: 900px; margin: 0 auto; }
 .reviews-grid-new { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 25px; }
-.feature-card { background: #fff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; height: 250px; margin: 0; }
+.feature-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; height: 200px; margin: 0; }
 .review-card-modern { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
 
 .gallery-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
