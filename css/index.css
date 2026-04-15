@@ -136,8 +136,26 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 }
 .feature-card i { font-size: 32px; margin-bottom: 15px; color: var(--navy); }
 
-.reviews-grid-new { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 40px; width: 100%; max-width: 1140px; margin: 0 auto; justify-content: center; }
-.review-card-modern { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; height: 100%; }
+/* ИЗМЕНЕННЫЙ БЛОК ОТЗЫВОВ */
+.reviews-grid-new { 
+    display: flex !important; 
+    justify-content: center !important; 
+    gap: 30px !important; 
+    width: 100%; 
+    max-width: 1140px; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+}
+.review-card-modern { 
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    display: flex; 
+    flex-direction: column; 
+    width: 340px; 
+    height: auto; 
+}
 .review-card-modern .stars, .review-card-modern .stars-wrapper { display: none !important; }
 
 .gallery-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
@@ -165,6 +183,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     .hero { height: 500px; margin-bottom: 300px; }
     .hero-card h1 { font-size: 32px; }
     .search-panel { position: relative; bottom: -280px; width: auto; margin: 0 20px; left: 0; transform: none; }
-    .about-grid, .features-grid, .reviews-grid-new, .footer-grid { grid-template-columns: 1fr !important; }
+    .about-grid, .features-grid, .footer-grid { grid-template-columns: 1fr !important; }
+    .reviews-grid-new { flex-direction: column; align-items: center; }
+    .review-card-modern { width: 90%; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
