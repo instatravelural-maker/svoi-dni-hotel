@@ -157,8 +157,10 @@
         top: 20%; left: 5%;
         text-align: left;
     }
-    .hero-card h1 { color: #244471 !important; }
-    .hero-card p { color: #444 !important; }
+    @media (min-width: 769px) {
+    .hero-card h1 { color: #ffffff !important; } /* Сделали белым */
+    .hero-card p { color: #ffffff !important; }  /* Сделали белым */
+}
     .search-panel {
         position: relative;
         margin-top: -50px;
