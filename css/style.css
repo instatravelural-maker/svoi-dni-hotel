@@ -1,14 +1,15 @@
 /* =========================================
-    1. ОБЩИЕ НАСТРОЙКИ
+    1. ОБЩИЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
     ========================================= */
 :root {
-    --bg-cream: #FDFBF4;     /* Основной фон сайта */
-    --dark-green: #2d3e40;   /* Темно-зеленый цвет из макета */
-    --gold-accent: #d4a373;  /* Иконки, логотип */
-    --text-dark: #333333;    /* Основной текст */
+    --bg-cream: #FDFBF4;     
+    --dark-green: #2d3e40;   
+    --gold-accent: #d4a373;  
+    --text-dark: #333333;    
     --white: #ffffff;
-    --grey-light: #E7EDEE;   /* Фон для отзывов */
-    --footer-bg: #ece9e2;    /* Тот самый бежевый тон для футера */
+    --grey-light: #E7EDEE;   
+    --footer-bg: #ece9e2;    
+    --navy: #244471;
 }
 
 body {
@@ -35,16 +36,16 @@ body {
     margin-bottom: 50px; 
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #244471;
+    color: var(--navy);
     font-weight: 700;
 }
 
 /* =========================================
-    2. ШАПКА (Header) — ПОЛНОСТЬЮ ИСПРАВЛЕННАЯ
+    2. ШАПКА (Header)
     ========================================= */
 .header {
     background: #ffffff; 
-    height: 85px; /* Фиксированная высота шапки */
+    height: 85px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -60,88 +61,71 @@ body {
     width: 100%;
 }
 
-/* Логотип */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: #244471;
+    color: var(--navy);
 }
 
 .logo span {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 1.2rem !important; /* Фикс размера лого */
+    font-weight: 700;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    line-height: 1;
-    white-space: nowrap;
 }
 
-.logo i {
-    color: var(--gold-accent);
-}
-
-/* Навигация (Меню) */
 .nav {
     display: flex;
-    gap: 30px; /* Одинаковое расстояние между ссылками */
+    gap: 30px;
     align-items: center;
 }
 
 .nav a {
     text-decoration: none;
-    color: #244471 !important;
-    font-size: 15px !important; /* Фикс размера шрифта меню */
+    color: var(--navy) !important;
+    font-size: 15px;
     font-weight: 600;
     transition: 0.3s;
-    white-space: nowrap;
 }
 
-.nav a:hover {
-    color: var(--gold-accent) !important;
-}
+.nav a:hover { color: var(--gold-accent) !important; }
 
-/* Кнопка "Забронировать" */
 .btn-dark {
-    background-color: #244471 !important; 
+    background-color: var(--navy) !important; 
     color: #ffffff !important;           
-    padding: 10px 24px !important; /* Оптимальный размер */
+    padding: 10px 24px;
     border-radius: 6px;        
     text-decoration: none;     
     font-weight: 600;          
-    transition: all 0.3s ease;
-    border: none;              
     display: inline-flex;
     align-items: center;
+    font-size: 14px;
+    min-width: 160px;
     justify-content: center;
-    font-size: 14px !important;
-    min-width: 160px; /* Кнопка не будет менять размер */
-    text-align: center;
 }
 
-.btn-dark:hover {
-    background-color: #1f2b2c !important;
-    transform: translateY(-1px);
-}
-
-/* Бургер для мобильных */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: var(--dark-green);
-    cursor: pointer;
     font-size: 24px;
+    cursor: pointer;
+    color: var(--navy);
 }
 
 /* =========================================
-    3. ОСТАЛЬНОЙ КОД (БЕЗ ИЗМЕНЕНИЙ)
+    3. ГЛАВНЫЙ ЭКРАН (Hero)
     ========================================= */
 .hero { 
     position: relative;
     overflow: hidden;
+}
+
+.hero-bg-wrapper {
+    position: relative;
+    height: 650px;
 }
 
 .hero-image-bg {
@@ -156,7 +140,7 @@ body {
     top: 20%;
     left: 5%;
     max-width: 600px;
-    color: #244471;
+    color: var(--navy);
     z-index: 2;
 }
 
@@ -170,18 +154,20 @@ body {
 .search-panel {
     background: var(--white);
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px 30px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
     margin-top: -50px;
     position: relative;
     z-index: 10;
 }
 
+/* =========================================
+    4. СЕТКИ И КОНТЕНТ (Десктоп)
+    ========================================= */
 .about-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 50px;
-    align-items: flex-start;
 }
 
 .about-main-img {
@@ -191,511 +177,125 @@ body {
     object-fit: cover;
 }
 
-.object-desc {
-    font-size: 16px;
-    color: #444;
-}
-
 .amenities-row {
     display: flex;
-    justify-content: flex-start;
     gap: 30px;
     margin: 30px 0;
-    text-align: center;
 }
 
-.amenity-item {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.amenity-item i {
-    color: var(--text-dark); 
-    margin-bottom: 5px;
-    width: 24px;
-}
-
-.location-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-size: 15px;
-}
-
-.about-thumbs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.about-thumbs img {
-    width: 100%;
-    height: 110px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Вертикально по ТЗ) */
+.features-grid, 
+.reviews-grid-new {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 25px;
+    align-items: center;
 }
 
-.feature-card {
+.feature-card, .review-card-modern {
+    width: 100% !important;
     background: var(--white);
-    padding: 40px 30px;
+    padding: 30px;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-.feature-icon {
-    color: #244471;
-    margin-bottom: 20px;
-    width: 35px;
-    height: 35px;
+/* ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Строго 3 колонки) */
+.gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 15px;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+.gallery-item {
+    position: relative;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%; height: 100%; object-fit: cover;
 }
 
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    padding: 20px;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.gallery-overlay i {
-    color: #ffffff;
-}
-.reviews-section {
-    background-color: var(--grey-light);
-    padding: 80px 0;
-}
+/* =========================================
+    5. ОТЗЫВЫ (Детали)
+    ========================================= */
+.reviews-section { background-color: var(--grey-light); padding: 80px 0; }
+.reviewer-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.reviewer-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.review-meta { display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-bottom: 15px; }
+.stars-wrapper { position: relative; color: var(--gold-accent); font-size: 18px; }
 
-.reviews-grid-new {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-bottom: 60px;
-}
-
-.review-card-modern {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid #f0f0f0;
-}
-
-.reviewer-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.reviewer-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.reviewer-name { font-weight: 700; font-size: 16px; color: var(--text-dark); }
-.review-date { font-size: 12px; color: #999; }
-
-.review-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #eee;
-}
-
-.stars-wrapper {
-    position: relative;
-    display: inline-block;
-    font-size: 18px; 
-    line-height: 1;
-}
-
-.stars-background {
-    color: #e0e0e0;
-    display: flex;
-    gap: 2px;
-}
-
-.stars-foreground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    gap: 2px;
-    color: var(--gold-accent);
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.rating-100 { width: 100%; }
-.rating-97 { width: 97%; }
-
-.stat-val-bold {
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--text-dark);
-}
-
-.review-modern-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #444;
-    font-style: italic;
-}
-
+/* =========================================
+    6. ФУТЕР
+    ========================================= */
 .footer {
     background: var(--footer-bg);
-    margin-top: 80px;
     padding: 60px 0 30px;
     border-top: 1px solid #d4d1ca;
+    margin-top: 80px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr; 
     gap: 40px;
-    margin-bottom: 40px;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    font-size: 24px;
-    color: #244471;
-    margin-bottom: 20px;
-}
-
-.footer h4 {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #244471;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer p {
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer a {
-    color: inherit;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer a:hover {
-    color: var(--dark-green);
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-links a {
-    color: #244471;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--gold-accent);
-}
-
-.footer-bottom {
-    padding-top: 20px;
-    border-top: 1px solid #d4d1ca;
-    text-align: center;
-    font-size: 12px;
-    color: #888;
-}
+.footer-logo { font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 20px; display: block; }
+.footer p { font-size: 14px; display: flex; align-items: center; gap: 10px; color: #555; }
+.social-links { display: flex; gap: 15px; margin-top: 20px; }
+.social-links a { color: var(--navy); font-size: 24px; }
 
 /* =========================================
-    9. АДАПТИВНОСТЬ
+    7. ЕДИНАЯ АДАПТИВНОСТЬ (Mobile & Tablet)
     ========================================= */
-@media (max-width: 992px) {
-    .reviews-grid-new { grid-template-columns: 1fr 1fr; }
-}
-
 @media (max-width: 768px) {
-    .section-title { font-size: 20px; }
-    
-    .menu-toggle {
-        display: block;
-        z-index: 1001;
-    }
+    .header { height: 70px; }
+    .menu-toggle { display: block; }
 
     .nav {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        padding: 20px;
+        top: 100%; left: 0; width: 100%;
+        background: #fff; padding: 20px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        gap: 15px;
-        z-index: 1000;
     }
+    .nav.active { display: flex; }
 
-    .nav.active {
-        display: flex;
+    /* Hero Mobile */
+    .hero-bg-wrapper { height: 450px; }
+    .hero-bg-wrapper::after {
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
     }
-    
-    .header-action {
-        display: none; 
-    }
-
     .hero-image-bg { height: 450px; }
     .hero-card {
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 40px 20px;
-        text-align: center;
+        position: relative; top: 0; left: 0;
+        padding: 40px 20px; text-align: center;
+        color: #fff !important;
     }
-    .hero-card h1 { font-size: 30px; }
+    .hero-card h1 { font-size: 28px; color: #fff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 
-    .about-grid, 
-    .features-grid, 
-    .reviews-grid-new, 
-    .footer-grid {
-        grid-template-columns: 1fr; 
-        gap: 30px;
+    .search-panel { margin: -20px 15px 0; padding: 15px; }
+
+    /* Сетки в одну колонку */
+    .about-grid, .footer-grid { grid-template-columns: 1fr; }
+    
+    .amenities-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+    /* Достопримечательности - сохраняем 3 колонки по ТЗ */
+    .gallery-grid { 
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 8px !important; 
     }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; 
-    }
-}
-
-.social-links .fa-vk {
-    font-size: 24px; 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-/* --- АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ --- */
-
-@media (max-width: 768px) {
-    /* 1. Настройка главного контейнера */
-    .container {
-        padding: 0 15px; /* Уменьшаем боковые отступы */
-        margin-top: 20px !important;
-    }
-
-    /* 2. Адаптация заголовков */
-    .section-header h1 {
-        font-size: 1.8rem !important; /* Уменьшаем шрифт заголовка */
-        line-height: 1.2;
-    }
-
-    .section-header {
-        margin-bottom: 30px !important;
-    }
-
-    /* 3. Перестроение сетки в одну колонку */
-    .bento-grid {
-        grid-template-columns: 1fr !important; /* Всегда одна колонка */
-        gap: 15px !important;
-    }
-
-    /* 4. Сброс расширенных блоков (wide и full) */
-    .item.wide, .item.full {
-        grid-column: span 1 !important; /* Блоки на весь экран по ширине */
-    }
-
-    /* 5. Настройка карточек (item) */
-    .item {
-        padding: 20px !important; /* Меньше внутренних отступов */
-    }
-
-    /* 6. Высота фото и видео для мобилок */
-    .media-wrapper {
-        height: 220px !important; /* Чтобы блоки не были слишком длинными */
-        margin-bottom: 15px;
-    }
-
-    /* 7. Адаптация внутренних сеток (Правила и Еда) */
-    .rules-grid-four, .food-grid-three {
-        grid-template-columns: 1fr !important; /* Колонки друг под другом */
-        gap: 10px !important;
-    }
-
-    /* 8. Текст и кнопки */
-    .code-val {
-        font-size: 1.5rem !important; /* Уменьшаем код домофона */
-    }
-
-    h2 {
-        font-size: 1.2rem !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* Поправка навигации (если меню-бургер еще не настроен в style.css) */
-    .header-flex {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-@media (max-width: 768px) {
-    /* Фикс шапки и меню */
-    .header { height: 70px; }
-    .header-flex { position: relative; }
-    .nav { gap: 0; padding: 10px 0; }
-    .nav a { padding: 12px 20px; border-bottom: 1px solid #f0f0f0; width: 100%; box-sizing: border-box; }
-
-    /* Адаптация Hero и Поиска */
-    .hero-image-bg { height: 350px; }
-    .search-panel { margin-top: 0; border-radius: 0; box-shadow: none; padding: 15px; }
-
-    /* Блок "О квартире" */
-    .about-main-img { height: 300px; }
-    .amenities-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .about-thumbs { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .about-thumbs img { height: 80px; }
-
-    /* Карточки и Галерея */
-    .feature-card { padding: 30px 20px; }
-    .gallery-item img { height: 220px; }
-    .gallery-overlay { padding: 15px; font-size: 14px; }
-
-    /* Футер */
-    .footer { padding: 40px 0 20px; text-align: center; }
-    .footer-logo, .footer p, .footer h4 { justify-content: center; }
-    .social-links { justify-content: center; }
+    .gallery-item { height: 120px; }
 }
 
 @media (max-width: 480px) {
-    .hero-card h1 { font-size: 24px; }
     .amenities-row { grid-template-columns: repeat(2, 1fr); }
-    .gallery-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .hero {
-        position: relative;
-        min-height: 85vh; /* Увеличиваем высоту для вертикального отображения */
-        display: flex;
-        align-items: center; /* Центрируем контент по вертикали */
-        justify-content: center;
-    }
-
-    .hero-bg-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    .hero-image-bg {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; /* Картинка заполняет весь блок вертикально */
-        object-position: center;
-    }
-
-    /* Наложение темного градиента для читаемости текста поверх фото */
-    .hero-bg-wrapper::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-    }
-
-    .hero-card {
-        position: relative;
-        z-index: 2;
-        background: none; /* Убираем заливку, чтобы видеть фото */
-        padding: 0 20px;
-        text-align: center;
-        margin-bottom: 120px; /* Место для модуля поиска */
-    }
-
-    .hero-card h1 {
-        font-size: 28px;
-        color: #ffffff !important;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero-card p {
-        color: #ffffff !important;
-        text-shadow: 0 1px 5px rgba(0,0,0,0.5);
-    }
-
-    /* Модуль бронирования поверх картинки */
-    .search-panel {
-        position: absolute;
-        bottom: 20px;
-        left: 15px;
-        right: 15px;
-        width: auto;
-        margin-top: 0;
-        transform: none;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(5px);
-    }
-
-    #hr-widget form {
-        flex-direction: column !important;
-    }
-}
-    /* Адаптация сетки преимуществ и отзывов */
-    .about-grid, .features-grid, .gallery-grid, .reviews-grid-new {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    .section-padding {
-        padding: 40px 0;
-    }
+    .gallery-item { height: 100px; }
+    .section-title { font-size: 20px; }
 }
