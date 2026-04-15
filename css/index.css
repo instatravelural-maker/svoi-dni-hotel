@@ -1,8 +1,8 @@
-/* ==========================================================================
-   ПОЛНОСТЬЮ ИСПРАВЛЕННЫЙ КОД ПО МАКЕТУ (HERO, СЕТКИ И АДАПТИВ)
-   ========================================================================== */
+/* =========================================
+   ИСПРАВЛЕННЫЙ LAYOUT ПО МАКЕТУ
+   ========================================= */
 
-/* 1. HERO БЛОК (Десктоп и общие стили) */
+/* 1. HERO БЛОК */
 .hero {
     position: relative;
     min-height: 80vh;
@@ -53,30 +53,14 @@
     z-index: 10;
 }
 
-#hr-widget {
-    --hr-primary-color: #244471; 
-    --hr-bg-color: #ffffff;
-}
 #hr-widget form {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     gap: 15px !important;
 }
-#hr-widget .hr-input-group {
-    flex: 1;
-    border-right: 1px solid #eee;
-    padding-right: 15px;
-}
-#hr-widget button {
-    background-color: #244471 !important;
-    padding: 15px 30px !important;
-    border-radius: 8px !important;
-    text-transform: none !important;
-    font-weight: 600 !important;
-}
 
-/* 3. ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Сетка строго 3х2) */
+/* 3. ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Сетка 3 колонки, 2 ряда) */
 .gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -88,26 +72,15 @@
     border-radius: 15px;
     overflow: hidden;
     height: 250px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-.gallery-item:hover {
-    transform: translateY(-5px);
 }
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-.gallery-item:hover img {
-    transform: scale(1.1);
 }
 .gallery-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
     padding: 20px;
     color: #fff;
@@ -115,13 +88,8 @@
     align-items: center;
     gap: 10px;
 }
-.gallery-overlay span {
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
 
-/* 4. ВЕРТИКАЛЬНЫЕ БЛОКИ (Преимущества и Отзывы) */
+/* 4. ВЕРТИКАЛЬНЫЕ БЛОКИ (Один под другим по ТЗ) */
 .features-grid, 
 .reviews-grid-new {
     display: flex !important;
@@ -132,92 +100,47 @@
 .feature-card, 
 .review-card-modern {
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
 }
 
-/* 5. АДАПТИВНОСТЬ (Мобильные и Планшеты) */
+/* 5. АДАПТИВНОСТЬ (Мобильные устройства) */
 @media (max-width: 768px) {
-    /* Фикс шапки */
     .header { height: 70px; }
-    .header-flex { position: relative; }
-    .nav { gap: 0; padding: 10px 0; }
-    .nav a { padding: 12px 20px; border-bottom: 1px solid #f0f0f0; width: 100%; box-sizing: border-box; }
-
-    /* Hero для мобильных */
-    .hero {
-        min-height: 85vh;
-        justify-content: center;
-    }
-    .hero-bg-wrapper {
-        position: absolute;
-        z-index: 1;
-    }
+    .hero { min-height: 85vh; justify-content: center; }
     .hero-bg-wrapper::after {
         content: '';
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
     }
-    .hero-image-bg { height: 100%; }
-    
     .hero-card {
-        position: relative;
         z-index: 2;
         text-align: center;
         margin-bottom: 120px;
         padding: 0 20px;
     }
-    .hero-card h1 { 
-        font-size: 28px; 
-        color: #ffffff !important;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    .hero-card p { 
-        color: #ffffff !important;
-        text-shadow: 0 1px 5px rgba(0,0,0,0.5);
-    }
+    .hero-card h1 { font-size: 28px; color: #fff !important; }
+    .hero-card p { color: #fff !important; }
 
-    /* Панель поиска на мобильных */
     .search-panel {
         position: absolute;
-        bottom: 20px;
-        left: 15px; right: 15px;
+        bottom: 20px; left: 15px; right: 15px;
         width: auto;
         transform: none;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(5px);
         padding: 15px;
     }
     #hr-widget form { flex-direction: column !important; }
 
-    /* Блок О квартире */
-    .about-main-img { height: 300px; }
-    .amenities-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-    .about-thumbs { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .about-thumbs img { height: 80px; }
-
-    /* Галерея на мобильных (сохраняем сетку) */
+    /* Галерея на мобильных сохраняет 3 колонки */
     .gallery-grid { 
         grid-template-columns: repeat(3, 1fr) !important; 
         gap: 10px; 
     }
     .gallery-item { height: 150px; }
-    .gallery-overlay { padding: 10px; font-size: 12px; }
-
-    .section-padding { padding: 40px 0; }
-
-    /* Футер */
-    .footer { padding: 40px 0 20px; text-align: center; }
-    .footer-logo, .footer p, .footer h4, .social-links { justify-content: center; }
 }
 
-@media (max-width: 480px) {
-    .hero-card h1 { font-size: 24px; }
-    .amenities-row { grid-template-columns: repeat(2, 1fr); }
-    .gallery-item { height: 110px; }
-}
-
-/* 6. ДЕСКТОПНЫЙ ВОЗВРАТ (для экранов шире 768px) */
+/* 6. ДЕСКТОПНЫЙ ВОЗВРАТ КОНТЕНТА HERO */
 @media (min-width: 769px) {
     .hero { display: block; min-height: auto; }
     .hero-bg-wrapper { position: relative; height: 650px; }
@@ -225,30 +148,15 @@
     .hero-card {
         position: absolute;
         top: 20%; left: 5%;
-        max-width: 600px;
         text-align: left;
     }
-    .hero-card h1 { color: #244471 !important; text-shadow: none; font-size: 46px; }
-    .hero-card p { color: #444 !important; text-shadow: none; }
+    .hero-card h1 { color: #244471 !important; }
+    .hero-card p { color: #444 !important; }
     .search-panel {
         position: relative;
         margin-top: -50px;
-        bottom: auto; left: auto; right: auto;
         width: 100%;
         transform: none;
-        background: #fff;
-    }
-    .hero-bg-wrapper::after { display: none; }
-}
-/* Фиксация вертикального расположения для десктопной версии */
-@media (min-width: 769px) {
-    .features-grid, 
-    .reviews-grid-new {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .feature-card, 
-    .review-card-modern {
-        width: 100% !important;
+        left: auto;
     }
 }
