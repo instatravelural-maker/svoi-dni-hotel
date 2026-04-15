@@ -184,20 +184,23 @@ body {
 }
 
 /* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Вертикально по ТЗ) */
+/* ПРЕИМУЩЕСТВА И ОТЗЫВЫ (Теперь горизонтально в 3 колонки) */
 .features-grid, 
 .reviews-grid-new {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 25px;
-    align-items: center;
+    display: grid !important; /* Было flex */
+    grid-template-columns: repeat(3, 1fr) !important; /* Силой ставим 3 колонки */
+    gap: 25px !important;
+    align-items: stretch !important;
 }
 
 .feature-card, .review-card-modern {
-    width: 100% !important;
+    width: 100% !important; /* Убираем фикс ширину, пусть сетка рулит */
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 /* ДОСТОПРИМЕЧАТЕЛЬНОСТИ (Строго 3 колонки) */
