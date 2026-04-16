@@ -2,7 +2,7 @@
     1. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И БАЗА
    ========================================= */
 :root {
-    --bg-cream: #FDFBF4;     
+    --bg-cream: #FDFBF4;      
     --navy: #244471;
     --gold-accent: #d4a373;  
     --white: #ffffff;
@@ -157,9 +157,13 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     gap: 8px;
     box-sizing: border-box;
 }
+
+/* Обращаемся напрямую к SVG, который создает библиотека Lucide */
+.gallery-overlay svg,
 .gallery-overlay i, 
 .gallery-text {
     color: #ffffff !important;
+    stroke: #ffffff !important; /* Важно для контурных иконок */
     font-size: 14px;
     font-weight: 600;
 }
