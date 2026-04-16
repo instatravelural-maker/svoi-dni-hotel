@@ -15,118 +15,17 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .section-title { text-align: center; font-size: 26px; margin-bottom: 40px; color: var(--navy); text-transform: uppercase; font-weight: 700; }
 
 /* =========================================
-    2. ШАПКА (HEADER) — ЕДИНЫЙ СТИЛЬ ДЛЯ ВСЕХ СТРАНИЦ
+    2. ШАПКА (HEADER)
    ========================================= */
-.header { 
-    background: #fff; 
-    height: 85px; 
-    display: flex; 
-    align-items: center; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-    width: 100%;
-}
+.header { background: #fff; height: 85px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.header-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); font-weight: 700; }
+.nav { display: flex; gap: 25px; align-items: center; }
+.nav a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 15px; }
 
-.header-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
-}
+.btn-dark { background: var(--navy); color: #fff !important; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
 
-/* ЛОГОТИП: Текст "Свои Дни" — СТРОГО 1.2rem, Navy, без Caps Lock */
-.logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    text-decoration: none; 
-    color: var(--navy) !important; 
-    font-weight: 700 !important;
-    font-size: 1.2rem !important; 
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.logo img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-}
-
-/* НАВИГАЦИЯ */
-.nav { 
-    display: flex; 
-    gap: 25px; 
-    align-items: center; 
-}
-
-.nav a { 
-    text-decoration: none; 
-    color: var(--navy) !important; 
-    font-weight: 600; 
-    font-size: 15px; 
-    transition: 0.3s opacity;
-}
-
-.nav a.active {
-    color: #399d7b !important; /* Зеленый акцент для активной страницы */
-}
-
-.nav a:hover {
-    opacity: 0.7;
-}
-
-/* КНОПКА ЗАБРОНИРОВАТЬ */
-.btn-dark { 
-    background: var(--navy); 
-    color: #fff !important; 
-    padding: 10px 24px; 
-    border-radius: 6px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 14px;
-    display: inline-flex; 
-    justify-content: center; 
-    align-items: center; 
-    border: none;
-    transition: 0.3s transform;
-    cursor: pointer;
-}
-
-.btn-dark:hover {
-    transform: translateY(-1px);
-}
-
-.menu-toggle { 
-    display: none; 
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-    color: var(--navy); 
-}
-
-/* Корректная адаптивность для всех страниц */
-@media (max-width: 768px) {
-    .header { height: 70px; }
-    .menu-toggle { display: block; }
-    .nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 70px; /* Высота мобильной шапки */
-        left: 0; 
-        width: 100%; 
-        background: #fff; 
-        padding: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        gap: 15px;
-        z-index: 999;
-    }
-    .nav.active { display: flex !important; }
-    .header-action { display: none !important; } /* Скрываем кнопку в мобильной шапке */
-}
 
 /* =========================================
     HERO & BOOKING MODULE (100% LAYOUT MATCH)
