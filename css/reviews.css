@@ -32,11 +32,11 @@
 .logo-text {
     font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important; /* Соответствует главной */
-    font-size: 24px !important;   /* Точный размер с главной */
+    font-size: 1.2rem !important;   /* Точный размер с главной */
     text-transform: none !important; /* Убираем капс */
     letter-spacing: -0.5px !important; /* Плотность как на главной */
     color: #244471 !important;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 /* Также убедимся, что сам контейнер логотипа выравнивает текст по центру иконки */
