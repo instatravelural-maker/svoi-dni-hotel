@@ -35,10 +35,32 @@
         .review-meta {
             margin-top: 10px;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .rating-bar {
+            display: flex;
+            gap: 4px;
+        }
+        .bar-segment {
+            width: 6px;
+            height: 18px;
+            background: var(--navy);
+            opacity: 0.2;
+            transform: skewX(-20deg);
+            display: inline-block;
+        }
+        .bar-segment.fill {
+            opacity: 1;
         }
         .review-modern-text {
             margin: 0;
             flex-grow: 1;
+        }
+        .stat-val-bold {
+            font-weight: 700;
+            color: var(--navy);
         }
     </style>
 </head>
@@ -213,13 +235,17 @@
                         </div>
                     </div>
                     <div class="review-meta">
-                        <div class="stars-wrapper">
-                            <div class="stars-background">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="stars-foreground rating-97">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
+                        <div class="rating-bar">
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
                         </div>
                         <span class="stat-val-bold">9,7</span>
                     </div>
@@ -235,13 +261,17 @@
                         </div>
                     </div>
                     <div class="review-meta">
-                        <div class="stars-wrapper">
-                            <div class="stars-background">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="stars-foreground rating-100">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
+                        <div class="rating-bar">
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
                         </div>
                         <span class="stat-val-bold">10.0</span>
                     </div>
@@ -257,13 +287,17 @@
                         </div>
                     </div>
                     <div class="review-meta">
-                        <div class="stars-wrapper">
-                            <div class="stars-background">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="stars-foreground rating-100">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
+                        <div class="rating-bar">
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
+                            <span class="bar-segment fill"></span>
                         </div>
                         <span class="stat-val-bold">10.0</span>
                     </div>
