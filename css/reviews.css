@@ -30,13 +30,22 @@
 
 /* Текст логотипа */
 .logo-text {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
     font-size: 1.2rem !important; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
     color: #244471 !important;
     white-space: nowrap;
+    line-height: 1;
+}
+
+/* Также убедимся, что сам контейнер логотипа выравнивает текст по центру иконки */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 /* Навигация */
