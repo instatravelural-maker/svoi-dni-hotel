@@ -1,118 +1,5 @@
 /* =========================================
-    1. ШАПКА (HEADER) — СТРОГО ПО ГЛАВНОЙ
-   ========================================= */
-.header { 
-    background: #ffffff; 
-    height: 85px; 
-    display: flex; 
-    align-items: center; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-    width: 100%;
-}
-
-/* Центрирование контента как на главной */
-.header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Флекс-контейнер для элементов внутри */
-.header-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
-}
-
-/* Исправленный логотип */
-.logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    text-decoration: none; 
-    /* Стили текста напрямую */
-    color: #244471 !important; 
-    font-weight: 700 !important;
-    font-size: 1.2rem !important;
-    line-height: 1.2;
-    white-space: nowrap;
-}
-
-.logo img {
-    display: block;
-    width: 45px;
-    height: 45px;
-}
-
-/* Навигация */
-.nav { 
-    display: flex; 
-    gap: 25px; 
-    align-items: center; 
-}
-
-.nav a { 
-    text-decoration: none; 
-    color: #244471 !important; 
-    font-weight: 600; 
-    font-size: 15px !important; 
-    transition: 0.3s;
-}
-
-.nav a.active {
-    color: #399d7b !important; /* Зеленый акцент как на главной для активной ссылки */
-}
-
-/* Кнопка */
-.btn-dark.header-action { 
-    background: #244471 !important; 
-    color: #fff !important; 
-    padding: 10px 24px; 
-    border-radius: 6px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 14px !important;
-    display: inline-flex; 
-    justify-content: center; 
-    align-items: center;
-    transition: 0.3s;
-}
-
-.menu-toggle { 
-    display: none; 
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-    color: #244471; 
-}
-
-/* Мобильная адаптация шапки */
-@media (max-width: 768px) {
-    .header { height: 70px; }
-    .nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 70px; left: 0; width: 100%; 
-        background: #fff; padding: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-    }
-    .nav.active { display: flex; }
-    .header-action { display: none !important; }
-    .menu-toggle { display: block !important; }
-}
-
-/* =========================================
-    2. ФОН И ОСНОВНЫЕ БЛОКИ
+    ОТЗЫВЫ — СПЕЦИФИЧЕСКИЕ СТИЛИ СТРАНИЦЫ
    ========================================= */
 
 html, body.reviews-page {
@@ -128,11 +15,6 @@ html, body.reviews-page {
 }
 
 /* --- КОРПОРАТИВНЫЕ ЦВЕТА --- */
-.nav a.active, .nav a:hover {
-    color: #244471 !important;
-    opacity: 0.8;
-}
-
 [data-lucide] {
     color: #244471;
 }
@@ -196,8 +78,7 @@ html, body.reviews-page {
     flex-wrap: wrap;
 }
 
-/* КОРПОРАТИВНЫЕ КНОПКИ */
-.btn-dark, 
+/* КНОПКИ МЕССЕНДЖЕРОВ */
 .cta-btn.whatsapp, 
 .cta-btn.telegram {
     background-color: #244471 !important;
@@ -215,8 +96,7 @@ html, body.reviews-page {
     font-weight: 500;
 }
 
-.cta-btn [data-lucide], 
-.btn-dark [data-lucide] {
+.cta-btn [data-lucide] {
     color: #ffffff !important;
 }
 
@@ -323,12 +203,7 @@ html, body.reviews-page {
     margin: 0; 
 }
 
-/* 6. АДАПТИВНОСТЬ */
-@media (max-width: 1024px) {
-    .nav { gap: 15px; }
-    .nav a { font-size: 14px !important; }
-}
-
+/* 6. АДАПТИВНОСТЬ КОНТЕНТА */
 @media (max-width: 900px) {
     .sutochno-rating-card { 
         flex-direction: column; 
@@ -339,24 +214,6 @@ html, body.reviews-page {
         grid-template-columns: 1fr; 
         width: 100%; 
     }
-}
-
-@media (max-width: 768px) {
-    .header-flex { height: 70px; position: relative; }
-    .nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 100%; left: 0; width: 100%; 
-        background: #ffffff; 
-        padding: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        z-index: 1000; 
-        gap: 15px;
-    }
-    .nav.active { display: flex; }
-    .header-action { display: none; }
-    .menu-toggle { display: block !important; }
 }
 
 @media (max-width: 600px) {
