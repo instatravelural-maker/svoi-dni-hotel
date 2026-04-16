@@ -3,22 +3,6 @@ body {
     background-color: #fdfaf7; 
 }
 
-/* Шапка и навигация */
-.logo span {
-    color: #244471 !important;
-    font-weight: 700;
-}
-
-.nav a {
-    color: #244471 !important;
-    font-weight: 600;
-}
-
-.header-action {
-    background-color: #244471 !important;
-    color: #ffffff !important;
-}
-
 /* Заголовки */
 .section-title {
     text-align: center;
@@ -152,32 +136,14 @@ body {
 
 @media (max-width: 768px) {
     .footer-grid { grid-template-columns: 1fr; }
-    .nav { display: none; }
-    .menu-toggle i { color: #244471; }
 }
+
 @media (max-width: 992px) {
     .details-grid { grid-template-columns: 1fr; }
     .sidebar-booking { position: static; order: -1; width: auto; }
 }
 
 @media (max-width: 768px) {
-    /* Навигация и меню */
-    .header-flex { height: 70px; position: relative; }
-    .nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 100%; left: 0; width: 100%; 
-        background: var(--white); 
-        padding: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        z-index: 1000; 
-        gap: 15px;
-    }
-    .nav.active { display: flex; }
-    .header-action { display: none; }
-    .menu-toggle { display: block !important; }
-
     /* Галерея */
     .full-gallery { grid-template-columns: 1fr; height: 300px; }
     .side-imgs { display: none; }
