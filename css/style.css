@@ -15,7 +15,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .section-title { text-align: center; font-size: 26px; margin-bottom: 40px; color: var(--navy); text-transform: uppercase; font-weight: 700; }
 
 /* =========================================
-    2. ШАПКА (HEADER)
+    2. ШАПКА (HEADER) — ЕДИНЫЙ КОД
    ========================================= */
 .header { 
     background: #fff; 
@@ -28,12 +28,18 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
 }
 
+/* ЭТОТ БЛОК ОБЯЗАТЕЛЕН для центровки */
+.header .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .header-flex { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    width: 100%;
-    gap: 40px; /* ЭТО ИСПРАВИТ РАССТОЯНИЕ: зазор между лого и меню */
+    width: 100%; 
 }
 
 .logo { 
@@ -43,14 +49,13 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     text-decoration: none; 
     color: var(--navy); 
     font-weight: 700; 
-    flex-shrink: 0; /* Не дает логотипу сжиматься */
+    flex-shrink: 0;
 }
 
 .nav { 
     display: flex; 
     gap: 25px; 
     align-items: center; 
-    margin-left: auto; /* Прижимает меню к правой части, если места много */
 }
 
 .nav a { 
@@ -58,7 +63,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     color: var(--navy); 
     font-weight: 600; 
     font-size: 15px; 
-    white-space: nowrap; /* Не дает ссылкам переноситься */
 }
 
 .btn-dark { 
@@ -71,7 +75,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     display: inline-flex; 
     justify-content: center; 
     align-items: center; 
-    margin-left: 25px; /* Отступ кнопки от меню */
 }
 
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
