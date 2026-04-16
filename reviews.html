@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/reviews.css">
 
     <style>
-        /* Принудительно ставим шрифт Inter для всей страницы, как на главной */
         body {
             font-family: 'Inter', sans-serif !important;
         }
@@ -34,9 +33,9 @@
 <header class="header">
     <div class="container header-flex">
         <a href="index.html" class="logo">
-    <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
-    <span class="logo-text">Свои Дни</span>
-</a> 
+            <img src="img/logo.webp" alt="Логотип" style="width: 45px; height: 45px; object-fit: contain;">
+            <span class="logo-text">Свои Дни</span>
+        </a> 
         
         <button class="menu-toggle" id="menu-toggle">
             <i data-lucide="menu"></i>
@@ -89,9 +88,7 @@
                     </div>
                 </div>
                 <div class="review-text-side">
-                    <div class="review-top-row">
-                        <span class="small-badge">9,7</span>
-                    </div>
+                    <div class="review-top-row"><span class="small-badge">9,7</span></div>
                     <p class="comment">Рекомендую! Хозяин всегда на связи, всё объяснил, выслал схему проезда. Заселение было даже раньше времени, сам встретил. Квартира отличная, чистая.</p>
                 </div>
             </div>
@@ -106,10 +103,68 @@
                     </div>
                 </div>
                 <div class="review-text-side">
-                    <div class="review-top-row">
-                        <span class="small-badge">10,0</span>
-                    </div>
+                    <div class="review-top-row"><span class="small-badge">10,0</span></div>
                     <p class="comment">Отличное расположение в Приморском районе. Рядом всё необходимое. В квартире тихо, соседей не слышно.</p>
+                </div>
+            </div>
+
+            <div class="single-review">
+                <div class="guest-info-side">
+                    <img src="https://i.pravatar.cc/150?u=kat" class="guest-avatar" alt="Екатерина">
+                    <div class="guest-name">Екатерина</div>
+                    <div class="stay-meta">
+                        <div class="meta-row"><i data-lucide="calendar" size="14"></i> Март 2026</div>
+                        <div class="meta-row"><i data-lucide="user" size="14"></i> 2 гостя</div>
+                    </div>
+                </div>
+                <div class="review-text-side">
+                    <div class="review-top-row"><span class="small-badge">10,0</span></div>
+                    <p class="comment">Прекрасный хозяин квартиры! Сам позвонил, сориентировал по месту парковки. Согласовал раннее заселение. Постоянно был на связи. Очень удобный замок в квартиру. Без ключей. Нам с мужем было удобно, т. к. мы возвращались в разное время. Квартира на первом этаже, не нужно ждать лифт. Вся инфраструктура в пешей доступности.</p>
+                </div>
+            </div>
+
+            <div class="single-review">
+                <div class="guest-info-side">
+                    <img src="https://i.pravatar.cc/150?u=dima" class="guest-avatar" alt="Дмитрий">
+                    <div class="guest-name">Дмитрий</div>
+                    <div class="stay-meta">
+                        <div class="meta-row"><i data-lucide="calendar" size="14"></i> Март 2026</div>
+                        <div class="meta-row"><i data-lucide="user" size="14"></i> 1 гость</div>
+                    </div>
+                </div>
+                <div class="review-text-side">
+                    <div class="review-top-row"><span class="small-badge">10,0</span></div>
+                    <p class="comment">Останавливался по работе. Очень удобное рабочее место и быстрый интернет. Заселение моментальное, хозяин всегда на связи.</p>
+                </div>
+            </div>
+
+            <div class="single-review">
+                <div class="guest-info-side">
+                    <img src="https://i.pravatar.cc/150?u=alex" class="guest-avatar" alt="Александр">
+                    <div class="guest-name">Александр</div>
+                    <div class="stay-meta">
+                        <div class="meta-row"><i data-lucide="calendar" size="14"></i> Март 2026</div>
+                        <div class="meta-row"><i data-lucide="user" size="14"></i> 2 гостя</div>
+                    </div>
+                </div>
+                <div class="review-text-side">
+                    <div class="review-top-row"><span class="small-badge">10,0</span></div>
+                    <p class="comment">Нормально всё. Типичная студия. Удобное бесконтактное заселение</p>
+                </div>
+            </div>
+
+            <div class="single-review">
+                <div class="guest-info-side">
+                    <img src="https://i.pravatar.cc/150?u=grig" class="guest-avatar" alt="Григорий">
+                    <div class="guest-name">Григорий</div>
+                    <div class="stay-meta">
+                        <div class="meta-row"><i data-lucide="calendar" size="14"></i> Январь 2026</div>
+                        <div class="meta-row"><i data-lucide="user" size="14"></i> 2 гостя</div>
+                    </div>
+                </div>
+                <div class="review-text-side">
+                    <div class="review-top-row"><span class="small-badge">10,0</span></div>
+                    <p class="comment">Квартира теплая, все необходимое для пребывания есть. Мебель, сантехника новая, постельные принадлежности чистые и свежие. На кухне все есть. По нашей просьбе хозяин добавил кофемашину. Хозяин отзывчивый, шел навстречу во всех вопросах. Остались довольны. Спасибо.</p>
                 </div>
             </div>
         </div>
@@ -137,7 +192,6 @@
                 Свои Дни
             </div>
             <p>Ваш уютный уголок в Санкт-Петербурге. Профессиональный сервис посуточной аренды квартир.</p>
-            
             <div class="social-links">
                 <a href="https://t.me/GMSergeevich" target="_blank"><i data-lucide="send" size="20"></i></a>
                 <a href="https://wa.me/79214070305" target="_blank"><i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i></a>
