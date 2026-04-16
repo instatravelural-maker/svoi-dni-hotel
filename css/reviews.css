@@ -29,14 +29,15 @@
 }
 
 /* Текст логотипа */
+/* Полное соответствие стилям .logo с главной страницы */
 .logo-text {
     font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important; /* Соответствует главной */
-    font-size: 1.2rem !important;   /* Точный размер с главной */
-    text-transform: none !important; /* Убираем капс */
-    letter-spacing: -0.5px !important; /* Плотность как на главной */
+    font-weight: 700 !important;
+    font-size: 1.2rem !important; 
     color: #244471 !important;
-    line-height: 1;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
 }
 
 /* Также убедимся, что сам контейнер логотипа выравнивает текст по центру иконки */
