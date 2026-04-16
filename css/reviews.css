@@ -1,5 +1,5 @@
 /* =========================================
-    1. ШАПКА (HEADER) — ОБЩИЕ СТИЛИ
+    1. ШАПКА (HEADER) — СТРОГО ПО ГЛАВНОЙ
    ========================================= */
 .header { 
     background: #ffffff; 
@@ -10,77 +10,81 @@
     top: 0; 
     z-index: 1000; 
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-}
-
-/* Контейнер шапки внутри */
-.header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-    height: 80px; 
 }
 
+/* Центрирование контента как на главной */
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Флекс-контейнер для элементов внутри */
+.header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+/* Исправленный логотип */
 .logo { 
     display: flex; 
     align-items: center; 
-    gap: 10px; 
+    gap: 12px; 
     text-decoration: none; 
+    /* Стили текста напрямую */
     color: #244471 !important; 
     font-weight: 700 !important;
     font-size: 1.2rem !important;
-    line-height: 1;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
-/* Текст логотипа */
-/* Полное соответствие стилям .logo с главной страницы */
-.logo-text {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 1.2rem !important; 
-    color: #244471 !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    line-height: 1 !important;
-}
-
-/* Также убедимся, что сам контейнер логотипа выравнивает текст по центру иконки */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+.logo img {
+    display: block;
+    width: 45px;
+    height: 45px;
 }
 
 /* Навигация */
-.nav {
-    display: flex;
+.nav { 
+    display: flex; 
     gap: 25px; 
-    align-items: center;
+    align-items: center; 
 }
 
-.nav a {
+.nav a { 
+    text-decoration: none; 
+    color: #244471 !important; 
+    font-weight: 600; 
     font-size: 15px !important; 
-    font-weight: 600;
-    text-decoration: none;
-    color: #244471 !important;
-    transition: opacity 0.3s;
+    transition: 0.3s;
 }
 
-/* Кнопка в шапке */
-.header-action {
-    padding: 10px 20px;
+.nav a.active {
+    color: #399d7b !important; /* Зеленый акцент как на главной для активной ссылки */
+}
+
+/* Кнопка */
+.btn-dark.header-action { 
+    background: #244471 !important; 
+    color: #fff !important; 
+    padding: 10px 24px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    font-weight: 600; 
     font-size: 14px !important;
-    min-width: 160px;
-    text-align: center;
-    background-color: #244471 !important;
-    color: #ffffff !important;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    justify-content: center;
+    display: inline-flex; 
+    justify-content: center; 
     align-items: center;
+    transition: 0.3s;
 }
 
 .menu-toggle { 
@@ -89,6 +93,22 @@
     border: none; 
     cursor: pointer; 
     color: #244471; 
+}
+
+/* Мобильная адаптация шапки */
+@media (max-width: 768px) {
+    .header { height: 70px; }
+    .nav { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 70px; left: 0; width: 100%; 
+        background: #fff; padding: 20px; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    }
+    .nav.active { display: flex; }
+    .header-action { display: none !important; }
+    .menu-toggle { display: block !important; }
 }
 
 /* =========================================
