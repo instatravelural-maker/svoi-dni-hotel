@@ -35,7 +35,7 @@
     padding: 40px;
     border-radius: 20px;
     margin-bottom: 60px;
-    border: 1px solid rgba(36, 68, 113, 0.1); /* Цвет заменен на синий 10% */
+    border: 1px solid rgba(36, 68, 113, 0.1); 
 }
 
 .info-card-compact h2 {
@@ -81,7 +81,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: var(--brand-blue) !important; /* Цвет заменен на синий */
+    background: var(--brand-blue) !important;
     color: white;
     padding: 14px 24px;
     border-radius: 8px;
@@ -101,24 +101,6 @@
     box-shadow: 0 4px 12px rgba(36, 68, 113, 0.2);
 }
 
-/* Стили шапки и навигации (синхронизация) */
-.nav a {
-    color: var(--brand-blue) !important;
-    font-weight: 600;
-}
-
-.logo span {
-    color: var(--brand-blue) !important;
-}
-
-.header-action {
-    background-color: var(--brand-blue) !important;
-}
-
-[data-lucide="menu"] {
-    color: var(--brand-blue) !important;
-}
-
 /* Футер: заголовки и иконки */
 .footer h4, 
 .footer-logo, 
@@ -126,7 +108,7 @@
     color: var(--brand-blue) !important;
 }
 
-/* Адаптивность */
+/* Адаптивность контента */
 @media (max-width: 850px) {
     .booking-info-bottom {
         grid-template-columns: 1fr;
@@ -138,29 +120,13 @@
         flex-direction: column;
     }
 }
+
 @media (max-width: 992px) {
     .details-grid { grid-template-columns: 1fr; }
     .sidebar-booking { position: static; order: -1; width: auto; }
 }
 
 @media (max-width: 768px) {
-    /* Навигация и меню */
-    .header-flex { height: 70px; position: relative; }
-    .nav { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 100%; left: 0; width: 100%; 
-        background: var(--white); 
-        padding: 20px; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-        z-index: 1000; 
-        gap: 15px;
-    }
-    .nav.active { display: flex; }
-    .header-action { display: none; }
-    .menu-toggle { display: block !important; }
-
     /* Галерея */
     .full-gallery { grid-template-columns: 1fr; height: 300px; }
     .side-imgs { display: none; }
