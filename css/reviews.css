@@ -234,3 +234,47 @@ html, body.reviews-page {
         gap: 10px;
     }
 }
+@media (max-width: 768px) {
+    /* Проявление бургера, который скрыт в HTML */
+    .menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    /* Настройка мобильного меню для страницы отзывов */
+    .nav {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed !important;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: calc(100vh - 85px);
+        background: #ffffff !important;
+        flex-direction: column !important;
+        padding: 25px !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    /* Класс, который добавляется скриптом при клике на бургер */
+    .nav.active {
+        display: flex !important;
+    }
+
+    /* Адаптация сетки отзывов, чтобы блоки шли вертикально */
+    .reviews-grid-new {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 10px;
+    }
+
+    .review-card-modern {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
