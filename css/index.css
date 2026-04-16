@@ -15,16 +15,9 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .section-title { text-align: center; font-size: 26px; margin-bottom: 40px; color: var(--navy); text-transform: uppercase; font-weight: 700; }
 
 /* =========================================
-    2. ШАПКА (HEADER)
+    КНОПКИ И ОБЩИЕ ЭЛЕМЕНТЫ (Сохранено для использования в секциях)
    ========================================= */
-.header { background: #fff; height: 85px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-.header-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); font-weight: 700; }
-.nav { display: flex; gap: 25px; align-items: center; }
-.nav a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 15px; }
-
 .btn-dark { background: var(--navy); color: #fff !important; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; }
-.menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
 
 /* =========================================
     HERO & BOOKING MODULE (STRICT LAYOUT)
@@ -139,7 +132,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .reviews-grid-new { display: flex !important; justify-content: center !important; gap: 20px !important; width: 100%; max-width: 1140px; margin: 0 auto; }
 .review-card-modern { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; width: 350px; flex-shrink: 0; }
 
-/* СТРОКА ИЗМЕНЕНА СОГЛАСНО ТЗ */
 .review-card-modern .stars, .review-card-modern .stars-wrapper { display: flex !important; gap: 5px; color: #ffb400; margin-bottom: 10px; }
 
 .gallery-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
@@ -158,12 +150,11 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
     box-sizing: border-box;
 }
 
-/* Обращаемся напрямую к SVG, который создает библиотека Lucide */
 .gallery-overlay svg,
 .gallery-overlay i, 
 .gallery-text {
     color: #ffffff !important;
-    stroke: #ffffff !important; /* Важно для контурных иконок */
+    stroke: #ffffff !important; 
     font-size: 14px;
     font-weight: 600;
 }
@@ -183,9 +174,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .mobile-booking-btn { display: none !important; }
 
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; flex-direction: column; padding: 30px; gap: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .nav.active { display: flex !important; }
     .hero { height: 500px; margin-bottom: 300px; }
     .hero-card h1 { font-size: 32px; }
     .search-panel { position: relative; bottom: -280px; width: auto; margin: 0 20px; left: 0; transform: none; }
