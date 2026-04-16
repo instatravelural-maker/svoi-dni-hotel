@@ -135,7 +135,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); marg
 .footer { background: var(--footer-bg); padding: 50px 0 20px; margin-top: 60px; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
 .footer h4 { color: var(--navy); margin-bottom: 15px; }
-.social-links { display: flex; gap: 15px; margin-top: 15px; }
+.social-links { display: flex; gap: 15px; margin-top: 15px; align-items: center; }
+.social-links a i, .social-links a svg { width: 20px; height: 20px; font-size: 20px; display: flex; align-items: center; justify-content: center; }
 .footer-bottom { text-align: center; padding-top: 30px; font-size: 13px; color: #777; border-top: 1px solid #d4d1ca; margin-top: 30px; }
 
 /* =========================================
