@@ -1,0 +1,356 @@
+/* =========================================
+    1. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И БАЗА
+   ========================================= */
+:root {
+    --bg-cream: #FDFBF4;     
+    --navy: #244471;
+    --gold-accent: #d4a373;  
+    --white: #ffffff;
+    --footer-bg: #ece9e2;    
+}
+
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-cream); margin: 0; line-height: 1.6; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 60px 0; }
+.section-title { text-align: center; font-size: 26px; margin-bottom: 40px; color: var(--navy); text-transform: uppercase; font-weight: 700; }
+
+/* =========================================
+    2. ШАПКА (HEADER) — ЕДИНЫЙ КОД
+   ========================================= */
+.header { 
+    background: #fff; 
+    height: 85px; 
+    display: flex; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+}
+
+/* ЭТОТ БЛОК ОБЯЗАТЕЛЕН для центровки */
+.header .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    text-decoration: none; 
+    color: var(--navy); 
+    font-weight: 700; 
+    flex-shrink: 0;
+}
+
+.nav { 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; 
+}
+
+.nav a { 
+    text-decoration: none; 
+    color: var(--navy); 
+    font-weight: 600; 
+    font-size: 15px; 
+}
+
+.btn-dark { 
+    background: var(--navy); 
+    color: #fff !important; 
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); }
+
+
+/* =========================================
+    HERO & BOOKING MODULE (100% LAYOUT MATCH)
+   ========================================= */
+.hero {
+    position: relative;
+    height: 650px;
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('../img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.hero-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: #ffffff !important;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    color: #ffffff !important;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    color: #ffffff !important;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.booking-container {
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    right: 20px;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    display: flex;
+    gap: 25px;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.booking-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-item label { font-size: 13px; font-weight: 700; margin-bottom: 5px; color: #777; }
+.booking-item input, .booking-item select { 
+    border: 1px solid #eee; 
+    padding: 12px; 
+    border-radius: 8px; 
+    font-family: inherit; 
+    font-size: 15px;
+    background: #fcfcfc;
+}
+
+.booking-btn {
+    height: 52px;
+    padding: 0 35px !important;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+/* =========================================
+    3. СЕТКИ (ДЕСКТОП) - БЕЗ ИЗМЕНЕНИЙ
+   ========================================= */
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+.about-main-img { width: 100%; height: 450px; object-fit: cover; border-radius: 15px; }
+
+.amenities-row { display: flex; justify-content: space-between; margin: 25px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 15px 0; }
+.amenity-item { text-align: center; font-size: 12px; flex: 1; }
+.amenity-item i { margin-bottom: 5px; display: block; }
+.location-details { margin-bottom: 25px; font-size: 14px; }
+.location-line { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.location-line i { flex-shrink: 0; margin-top: 3px; }
+.about-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.about-thumbs img { width: 100%; height: 80px; object-fit: cover; border-radius: 10px; }
+
+.features-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 30px; align-items: center; width: 100%; max-width: 900px; margin: 0 auto; justify-content: center; }
+.reviews-grid-new { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 40px; width: 100%; max-width: 1140px; margin: 0 auto; justify-content: center; }
+.feature-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; height: 200px; margin: 0; width: 100%; }
+.review-card-modern { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; height: 100%; }
+.review-card-modern .stars, .review-card-modern .stars-wrapper { display: none !important; }
+
+.gallery-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
+.gallery-item { height: 250px; border-radius: 12px; overflow: hidden; position: relative; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+/* Обращаемся напрямую к SVG, который создает библиотека Lucide */
+.gallery-label svg, 
+.gallery-label i, 
+.gallery-label span {
+    color: #ffffff !important;
+    stroke: #ffffff !important; /* Важно для контурных иконок */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================================
+    4. ФУТЕР (Обновлен под стиль Контактов)
+   ========================================= */
+.footer { background: var(--footer-bg); padding: 60px 0 20px; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+.footer-logo { color: var(--navy) !important; font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+.footer h4 { color: var(--navy) !important; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; font-size: 16px; }
+.footer p { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #000000 !important; font-size: 14px; }
+.footer p i, .footer p [data-lucide] { flex-shrink: 0; color: var(--navy) !important; width: 18px; height: 18px; }
+.footer a:not(.footer-logo) { color: #000000 !important; text-decoration: none; transition: opacity 0.3s; }
+.footer a:not(.footer-logo):hover { text-decoration: underline; }
+.social-links { display: flex; gap: 15px; margin-top: 20px; align-items: center; }
+.social-links a { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.social-links i, .social-links svg, .social-links [data-lucide] { color: var(--navy) !important; width: 24px; height: 24px; transition: transform 0.3s ease; }
+.social-links a:hover i { transform: translateY(-3px); }
+.footer-bottom { text-align: center; padding-top: 30px; font-size: 13px; color: #666; border-top: 1px solid #d4d1ca; margin-top: 40px; }
+
+/* =========================================
+    5. АДАПТИВНОСТЬ (MOBILE)
+   ========================================= */
+.mobile-booking-btn { display: none !important; }
+
+@media (max-width: 768px) {
+    /* 1. ГЛАВНЫЙ ЭКРАН: Вертикальное фото и центровка текста */
+    .hero {
+        height: 100vh !important; /* Фото на весь экран смартфона */
+        min-height: 600px;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important; /* Центровка текста строго по середине фото */
+        justify-content: center !important;
+        padding-top: 0 !important;
+        background-attachment: scroll;
+        position: relative;
+    }
+
+    .hero-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        text-align: center !important; /* Текст по центру без изменения цвета */
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        z-index: 5;
+    }
+
+    .hero-content h1 {
+        font-size: 32px !important; 
+        color: #ffffff !important; 
+        margin-bottom: 15px !important;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+        font-size: 16px !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Модуль бронирования: строгое наложение на фото внизу */
+    .booking-container {
+        position: absolute !important;
+        bottom: 30px !important; /* Накладывается поверх фото как в веб-версии */
+        left: 15px !important;
+        right: 15px !important;
+        width: auto !important;
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 10px !important;
+        transform: none !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        z-index: 10 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    }
+
+    .booking-item {
+        width: 100%;
+    }
+
+    .booking-btn {
+        width: 100% !important;
+        height: 50px !important;
+    }
+
+    /* 2. ДОСТОПРИМЕЧАТЕЛЬНОСТИ: блоки вертикально */
+    .gallery-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .gallery-item {
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+    /* 3. МЕНЮ: Выпадающее мобильное меню */
+    .nav {
+        display: none;
+        position: fixed !important;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #ffffff !important;
+        flex-direction: column !important;
+        padding: 25px !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav.active {
+        display: flex !important;
+    }
+
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .header-action.desktop-only-btn {
+        display: none !important;
+    }
+
+    .nav .mobile-booking-btn {
+        display: flex !important;
+        margin-top: 10px;
+    }
+
+    /* 4. ОБЩАЯ КОРРЕКТНОСТЬ БЛОКОВ */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .about-grid, .features-grid, .reviews-grid-new, .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .about-main-img {
+        height: 250px !important;
+        width: 100%;
+    }
+
+    .amenities-row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    .amenity-item {
+        flex: 0 0 30% !important;
+        margin-bottom: 10px;
+    }
+}
